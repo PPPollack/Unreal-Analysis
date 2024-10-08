@@ -1,4 +1,4 @@
-This is the repo for the book **Unreal Analysis**, written by [Paul Pollack](https://pollack.uga.edu) and published by the [Ross Mathematics Program](https://rossprogram.org/). Click [here](https://github.com/PPPollack/Unreal-Analysis/blob/main/padic-current.pdf) for a PDF of the manuscript. To report typos and other errors, please open an issue.
+This is the repo for the book **Unreal Analysis**, written by [Paul Pollack](https://pollack.uga.edu) and published by the [Ross Mathematics Program](https://rossprogram.org/). Click [here](https://github.com/PPPollack/Unreal-Analysis/raw/main/padic-current.pdf) for a PDF of the manuscript. To report typos and other errors, please open an issue.
 
 ___
 ### How to use this book
