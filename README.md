@@ -27,4 +27,4 @@ I must emphasize that this should not be your only resource on $p$-adic numbers.
 - **Murty**, M. R. (2002). *Introduction to* $p$*-adic analytic number theory*. American Mathematical Society.
 - **Schikhof**, W. H. (2006). *Ultrametric calculus: An introduction to* $p$*-adic analysis*. Cambridge University Press.
 - **Serre**, J.-P. (1973). *A course in arithmetic*. Springer.
-- **Steuding**, J. *Die* $p$-*adischen Zahlen*. [https://www.uni-marburg.de/de/fb12/fachbereich/profil/geschichte-des-fachbereichs/biographisches/hensel_p_adischen_zahlen.pdf](https://www.uni-marburg.de/de/fb12/fachbereich/profil/geschichte-des-fachbereichs/biographisches/hensel_p_adischen_zahlen.pdf])
+- **Steuding**, J. *Die* $p$-*adischen Zahlen*. [https://www.uni-marburg.de/de/fb12/fachbereich/profil/geschichte-des-fachbereichs/biographisches/hensel_p_adischen_zahlen.pdf](https://www.uni-marburg.de/de/fb12/fachbereich/profil/geschichte-des-fachbereichs/biographisches/hensel_p_adischen_zahlen.pdf)
