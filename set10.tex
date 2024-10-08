@@ -1,0 +1,145 @@
+\setcounter{chapter}{11}
+\chapter*{$p$-Set \#11}
+\addcontentsline{toc}{chapter}{Set \#11}
+\markboth{Set \#11}{Set \#11}
+\label{chap:skolem}
+
+\vspace{-0.4in}
+%\setlength{\epigraphwidth}{0.51\textwidth}
+% \epigraph{Ordinary analysis has amassed a great stock of identities between power series. Many of these are valid in $p$-adic analysis too. But here an identity between power series yields congruences between partial sums.}{Max Zorn}
+%\setlength{\epigraphwidth}{0.49\textwidth}
+\epigraph{In 1926, when he was nearly 40 years old, Skolem obtained his
+doctorate\dots The somewhat advanced age
+has the following explanation. In their younger years, Viggo Brun and
+Skolem agreed that neither of them would bother to obtain the degree of
+Doctor, probably feeling that, in Norway, it served no useful function
+in the education of a young scientist. But in the middle twenties a
+younger generation of Norwegian mathematician emerged. It seems
+that Skolem then felt he too ought to fulfil the formal requirement
+of having a doctorate, and he ``obtained permission'' from Brun to
+submit a thesis.}{Jens Erik Fenstad}
+
+\vspace{0.12in}
+\section*{I \dots Have \dots the \dots Power\dots (Series)}
+\begin{prob}[$p$-adic lumber theory]\label{prob:padiclumber1}\index{p-adic@$p$-adic logarithm!definition and convergence on $1+p\Z_p$}\index{logarithm, on $\Q_p$|see{$p$-adic logarithm}} Recall from calculus that \[ \log{x} = \log(1+(x-1)) = \sum_{k\ge 1} \frac{(-1)^{k-1}}{k} (x-1)^k \quad\text{whenever} \quad |x-1| < 1.\] This motivates us to define, for each prime $p$,
+\[ \log_p(T) = \sum_{k\ge 1} \frac{(-1)^{k-1}}{k} (T-1)^{k} \in \Q_p[[T-1]]. \] Show: $\log_p{x}$ converges for all $x \in \Q_p$ with $|x-1|_p < 1$.
+\end{prob}
+
+\testrule
+Passing the familiar identity $\log{xy} = \log{x} +\log{y}$ (valid for $x,y \in \R^{+}$) from $\R$ to $\Q_p[[X-1,Y-1]]$, and then on to $\Q_p$, one can show that
+\begin{equation}\tag{$\dagger$} \log_p{x} + \log_p{y} = \log_p(xy) \quad\text{whenever $x,y \in 1 +p\Z_p$}.\end{equation}
+Filling in the details here is a bit finicky. If you enjoy this kind of work (you know who you are\dots), give it a try!
+\testruletwo
+
+\begin{prob}\label{prob:padiclumber2} Go ahead and assume (\textdagger).
+
+Show: $\displaystyle\sum_{k=1}^{\infty}\left(1+\frac{1}{2^k} + \frac{1}{3^k} + \dots + \frac{1}{(p-1)^k}\right) \frac{p^k}{k}=0$ in $\Q_p$. \\
+In particular ($p=2$):\quad $\displaystyle\sum_{k=1}^{\infty}\frac{2^k}{k}=0$ in $\Q_2$.\footnote{``Ordinary analysis has amassed a great stock of identities between power series. Many of these are valid in $p$-adic analysis too. But here an identity between power series yields congruences between partial sums.'' --- Max Zorn}
+
+
+
+% {\scriptsize Put $\Exp_p(T)=\sum_{k\ge 0} \frac{T^k}{k!}$. Suppose $p$ is odd (the situation is slightly more complicated when $p=2$). Then $\Exp_p(T)$ converges for $x\in p\Z_p$, and for these same $x$ one has $\Exp_p(\log_p(1+x)) = 1+x$ and $\log_p(\Exp_p(x)) = x$. Also, $\Exp_p(x+y)=\Exp_p(x)\cdot \Exp_p(y)$ for all $x,y\in p\Z_p$.}
+\end{prob}
+
+
+
+\begin{prob}[derive responsibly!]\label{prob:fakeproofkoblitz} Critique the following proof that $\pi$ is irrational: Suppose that $\pi = \frac{a}{b}$, where $a$ and $b$ are positive integers. Let $p$ be an odd prime not dividing $a$. Then $$0 = \sin(pb \pi) = \sin(ap) = \sum_{k\ge 0} (-1)^k \frac{(ap)^{2k+1}}{(2k+1)!}, $$ 
+where this last series converges in $\Q_p$. Therefore,
+\[ p^{-1} = |-ap|_p = \left|\sum_{k\ge 0} (-1)^k \frac{(ap)^{2k+1}}{(2k+1)!} -ap\right|_p = \left|\sum_{k\ge 1} (-1)^k \frac{(ap)^{2k+1}}{(2k+1)!}\right|_p\le p^{-2}. \]
+Contradiction! \label{ex:pi}
+\end{prob}
+
+
+
+
+% \begin{prob} In courses on rigorous calculus, it is shown that when $x$ is  real  with $|x| < 1$, the series $\sum_{k\ge 0} \frac{\frac{1}{2}(\frac{1}{2}-1)\cdots (\frac{1}{2}-(k-1))}{k!} x^k$ converges to the positive square root of  $1+x$. Show that for $p$ odd and $x \in p\Z_p$, that same series converges to the square root of $1+x$ belonging to $1+p\Z_p$. Hence, $\sum_{k\ge 0} \frac{\frac{1}{2}(\frac{1}{2}-1)\cdots (\frac{1}{2}-(k-1))}{k!} (9/16)^{k}$ converges to $5/4$ in $(\R,|\cdot|)$ but to $-5/4$ in $(\Q_3,|\cdot|_3)$.
+% \end{prob}
+
+\section*{Strassmann Series}
+
+\begin{prob}\label{prob:uniquezero} Let $F(T) = 1 + T + (pT)^2 + (pT)^4 + (pT)^8 + (pT)^{16} + \dots$. There is exactly one $x\in \Z_p$ with $F(x)=0$.
+\end{prob}
+
+\vspace{-0.22in}
+\testrule
+It will be convenient for the next exercise, and certain others afterward, to name the coefficients of the \textsf{falling factorial} $T(T-1) \cdots (T-(N-1))$. For nonnegative integers $N$ and $K$, we let $s(N,K)$ be the integer defined by the formal equality \[ T(T-1)\cdots(T-(N-1)) = \sum_{K=0}^{\infty} s(N,K)  T^K.\]
+For example, when $N=5$, we have $T(T-1)(T-2)(T-3)(T-4) = 24T - 50T^2 + 35T^3 - 10T^4 + T^5$, so that
+\begin{multline*} s(5,0)=0, \quad s(5,1) = 24, \quad s(5,2) = -50, \quad s(5,3) = 35, \\ s(5,4)=-10, \quad s(5,5) = 1, \quad\text{and}\quad s(5,K) = 0 \text{ for $K > 5$}.\end{multline*}
+When $N=0$, the product $T(T-1)\cdots (T-(N-1))$ is empty and assigned  the value $1$; hence, $s(0,0)=1$ and $s(0,K)=0$ for $K>0$. The $s(N,K)$ are known as \textsf{Stirling numbers of the first kind}. \index{$s(N,K)$, Stirling numbers of the first kind} Don't let the fancy name fool you; while the Stirling numbers are important in combinatorics, for us they play only a notational role.
+\testruletwo
+
+\begin{prob}[$p$-adically interpolating $(1+a)^{x}$]\label{ex:binomialseries}\label{prob:binomialseries}\index{Strassmann series!representing $(1+a)^n$}
+Let $p$ be an odd prime, and let $a \in p\Z_p$. If $n$ is a nonnegative integer, then 
+\begin{align*} (1+a)^{n} &= \sum_{k=0}^{\infty} n(n-1)(n-2)\cdots(n-(k-1)) \frac{a^k}{k!} \\
+&= \sum_{k=0}^{\infty} \left(\sum_{j=0}^{k} s(k,j)n^j\right)\frac{a^k}{k!} = \sum_{j=0}^{\infty} C_{a,j} n^j,\end{align*}
+where
+\[ C_{a,j} := \sum_{k\ge j} s(k,j) \frac{a^k}{k!}. \]
+Moreover, $|C_{a,j}|_p \to 0$ as $j\to\infty$. 
+
+{\scriptsize Your job: Fill in the missing details. In particular, justify the swapping of the sums on $k$ and $j$.}
+
+\end{prob}
+
+%\testrule
+\underline{\textsc{Notation}}. For future use, we let $$\Binom(1+a;T) := \sum_{j=0}^{\infty} C_{a,j} T^j \in \Q_p[[T]].\index{$\Binom(1+a;T)$|see{Strassmann series representing $(1+a)^n$}}$$ As you have just shown, $\Binom(1+a;T)$ is a Strassmann series satisfying $\Binom(1+a;n) = (1+a)^n$ for all nonnegative integers $n$.
+%\testrule
+
+
+
+
+%\vspace{-0.25in}
+
+%See Gouvea's text for a precise statement.
+\vspace{-0.15in}
+\section*{Zeros of Linear Recurrence Sequences}
+
+Let $\{x_n\}_{n\ge 0}$ be a sequence of integers satisfying a linear recurrence
+\[ x_{n} = a_1 x_{n-1} + a_2 x_{n-2} + \dots + a_d x_{n-d} \quad\text{ for $n=d,d+1,d+2,\dots$}, \]
+where $a_1, \dots, a_d\in \Z$, and $a_d \ne 0$. Put 
+\[ A = \left[\begin{matrix} 
+0 & 1 & 0  & \hdots & 0\\
+0 & 0 & 1  & \hdots & 0 \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+0 & 0 & 0 & \hdots & 1 \\
+a_d & a_{d-1} & a_{d-2} & \hdots & a_1
+\end{matrix}\right]\qquad\text{and}\qquad \textbf{v} = \left[ 
+\begin{matrix}
+x_0 \\
+x_1 \\
+x_2 \\
+\vdots \\
+x_{d-1}
+\end{matrix}
+\right], \quad \textbf{e} = 
+\left[\,\begin{matrix}
+1 \\
+0 \\
+0 \\
+\vdots \\
+0
+\end{matrix}\,\right].
+\]
+\begin{prob}\label{prob:matrixmult} $x_{n} = \langle A^n\vv, \ee\rangle$.\end{prob}
+
+\begin{prob}\label{prob:pinvertible} If $p\nmid a_d$, then $A$ is invertible over $\F_p$.
+\end{prob}
+
+\begin{prob}\label{prob:matrixexpression} Let $p$ be as in Problem \ref{prob:pinvertible}, and let $k$ be the order of $A$ in $\GL(d,\F_p)$, so that $A^k = \mathrm{Id} +pB$ for some integer matrix $B$. If $n=km+r$, where $r \in \{0,1,\dots,k-1\}$, then 
+\[ x_n = \sum_{0 \le j \le m} \binom{m}{j} p^j \langle A^r B^j\vv,\ee\rangle.  \]
+\end{prob}
+
+\begin{prob}[$p$-adically interpolating $x_{km+r}$]\label{prob:matrixbinomial} Continue with the above notation and assumptions but assume additionally that $p$ is odd. For each fixed $r\in\{0,1,\dots,k-1\}$, there is a Strassmann series $F_{k,r}(T)$ with $F_{k,r}(m) = x_{km+r}$ for every integer $m\ge 0$.\index{Strassmann series!representing terms of a linear recurrence}
+\end{prob}
+
+\begin{prob}\label{prob:skdichotomy} For each fixed $r\in\{0,1,\dots,k-1\}$, either $x_{n}=0$ for all nonnegative integers $n\equiv r\pmod{k}$, or $x_{n}=0$ for only finitely many $n\equiv r\pmod{k}$.  
+
+Hence: The set of $n$ with $x_n=0$ is the union of a finite set and a finite collection of residue classes. \textbf{(Skolem's Theorem)}\index{Skolem--Mahler--Lech theorem}
+\end{prob}
+
+\begin{prob}\label{prob:easyrecurrence} Give an example of an integer linear recurrence sequence, not identically $0$, with the property that $x_n=0$ for infinitely many $n$.
+\end{prob}
+
+\begin{prob}[Mahler]\label{prob:mahlerSML} Does Skolem's Theorem hold for recurrence sequences over $\Q$? (``Over $\Q$'' means that $a_1,\dots,a_d$ and $x_0,\dots,x_{d-1}$ belong to $\Q$.) Over an arbitrary finite extension of $\Q$ (number field)?
+\end{prob}
+
+

@@ -1,0 +1,116 @@
+
+\chapter*{Solutions to Set \#6}
+\addcontentsline{toc}{chapter}{Solutions to Set \#6}
+\markboth{Solutions to Set \#6}{Solutions to Set \#6}
+\label{set5sols}
+
+
+\begin{sol}{prob:68}\index{Cauchy sequence} Suppose $\{x_n\}$ is Cauchy. To prove that $|x_{n+1}-x_n|\to 0$, let $\epsilon > 0$ be given, and select $N \in \Z^{+}$ so that $|x_n-x_m| < \epsilon$ for all positive integers $n,m \ge N$. Then $|x_{n+1}-x_n| < \epsilon$ whenever $n\ge N$. (This direction of the proof does not use that $|\cdot|$ is non-Archimedean.)
+
+Conversely, suppose that $|x_{n+1}-x_n| \to 0$. To prove $\{x_n\}$ is Cauchy, let $\epsilon > 0$, and choose $N \in \Z^{+}$ with $|x_{n+1}-x_n| < \epsilon$ whenever $n\ge N$. If we assume that $n > m \ge N$, the strong triangle inequality yields
+\begin{align*} |x_n - x_m| &= |(x_n - x_{n-1}) + (x_{n-1} + x_{n-2}) + \dots + (x_{m+1}-x_m)|
+\\&\le \max\{|x_n-x_{n-1}|,\dots,|x_{m+1}-x_m|\} < \epsilon.\end{align*}
+The cases where $m > n \ge N$ are interchangeable with these, since $|x_n-x_m| = |x_m-x_n|$. Finally, the inequality $|x_n-x_m| < \epsilon$ is trivial for $n=m$.
+\end{sol}
+
+
+\begin{sol}{prob:70} Let $x_n = 2^{5^n}$. By Euler's theorem, $x_{n+1}-x_n = x_n\cdot (2^{5^{n+1}-5^{n}}-1) = x_n \cdot (2^{\varphi(5^{n+1})}-1) \equiv x_n \cdot 0\equiv 0\pmod{5^{n+1}}$. Thus,  $|x_{n+1}-x_n|_5 \le 5^{-n-1}$, which tends to $0$, and $\{x_n\}$ is a Cauchy sequence by Exercise \ref{prob:68}.
+% By Fermat's little theorem, $x_2 = 2^{5^2} = (2^{5})^5 \equiv 2^5 \equiv x_1\pmod{5}$. Suppose that $x_{n+1}\equiv x_n\pmod{5^n}$ for some $n\in \Z^{+}$, and write $x_{n+1} = x_n + 5^n q_n$. Then, working modulo $5^{n+1}$,
+% \begin{align*} x_{n+2} \equiv x_{n+1}^5 &\equiv (x_n + 5^n q_n)^{5} \\
+% &\equiv x_n^5 + 5^{n+1} x_n^{4} q_n + \sum_{2\le j \le 5} \binom{5}{j} x_n^{5-j} 5^{jn} q_n^{j} \equiv x_n^5 \equiv x_{n+1}. \end{align*}
+% (In the last step we use that $jn\ge n+1$ for all $j\ge 2$.) 
+\end{sol}
+
+\begin{sol}{prob:68point5} Choose $N \in \Z^{+}$ so that $|x_n-x_m| < 1$ whenever $n, m \ge N$. Then for all $n \ge N$, we have $|x_n-x_N| < 1$, so that \[ |x_n| = |(x_n-x_N) + x_N| \le |x_n-x_N| + |x_N| \le 1 + |x_N|. \]
+As a consequence, each $|x_n| \le \max\{|x_1|,|x_2|,\dots,|x_{N-1}|,1+|x_N|\}$.
+\end{sol}
+
+\begin{sol}{prob:69} The argument is the same as in calculus. Suppose $\{x_n\}$ is Cauchy and that the subsequence $\{x_{n_k}\}$ converges to $x$. 
+
+Given $\epsilon > 0$, choose $N_1 \in \Z^{+}$ with the property that $|x_k - x_\ell| < \frac{1}{2}\epsilon$ whenever $k,\ell \ge N_1$. Choose $N_2 \in \Z^{+}$ so that $|x_{n_k} - x| < \epsilon$ for all $k \ge N_2$. If $k \ge \max\{N_1, N_2\}$, then
+\[ |x_k - x| = |(x_k - x_{n_k}) + (x_{n_k}-x)| \le |x_k - x_{n_k}| + |x_{n_k}-x| < \frac{1}{2}\epsilon + \frac{1}{2}\epsilon = \epsilon. \]
+(We use here that $n_k \ge k \ge N_1$.) Hence, $x_k\to x$.
+ \end{sol}
+
+
+
+\begin{sol}{prob:63} Since $p^{-1} \in \Q_p$, both $\bigcup_{n\ge 0} p^{-n}\Z_p$ and $\Z_p[1/p]$ are contained in $\Q_p$. Both also contain $0$, so we will be done if we show that both contain $\Q_p^{\times}$. 
+
+By Exercise \ref{prob:56}, each $x\in \Q_p^{\times}$ can be written as $\frac{p^v u}{p^{v'} u'}$ for some nonnegative integers $v,v'$ and some $u,u' \in \Z_p^{\times}$. Then $x = p^{v-v'} uu'^{-1} \in p^{v-v'}\Z_p$. Since $p^{v-v'}\Z_p$ is a subset of both $\bigcup_{n\ge 0} p^{-n} \Z_p$ and $\Z_p[1/p]$, it follows that $x$ is contained in both sets.
+\end{sol}
+
+\begin{sol}{prob:64}  That $x$ has such a representation is implicit in our solution to Problem \ref{prob:63}. To prove uniqueness, suppose $x=p^{v} u = p^{v'} u'$, with $v,v'\in \Z$ and $u, u' \in \Z_p^{\times}$. Choose $w \in \Z$ large enough that both $v+w$ and $v'+w$ are nonnegative, and apply the already-known uniqueness statement from Problem \ref{prob:56} to $p^w x = p^{v+w} u = p^{v'+w} u'$.
+\end{sol}
+
+\begin{sol}{prob:65} Both definitions assign $v_p(0)=\infty$, so it is enough to prove our two definitions of $v_p(x)$ agree for $x \in \Q^{\times}$. Write $x = p^{v} \frac{a}{b}$ where $a$ and $b$ are integers not divisible by $p$. Then $v_p(x)=v$ if we go by the Set \#1 definition. To show $v_p(x)=v$ with our new definition, it suffices to prove that $\frac{a}{b}$ is a unit in $\Z_p$. Thankfully, this is easy: Since $p\nmid ab$, we have both $\frac{a}{b} \in \Z_{(p)} \subset \Z_p$ and $(\frac{a}{b})^{-1} = \frac{b}{a} \in \Z_{(p)} \subset \Z_p$. (See Problem \ref{prob:54} for the containment $\Z_{(p)}\subset \Z_p$.) Thus, $\frac{a}{b} \in \Z_p^{\times}$.
+
+It remains to show that $|\cdot|_p$ is a non-Archimedean absolute value on $\Q_p$. Property (i) in the absolute value definition (see Set \#1) is clear. Property (iii) is straightforward: We can assume $x,y$ are nonzero. Write $x= p^{v_p(x)} u$ and $y=p^{v_p(y)} u'$, where $u, u' \in \Z_p^{\times}$. Then $xy = p^{v_p(x) + v_p(y)} uu'$, and $uu' \in \Z_{p}^{\times}$. Hence, $v_p(xy) = v_p(x)+v_p(y)$, so that $|xy|_{p} = p^{-v_p(x)-v_p(y)}= p^{-v_p(x)} p^{-v_p(y)} = |x|_p|y|_p$. Finally, we turn our attention to the strong triangle inequality: $|x+y|_p \le \max\{|x|_p,|y|_p\}$. For the proof we may assume that $x, y$, and $x+y$ are all nonzero. As above, write $x = p^{v_p(x)} u$ and $y = p^{v_p(y)} u'$. Assuming (as we may) that $v_p(x)\le v_p(y)$, we find that $x+y = p^{v_p(x)} w$ for some $w \in \Z_p$. Furthermore, $w$ is nonzero by our assumption that $x+y\ne 0$. Write $w= p^{v_p(w)} u''$. Then $x+y = p^{v_p(x)+v_p(w)} u''$, and $|x+y|_p = p^{-v_p(x)-v_p(w)} \le p^{-v_p(x)} = \max\{p^{-v_p(x)}, p^{-v_p(y)}\} = \max\{|x|_p, |y|_p\}$.
+\end{sol}
+
+\begin{sol}{prob:66} First, we argue that for $x \in \Q_p$:\quad $x \in \Z_p \Longleftrightarrow |x|_p \le 1$. 
+
+We may assume that $x \in \Q_p^{\times}$. Write $x=p^{v_p(x)}u$ where $u \in \Z_{p}^{\times}$. When $v_p(x) \ge 0$, it is clear that $x \in \Z_p$, as both $p^{v_p(x)}$ and $u$ belong to $\Z_p$. On the other hand, Problem \ref{prob:56} gives $v_p(x) \ge 0$ for all nonzero $x \in \Z_p$. Therefore,
+\[ x \in \Z_p \Longleftrightarrow v_p(x) \ge 0 \Longleftrightarrow p^{-v_p(x)} \le 1 \Longleftrightarrow |x|_p \le 1,\]
+and $\Z_p = \{x\in \Q_p: |x|_p \le 1\}$.
+
+Next, observe that for each nonzero $x \in \Q_p$,
+\[ x \in \Z_p^{\times} \Longleftrightarrow v_p(x) = 0 \Longleftrightarrow p^{-v_p(x)}=1 \Longleftrightarrow |x|_p = 1. \]
+Hence, $\Z_p^{\times} = \{x \in \Q_p: |x|_p=1\}$. 
+\end{sol}
+
+
+\begin{sol}{prob:67}\index{$\Z_p$, ring of $p$-adic integers!is compact} We address only the part after ``thus''; the earlier claims in the problem are consequences of the Pigeonhole Principle. By construction, $a_{k+1}\equiv a_k \pmod{p^k}$ for every $k$, so that $x:=(a_1\bmod{p},a_2\bmod{p^2},\dots) \in \Z_p$. Furthermore, for each $k$, there are infinitely many $n \in \Z^{+}$ where the mod $p^k$ component of $x_n$ is $a_k\bmod{p^k}$. 
+
+Choose $n_1 \in \Z^{+}$ so that the mod $p$ component of $x_{n_1}$ is $a_1\bmod{p}$. Then choose $n_2 > n_1$ where the mod $p^2$ component of $x_{n_2}$ is $a_2\bmod{p^2}$, then $n_3 > n_2$ where the mod $p^3$ component of $x_{n_3}$ is $a_3\bmod{p^3}$, etc. 
+
+We argue that $x_{n_k} \to x$ in $(\Q_p,|\cdot|_{p})$. Let $k \in \Z^{+}$. By construction, the mod $p^k$ component of $x_{n_k}-x$ vanishes. By the compatibility condition baked into the definition of $\Z_p$, the mod $p$, mod $p^2$, \dots, mod $p^{k-1}$ components also vanish. Therefore (see the solution to Problem \ref{prob:56}), either $x_{n_k}-x=0$ or $x_{n_k}-x = p^{v} u$ for an integer $v \ge k$ and a $u \in \Z_p^{\times}$. In either case, $v_p(x_{n_k}-x) \ge k$, and $|x_{n_k}-x|_p \le p^{-k}$. Since $p^{-k}\to 0$, we conclude that $x_{n_k}\to x$, as required.
+\end{sol}
+
+\begin{rmk} Grouchy experts may complain that Problem \ref{prob:67} establishes the \emph{sequential} compactness of $\Z_p$, not \textsf{compactness} with today's accepted meaning in general topology (cf.~\cite{sundstrom}). But those same experts will know that for metric spaces --- such as $\Z_p$ --- the two concepts coincide. So what exactly are they complaining about?
+
+Such grumblers may find the following Extra Exploration more to their tastes.
+\end{rmk}
+
+\begin{challenge}[$\Z_p$ is compact, take two]\index{$\Z_p$, ring of $p$-adic integers!is compact}
+\vspace{-0.12in}
+\begin{enumerate}\item[(a)] A (possibly infinite) number of Ross Program counselors are stationed at points of $\Z_p$. Each counselor is responsible for the campers within a certain positive radius of their position, as measured by $|\cdot|_p$. Presently, all of $\Z_p$ is monitored: each point of $\Z_p$ lies within the assigned radius of some counselor. Show that all but finitely many of the counselors can leave to purchase talent show supplies while $\Z_p$ remains fully monitored (without the need to relocate the remaining counselors).
+\item[(b)] What happens if we replace every occurrence of $\Z_p$ by $\Z$? Assume distances are still measured by $|\cdot|_p$ for some prime $p$.
+\end{enumerate}
+\end{challenge}
+
+
+
+\begin{sol}{prob:71}  Let's accept for the time being the identity $\prod_{j\ge 1}\e^{T^j/j}= \frac{1}{1-T}$ in $\Q[[T]]$. 
+
+The series for $\frac{1}{1-T}$ has $T^p$-coefficient (in fact, every coefficient) equal to $1$. To see what the coefficient of $T^p$ looks like on the left side of our identity, we expand
+\begin{multline*}\prod_{j=1}^{\infty} \left(1 + \frac{T^j}{j} + \frac{1}{2!} \frac{T^{2j}}{j^2} + \frac{1}{3!}\frac{T^{3j}}{j^3} + \dots\right) \\= \sum_{k\ge 0} T^k \sum_{\substack{e_1+2e_2 + 3e_3 + \dots = k \\ \text{all $e_i \ge 0$}}} \frac{1}{e_1! e_2! e_3!\cdots} \frac{1}{1^{e_1} 2^{e_2} 3^{e_3} \cdots}.  \end{multline*}
+All but two of the tuples $e_1,e_2,\dots$ with $e_1+2e_2 + 3e_3 + \dots = p$ have $\frac{1}{e_1! e_2! e_3!\cdots} \frac{1}{1^{e_1} 2^{e_2} 3^{e_3}\cdots} \in \Z_{(p)}$. The two exceptions are (1) the tuple with $e_1=p$ and all other $e_i=0$ and (2) the tuple with $e_p=1$ and all other $e_i=0$, which make respective contributions of $\frac{1}{p!}$ and $\frac{1}{p}$. Equating coefficients of $T^p$ leads to the conclusion that $1 - (\frac{1}{p!} + \frac{1}{p}) \in \Z_{(p)}$, as claimed.
+
+Since $1$ also belongs to the ring $\Z_{(p)}$,  we infer that $\frac{1}{p!} + \frac{1}{p} \in \Z_{(p)}$. But
+\[ \left|\frac{1}{p!} + \frac{1}{p}\right|_{p} = \left|\frac{(p-1)!+1}{p!}\right|_p = p |(p-1)!+1|_p. \]
+Consequently, $|(p-1)!+1|_p \le 1/p$. This translates to $p\mid (p-1)!+1$, or $(p-1)!\equiv -1\pmod{p}$.\index{Wilson's theorem}
+
+\begin{rmk} It is a little tricky to write down a rigorous proof of the formal identity $\prod_{j\ge 1} \e^{T^j/j} = \frac{1}{1-T}$. We sketch one argument, which, however, involves some `cheating'; specifically we draw  on the theory of complex variables, which is not a prerequisite for the rest of the text.
+
+For each $J \in \Z^{+}$, let $F_J(T) = \prod_{1 \le j \le J} \e^{T^j/j}$ (as a formal power series). Reasoning as in the Remark to Problem \ref{prob:42}, $F_J(z) = \prod_{1\le j \le J} \e^{z^j/j}$ for all complex $z$. As $J\to\infty$, the functions $F_J(z)$ converge uniformly to $\frac{1}{1-z}$ on every compact subset of the open unit disc $|z|<1$. So by Cauchy's integral formula, if we write $F_{J}(T) = \sum_{k \ge 0}a_{k,J} T^k$, then for each fixed $k$,
+\[ a_{k,J} = \frac{1}{2\pi \mathrm{i}}\int_{|z|=9/10} F_J(z) z^{-k-1}\,\mathrm{d}z \overset{J\to\infty}{\xrightarrow{\hspace{0.65cm}} } \frac{1}{2\pi i}\int_{|z|=9/10} \frac{1}{1-z} z^{-k-1}\,\mathrm{d}z = 1. \]
+(Here we recognized the final integral as the coefficient of $T^{k}$ in $\frac{1}{1-T} = 1 + T +T^2 + \dots$.) Since $a_{k,J}=a_{k,k}$ for all $J\ge k$, we conclude that $a_{k,J}=1$ for all $J\ge k$. In particular: For each fixed $k$, the $k$th coefficient of $F_J(T)$ eventually stabilizes at the $k$th coefficient of $\frac{1}{1-T}$. This is precisely what it means to say that $\prod_{j\ge 1} \e^{T^j/j} = \frac{1}{1-T}$ as formal power series.
+\end{rmk} 
+\end{sol}
+
+
+
+\begin{sol}{prob:72} Write $a^{p-1} = 1 + p q_p(a)$, $b^{p-1} = 1 + p q_p(b)$. Multiplying, $(ab)^{p-1} = 1 + p(q_p(a) q_p(b) + p q_p(a) q_p(b))$, so that
+\[ q_p(ab) = \frac{(ab)^{p-1}-1}{p} = q_p(a) + q_p(b) + p q_p(a) q_p(b) \equiv q_p(a) + q_p(b)\!\!\pmod{p}. \]
+\end{sol}
+
+
+\let\oldaddcontentsline\addcontentsline
+\renewcommand{\addcontentsline}[3]{}
+\begin{thebibliography}{11}
+
+\bibitem{sundstrom}  M.~Raman-Sundström, 
+\emph{A pedagogical history of compactness}.
+Amer. Math. Monthly \textbf{122} (2015),  619--635.
+\end{thebibliography}
+\let\addcontentsline\oldaddcontentsline

@@ -1,0 +1,192 @@
+
+\chapter*{Solutions to Set \#3}
+\addcontentsline{toc}{chapter}{Solutions to Set \#3}
+\markboth{Solutions to Set \#3}{Solutions to Set \#3}
+\label{set2sols}
+
+
+
+\begin{sol}{prob:28}\index{limits (sequential)}  The proof is the same as in calculus: Suppose for a contradiction that $x_n\to x$ and $x_n \to x'$, where $x' \ne x$. Then $\epsilon := \frac{1}{2}|x'-x| > 0$. Since $x_n\to x$, we can choose $N \in \Z^{+}$  with $|x_n-x| < \epsilon$ for all $n\ge N$. Similarly, we can choose $N' \in \Z^{+}$ with $|x_n-x'| < \epsilon$ for all $n \ge N'$. Taking $n\ge \max\{N,N'\}$, we find that
+\[ |x'-x| = |(x'-x_n) + (x_n-x)| \le |x'-x_n| + |x_n-x| < 2\epsilon= |x'-x|. \]
+Contradiction! 
+\end{sol}
+
+
+\begin{sol}{prob:28andahalf}
+\begin{enumerate}
+\item[(a)]  Let $\epsilon > 0$. Choose $N_1=1$. If $n \ge N_1$, then $|x_n-x| = 0 < \epsilon$.
+\item[(b)]  Let $\epsilon > 0$. Choose $N_1, N_2 \in \Z^{+}$ so that $|x_n-x| < \frac{1}{2}\epsilon$ whenever $n\ge N_1$ and $|y_n-y| < \frac{1}{2}\epsilon$ whenever $n \ge N_2$. For $n\ge \max\{N_1, N_2\}$, 
+\[ |(x_n+y_n)-(x+y)| = |(x_n-x) + (y_n-y)| \le |x_n-x| + |y_n-y| < \frac{1}{2}\epsilon + \frac{1}{2}\epsilon = \epsilon. \]
+So $x_n+y_n\to x+y$.  
+\item[(c)] Here we must work a bit harder. When checking the definition of convergence, we can assume that $0 < \epsilon < 1$. (Larger values of $\epsilon$ only make life easier.) Given such an $\epsilon$, choose $N_1, N_2 \in \Z^{+}$ with $|x_n-x| < \frac{1}{3(|y|+1)}\epsilon$ for all $n\ge N_1$ and $|y_n-y| < \frac{1}{3(|x|+1)} \epsilon$ for all $n\ge N_2$. Write $x_n = x + d_n$ and $y_n = y + e_n$, so that 
+$x_n y_n = xy + x e_n + y d_n + d_n e_n$. For $n\ge \max\{N_1, N_2\}$,
+\[ |x e_n| \le \frac{|x|}{3(|x|+1)} \epsilon < \frac{\epsilon}{3}\quad\text{and}\quad |y d_n| \le \frac{|y|}{3(|y|+1)} \epsilon < \frac{\epsilon}{3}. \]
+For these same values of $n$, we have $|d_n|, |e_n| < \frac{\epsilon}{3} < \frac{1}{3}$. So (estimating crudely) $|d_n e_n| \le |d_n| < \frac{\epsilon}{3}$. Therefore,
+\[ |x_n y_n - xy| = |x e_n + y d_n + d_n e_n|\le |xe_n| + |yd_n| + |d_n e_n| < \frac{\epsilon}{3} + \frac{\epsilon}{3} + \frac{\epsilon}{3} = \epsilon.\]
+\end{enumerate}
+\end{sol}
+
+
+\begin{sol}{prob:29}\index{convergence of infinite series} Notice that $2x_n = 2 + 2\cdot 3 + 2\cdot 3^2 + \dots + 2\cdot 3^n$, which is precisely the ternary expansion of $3^{n+1}-1$. So $x_n = \frac{3^{n+1}-1}{2} = -\frac{1}{2} + \frac{1}{2} 3^{n+1}$, and $|x_n-(-\frac{1}{2})|_{3} = |\frac{1}{2} 3^{n+1}|_{3} = 3^{-(n+1)}$, which tends to $0$. Therefore, $x_n \to -\frac{1}{2}$ in $(\Q,|\cdot|_{3})$.
+
+The series $\sum_{k=0}^{\infty} 3^k$ diverges in $\Q_p$ for each prime $p\ne 3$. To prove this, we appeal to a result possessing the air of the familiar.
+
+\begin{lem}[$k$th term test for a valued field] If $\sum_{k=1}^{\infty} a_k$ converges in $(K,|\cdot|)$, then $a_k\to 0$. 
+\end{lem}
+
+To apply this in our situation, observe that if $p\ne 3$, then $|3^k|_p=1$ for every $k$, and  $1$ does not tend to $0$ !\footnote{Although it does tend to ``$0!$''}
+
+\begin{proof} Suppose $\sum_{k=1}^{\infty} a_k=x$ (where $x \in K$). This means that the sequence $\{s_n\}$ with $n$th term $s_n = \sum_{k=1}^{n} a_k$ converges to $x$. Let $\epsilon > 0$ and choose $N \in \Z^{+}$ with the property that $|s_n - x| < \frac{1}{2}\epsilon$ for all $n\ge N$. Then for every positive integer $n\ge N+1$, 
+\[ |a_n| = |s_{n}-s_{n-1}| = |(s_n - x) + (x-s_{n-1})| \le |s_n-x| + |x-s_{n-1}| < 2\cdot \frac{1}{2}\epsilon = \epsilon. \]
+We have verified the definition of ``$a_n\to 0$.''
+\end{proof}
+\end{sol}
+
+
+
+\begin{sol}{prob:30} Some experimentation suggests that $\sum_{n=0}^{N} n\cdot n! = (N+1)!-1$, which is easily confirmed by induction. Hence, $|\sum_{n=0}^{N} n\cdot n! - (-1)|_2 = |(N+1)!|_2$. Since the power of $2$ in $(N+1)!$ tends to infinity, $|(N+1)!|_2 \to 0$, and $\sum_{n=0}^{N} n\cdot n! \to -1$. That is, $\sum_{n=0}^{\infty} n\cdot n!=-1$.
+
+Next, we look at $\sum_{n=0}^{N} n^2 \cdot 2^n$. Let $F(T) = \sum_{n=0}^{N} T^n$. Differentiating and multiplying by $T$ gives $T F'(T) = \sum_{n=0}^{N} n T^n$. Another round of the same process yields
+\[ \sum_{n=0}^{N} n^2 T^n = T(TF'(T))' = T^2 F''(T) + T F'(T). \]
+Substituting in $F(T) = \frac{1-T^{N+1}}{1-T} = \frac{1}{1-T} - T^{N+1}\frac{1}{1-T}$ and simplifying,
+\[ \sum_{n=0}^{N} n^2 T^n = \frac{T(T+1)}{(1-T)^3} +  T^{N+1} \frac{G_N(T)}{(1-T)^3} \]
+for some $G_N(T) \in \Z[T]$.
+
+Plugging in $T=2$, we deduce that
+\[ \left|\sum_{n=0}^{N} n^2 2^n - (-6)\right|_2 = 2^{-N-1} \cdot |G_N(2)|_{2} \le 2^{-N-1}.\] 
+We send $N$ to infinity and conclude that $\sum_{n=0}^{\infty} n^2 2^n = -6$ in $(\Q,|\cdot|_2)$.\end{sol}
+
+
+\begin{sol}{prob:31} With $x_0:= \frac{11}{7} \in \Z_{(3)}$, each step of the displayed algorithm has the form $x_{n} = d_n + 3x_{n+1}$, where $d_n \in \{0,1,2\}$ and $x_{n+1} \in \Z_{(3)}$. 
+
+Repeated substitution reveals that for each nonnegative integer $n$,
+\begin{align*} x_0 &= d_0 + 3x_1 \\&= d_0 + 3(d_1 + 3x_2) \\&\,\,\vdots \\& = d_0 + 3(d_1 + 3(d_2 + \dots + 3(d_n + 3x_{n+1}))) \\&= d_0 + 3d_1 + 3^2 d_2 + \dots + 3^{n} d_n + 3^{n+1} x_{n+1}.\end{align*}
+Therefore,
+\[ \bigg|x_0 - \sum_{k=0}^{n} 3^k d_k\bigg|_3 = 3^{-n-1} |x_{n+1}|_3 \le 3^{-n-1}.\] Sending $n$ to infinity, $x_0 = \sum_{k=0}^{\infty} 3^k d_k$. 
+
+As shown in the problem statement, $x_1=x_7$, implying that the ``digits'' $d_i$ repeat in blocks of six starting from $i=1$.
+\end{sol}
+
+\begin{sol}{prob:32} We modify the algorithm of Problem \ref{prob:31}. This time $x_0=\frac{2}{7} \in \Q_{(5)}$, and each $d_{n} \in \{0,1,2,3,4\}$ is chosen so that $x_{n} = d_n + 5 x_{n+1}$ for an $x_{n+1} \in \Q_{(5)}$. Grinding this out,
+{\small\begin{equation*}
+  \begin{split}
+\frac{2}{7} &= 1 + 5\cdot \frac{-1}{7} \\
+\frac{-1}{7} &= 2 + 5\cdot \frac{-3}{7} \\
+\frac{-3}{7} &= 1 + 5\cdot \frac{-2}{7} \\
+\frac{-2}{7} &= 4 + 5\cdot \frac{-6}{7} \\
+  \end{split}\quad\quad\quad\quad
+  \begin{split}
+\frac{-6}{7} &= 2 + 5\cdot \frac{-4}{7} \\
+\frac{-4}{7} &= 3 + 5\cdot \frac{-5}{7} \\
+\frac{-5}{7} &= 0 + 5\cdot \frac{-1}{7}.
+\end{split}
+\end{equation*}}\normalsize Replicating the logic of the solution to Problem \ref{prob:31}, we conclude that in $(\Q,|\cdot|_5)$, 
+\[ \frac{2}{7} = 1 + 2\cdot 5 + 1\cdot 5^2 + 4\cdot 5^3 + 2\cdot 5^4 + 3 \cdot 5^5 + 0 \cdot 5^6 + 2\cdot 5^7 + \dots, \]
+where the ``digits'' follow the eventually periodic pattern $1, \overline{2, 1, 4, 2, 3, 0}$.
+\end{sol}
+
+ \begin{challenge}[cf.\ Burger and Struppeck \cite{BS}] Show that there is a sequence of rational numbers $\{a_n\}$ with the property that $\sum_{n=1}^{\infty} a_n$ converges to $0$ with respect to $|\cdot|_{\infty}$ and converges to $1/p$ with respect to $|\cdot|_p$ for every prime $p$.
+\end{challenge} 
+
+\begin{sol}{prob:34} If $|\cdot|$ is non-Archimedean, a straightforward induction shows that $|m| \le 1$ for \emph{all} positive integers $m$. This handles the forward direction of the equivalence.
+
+Turning to the reverse implication, suppose that $|2| \le 1$. If $n$ is any positive integer, we get from Problem \ref{prob:06} that
+\[ \bigg|\binom{n}{k}\bigg| \le n \quad\text{whenever $0\le k \le n$}. \] So by Exercise \ref{prob:17}, $|x+y| \le (n(n+1))^{1/n} \max\{|x|,|y|\}$ for all $x,y \in K$. Sending $n$ to infinity in this last inequality, $|x+y| \le \max\{|x|,|y|\}$: That is, $|\cdot|$ is non-Archimedean.
+
+We can draw the same conclusion if $3$ replaces $2$. More generally, suppose $m\ge 2$ and $|m|\le 1$. Let $n$ be a positive integer and write each associated binomial coefficient $\binom{n}{k}$ in base $m$: $\binom{n}{k} = \sum_{j \ge 0} d_j m^j$, where each $d_j \in \{0,1,2,\dots,m-1\}$ and the $d_j$ are eventually zero. If $J$ is the largest index for which $d_j \ne 0$, then $2^n > \binom{n}{k} \ge m^j \ge 2^j$. Hence, $j< n$ and
+\[ \left|\binom{n}{k}\right| \le \sum_{0 \le j < n} |d_j| |m|^j \le \sum_{0 \le j < n} |d_j| \le \max\{|0|, |1|, \dots, |m-1|\} \cdot n. \]
+This bound on $|\binom{n}{k}|$ is a suitable substitute for that of Problem \ref{prob:06} in the argument of the last paragraph.
+
+In summary: If $m$ is an integer with $m\ge 2$, and $|m|\le 1$, then $|\cdot|$ is non-Archimedean.
+\end{sol}
+
+\begin{sol}{prob:35} Let $|\cdot|$ be a nontrivial non-Archimedean absolute value on $\Q$. As noted in the solution to Problem \ref{prob:34}, $|m| \le 1$ for all positive integers $m$. In particular, $|p|\le 1$ for all primes $p$. If equality holds for all $p$, then $|m| = 1$ for all $m\in \Z^{+}$ (apply the Fundamental Theorem of Arithmetic). But then Exercise \ref{prob:01}(a,c) allows us to deduce $|x|=1$ for all nonzero $x \in \Q$, contradicting that $|\cdot|$ is nontrivial.
+\end{sol}
+ 
+\begin{sol}{prob:36} Since $|\cdot|$ is non-Archimedean, $|k| \le 1$ for all integers $k$. 
+
+Given relatively prime integers $m$ and $n$, write $1 = am + bn$ with $a, b \in \Z$ (Bézout). Then 
+\[ 1 = |am+bn| \le \max\{|a||m|, |b||n|\} \le \max\{|m|, |n|\} \le 1. \]
+Hence, $\max\{|m|,|n|\}=1$, so that either $|m|=1$ or $|n|=1$.
+\end{sol}
+
+\begin{sol}{prob:37}The units in $\Oo$ are precisely the $x \in K^{\times}$ satisfying both $|x|\le 1$ and $|x^{-1}|\le 1$. As $|x^{-1}| = |x|^{-1}$, the last two inequalities are satisfied simultaneously precisely when $|x|=1$.
+
+Let $M$ be the collection of nonunits in $\Oo$, so that $M = \Dd_{<1}(0)$. Clearly $0 \in M$. If $x, y \in M$, then $|x+y| \le \max\{|x|, |y|\} < 1$, and so $x+y \in M$. Moreover, if $x \in M$ and $r \in \Oo$, then $|rx| = |r| |x| \le |x| < 1$, so that $rx \in M$. Hence, $M$ is an ideal of $\Oo$. Since $1\notin M$, the ideal $M$ is proper.
+
+Let $I$ be any proper ideal of $\Oo$. If $x \in I$, then $x$ cannot be a unit in $\Oo$: Otherwise $I\supset x\Oo=\Oo$. Thus, $x \in M$. Since this holds for all $x \in I$, we conclude that $I \subset M$.
+
+Thus, $M$ is a proper ideal of $\Oo$ containing all proper ideals of $\Oo$. So $M$ cannot itself be properly contained in a proper ideal of $\Oo$; that is, $M$ is maximal.
+\end{sol}
+
+\begin{sol}{prob:38} Each nonzero $x \in \Z_{(p)}$ has the form $\frac{a}{b}$ where $a, b \in \Z$ and $p\nmid b$. If we factor $a = p^{v_p(a)} a'$, then $x = p^{v_p(a)} \frac{a'}{b}$. Here $v_p(a)\ge 0$ and $\frac{a'}{b} \in \Z_{(p)}^{\times}$. So we have at least one decomposition of the desired form. 
+
+Uniqueness is easy: Suppose $x = p^v u = p^{v'} u'$ with $v,v'$ nonnegative integers and $u,u' \in \Z_{(p)}^{\times}$. Then $|u|_p=|u'|_p=1$, so that $p^{-v} = |x|_p = p^{-v'}$. Hence, $v=v'$. But then $p^v u = p^{v} u'$, and $u=u'$.
+\end{sol}
+
+\begin{sol}{prob:39} Let $I$ be any nonzero ideal of $\Z_{(p)}$ and choose a nonzero $x \in I$ with $v_p(x)$ minimal among nonzero elements of $I$. Set $v=v_p(x)$.
+
+\textbf{Claim:} $I = p^v \Z_{(p)}$.
+
+Since $x=p^v u$ for some $u \in \Z_{(p)}^{\times}$, it is immediate that $I \supset x\Z_{(p)} = p^v u\Z_{(p)} = p^v \Z_{(p)}$. To prove the reverse containment, we take an arbitrary $y \in I$ and show that $y \in p^v \Z_{(p)}$. Clearly $y=0$ belongs to $p^v\Z_{(p)}$. If $y\ne 0$, write $y = p^{v_p(y)} w$ where $w \in \Z_{(p)}^{\times}$. Then $v_p(y)\ge v$, and $y = p^{v} (p^{v_p(y)-v} w) \in p^v \Z_{(p)}$, finishing the proof of the Claim.
+
+It follows that $\Z_{(p)}$ is a principal ideal domain (PID), with each of its ideals somewhere in the infinite chain
+\[ (0) \subsetneq \dots \subsetneq p^{n} \Z_{(p)} \subsetneq \dots \subsetneq p^{3}\Z_{(p)} \subsetneq p^{2} \Z_{(p)} \subsetneq p \Z_{(p)} \subsetneq \Z_{(p)}. \]
+(The containments are strict since $p$ is a nonzero, nonunit element of the domain $\Z_{(p)}$.) It is clear from this linear ordering that $p\Z_{(p)}$ is the unique maximal ideal of $\Z_{(p)}$.\footnote{We could also have proved that $p\Z_{(p)}$ is the unique maximal ideal of $\Z_{(p)}$ by invoking Problem \ref{prob:37}: $p\Z_{(p)} = \{x \in \Z_{(p)}: |x|_p < 1\}$.} 
+\end{sol}
+
+\begin{sol}{prob:40}\index{Ramanujan--Nagell equation} Since $x^2+7=2^m$, the integer $x$ must be odd. Hence, $8\mid x^2+7 = 2^m$ and $m\ge 3$. 
+
+Since $x$ is an odd number, $\frac{x\pm \sqrt{-7}}{2} \in R$ for both choices of sign. Furthermore, recalling that $\alpha = \frac{1+\sqrt{-7}}{2}$ and $\beta = \frac{1-\sqrt{-7}}{2}$,
+\begin{align}\notag \frac{x+ \sqrt{-7}}{2} \cdot \frac{x- \sqrt{-7}}{2} = 2^{m-2} &= (\alpha\beta)^{m-2}\\
+&= \alpha^{m-2} \cdot \beta^{m-2}.\tag{*}
+\end{align}
+
+We proceed by analyzing prime factorizations. First we show that $\alpha$ and $\beta$ are prime in $R$. Since $R = \Z[\alpha]$, it is plain that every residue class mod $\alpha R$ has a representative from $\Z$. In fact, since $2 = \alpha\beta = 0$ in $R/\alpha R$, every class mod $\alpha R$ is represented by $0$ or $1$. If every class is represented by $0$, then $R = \alpha R$, forcing $\alpha$ to be a unit and contradicting that $R^{\times} = \{\pm 1\}$. So $R/\alpha R$ is (isomorphic to) $\Z/2$. Since $\Z/2$ is a domain, $\alpha R$ is a prime ideal of $R$, and $\alpha$ is a prime element of $R$. An identical argument shows that $\beta$ is prime in $R$.
+
+% Next, we note that $\alpha,\beta$ are not associates. Otherwise, $\alpha \mid \beta$. But $\beta = 1-\alpha = 1$ in $R/\alpha R$, not $0$. 
+
+Continuing, we argue that neither $\alpha$ nor $\beta$ is a common divisor of the left-hand factors in (*). If $\alpha$ is common divisor, then $\alpha \mid \frac{x+\sqrt{-7}}{2} - \frac{x-\sqrt{-7}}{2} = \sqrt{-7}$. But $\sqrt{-7} = 2\alpha-1 = -1$ in $R/\alpha R$, rather than $0$. A similar argument shows that $\beta$ is not a common divisor.
+
+The two left-hand factors in (*) are nonunits. By unique factorization, each is a (nonempty) product of the primes $\alpha$ and $\beta$ (up to units). We also know, from our work in the last paragraph, that $\alpha$ appears in the prime factorization of only one of $\frac{x+ \sqrt{-7}}{2}$ and $\frac{x- \sqrt{-7}}{2}$, and similarly for $\beta$.
+
+How can this be? $\frac{x+ \sqrt{-7}}{2}$ and $\frac{x-\sqrt{-7}}{2}$ must match up with $\alpha^{m-2}$ and $\beta^{m-2}$, up to order and associates. That is, for some $\epsilon = \pm 1$ and some units $\eta, \eta'$ of $R$,
+\[ \frac{x+\epsilon \sqrt{-7}}{2} =  \eta \alpha^{m-2}, \quad \frac{x-\epsilon \sqrt{-7}}{2} =  \eta' \beta^{m-2}.\]
+
+Multiplying the last two equations, $x^2+7 = \eta\eta' 2^{m-2}$, and so $\eta\eta'=1$. Since $\eta, \eta'\in \{-1,  1\}$, in fact $\eta=\eta'$, and
+\[ \eta(\alpha^{m-2}-\beta^{m-2}) = \frac{x+\epsilon \sqrt{-7}}{2} - \frac{x-\epsilon \sqrt{-7}}{2}  =  \epsilon \sqrt{-7} = \epsilon (\alpha-\beta). \]
+Therefore,
+\[ u_{m-2} = \frac{\alpha^{m-2}-\beta^{m-2}}{\alpha-\beta} = \epsilon \eta^{-1} \in \{\pm 1\}. \]
+
+The converse also holds: Every $m$ with $u_{m-2}=\pm 1$ gives rise to an $x$ with $x^2+7=2^m$. If $u_{m-2} = \pm 1$, then $\alpha^{m-2}-\beta^{m-2} = \pm (\alpha-\beta) = \pm \sqrt{-7}$. On the other hand, if we write $\alpha^{m-2} = \frac{x+y\sqrt{-7}}{2}$ for integers $x$ and $y$, then (applying complex conjugation) $\beta^{m-2} = \frac{x-y\sqrt{-7}}{2}$, so that $\alpha^{m-2} - \beta^{m-2} = y\sqrt{-7}$. Comparing expressions, $y=\pm 1$. Therefore, $2^{m-2} = \alpha^{m-2} \beta^{m-2} = \frac{x^2+7y^2}{4} = \frac{x^2+7}{4}$, and $x^2+7=2^m$.
+
+
+
+\begin{rmks}\mbox{ }
+\vspace{-0.12in}
+\begin{enumerate}
+    \item[(i)] We didn't need to know $R$ was a UFD to execute our solution. After proving that $\alpha$ and $\beta$ are prime, we could have appealed to the following result, valid in \emph{every} integral domain: If a product $UV$ factors as $\pi_1\cdots \pi_k$, with all $\pi_i$ prime\footnote{we really do mean \emph{prime}, not merely irreducible!}, then $U = \eta\prod_{i\in S} \pi_i$ and $V = \eta'\prod_{i \in S'} \pi_i$ for some units $\eta, \eta'$ and some partition of $\{1,2,\dots,k\}$ into sets $S$ and $S'$. (We allow $S$ or $S'$ to be empty.) Try to prove this if you haven't seen it before! 
+    
+    \item[(ii)] For completeness, we include a proof that $R^{\times}= \{\pm 1\}$. 
+    %Let $\alpha = \frac{1+\sqrt{-7}}{2}$(as above).
+    % Then $\alpha^2 = \alpha -2$ and so $\Z[\alpha]=\Z+\Z\alpha$. But $\Z+\Z\alpha = \{\frac{1}{2}((2u+v)+v\sqrt{-7}): u,v \in \Z\} = R$. Hence, $R=\Z[\alpha]$ is  a ring. That $R$ is a domain is now immediate, since $R$ is a subring of the field $\C$.    
+    % Turning to $R^{\times}$, 
+    It is obvious that $\pm 1 \in R^{\times}$. What requires proof is that $\pm 1$ are the \emph{only} elements of $R^{\times}$.
+    
+For each $\mu \in R$, we define the \textsf{norm} of $\mu$ by $\Nm\mu = \mu\bar{\mu}$, where the bar denotes complex conjugation. Thus, if $\mu = \frac{1}{2}(a+b\sqrt{-7})$, then $\Nm\mu = \frac{1}{4}(a^2+7b^2)$. Recalling that $a\equiv b\pmod{2}$, we deduce that (a) $\Nm\mu$ is a nonnegative integer for every $\mu \in R$, with $\Nm\mu=0$ only when $\mu=0$. Furthermore, (b) for every $\mu,\nu \in R$, $\Nm(\mu\nu) = \mu\nu \cdot \overline{\mu\nu} = \mu\bar{\mu} \cdot \nu\bar{\nu} = \Nm\mu \cdot \Nm\nu$.
+
+ Suppose $\varepsilon$ is a unit in $R$ with inverse $\varepsilon'$. Using (b), $1 = \Nm(1) = \Nm(\varepsilon \varepsilon') = \Nm\varepsilon \cdot \Nm\varepsilon'$. From (a), $\Nm\varepsilon = \Nm\varepsilon'=1$. Writing $\varepsilon = \frac{1}{2}(e+f\sqrt{-7})$, the equation $\Nm\varepsilon=1$ translates into $e^2+7f^2=4$. This forces $f=0$ and $e=\pm 2$, so that $\varepsilon = \frac{1}{2}(\pm 2 + 0\sqrt{-7}) = \pm 1$.
+
+ 
+\end{enumerate}
+\end{rmks}
+
+\end{sol}
+
+\let\oldaddcontentsline\addcontentsline
+\renewcommand{\addcontentsline}[3]{}
+\begin{thebibliography}{11}
+        \bibitem{BS}  E.\,B. Burger and T. Struppeck, \emph{Does $\sum_{n=0}^{\infty} \frac{1}{n!}$ really converge? Infinite series and $p$-adic analysis.} Amer. Math. Monthly \textbf{103} (1996), 565--577.
+    \end{thebibliography}
+\let\addcontentsline\oldaddcontentsline
+

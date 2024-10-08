@@ -1,0 +1,252 @@
+\chapter*{Solutions to Set \#9}
+\addcontentsline{toc}{chapter}{Solutions to Set \#9}
+\markboth{Solutions to Set \#9}{Solutions to Set \#9}
+\label{set8sols}
+
+\begin{sol}{prob:99}\index{method of successive approximation} Let $a \in \Z_p^{\times}$. If $a=x^2$ for some $x \in \Q_p$, then $|x|_p^2 = |a|_p = 1$. Therefore, $|x|_p = 1$; in particular, $x \in \Z_p$. Reducing the equation $x^2=a$ modulo the ideal $p\Z_p$ shows that $a\bmod{p\Z_p}$ is a square in $\Z_p/p\Z_p$. Now recall from Exercise \ref{prob:58} that the inclusion of $\Z$ into $\Z_p$ induces an isomorphism between $\Z/p$ and $\Z_p/p\Z_p$ and that this isomorphism identifies $a_1\bmod{p}$ with $a\bmod{p\Z_p}$. Since $a\bmod{p\Z_p}$ is a square in $\Z_p/p\Z_p$, it follows that $a_1\bmod{p}$ is a square in $\Z/p$.
+
+Conversely, suppose $a\in \Z_p^{\times}$ and that $a_1\bmod{p}$ is a square in $\Z/p$. Then $a\bmod{p\Z_p}$ is a square in $\Z_p/p\Z_p$ and we can choose $r_1 \in \Z_p$ with $r_1^2\equiv a\pmod{p\Z_p}$. We construct a $\Z_p$-solution to $x^2=a$ following the iterative procedure of Problem \ref{prob:98}.
+
+Let $k \in \Z^{+}$. Suppose we have a mod $p^k\Z_p$-solution $r_k\bmod{p^k\Z_p}$ to $x^2=a$; we lift this to a mod $p^{k+1}\Z_p$ solution. Expanding, $(r_k + p^k q)^2 \equiv r_k^2 + 2p^k r_k q \pmod{p^{k+1}\Z_p}$. The right-hand side is congruent to $a\bmod{p^{k+1}\Z_p}$ precisely when
+\[ 2p^k r_k q \equiv a-r_k^2\pmod{p^{k+1}\Z_p}. \]
+By construction, $a-r_k^2 \in p^k\Z_p$, so we can rewrite the last congruence as
+\[ 2r_k q \equiv \frac{a-r_k^2}{p^k} \pmod{p\Z_p}.\]
+Since $p$ is odd, $2$ is invertible in $\Z_p$. As $r_k^2\equiv a\pmod{p\Z_p}$ and $a\notin p\Z_p$, we have $r_k\notin p\Z_p$. So $r_k$ is invertible in $\Z_p$, and the last displayed congruence is equivalent to 
+\[ q \equiv \frac{a-r_k^2}{2 p^k r_k} \bmod{p\Z_p}.\] 
+So if we put $r_{k+1} = r_k + p^k\frac{a-r_k^2}{2 p^k r_k} = r_k + \frac{a-r_k^2}{2 r_k}$, then $r_{k+1}\bmod{p^{k+1}\Z_p}$ is a lift of $r_k\bmod{p^k\Z_p}$ to a mod $p^{k+1}\Z_p$ solution of $x^2=a$.
+
+Assume $r_1, r_2, r_3,\dots$ have been determined by the above procedure.
+Since $r_{k+1}\bmod{p^{k+1}\Z_p}$ is a lift of $r_k\bmod{p^k\Z_p}$, we have $|r_{k+1}-r_k|_{p} \le p^{-k}$. Thus, $\{r_k\}$ is a Cauchy sequence of elements of $\Z_p$.  Let $x = \lim r_k$, which belongs to $\Z_p$. By construction, $|r_k^2 - a|_p \le p^{-k}$. Thus, $r_k^2 \to a$. Since $r_k^2$ also tends to $x^2$, we conclude that $x^2=a$.
+\end{sol}
+
+\begin{rmk} By a small modification of the argument, we can choose our mod $p^k\Z_p$ solutions $r_k$ to all be rational integers. Then their limit $x$ is simply $(r_1\bmod{p}, r_2\bmod{p^2}, r_3\bmod{p^3},\dots) \in \Z_p$.
+\end{rmk}
+
+\begin{sol}{prob:100} By Problem \ref{prob:99}, the map $\phi\colon\Z_p^{\times} \to \{\pm 1\}$ that sends $a$ to $\legendre{a_1}{p}$ is a homomorphism with kernel $(\Z_p^{\times})^2$. This homomorphism is onto, as $1$ is sent to $1$ and any $n\in \Z$ with $\legendre{n}{p}=-1$ is sent to $-1$. Therefore, the two cosets of $(\Z_p^{\times})^2$ in $\Z_p^{\times}$ are $\phi^{-1}(1) = (\Z_p^{\times})^2$ and $\phi^{-1}(-1) = n(\Z_p^{\times})^2$, establishing the first claim.\index{$\Z_p$, ring of $p$-adic integers!structure of $\Z_p^{\times}/(\Z_p^{\times})^2$}\index{$\Q_p$, field of $p$-adic numbers!structure of $\Q_p^{\times}/(\Q_p^{\times})^2$}  
+
+Every $x \in \Q_p^{\times}$ has a unique representation in the form $p^v u$ where $v \in \Z$ and $u \in \Z_p^{\times}$. Identifying $p^v u$ with $(v,u)$ sets up an isomorphism $\Q_p^{\times} \cong \Z\times \Z_p^{\times}$, which after quotienting by squares becomes $\Q_p^{\times}/(\Q_p^{\times})^2 \cong \Z/2 \times \Z_p^{\times}/(\Z_p^{\times})^2$. In this last isomorphism, $1, p, n, np$ are sent to the four distinct elements of $\Z/2 \times \Z_p^{\times}/(\Z_p^{\times})^2$. Hence, $1, p, n$, and $np$ are coset representatives for $\Q_p^{\times}/(\Q_p^{\times})^2$.
+\end{sol}
+
+\begin{sol}{prob:101} Assume $a \in \Z_2^{\times}$. Then $a$ is a square in $\Q_2$ $\Longleftrightarrow$ $a$ is a square in $\Z_2$ (cf.\ the solution to Problem \ref{prob:99}). 
+
+If $a=x^2$ with $x\in \Z_2$, and $a\in \Z_2^{\times}$, then $x\in \Z_2^{\times}$. Hence, $x\equiv 1,3,5,\text{ or }7\pmod{8\Z_2}$. In each of these cases, $x^2\equiv 1\pmod{8\Z_2}$, and so $a\equiv 1\pmod{8\Z_2}$.
+
+Conversely, suppose that $a\equiv 1\pmod{8\Z_2}$ and write $a=1+8b$. Any square root of $a$ in $\Z_2$ must have the form $1+2y$, for some $y \in \Z_2$. As $(1+2y)^2= a$ $\Longleftrightarrow$ $y^2+y=2b$, it suffices to prove that $y^2+y=2b$ has a solution $y\in \Z_2$. This we do following the method of Problem \ref{prob:99}.
+
+To get started, the residue class $0\bmod{2\Z_2}$ is a mod $2\Z_2$-solution to $y^2+y=2b$. Suppose we have already found a mod $2^k \Z_2$ solution $r_k\bmod{2^k \Z_2}$ to $y^2+y=2b$, where $k \in \Z^{+}$. We proceed to lift this to a mod $2^{k+1}\Z_2$ solution. Expanding, $(r_k+2^{k}q)^2 + (r_k + 2^k q) \equiv r_k^2 + r_k + 2^k q \pmod{2^{k+1}\Z_2}$. The right-hand side is congruent to $2b$ modulo $2^{k+1}\Z_2$ precisely when 
+\[ 2^k q \equiv 2b - (r_k^2 + r_k). \]
+By construction, $2b-(r_k^2+r_k) \in 2^k \Z_2$, and so this last congruence can be rewritten as
+\[ q\equiv \frac{2b-(r_k^2+r_k)}{2^k}\pmod{2\Z_2}. \]
+So if we put $r_{k+1} = r_k + 2^k\frac{2b-(r_k^2+r_k)}{2^k} = 2b-r_k^2$, then $r_{k+1}\pmod{2^{k+1}\Z_2}$ is a suitable lift. 
+
+    The rest of the solution is essentially the same as that of Problem \ref{prob:99}.
+% Put $r_1=0$; then as shown in the last paragraph, every $x\equiv r_1\pmod{2\Z_2}$ has $x^2\equiv 1 \equiv a\pmod{8\Z_2}$. Let $k \in \Z^{+}$ and suppose every $x$ in the residue class $r_k\bmod{2^k\Z_2}$ satisfies $x^2\equiv a\pmod{2^{k+2}\Z_2}$.
+% We describe how to lift $r_k\bmod{2^k\Z_2}$ to a residue class $r_{k+1}\bmod{2^{k+1}\Z_2}$ in such a way  that every $x\equiv r_{k+1} \pmod{2^{k+1}\Z_2}$ has $x^2\equiv a\pmod{2^{k+3}\Z_2}$.
+
+
+% Expanding, $(r_k + 2^{k+1} q)^2 \equiv r_k^2 + 2^{k+2} r_k q \pmod{2^{k+3}\Z_2}$. The right-hand expression is congruent to $a$ modulo $2^{k+3}$ precisely when 
+% \[ 2^{k+2} r_k q \equiv a-r_k^2\pmod{2^{k+3}\Z_2}.\]
+% By assumption, $r_k^2-a \in 2^{k+2}\Z_2$. So we can rewrite this last congruence in the form
+% \[ r_k q \equiv \frac{a-r_k^2}{2^{k+2}} \pmod{2\Z_2}. \]
+% Since $r_k^2\equiv a \equiv 1\pmod{2\Z_2}$, we see that $r_k\notin 2\Z_2$, and thus $r_k \in \Z_2^{\times}$. So we can choose any $q \equiv \frac{a-r_k^2}{2^{k+2} r_k} \pmod{2\Z_2}$. In particular, one suitable lift is $r_{k+1} = r_k + 2^{k+1} \frac{a-r_k^2}{2^{k+2} r_k} = r_k + \frac{a-r_k^2}{2 r_k}$.
+
+% Assume $r_1, r_2, r_3,\dots$ have been determined by the above procedure.
+% Since $r_{k+1}\bmod{2^{k+1}\Z_2}$ is a lift of $r_k\bmod{2^k\Z_2}$, we have $|r_{k+1}-r_k|\le 2^{-k-1}$, and so $\{r_k\}$ is a Cauchy sequence in $\Z_2$. Let $x = \lim r_k$. We will show $x^2=a$. By construction, $|r_k^2-a|\le 2^{-k-2}$ and thus $r_k^2\to a$. Since $r_k^2\to x^2$, we conclude that $x^2=a$.
+\end{sol}
+
+
+\begin{sol}{prob:102} By Problem \ref{prob:101}, the homomorphism from $\Z_2^{\times}$ to $(\Z_2/8\Z_2)^{\times}$ sending $a$ to $a\bmod{8\Z_2}$ has kernel $(\Z_2^{\times})^2$. As this homomorphism is easily seen to be surjective, $\Z_2^{\times}/(\Z_2^{\times})^2 \cong (\Z_2/8\Z_2)^{\times} = \{1\bmod{8\Z_2}, 3\bmod{8\Z_2}, 5\bmod{8\Z_2}, 7\bmod{8\Z_2}\}$. Hence, $1, 3, 5$, and $7$ are coset representatives for $(\Z_2/8\Z_2)^{\times}$. Noting that each element of $\Q_2^{\times}$ has a unique representation in the form $2^v u$, with $v \in \Z$ and $u \in \Z_2^{\times}$, we conclude that \[ 1,\enspace 3,\enspace 5,\enspace 7,\enspace 2\cdot 1,\enspace 2\cdot 3,\enspace 2\cdot 5,\enspace  2\cdot 7 \] are coset representatives for $\Q_2^{\times}/(\Q_2^{\times})^2$. (See the solution to Problem \ref{prob:100} for further details on this last step.)
+\end{sol}
+
+\begin{challenge} Characterize the elements of $\Z_p$ that can be written as $x^2-y^2$ for $x,y \in \Z_p$. Then do the same for $x^2+y^2$ (harder). For the latter problem, start by showing that every element of $\Z/p$ is a sum of two squares.
+\end{challenge}
+
+
+\begin{sol}{prob:103} Let $a \in \Q_p^{\times}$ and write $a=p^{v} u$ with $u \in \Z_p^{\times}$. If $a=x^n$ for some $x \in \Q_p$, then $n \mid n v_p(x) = v_p(a) = v$. For this to hold for infinitely many $n$ requires $v=0$, so that $a=p^{v}u = u \in \Z_p^{\times}$. This proves the ``$\Longleftarrow$'' implication: If $\sqrt[n]{a} \in \Q_p$ for infinitely many $n$, then $a \in \Z_p^{\times}$.
+
+Now suppose that $a \in \Z_p^{\times}$. It suffices to show that if $\ell$ is any prime not dividing $p(p-1)$, then $a$ is an $\ell$th power in $\Q_p$.
+
+Since $\ell \nmid p-1 = \#(\Z_p/p\Z_p)^{\times}$, the $\ell$th power map is an automorphism of $(\Z_p/p\Z_p)^{\times}$. So we can find an $r_1 \in \Z_p^{\times}$ with $r_1^\ell \equiv a\bmod{p\Z_p}$. We take $r_1\bmod{p\Z_p}$ as our starting point in the method of successive approximation. 
+
+Assume we know a mod $p^k\Z_p$-solution to $x^\ell=a$, say $r_k\bmod{p^k\Z_p}$. We seek a mod $p^{k+1}\Z_p$-solution $r_{k+1}\bmod{p^{k+1}\Z_p}$. Expanding, $(r_k+p^{k}q)^\ell \equiv r_k^\ell + \ell r_k^{\ell-1} p^{k} q \pmod{p^{k+1}\Z_p}$. For the right-hand expression to agree with $a$ mod $p^{k+1}$, we require that $\ell r_k^{\ell-1} p^k q \equiv a-r_k^\ell \pmod{p^{k+1}\Z_p}$, or equivalently
+\[ \ell r_k^{\ell-1} q \equiv \frac{a-r_k^{\ell}}{p^k}\pmod{p\Z_p}.\]
+Both $r_k$ and $\ell$ belong to $\Z_p^{\times}$. (We use here that $a\in \Z_p^{\times}$ and that $\ell$ is a prime distinct from $p$.) So we can satisfy this congruence with any $q\equiv \frac{a-r_k^{\ell}}{p^k \ell r_k^{\ell-1}}$ modulo $p\Z_p$. In particular, $r_{k+1} = r_k + p^k\frac{a-r_k^{\ell}}{p^k \ell r_k^{\ell-1}} = r_k + \frac{a-r_k^{\ell}}{\ell r_k^{\ell-1}}$ yields a suitable lift.
+
+Assume $r_1,r_2,r_3,\dots$ are chosen according to the above procedure. Each $|r_{k+1}-r_k|\le p^{-k-1}$, so that the $\{r_k\}$ form a Cauchy sequence in $\Z_p$ with a limit $x \in \Z_p$. Since $r_k\to x$, and taking $\ell$th powers preserves limits, $r_k^{\ell}\to x^{\ell}$. On the other hand, each $|r_k^{\ell} -a|\le p^{-k}$, so that $r_k^{\ell}\to a$. Therefore, $x^{\ell}=a$.
+\end{sol}
+
+\begin{sol}{prob:104}\index{Liouville's approximation theorem in $\Z_p$} Let $R$ be any commutative ring. If $F(T) \in R[T]$, then $$F(X)-F(Y) \equiv F(Y) - F(Y) \equiv 0 \pmod{(X-Y) R[X,Y]}.$$ So we can write $F(X) - F(Y) = (X-Y) G(X,Y)$ for some $G(X,Y) \in R[X,Y]$.  
+
+If $G(X,Y) \in \Z[X,Y]$ is the polynomial corresponding to our $F(T) \in \Z[T]$, then 
+\[ |F(n)-F(\alpha)|_p = |(n-\alpha)G(n,\alpha)|_p \le |n-\alpha|_p. \] 
+(To make the last estimate we use that $G$ has $\Z_p$-coefficients and that both $n,\alpha \in \Z_p$.)  This establishes the first claim of the problem.
+
+Since $\alpha$ is a root of $F$, it is clear that $|F(n)-F(\alpha)|_p = |F(n)|_p$.
+
+As $F$ has no integer zeros, $F(n) \ne 0$, so that by the product formula, $|F(n)|_p = |F(n)|_{\infty}^{-1} \prod_{\text{prime }\ell \ne p} |F(n)|_\ell^{-1} \ge |F(n)|_{\infty}^{-1}$.
+
+Write $F(T) = \sum_{k=0}^{d} a_k T^k$. Then
+\[ |F(n)|_{\infty} = \left|\sum_{k=0}^{d} a_k n^k\right|_{\infty} \le \left(\sum_{k=0}^{d} |a_k|_{\infty}\right) |n|_{\infty}^{d}.\]  Therefore, $|F(n)|_{\infty}^{-1} \ge c|n|_{\infty}^{-d}$ for $c := (\sum_k |a_k|_{\infty})^{-1}$. (The definition of $c$ makes sense since the $a_k$ are not all zero.) 
+\end{sol}
+
+\begin{rmk} When $d\ge 2$ our inequality $|n-\alpha|_p \ge c|n|_{\infty}^{-d}$ can be improved substantially. A theorem of Mahler \cite[Theorem (5,I), p.\ 159]{mahler61} allows us to replace $-d$ with $-1-\epsilon$, for any fixed $\epsilon > 0$. In this new statement, the coefficient $c$ in front of $|n|_{\infty}^{-1-\epsilon}$ is now allowed to depend on both $F$ and $\epsilon$. Mahler's theorem is a $p$-adic variant of a deep result of Klaus Roth, for which Roth was awarded the Fields Medal in 1958.
+
+The exponent $-1-\epsilon$ in Mahler's theorem is  essentially best possible, since approximations to within $|n|_{\infty}^{-1}$ are thick on the ground. Indeed, each $\alpha \in \Z_p$ has a canonical expansion of the form $c_0 + c_1 p + c_2 p^2 + \dots$. If we choose $n=c_0 + c_1 p + \dots + c_{k-1} p^{k-1}$, then $|n-\alpha|_p \le p^{-k} < |n|_{\infty}^{-1}$ (if $n\ne 0$). Provided that $\alpha$ is not a nonnegative integer, varying $k$ yields infinitely many distinct positive integers $n$. By a similar argument, as long as $\alpha$ is not a nonpositive integer, $|n-\alpha|_p < |n|_{\infty}^{-1}$ has infinitely many solutions in negative integers $n$. Therefore, $|n-\alpha|_p < |n|_{\infty}^{-1}$ has infinitely many integer solutions $n$ whenever $\alpha$ is a nonzero element of $\Z_p$. 
+\end{rmk}
+
+\begin{challenge} Let $A(T) = \sum_{k=0}^{d} a_k T^k \in \Z_p[T]$. It is easy to prove (and we essentially did this in our solution to Problem \ref{prob:104}) that $|A(x+h) - A(x)|_p \le |h|_p$ whenever $x, h \in \Z_p$. Show that for $x \in \Z_p$ and $h \in p\Z_p$, this bound can be refined to
+\[ |A(x+h) - A(x)|_p \le K |h|_p, \]
+where $K = \max_{k\ge 0} |k a_k|_p$ is the largest absolute value of any coefficient of $A'(T)$. This is a $p$-adic cousin of the usual mean value theorem (cf.~Robert \cite{robert91}).
+\end{challenge}
+
+\begin{sol}{prob:105} That $\alpha := \sum_{k \ge 1} p^{k!} \in \Z_p$ follows from Problem \ref{prob:89}. Suppose for a contradiction that $\alpha$ is a root of the nonconstant polynomial $F(T) \in \Q[T]$. We can assume $F(T)$ is irreducible over $\Q$ and, by clearing denominators, that $F(T) \in \Z[T]$. 
+
+If $F$ has an integer root $n_0$, irreducibility over $\Q$ forces $F$ to be linear with $n_0$ as its only root. In that case, $\alpha = n_0 \in \Z$. But this is absurd: $\alpha$'s canonical expansion is not eventually periodic, so that $\alpha$ is not even rational, let alone a rational integer.
+
+We can therefore apply the result of Exercise \ref{prob:104}. Let $c$ be the constant associated with $F$ in that problem. For each $n$, let $r_n = \sum_{k=1}^{n} p^{k!} \in \Z$. Then $|r_n-\alpha|_p = |\sum_{k > n}p^{k!}|_p \le p^{-(n+1)!}$. Also, $|r_n|_{\infty} \le 2p^{n!}$; here we use that the largest term in the sum defining $r_n$ is $p^{n!}$ and that each term in that sum is at least twice the preceding one. Therefore,
+\[ p^{-(n+1)!}\ge |r_n-\alpha|_p \ge c|r_n|_{\infty}^{-d}\ge c \cdot 2^{-d} p^{-d n!}. \]
+Rearranging,
+\[ p^{n!(d-(n+1))} \ge c \cdot 2^{-d}.\]
+But the right-hand side is a positive quantity independent of $n$, while the left-hand side tends to $0$ as $n$ tends to infinity. Contradiction!
+\end{sol}
+
+\begin{sol}{prob:106}\index{$\Z_g$, ring of $g$-adic integers!example of $\Z_{10}$}  Given $x\in \Z_{10}$, define the \textsf{$\Z_2$ and $\Z_5$-reductions of $x$} as the first and second components of the image of $x$ under the isomorphism $\Z_{10}\cong \Z_2 \times \Z_5$ described in the solution to Problem \ref{prob:59}. Concretely, if $x=(a_1\bmod{10}, a_2\bmod{10^2}, \dots)$, its $\Z_2$-reduction is $(a_1\bmod{2}, a_2\bmod{2^2}, \dots)$, and its $\Z_5$-reduction is $(a_1\bmod{5}, a_1\bmod{5^2},\dots)$.
+
+Convergence in $\Z_{10}$ can then be defined in terms of convergence in $\Q_2$ and $\Q_5$.  If $\{x_n\}$ is a sequence of elements of $\Z_{10}$, and $x \in \Z_{10}$, we say $x_n\to x$ in $\Z_{10}$ if the $\Z_2$ and $\Z_5$-reductions of the $x_n$ converge to the $\Z_2$ and $\Z_5$-reductions of $x$ (in $\Q_2$ and $\Q_5$).
+
+With this definition of convergence in place, your work on Set \#7 can be adapted to show that every element of $\Z_{10}$ has a unique, convergent $10$-adic expansion $\sum_{k\ge 0} d_k\cdot 10^k$ with each $d_k \in \{0,1,2,\dots,9\}$. (Check this!)
+
+Clearly, $2^{4\cdot 5^n} \to 0$ in $\Z_2$. By Exercise \ref{prob:77andahalf}, $2^{4\cdot 5^n}\to 1$ in $\Z_5$. So the $\Z_{10}$ limit $x$ of $2^{4\cdot 5^n}$ corresponds, under our isomorphism, to $(0,1) \in \Z_2 \times \Z_5$. Write the $10$-adic expansion of $x$ as $\sum_{k\ge 0} d_k \cdot 10^k$ and assume for a contradiction that the sequence $\{d_k\}$ is eventually periodic, say $d_k = d_{k+\ell}$ for all $k\ge k_0$. Working in $\Z_2$, we find that the $\Z_2$-reduction of $x$ is
+\begin{multline*} \sum_{0 \le k < k_0} 10^k + \sum_{k_0 \le k < k_0+\ell} d_k \cdot 10^k (1 + 10^{\ell} + 10^{2\ell} + \dots) \\= \sum_{0 \le k < k_0} 10^k + \sum_{k_0 \le k < k_0+\ell} \frac{d_k \cdot 10^k}{1-10^{\ell}}.\end{multline*}
+Let $r$ be the rational number defined by the right-hand side. The exact same calculation shows that the $\Z_5$-reduction of $x$ is also $r$. It follows that $x=\sum_{k \ge 0} d_k\cdot 10^k$ is the element of $\Z_{10}$ corresponding under our isomorphism to $(r,r) \in \Z_2\times \Z_5$. But we saw already that $x$ corresponds to $(0,1)$. Contradiction! 
+\end{sol}
+
+\begin{challenge} Say that the infinite sequence of decimal digits $d_0$, $d_1$, $d_2$, $d_3, \dots$ is \textsf{self-squaring} if, for every $k \in \Z^{+}$, \[ (d_0 + d_1 \cdot 10 + \dots + d_{k-1} \cdot 10^{k-1})^2 \equiv d_0 + d_1 \cdot 10 + \dots + d_{k-1}\cdot 10^{k-1} \pmod{10^k}. \]
+For example, the two sequences $0,0,0,0,\dots$ (all zeros) and $1,0,0,0,\dots$ (all zeros past the first term) are trivially self-squaring.
+\begin{enumerate}
+\vspace{-0.12in}
+\item[(a)] Prove that there is a unique self-squaring sequence starting with $d_0=6$.
+\item[(b)] Show that the sequence in (a) begins 6, 7, 3, 9, 0, 1, 7, 8, 7, 1. (As a spot check, $76^2 = 57\underline{76}$, while $109376^2= 11963\underline{109376}$.)
+\item[(c)] How many self-squaring sequences are there?
+\end{enumerate}
+\end{challenge}
+
+
+
+
+\begin{challenge}[Shapiro and Shapiro \cite{SS}]\label{challenge:SS} Let $a_1, a_2, a_3, \dots$ be an arbitrary sequence of positive integers. Show that for every $g\in\Z^{+}$, the sequence $a_1, a_1^{a_2}, a_1^{a_2^{a_3}}, \dots$ stabilizes modulo $g$. Deduce that for each $g>1$, this same sequence converges in $\Z_g$. (Define convergence in $\Z_g$ by mimicking what we did for $\Z_{10}$ above.) 
+\end{challenge}
+
+\begin{challenge}[continuation]
+Let $a$ be a positive integer not divisible by $10$. By \pp~\ref{challenge:SS},  for each $k\in \Z^{+}$ the residue class mod $10^k$ of $a, a^a, a^{a^{a}},\dots$ eventually stabilizes. Let $x_k$ be the least nonnegative integer in the limiting residue class mod $10^k$, so that $0 \le x_k < 10^k$. 
+%(Thus, $(x_1\bmod{10}, x_2\bmod{10^2}, x_3\bmod{10^3},\dots)\in \Z_{10}$.)
+\begin{enumerate}
+\vspace{-0.12in}
+\item[(a)] Show that for each $k\ge 2$, we have $a^{x_k} \equiv x_k\pmod{10^k}$.
+\item[(b)] Let $a=73$. Compute $x_{33}$, by hook or by crook, and thereby show that
+\[ 73^{990485815519399724778909194186633} = \dots990485815519399724778909194186633.\]
+\end{enumerate}
+\vspace{-0.10in}
+For more on this theme, see the papers of Jim\'enez Urroz \& Yebra \cite{UY} and Germain~ \cite{germain}.
+\end{challenge}
+
+\begin{sol}{prob:107} The first equivalence is immediate from Problem \ref{prob:89}. 
+
+Turning to the second: If $x \in \Z_p$, then $|a_n x^n|_p \le |a_n|_p$ for all $n$. So if $|a_n|_p\to 0$, then $\sum_{n\ge 0} a_n x^n$ converges for all $x \in \Z_p$.
+
+Conversely, suppose that $\sum_{n\ge 0} a_n x^n$ converges for all $x \in \Z_p$. Then $\sum_{n\ge 0} a_n$ converges (the case $x=1$), so that $|a_n|_p  \to 0$.
+\end{sol}
+
+\begin{challenge} Check that the Strassmann series form a subring of $\Q_p[[T]]$. This ring is commonly denoted $\Q_p\langle T\rangle$\index{$\Q_p\langle T\rangle$, ring of Strassmann series (Tate algebra)}\index{Strassmann series!form a subring of $\Q_p[[T]]$} and referred to as the \textsf{Tate algebra in one variable over $\Q_p$}. 
+Show that for each $z \in \Z_p$, the evaluation map $\mathrm{eval}_z\colon \Q_p\langle T\rangle \to \Q_p$ sending $F(T)$ to $F(z)$ is a ring homomorphism.
+\end{challenge}
+
+\begin{sol}{prob:108} Since $F(T)$ is a Strassmann series, its coefficients $a_n$ tend to $0$. In particular, $\{|a_n|_p\}$ is bounded, and $p^k F(T) \in \Z_p[[T]]$ for a certain integer $k$. Since $F$ and $p^k F$ have the same zeros, we can (and will) assume that $F(T) \in \Z_p[[T]]$ to start with.
+
+Let $m$ be the smallest nonnegative integer for which $a_m\ne 0$ and let $\delta = |a_m|_p$. Note that $\delta \le 1$, since $F(T) \in \Z_p[[T]]$. If $0 < |x|_p < \delta$, then
+\[ \bigg|\sum_{n > m} a_n x^n\bigg|_p \le \max_{n > m}{|a_n x^n|_p} \le |x|_p^{m+1} < \delta |x|_p^{m} = |a_m x^m|_p = \bigg|\sum_{n=0}^{m} a_n x^n\bigg|_p.\]
+Therefore,
+\[ |F(x)|_p = \left|\sum_{n=0}^{m} a_n x^n + \sum_{n > m} a_n x^n\right|_p \ge \bigg|\sum_{n=0}^{m} a_n x^n\bigg|_p - \bigg|\sum_{n>m} a_n x^n\bigg|_p > 0, \]
+so that $F(x)\ne 0$.
+
+As a consequence, if $F(T)$ is Strassmann and not the zero series in $\Q_p[[T]]$, then $F(p^m)$ is nonzero for all sufficiently large $m$ (specifically, for any $m$ with $p^{-m} < \delta$). Hence, a Strassmann series that vanishes everywhere on $\Z_p$ must be the zero series.
+\end{sol}
+
+\begin{sol}{prob:109} Substituting and applying the binomial theorem, we find that whenever $x,x_0 \in \Z_p$,
+\[ F(x+x_0) =  \sum_{k\ge 0} a_k(x+x_0)^k = \sum_{k \ge 0} \sum_{j \ge 0} \mathbf{1}_{k\ge j} a_k \binom{k}{j} x^j x_0^{k-j}. \]
+We would like to reverse the order of summation. To justify this we appeal to the criterion of Exercise \ref{prob:92}. Put $u_{k,j} = \mathbf{1}_{k\ge j} a_k \binom{k}{j} x^j x_0^{k-j}$. If we set $\epsilon_{N} = \max_{k\ge N} |a_k|_p$, then $|u_{k,j}|_p \le \epsilon_{N}$ whenever $k\ge N$ or $j \ge N$. Since $F(T)$ is a Strassmann series, $\epsilon_N\to 0$ as $N\to\infty$, and so the conditions of Exercise \ref{prob:92} are satisfied. Therefore,
+\begin{align*} F(x+x_0) &= \sum_{k} \sum_{j} u_{k,j} = \sum_{j} \sum_{k} u_{k,j} = \sum_{j\ge 0} \left(\sum_{k\ge j} a_k \binom{k}{j} x_0^{k-j}\right)x^j.
+\end{align*}
+Here the coefficient of $x^j$ is precisely the claimed coefficient $b_j$.
+
+Since $\sum_{j\ge 0} b_j x^j$ converges for all $x \in \Z_p$ (to $F(x+x_0)$), $\sum_{j\ge 0} b_j T^j$ is a Strassmann series.
+\end{sol}
+
+\begin{sol}{prob:110}\index{Strassmann series!if nonzero has finitely many zeros in $\Z_p$} Let $F(T)$ be a Strassmann series, $F(T) \ne 0$. Suppose for a contradiction that $F$ has an infinite number of zeros in $\Z_p$, and let $x_1, x_2, x_3,\dots$ be a sequence of distinct zeros. As $\Z_p$ is compact (Problem \ref{prob:zpcompact}), there is an $x_0 \in \Z_p$ such that some subsequence of $\{x_n\}$ converges to $x_0$.
+
+Problem \ref{prob:109} describes how to construct a Strassmann series $G(T)$ with $G(x) = F(x+x_0)$ for every $x \in \Z_p$. By the choice of $x_0$, every open disc centered at $x_0$ contains infinitely many zeros of $F$. Hence, every open disc centered at $0$ contains infinitely many zeros of $G$. This contradicts Exercise \ref{prob:108} unless $G(T)=0$ in $\Q_p[[T]]$. But that's impossible: If $G(T) = 0$, then $F(x) = G(x-x_0)=0$ for all $x \in \Z_p$. But a nonzero Strassmann series such as $F(T)$ cannot vanish on all of $\Z_p$ (Exercise \ref{prob:109}).
+\end{sol}
+
+
+
+\begin{challenge}\label{pp:entireproduct} We assume familiarity with  infinite products, as defined in \pp~\ref{pp:infprod}. Let $c_1, c_2, c_3, \dots$ be a sequence of elements of $\Q_p$ tending to $0$. By \pp~\ref{pp:infprod}, the infinite product $\prod_{j=1}^{\infty} (1-c_j x)$ determines a well-defined element of $\Q_p$ for all $x \in \Q_p$. Write down a power series $F(T) \in \Q_p[[T]]$ with the property that $F(x) = \prod_{j=1}^{\infty} (1-c_j x)$ for all $x \in \Q_p$. 
+\end{challenge}
+
+\begin{challenge}[continuation; Sch\"{o}be {\cite[p.\ 38]{schoebe}}]\label{pp:noliouville} Let $e_1, e_2, e_3, \dots$ be a sequence of positive integers. For each $x \in \Q_p$, let $A(x) = \prod_{j=1}^{\infty} (1-(p^j x)^{p-1})^{e_j}$. 
+\begin{enumerate}
+\vspace{-0.12in}
+\item[(a)] Prove that $A(x)$ is a well-defined function from $\Q_p$ to $\Q_p$ and that $A(x)$ can be represented by an everywhere convergent power series with $\Q_p$-coefficients.
+\item[(b)] Show that $|A(x)|_p = 1$ if $x \in \Z_p$.
+\item[(c)] Suppose $|x|_p = p^{r}$, where $r$ is a positive integer. Show that $|A(x)|_p \le p^{-e_r} \prod_{j=1}^{r-1} p^{(r-j)(p-1) e_j}$.
+\item[(d)] Describe a method of choosing $e_1, e_2, e_3, \dots$ that guarantees $|A(x)|_p \le |x|_p^{-1}$ whenever $x \in \Q_p\setminus \Z_p$.
+\item[(e)]  Deduce from (a)--(d) that there is an  power series over $\Q_p$ that converges everywhere and induces a bounded but nonconstant function from $\Q_p$ to $\Q_p$. For those who have taken a complex variables course: Explain how this suggests $\Q_p$ is more analogous to $\R$ than to $\C$.
+\end{enumerate}
+\end{challenge}
+
+
+\begin{sol}{prob:111}\index{Bernoulli numbers!associated characterization of Wilson primes} When $p=2$, neither statement holds. So assume $p$ is odd.
+
+By Problem \ref{prob:87}, $\frac{(p-1)!+1}{p} \equiv \sum_{a=1}^{p-1} q_p(a)\pmod{p}$. So it suffices to show that $\sum_{a=1}^{p-1} q_p(a) - (B_{p-1}+\frac{1}{p}-1) \in p \Z_{(p)}$.
+
+By Faulhaber's formula\index{Bernoulli numbers!Faulhaber's formula}\index{Faulhaber's formula}, 
+\[ \sum_{a=1}^{p-1} q_p(a) = \frac{S_{p-1}(p)}{p} -\frac{p-1}{p} = B_{p-1} + \frac{1}{p} -1 + \sum_{j=1}^{p-1} \binom{p-1}{j} B_{p-1-j} \frac{p^{j}}{j+1}.\]
+For each $j=1,2,3,\dots,p-1$, the Bernoulli number $B_{p-1-j} \in \Z_{(p)}$; this is clear for $j=p-1$ (recall that $B_0=1$) and for $j < p-1$ it follows from Exercise \ref{prob:newbern2}. In this same range of $j$, we have $p^j \ge 3^j > j+1$. Thus, $v_p(j+1) < j$, and $v_p(\frac{p^j}{j+1}) = j - v_p(j+1) > 0$.  Consequently, each term in our sum on $j$ belongs to $p\Z_{(p)}$, implying that the sum itself belongs to $p\Z_{(p)}$. But that sum is precisely $\sum_{a=1}^{p-1} q_p(a) - (B_{p-1}+\frac{1}{p}-1)$.
+\end{sol}
+
+\begin{sol}{prob:WJfermat}\index{Teichm\"{u}ller representatives}   By Problem \ref{prob:WJteich} and its solution, $p\equiv 1\pmod{6}$ and $\omega(1+u) = 1 + \omega(u)$. Write $v=\omega(u) + p^k q$, where $q \in \Z_p$. Since $p$ is odd and $p \mid \binom{p}{k}$ for all $k$ between $0$ and $p$,
+\begin{align*}
+  v^p = (\omega(u)+p^k q)^p &\equiv \omega(u)^{p} + \omega(u)^{p-1} p^{k+1} q \pmod{p^{2k+1}p\Z_p} \\
+      &\equiv \omega(u) + p^{k+1} q \pmod{p^{2k+1} p\Z_p}. 
+\end{align*} 
+On the other hand, $1+v = 1 + \omega(u) + p^k q = \omega(u+1) + p^k q$, and (by analogous reasoning to what is displayed above)
+\[ (1+v)^p \equiv \omega(u+1) + p^{k+1} q \pmod{p^{2k+1} p\Z_p}. \]
+Using once more that $1+\omega(u) = \omega(u+1)$, we deduce that $(1+v)^p \equiv 1 + v^p \pmod{p^{2k+1}\Z_p}$. Since both $(1+v)^p$ and $1+v^p$ lie in $\Z$, this last congruence in fact holds modulo $(p^{2k+1} \Z_p) \cap \Z = p^{2k+1} \Z$. 
+
+Let $p=7$. In the course of solving Problem \ref{prob:teichmullercalculation}, we computed that $\omega(2) \equiv 324 \pmod{7^3 \Z_7}$. Taking $v=324$ and $k=3$ in the result of the last paragraph ``explains'' the given example.
+\end{sol}
+
+
+\let\oldaddcontentsline\addcontentsline
+\renewcommand{\addcontentsline}[3]{}
+\begin{thebibliography}{11}
+
+\bibitem{germain} J. Germain, \emph{
+On the equation $a^x \equiv x\pmod{b}$}. 
+Integers \textbf{9} (2009), A47, 629--638.
+
+
+\bibitem{UY} J. Jiménez Urroz and {J.\,L.\,A.} Yebra, \emph{On the equation $a^x\equiv x\pmod{b^n}$}. J. Integer Seq. \textbf{12} (2009), Article 09.8.8, 8 pp.
+
+
+
+\bibitem{mahler61} K. Mahler, \emph{Lectures on Diophantine approximations. Part I: $g$-adic numbers and {R}oth's theorem}, Notre Dame Mathematical Lectures, vol. 7, University of Notre Dame Press, Notre Dame, 1961.
+
+\bibitem{robert91} A. Robert, \emph{A note on the numerators of the Bernoulli numbers}. Exposition. Math. \textbf{9} (1991), 189--191. 
+
+\bibitem{schoebe} W. Schöbe, \emph{Beiträge zur Funktionentheorie in nichtarchimedisch bewerteten Körpern}. Münster: Diss. Math. Univ. Münster, Universitas-Archiv \textbf{42}, Math. Abteilung Nr. 2 (1930), 61 pp.
+
+
+\bibitem{SS} {D.\,B.} Shapiro and {S.\,D.} Shapiro, \emph{Iterated exponents in number theory}. Integers \textbf{7} (2007), A23, 19 pp.
+
+\end{thebibliography}
+\let\addcontentsline\oldaddcontentsline

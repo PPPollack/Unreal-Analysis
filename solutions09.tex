@@ -1,0 +1,176 @@
+\chapter*{Solutions to Set \#10}
+\addcontentsline{toc}{chapter}{Solutions to Set \#10}
+\markboth{Solutions to Set \#10}{Solutions to Set \#10}
+\label{set9sols}
+
+\begin{sol}{prob:F12convergence} 
+We begin by establishing some useful arithmetic properties of the generalized binomial coefficients $\binom{\frac{1}{2}}{k}$ for nonnegative integers $k$.
+
+Fix $k$. Let $\ell$ be an odd prime, and let $A$ be a nonnegative integer with $\frac{1}{2} \equiv A \pmod{\ell^{v_\ell(k!)}\Z_\ell}$; e.g., $A =\frac{1}{2} (\ell^{v_\ell(k!)}+1)$. Since $\binom{A}{k} \in \Z$,
+\[ \ell^{v_\ell(k!)} \mid k! \mid \binom{A}{k} k! = A(A-1)(A-2) \cdots (A-(k-1)), \]
+where the divisibility relations are being asserted in the ring $\Z$. Naturally, these same relations also hold in $\Z_{\ell}$, so that working in $\Z_{\ell}$ modulo $\ell^{v_\ell(k!)}\Z_{\ell}$,
+\[ \frac{1}{2}\left(\frac{1}{2}-1\right) \cdots \left(\frac{1}{2}-(k-1)\right) \equiv A(A-1)\cdots (A-(k-1)) \equiv 0. \]
+It follows that $v_\ell(\frac{1}{2}(\frac{1}{2}-1) \cdots (\frac{1}{2}-(k-1))) \ge v_\ell(k!)$, so that $v_\ell(\binom{\frac{1}{2}}{k})  \ge 0$. % In $\Z_p$, the elements $k!$ and $p^{v_p(k!)}$ are associates. So % let $x_n = \frac{1}{2}(\ell^n+1)$; the $x_n$ are positive integers converging to $\frac12$ in $\Q_\ell$. By the limit laws established in Problem \ref{prob:calclimits}, for every nonnegative integer $k$,
+% \begin{align*} \lim_{n\to\infty} \binom{x_n}{k} &= \lim_{n\to\infty} \frac{x_n(x_n-1)\cdots(x_n-(k-1))}{k!}\\ &= \frac{\frac{1}{2}(\frac{1}{2}-1)\cdots(\frac{1}{2}-(k-1))}{k!} =\binom{\frac{1}{2}}{k}. \end{align*}
+% Therefore, $|\binom{\frac{1}{2}}{k}|_\ell = \lim |\binom{x_n}{k}|_\ell \le 1$ (since each $\binom{x_n}{k} \in \Z$, and $\Z\subset \Z_\ell$). 
+As this holds for all odd primes $\ell$, the rational number $\binom{\frac{1}{2}}{k}$ has denominator a power of $2$.
+
+To determine which power of $2$, we look $2$-adically. Expanding out, $$\binom{\frac{1}{2}}{k} = \frac{1\cdot (1-2)\cdot (1-2\cdot 2) \cdots (1-2(k-1))}{2^k k!}.$$  
+The numerator on the right is odd, and so the power of $2$ in the denominator of $\binom{\frac{1}{2}}{k}$ is $2^{k+v_2(k!)}$. 
+
+Collecting what we know so far: $\binom{\frac12}{k}$ is a rational number with denominator $2^{k+v_2(k!)}$.
+
+We are now well-positioned to decide when $B_{\frac{1}{2}}(x)$ converges --- equivalently, when $|\binom{\frac{1}{2}}{k} x^k|_p \to 0$ (as $k\to\infty$). For use momentarily, we recall that $v_2(k!) \le k$, so that $k+v_2(k!) \le 2k$. 
+
+
+Suppose $p$ is odd. Then $|\binom{\frac12}{k}|_p\le 1$, and $|\binom{\frac{1}{2}}{k} x^k|_p \le |x|_p^{k}$. If $|x|_p \le 1/p$, then $|x|_p^{k} \to 0$ as $k\to\infty$. Thus, $B_{\frac{1}{2}}(x)$ converges for these $x$.
+
+Suppose instead that $p=2$. If $x \in \Q_2$, then $|\binom{\frac{1}{2}}{k} x^k|_2 = 2^{k+v_2(k!)} |x|_2^{k}\le 2^{2k} |x|_2^{k}$. This last expression tends to $0$ if $|x|_2 \le 1/2^{3}$. 
+
+These conditions on $x$ turn out to be   necessary for convergence. 
+
+\begin{lem} Let $F(T) \in \Q_p[[T]]$. If $F(x_0)$ converges ($x_0 \in \Q_p$), then $F(x)$ converges for all $x \in \Q_p$ with $|x|_p \le |x_0|_p$.
+\end{lem}
+\begin{proof} Write $F(T) = \sum_{k\ge 0} a_k T^k$. If $|a_k x_0^k|_p\to 0$, and $|x|_p \le |x_0|_p$, then  $|a_k x^k|_p\to 0$.
+\end{proof}
+
+Seeking a contradiction, suppose $p$ is odd and that $B_{\frac12}(x_0)$ converges for a value of $x_0$ with $|x_0|_p > 1/p$. Then $|x_0|_p \ge 1$. Invoking the lemma, $B_{\frac12}(x)$ converges whenever $|x|_p\le 1$, i.e., on all of $\Z_p$. But whenever $B_{\frac12}(x)$ converges, it converges to a square root of $1+x$. We infer that that every element of $\Z_p$ has a square root in $\Q_p$ --- absurd! 
+
+Similarly, if $B_{\frac{1}{2}}(x)$ converges for an $x_0\in \Q_2$ with $|x_0|_2 > 1/2^3$, then it converges whenever $|x|_2 \le 1/2^2$. But then $B_{\frac{1}{2}}(4)$ converges to a square root of $5$ in $\Q_2$, whereas $5 \notin (\Q_2^{\times})^2$!
+\end{sol}
+
+\begin{challenge}\label{pp:binomial0}\mbox{ }
+\vspace{-0.12in} Establish the following claims.
+\begin{enumerate}
+    \item[(a)] If $x \in \Z_p$ and $k$ is a nonnegative integer, then $\binom{x}{k}:= \frac{x(x-1)\cdots(x-(k-1))}{k!} \in \Z_{p}$.
+    \item[(b)] If $x \in \Q$ and $k$ is a positive integer, then every prime appearing in the denominator of $\binom{x}{k}$ appears in the denominator of $x$, and vice versa.
+\end{enumerate}
+\end{challenge}
+
+\begin{challenge}(continuation of \pp~\ref{pp:binomial0})\label{pp:binomial1} Let $m\in \Z^{+}$.
+\begin{enumerate}
+\vspace{-0.12in}
+\item[(a)] Show that if $p$ is a prime not dividing $m$ and $x \in p\Z_p$, then $\sum_{k\ge 0} \binom{\frac{1}{m}}{k} x^k$ converges to (one value of) $\sqrt[m]{1+x}$ in $\Q_p$.
+\item[(b)] Now assume $p\mid m$. Show that the conclusion of (a) holds if either $p$ is odd and $v_p(x) \ge v_p(m)+1$, or $p=2$ and $v_2(x) \ge v_2(m)+2$.
+\end{enumerate}
+
+\end{challenge}
+
+\begin{sol}{prob:differentroots} When $x$ is real and $|x| < 1$, the series $B_{\frac12}(x)$ converges to the positive square root of $1+x$. So over the real numbers, $B_{\frac12}(\frac{9}{16}) = \frac{5}{4}$.
+
+Suppose now that $p$ is an odd prime and that $x \in p\Z_p$. Recalling that $\binom{\frac{1}{2}}{k} \in \Z_p$ for each $k=0,1,2,\dots$, we find that
+$|B_{\frac{1}{2}}(x) - 1|_p \le \max_{k\ge 1} |\binom{\frac{1}{2}}{k} x^k|_p \le 1/p$. Thus, $B_{\frac12}(x) \in 1 + p\Z_{p}$. 
+
+When $p=3$ and $x=\frac{9}{16}$, the (unique) square root of $1+x$ belonging to $1+3\Z_3$ is $-\frac{5}{4}$.
+\end{sol}
+
+
+
+\begin{sol}{prob:113}\index{Taylor's formula} These results are not particular to $\Z_p$ and $\Q_p$. Let $D$ be any domain of characteristic $0$ with fraction field $K$. (For example, we could take $D=\Z_p$ and $K=\Q_p$.) Then Taylor's formula holds for polynomials over $K$: If $F(T) \in K[T]$ and $a \in K$, then
+\[ F(a+T) = \sum_{j \ge 0} \frac{F^{(j)}{(a)}}{j!} T^j.\]
+For the proof, fix $a\in K$. Consider $K[T]$ as a $K$-vector space and observe that both  sides of the claimed equation represent $K$-linear functions of $F(T) \in K[T]$. So the identity will be established if it is shown for $F(T) = 1, T, T^2, \dots$ (a $K$-basis for $K[T]$). When $F(T) = T^n$,  the left-hand side is $(a+T)^n$ while the right is
+\[ \sum_{j\ge 0} \one_{n\ge j} \frac{n(n-1)(n-2)\dots(n-(j-1))}{j!} a^{n-j} T^j = \sum_{0\le j \le n} \binom{n}{j} a^{n-j} T^j. \]
+This last expression is of course the binomial expansion of $(a+T)^n$. 
+
+Next, we show that if $F(T) \in D[T]$, then $\frac{1}{j!} F^{(j)}(T) \in D[T]$ for each nonnegative integer $j$. We fix $j$ and check the claim for $F(T) = 1, T, T^2, \dots$ (a $D$-basis for $D[T]$). This is straightforward: If $F(T) = T^n$, then $\frac{1}{j!} F^{(j)}(T) = \one_{n\ge j} \binom{n}{j} T^{n-j} \in \Z[T] \subset D[T]$.
+\end{sol}
+
+
+
+\begin{sol}{prob:114}\index{Newton's method} Taylor's formula gives $F(\tilde{x}) = \sum_{j \ge 0} \frac{1}{j!} F^{(j)}(x) (-F(x)/F'(x))^j$. The terms of the sum corresponding to $j=0$ and $j=1$ cancel each other out (being $F(x)$ and $-F(x)$, respectively), so that
+\[ |F(\tilde{x})|_p = \left|\sum_{j\ge 2} \frac{F^{(j)}(x)}{j!} \left(-\frac{F(x)}{F'(x)}\right)^j\right|_p\le \max_{j\ge 2} \left|\frac{F^{(j)}(x)}{j!} \left(-\frac{F(x)}{F'(x)}\right)^j\right|_p.\]
+Viewing $F^{(j)}(x)/j!$ as the evaluation of the polynomial $F^{(j)}(T)/j! \in \Z_p[T]$ at the point $x \in \Z_p$, it is clear that $|F^{(j)}(x)/j!|_p \le 1$ for every $j$. Furthermore, $|F'(x)|_p=1$ while $|F(x)|_p \le 1$, so that $|(-F(x)/F'(x))^j|_p = |F(x)|_p^{j} \le |F(x)|_p^2$ for each $j\ge 2$. Hence, the above maximum does not exceed $|F(x)|_p^2$. 
+\end{sol}
+
+\begin{sol}{prob:115}\index{Hensel's lemma} We iteratively apply Exercise \ref{prob:114} in order to construct a Cauchy sequence of elements of $\Z_p$ converging to a root of $F$. 
+
+Let $n \in \Z^{+}$. Suppose that $x_n \in \Z_p$ satisfies both \[ |F(x_n)|_p < 1 \quad\text{and}\quad |F'(x_n)|_p=1.\] Let $x_{n+1} = x_n - \frac{F(x_n)}{F'(x_n)}$. By Exercise \ref{prob:114},
+\[ |F(x_{n+1})|_p \le |F(x_n)|_p^2 < 1.\] Furthermore, $x_{n+1}\equiv x_n\pmod{p\Z_p}$, implying $F'(x_{n+1})\equiv F'(x_n)\not\equiv 0\pmod{p\Z_p}$, so that \[ |F'(x_{n+1})|_p=1.\] Thus, the hypotheses we originally assumed for $x_n$ hold for $x_{n+1}$, allowing us to reboot the procedure with $x_{n+1}$ replacing $x_{n}$.
+
+Starting from the given $x_1$, we produce in this way a sequence $\{x_n\}$ of elements of $\Z_p$ satisfying
+\begin{equation}\tag{*} |F(x_n)|_p \le |F(x_{n-1})|_{p}^2 \le \dots \le |F(x_1)|_p^{2^{n-1}} \end{equation}
+for each $n=1,2,3,\dots$. As $|F(x_1)|_p < 1$, (*) guarantees that $F(x_n)$ converges (rapidly!) to $0$.
+
+Observe that $|x_{n+1} - x_{n}|_p = |F(x_n)/F'(x_n)|_p = |F(x_n)|_p$, for every $n$. Therefore, $\{x_n\}$ is Cauchy, and $x_n\to x$ for some $x \in \Z_p$. Hence, $F(x) = F(\lim x_n) = \lim F(x_n) = 0$. (We use here that polynomials preserve limits, which follows from Exercise \ref{prob:28andahalf}.)
+
+It remains only to argue that $x \equiv x_1\pmod{p\Z_p}$. This is immediate from the identity $x - x_1 = \sum_{k \ge 1} (x_{k+1}-x_k)$ expressing $x-x_1$ as a sum of terms from $p\Z_p$.
+\end{sol}
+
+\begin{challenge}[a stronger version of Hensel's Lemma]\index{Hensel's lemma} Let $F(T) \in \Z_p[T]$, and suppose that $a\in \Z_p$ satisfies $|F(a)|_p < |F'(a)|_p^2$. Prove that starting from $a$, Newton's method converges to a root $x$ of $F$ with $|x-a|_p = |\frac{F(a)}{F'(a)}|_p < |F'(a)|_p$. 
+\end{challenge}
+
+
+\begin{sol}{prob:116} Express the $\Q[T]$-ideal $F(T)\Q[T] + F'(T)\Q[T]$ as  $D(T) \Q[T]$, where $D(T) \in \Q[T]$. Since $F(T), F'(T) \in D(T) \Q[T]$, each complex root of $D(T)$ is a common zero of $F(T)$ and $F'(T)$ --- in other words, a multiple root of $F(T)$.
+
+We are given that $F(T)$ has distinct complex roots. Therefore, $D(T)$ has no complex roots, meaning that $D(T)$ is a nonzero constant. As a result, $F(T)\Q[T] + F'(T)\Q[T] = D(T)\Q[T]= \Q[T]$, and there are $X(T), Y(T) \in \Q[T]$ with $F(T) X(T) + F'(T) Y(T) = 1$. Choose $R \in \Z^{+}$ so that $\hat{X}(T):=R X(T), \hat{Y}(T):= R Y(T) \in \Z[T]$. Then 
+\[ F(T) \hat{X}(T) + F'(T) \hat{Y}(T) = R.\]
+Taking this last equation mod $p$, we find that the mod $p$ reductions of $F(T)$ and $F'(T)$ generate the unit ideal in $(\Z/p)[T]$ whenever $p\nmid R$. Hence, $F(T)$ and $F'(T)$ are coprime in $(\Z/p)[T]$ for each prime $p$ not dividing $R$.
+\end{sol}
+
+\begin{sol}{prob:117} According to Problem \ref{prob:24}, there are infinitely many primes $p$ for which $F$ has a root in $\F_p$. By Problem \ref{prob:116}, there are only finitely many primes $p$ for which $F$ and $F'$ have a common root in $\F_p$. So for infinitely many $p$, we can find an $x_1 \in \Z$ with $F(x_1)\equiv 0\pmod{p}$ and $F'(x_1)\not\equiv 0\pmod{p}$. For each of these primes, $F$ has a root in $\Z_p$ by Problem \ref{prob:115}.
+\end{sol}
+
+\begin{challenge}[bounding the number of modular roots of a polynomial] Suppose $F(T) \in \Z[T]$ is a nonconstant polynomial with distinct complex roots, and let $R$ be a nonzero integer belonging to $F(T) \Z[T] + F'(T) \Z[T]$ (as in Problem \ref{prob:116}). 
+\begin{enumerate}
+\vspace{-0.12in}
+\item[(a)] Show that if $K\ge 2 v_p(R)+1$, and $a$ is an integer with $F(a)\equiv 0\pmod{p^{K}}$, then there is a root $x \in \Z_p$ of $F$ with $x\equiv a\pmod{p^{K-v_p(R)}\Z_p}$.
+\item[(b)] Continue to assume $K\ge 2 v_p(R)+1$. Deduce from $F$ having at most $\deg{F}$ roots in (the  domain) $\Z_p$ that $F$ has at most $(\deg{F})p^{v_p(R)}$ roots in $\Z/p^K$.
+\item[(c)] Finally, show that for every $m\in\Z^{+}$, the number of roots of $F$ in $\Z/m$ is at most $(\deg{F})^{\nu(m)} R^2$, where $\nu(m)$ is the count of distinct primes dividing $m$.
+\end{enumerate}
+\vspace{-0.11in}
+This bound, which finds many applications in analytic number theory, was proved independently by Nagell \cite{nagell} and Ore \cite{ore} in 1921.
+\end{challenge}
+
+\begin{sol}{prob:118} If $F$ has a root $\theta' \in \Q_p$, let $K' = \Q(\theta')$ be the field generated by $\theta'$ over the copy of $\Q$ within $\Q_p$. By standard field theory, both $K$ and $K'$ are isomorphic to $\Q[T]/(F(T))$, via isomorphisms identifying $\theta$ and $\theta'$ with the class of $T$ mod $F(T)$. Daisy chain the isomorphism $K \xrightarrow[]{\sim} \Q[T]/(F(T))$ with the isomorphism $\Q[T]/(F(T)) \xrightarrow[]{\sim} K'$ to determine an embedding of $K$ into $\Q_p$. 
+
+Such a $\theta'$ exists for infinitely many $p$ by Exercise \ref{prob:117}.
+\end{sol}
+
+\begin{sol}{prob:onlyhomomorphism} Let $\phi\colon \Q_p\to \Q_p$ be a homomorphism. As every ring homomorphism sends $n\cdot 1$ to $n\cdot 1$ (for all $n \in \Z$), it is immediate that $\phi$ fixes $\Z$. Furthermore, for any $a, b \in \Z$ with $b \ne 0$, we have
+\[ \phi\left(\frac{a}{b}\right) b = \phi\left(\frac{a}{b}\right)\phi(b) =  \phi(a) = a. \]
+Thus, $\phi\left(\frac{a}{b}\right)=\frac{a}{b}$, meaning that $\phi$ in fact fixes all of $\Q$.
+
+Now let $x$ be an arbitrary element of $\Q_p$. Since $\Q$ is dense in $\Q_p$, there is a sequence of rational numbers $\{x_n\}$ for which $x_n \to x$. We will show that $\phi(x_n) \to \phi(x)$. Since each $\phi(x_n) = x_n$, and $x_n\to x$, it must be that $\phi(x)=x$. As $x$ was arbitrary, $\phi$ is the identity map.
+
+The algebraic characterization of $\Z_p^{\times}$ from Exercise \ref{prob:103} implies that $\phi$ maps $\Z_{p}^{\times}$ into $\Z_p^{\times}$.  To use this, suppose $x_n-x \ne 0$ (where $n$ is a positive integer index). Then $x_n - x = p^{v_p(x_n-x)} u_n$ for some $u_n \in \Z_p^{\times}$, and
+\[ \phi(x_n) - \phi(x) = \phi(x_n - x) = \phi(p^{v_p(x_n-x)}) \phi(u_n) = p^{v_p(x_n-x)} u_n' \]
+for some $u_n' \in \Z_{p}^{\times}$. Hence, $$|\phi(x_n)-\phi(x)|_p = p^{-v_p(x_n-x)} = |x_n-x|_p.$$ Of course, the equation $|\phi(x_n)-\phi(x)|_p = |x_n-x|_p$ also holds when $x_n-x=0$.
+
+We are assuming $x_n\to x$. Therefore, $|\phi(x_n)-\phi(x)|_p = |x_n-x|_p \to 0$. Hence, $\phi(x_n)\to \phi(x)$, as desired.
+\end{sol}
+
+\begin{sol}{prob:nohomomorphism} Suppose first that $p$ and $q$ are odd primes with $q\ne p$. Select $n\in \Z$ with $\legendre{n}{q}=-1$, and choose $a\in \Z$ with $a\equiv 1\pmod{p}$ and $a\equiv n\pmod{q}$. Then $a$ is a square in $\Q_p$ but not a square in $\Q_q$ (see Problem \ref{prob:99}). Since $a \in \Z$, any homomorphism from $\Q_p$ to $\Q_q$ must send $a$ to $a$. However, homomorphisms always send squares to squares, so no homomorphism from $\Q_p$ to $\Q_q$ can exist.  If $p=2$ and $q$ is odd, the same argument works if we select $a\equiv 1\pmod{8}$ and $a\equiv n\pmod{q}$ (see Problem \ref{prob:101}). If $p$ is odd and $q=2$, choose $a\equiv1\pmod{p}$ and $a\equiv 3\pmod{8}$. 
+
+The same argument works to demonstrate the impossibility of a homomorphism from $\Q_p$ to $\R$. If $p$ is odd, select $a$ with $a\equiv 1\pmod{p}$ and $a<0$. If $p=2$, pick $a\equiv 1\pmod{8}$ with $a<0$.
+\end{sol}
+
+
+% \begin{challenge} For which pairs $(n,p)$, with $n \in \Z^{+}$ and $p$ prime, is there an element of order $n$  in $\Q_p^{\times}$? 
+% \end{challenge}
+
+\begin{sol}{prob:mahlerirrational}\index{$\Z_g$, ring of $g$-adic integers!example of $\Z_{10}$}  Suppose for a contradiction that $\alpha:= 0.2481632\dots \in \Q$. Then the decimal expansion of $\alpha$ is eventually periodic with period $\ell$, say.
+
+Let $\beta \in  \Z_{10}$ be the $10$-adic limit of $2^{4\cdot 5^n}$ (see Problem \ref{prob:106}). Write the $10$-adic expansion of $\beta$ as $(\dots d_5 d_4 d_3 d_2 d_1 d_0)_{10}$, representing $d_0 + d_1\cdot 10 + d_2\cdot 10^2 + \dots$. For each fixed $N$ and all large $n$, the decimal expansion of $2^{4\cdot 5^n}$ terminates with the string $d_N d_{N-1} \dots d_1 d_0$. Therefore, this digit string appears infinitely often in the expansion of $\alpha$. Fixing any nonnegative integer $n_0$, and choosing $N \ge n_0+\ell$, we deduce from the periodicity of $\alpha$'s expansion that $d_{n_0} = d_{n_0+\ell}$. Since this holds for each $n_0$, the $10$-adic expansion of $\beta$ is (purely) periodic with period $\ell$, contradicting the result of Problem \ref{prob:106}.
+\end{sol}
+
+\begin{challenge}[Mahler \cite{mahler}] Let $g$ be an integer at least $2$. Show that the real number $0.(g)(g^2)(g^3)\dots$ obtained by concatenating the decimal expansions of $g, g^2, g^3,\dots$ is irrational.
+\end{challenge}
+
+
+
+
+\renewcommand\refname{\normalsize References}
+\let\oldaddcontentsline\addcontentsline
+\renewcommand{\addcontentsline}[3]{}
+\begin{thebibliography}{11}
+
+\bibitem{mahler}
+K. Mahler, \emph{On some irrational decimal fractions}. J. Number Theory \textbf{13} (1981), 268--269.
+
+\bibitem{nagell}
+T. Nagell, \emph{Généralisation d'un théorème de Tchebycheff}. J. Math. Pures Appl. \textbf{8} (1921), 343--356.
+
+\bibitem{ore} O. Ore, \emph{Anzahl der Wurzeln h\"{o}herer Kongruenzen}.
+Norsk Mat. Tidsskr. \textbf{3} (1921), 63--66.
+\end{thebibliography}
+\let\addcontentsline\oldaddcontentsline

@@ -1,0 +1,83 @@
+\chapter*{$p$-Set \#10}
+\addcontentsline{toc}{chapter}{Set \#10}
+\markboth{Set \#10}{Set \#10}
+
+\setlength{\epigraphwidth}{2.35in}
+\renewcommand{\epigraphflush}{flushright}
+\epigraph{If you claim a series sums to $S$\\
+Your metric you must not suppress\\
+The danger, you can now see \\
+Is that another may disagree \\
+And you may both be right: what a mess!}{Edward B. Burger\\ Thomas Struppeck}
+
+\section*{I \dots Have \dots the \dots Power\dots (Series)}
+One can often leverage identities from the real universe to establish corresponding results in the $p$-adic realm. As a proof of concept, consider the following formula you may have encountered in your study of Taylor series: For all real numbers $x$ with $|x| < 1$, 
+\begin{align*} \sqrt{1+x} &= 1 +\frac12 x -\frac18 x^2 + \frac1{16} x^3 - \frac{5}{128}x^4+\dots
+\\ 
+&=\sum_{k\ge 0} \binom{\frac12}{k} x^k, \qquad\text{where}\quad\binom{\frac12}{k} := \frac{\frac{1}{2}(\frac{1}{2}-1)\cdots(\frac{1}{2}-(k-1))}{k!}. \end{align*}
+We will argue that the same sum on $k$ defines a square root of $1+x$ in $\Q_p$ whenever it converges.
+
+Getting from $\R$ to $\Q_p$ requires a stopover in the land of formal power series. Let $B_{\frac12}(T) = \sum_{k\ge 0} \binom{\frac12}{k} T^k \in \Q[[T]]$, and let $C(T) = B_{\frac 12}(T)^2$, the formal square of $B_{\frac{1}{2}}(T)$. We claim that $C(T)=1+T$.
+
+To fashion a proof, suppose $x$ is a real number with $|x|<1$. Then $B_{\frac12}(x)$ converges absolutely (e.g., by the ratio test). So if we multiply $B_{\frac12}(x)$ by $B_{\frac12}(x)$, we can reshuffle the terms as we please. One such regrouping gives us $C(x)$. On the other hand, our ``real world'' identity says that $B_{\frac12}(x)^2 = 1+x$ whenever $|x| < 1$. It follows that $C(x) - (1+x)=0$ when $|x| < 1$. But a power series that vanishes on an open interval around $0$ has all its coefficients equal to $0$. This forces $C(T) = 1+T$, as formal series.
+
+Armed with this formal identity, we can head back to $\Q_p$. Suppose we have in hand an $x\in \Q_p$ for which $B_{\frac12}(x)$ converges. If we multiply $B_{\frac12}(x)$ by $B_{\frac12}(x)$, we can rearrange the result into $C(x)$ --- this time justifying ourselves not on the basis of absolute convergence but by an appeal to Problem \ref{prob:93}. Since $C(x)=1+x$, this shows that $B_{\frac{1}{2}}(x)$ represents a square root of $1+x$ in $\Q_p$ whenever $B_{\frac{1}{2}}(x)$ converges.
+
+\begin{prob}\label{prob:F12convergence} If $p$ is odd, then $B_{\frac12}(x)$ converges when $|x|_p \le 1/p$. If $p=2$, then $B_{\frac12}(x)$ converges when $|x|_2 \le 1/2^3$. Are these conditions necessary for convergence?
+\end{prob}
+
+\begin{prob}\label{prob:differentroots} $B_{\frac12}(\frac{9}{16}) = \sum_{k\ge 0} \binom{\frac12}{k} (\frac{9}{16})^{k}$ converges to $\frac54$ in $\R$ but to $-\frac54$ in $\Q_3$.\end{prob}
+
+
+
+%\vspace{-0.1in}
+
+
+
+
+
+\section*{Lifting and Embedding}
+
+\begin{prob}[Taylor's Formula]\label{prob:113} If $F(T) \in \Q_p[T]$, and $a \in \Q_p$, then 
+\[ F(a+T) = \sum_{j\ge 0} \frac{F^{(j)}{(a)}}{j!} T^j. \]
+Furthermore: If $F(T) \in \Z_p[T]$, so is $\frac{1}{j!} F^{(j)}(T)$, for all nonnegative integers $j$.\index{Taylor's formula}
+\end{prob}
+
+\begin{prob}[$p$-adic Newton's method]\label{prob:114}\index{Newton's method} Let $F(T) \in \Z_p[T]$.  If $x \in \Z_p$ and $|F'(x)|_p=1$, then $\tilde{x} := x- \frac{F(x)}{F'(x)}$ satisfies $|F(\tilde{x})|_p \le |F(x)|_p^2$.
+% \equiv 0\pmod{p\Z_p}$ and $F'(x_1)\not\equiv 0\pmod{p\Z_p}$. We can inductively define a sequence of elements of $\Z_p$ by setting
+% \[ x_{n+1} = x_n - \frac{F(x_n)}{F'(x_n)},\quad n=1,2,3,\dots. \]
+% Each $x_{n+1}\equiv x_n\pmod{p^{2^{n-1}}\Z_p}$ and each $F(x_n)\equiv 0 \pmod{p^{2^{n-1}}\Z_p}$.  
+\end{prob}
+ 
+
+\begin{prob}[Hensel's Lemma]\label{prob:115}\index{Hensel's lemma} Let $F(T) \in \Z_p[T]$. Suppose $x_1 \in \Z_p$ satisfies $F(x_1) \equiv 0\pmod{p\Z_p}$ and $F'(x_1)\not\equiv 0\pmod{p\Z_p}$. Then $F$ has a zero $x\in \Z_p$ satisfying $x\equiv x_1\pmod{p\Z_p}$.
+\end{prob}
+
+
+\begin{prob}\label{prob:116} Suppose $F(T) \in \Z[T]$ is nonconstant with all complex roots distinct. Then $F(T) \Q[T] + F'(T) \Q[T] = \Q[T]$. Hence, $F(T)\Z[T] + F'(T) \Z[T]$ contains a nonzero integer $R$.  Deduce: $F(T)$ and $F'(T)$ are coprime over $\Z/p$ for all but finitely many $p$.
+\end{prob}
+
+\begin{prob}\label{prob:117} Every nonconstant $F(T) \in \Z[T]$ has a root in $\Z_p$ for infinitely many primes $p$.
+\end{prob}
+
+\begin{prob}\label{ex:embedding}\label{prob:118} Let $K$ be a number field (a finite extension of $\Q$). By the primitive element theorem, $K = \Q(\theta)$ for some $\theta\in K$. Choose $F(T) \in \Z[T]$ irreducible over $\Q$ and vanishing at $\theta$. Then $K$ embeds into $\Q_p$ whenever $F(T)$ has a root in $\Q_p$. Deduce: There is an embedding $K \hookrightarrow \Q_p$ for infinitely many $p$.
+\end{prob}
+
+
+\section*{Don't Ever Change}
+\begin{prob}\label{prob:onlyhomomorphism} The only ring homomorphism from $\Q_p$ to $\Q_p$ is the identity.
+\end{prob}
+
+\begin{prob}\label{prob:nohomomorphism} There is no ring homomorphism from $\Q_p$ to $\Q_q$ ($q$ prime, $q\ne p$) or to $\R$.
+% \footnote{``\dots no manner of squinting seems to be able to make $\R$ the least bit mistakable for any
+% of the $p$-adic fields, nor are the $p$-adic fields $\Q_p$ isomorphic for distinct $p$. A major
+% theme in the development of Number Theory has been to try to bring $\R$ somewhat more into line with the $p$-adic fields; a major mystery is why $\R$ resists this attempt
+% so strenuously.'' --- Barry Mazur}
+\end{prob}
+
+{\scriptsize There \emph{is} a field embedding of $\Q_p$ into $\C$ (assuming the Axiom of Choice). In fact, there are many such embeddings, but none are canonical, and none carry convergent sequences in $\Q_p$ to convergent sequences in $\C$. Thus (channeling Hermann Weyl\footnote{Weyl famously wrote ``The introduction of numbers as coordinates \dots\,is an act of violence.''}), choosing such an embedding must always be regarded as something of a brute act.}
+
+\section*{Is Sticking Together Irrational?}
+\begin{prob}[Mahler]\label{prob:mahlerirrational} The real number $0.248163264128\dots$ obtained by concatenating the decimal digits of powers of $2$ is irrational.
+\end{prob}
+

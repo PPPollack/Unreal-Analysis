@@ -1,0 +1,131 @@
+\chapter*{$p$-Set \#7}
+\addcontentsline{toc}{chapter}{Set \#7}
+\markboth{Set \#7}{Set \#7}
+
+
+
+\section*{You Complete Me}
+%\setlength{\epigraphwidth}{0.53\textwidth} 
+\epigraph{Why does $\Q$ want to grow to $\R$ or $\Q_2$ or $\Q_3$? Its heart has holes, for example at $\sqrt{2}$ and $\sqrt{3}$. This
+is similar to mankind; we can grow to be big boys or big girls, but there is still some sadness in our hearts, and we grow to love another person.\index{sadness in our hearts}}{Kazuya Kato}
+% \doubleepigrapha{Why does $\Q$ want to grow to $\R$ or $\Q_2$ or $\Q_3$? Its heart has holes, for example at $\sqrt{2}$ and $\sqrt{3}$. This
+% is similar to mankind; we can grow to be big boys or big girls, but there is still some sadness in our hearts, and we grow to love another person.}{Kazuya Kato}{Empty spaces fill me up with holes\\
+% Distant limits with no place here to go\\
+% Without them within me I fail Cauchy's test\\
+% Where I converge is anybody's guess}{Keith Conrad, \emph{Incomplete} (Backstreet Boys song parody)}
+\setlength{\epigraphwidth}{0.45\textwidth}  
+
+ 
+Let $(K,|\cdot|)$ be a valued field. We call $K$ \textsf{complete}\index{completeness of a valued field} if every Cauchy sequence of elements of $K$ converges to an element of $K$. Intuitively, completeness means that ``everything in the world happens for a reason''\footnote{\textsc{Disclaimer}: ``Everything in the world'' means every occurrence of a sequence being Cauchy.}: the far-out terms of a sequence only clump together when they have a compelling justification for doing so, namely heading towards a single value.
+
+\begin{prob}\label{ex:zpcomplete}\label{prob:76} Every Cauchy sequence in $\Z_p$ has a limit belonging to $\Z_p$.
+\end{prob}
+
+\begin{prob}\label{ex:qpcomplete}\label{prob:77} Every Cauchy sequence in $\Q_p$ has a limit belonging to $\Q_p$. That is, $\Q_p$ is complete.\index{$\Q_p$, field of $p$-adic numbers!is complete}
+\end{prob}
+
+\begin{prob}\label{prob:77andahalf} In $\Q_5$, $\lim 2^{5^n}$ is a $4$th root of $1$. Is $\lim 2^{5^n} \in \Q$?
+\end{prob}
+
+\begin{prob}\label{prob:78} $\Z$ is \textsf{dense} in $\Z_p$. In other words, every element of $\Z_p$ is the limit of a sequence of terms from $\Z$.\index{$\Z_p$, ring of $p$-adic integers!has $\Z$ as a dense subset}
+\end{prob}
+
+\begin{prob}\label{prob:79} $\Q$ is dense in $\Q_p$.\index{$\Q_p$, field of $p$-adic numbers!has $\Q$ as a dense subset}
+\end{prob}
+
+Suppose $K$ and $L$ are fields equipped with absolute values and that the absolute value $|\cdot|$ on $L$ extends the absolute value on $K$. If $(L,|\cdot|)$ is complete and $K$ is a dense subset of $L$, we call $L$ the \textsf{completion of $K$ with respect to $|\cdot|$}.\index{completion of a valued field} For example, $\R$ is the completion of $\Q$ with respect to $|\cdot|_{\infty}$. By Exercises \ref{ex:qpcomplete} and \ref{prob:79}, $\Q_p$ is the completion of $\Q$ with respect to $|\cdot|_p$. 
+
+Why do we say \underline{the} completion and not \underline{a} completion? Completions are unique, up to isometric (absolute-value preserving) isomorphism. 
+
+\begin{prob}\label{prob:80}\index{completion of a valued field!is unique} If $(L,|\cdot|)$ and $(L',|\cdot|')$ are two completions of the same valued field $(K,|\cdot|_0)$, then there is an isomorphism $\phi\colon L \to L'$ that fixes $K$ and satisfies $|\phi(x)|' = |x|$ for all $x \in L$.
+\end{prob}
+
+
+\section*{Hands On, Digits Out}
+% %\setlength{\epigraphwidth}{0.58\textwidth}
+% \epigraph{Expansion in $\Z_p$ is just like decimal expansion, except that 10 is not prime and the expansion goes the wrong way.}{Hendrik Lenstra}
+% %\setlength{\epigraphwidth}{0.45\textwidth}
+
+\begin{prob}\label{prob:81} If $c_0, c_1, c_2, \dots$ is any sequence of integers, then $\sum_{k\ge 0} c_k p^k$ converges to an element of $\Z_p$.
+\end{prob}
+
+\vspace{-0.22in}
+\testrule
+Restricting the ``digits'' $c_k$ in Problem \ref{prob:81} to $\{0,1,2,\dots,p-1\}$, we find that every infinite base $p$ expansion determines an element of $\Z_p$. What about the other way around? Does every element of $\Z_p$ admit an infinite base $p$ expansion? 
+
+Let's suppose that $x\in \Z_p$ can be expanded in base $p$ and see where this leads us. Write $x = c_0 + c_1 p + c_2 p^2 + \dots$, with all $c_i \in \{0,1,\dots,p-1\}$. Then the digit in the $p^k$-place is given by
+\[ c_k = \frac{(c_0 + c_1 p + \dots + c_k p^k) - (c_0 + c_1 p + \dots + c_{k-1}p^{k-1})}{p^k}.\]
+The parenthesized terms in the numerator are the (least nonnegative integer) reductions of $x$ modulo $p^{k+1}\Z_p$ and modulo $p^k\Z_p$. (Make sure you see why!) So we've determined the digits $c_k$ in any possible expansion of $x$. Now that we know to try these digits, we are home free, as you are asked to check in the next exercise.
+\testruletwo
+
+\begin{prob}\label{prob:82}\index{$\Z_p$, ring of $p$-adic integers!base $p$ expansions of elements} Let $x \in \Z_p$, and let $x_k$ ($k=0, 1,2,3,\dots$) be the unique integer in the range $0 \le x_k < p^k$ with $x\equiv x_k\pmod{p^k\Z_p}$. Define
+\[ c_k = \frac{x_{k+1}-x_k}{p^k} \quad\text{for $k=0,1,2,\dots$}, \]
+Then each $c_k \in \{0,1,2,\dots,p-1\}$, each $x_k = c_0 + c_1 p + \dots  + c_{k-1} p^{k-1}$, and 
+\[ x = c_0 + c_1 p + c_2 p^2 + c_3 p^3 + \dots. \] 
+{\scriptsize Thus, the (finite) base $p$ expansions of the $x_k$ coalesce to an infinite base $p$ expansion of $x$. The representation produced in this way is not merely \emph{an} infinite base $p$ expansion of $x$, but --- as the lead-in to the problem establishes --- its \emph{unique} base $p$ expansion.}
+\end{prob}
+
+
+% \begin{prob}\label{ex:digitzp}\label{prob:83} The  expansion constructed in Exercise \ref{prob:82} gives the only way to write $x$ as $c_0 + c_1 p + c_2 p^2  \dots$, with each $c_i \in \{0,1,2,\dots,p-1\}$.
+% \end{prob}
+
+% \begin{prob} Let $x \in \Z_p$. For each $k=0,1,2,\dots$, let $x_k$ be defined as in Problem \ref{prob:82}. If the familiar base $p$ of expansion of $x_k$ has the form $x_k = c_0 + c_1 p + \dots + c_{k-1} p^{k-1}$, then the canonical expansion of $x$ begins as $x=c_0 + c_1 p + \dots + c_{k-1} p^{k-1} + \dots$. 
+% \end{prob}
+
+\begin{prob}[canonical expansions for elements of $\Q_p$]\label{prob:qpdigits}\label{prob:84}\index{$\Q_p$, field of $p$-adic numbers!base $p$ expansions of elements}\index{canonical expansions of elements of $\Q_p$} For each $x \in \Q_p$, there is a unique two-sided sequence of integers $\{c_k\}_{k=-\infty}^{\infty}$ satisfying
+\begin{enumerate}
+    \item[(i)] each $c_k \in \{0,1,2,\dots,p-1\}$,
+    \item[(ii)] $c_k$ is nonzero for only finitely many $k < 0$,
+    \item[(iii)] $x = \sum_{k} c_k p^k$.
+\end{enumerate}
+\end{prob}
+
+
+\begin{prob}\label{prob:85} The canonical expansion of $x \in \Q_p$ 
+%from Problem \ref{prob:qpdigits}
+terminates (meaning that $c_k=0$ for all large enough $k$) $\Longleftrightarrow$ $x=0$ or $x\in\Q^{+}$ with denominator a power of $p$.
+\end{prob}
+
+\begin{prob}\label{prob:86} The canonical expansion of $x\in \Q_p$ is eventually periodic $\Longleftrightarrow$ $x\in\Q$.\index{$\Q_p$, field of $p$-adic numbers!element has eventually periodic base $p$ expansion iff rational}
+\end{prob}
+
+\vspace{-0.1in}
+\curious
+
+\begin{prob}\label{ex:wilson00}\label{prob:87}  For every odd prime $p$:\quad $\displaystyle\sum_{a=1}^{p-1} \frac{a^{p-1}-1}{p} \equiv \frac{(p-1)! + 1}{p} \pmod{p}$. 
+\end{prob}
+
+
+\section*{Method of Successive Approximation}
+
+\begin{prob}[computing a value of $\sqrt{2}$ in $\Z_7$]\index{method of successive approximation} \label{ex:hensel0}\label{prob:98} We can compute a square root of $2$ in $\Z_7$ by determining a root in $\Z/7$, then $\Z/7^2$, then $\Z/7^3$, $\dots$, being mindful to maintain compatibility throughout the process.
+
+To start things off, the residue class $x_1 = 3\bmod{7}$ satisfies $x^2 = 2$ in $\Z/7$. This solution can be lifted, uniquely, to a solution of $x^2=2$ in $\Z/7^2$. To see why, note that a generic integer congruent to $3\pmod{7}$ has the form $3+7k$, and 
+$(3+7k)^2 = 9 + 42k + 7^2 k^2\equiv 9 + 42k\pmod{7^2}$. The congruence $9+42k\equiv 2\pmod{7^2}$ is satisfied precisely when $k\equiv 1\pmod{7}$. For integers $k\equiv 1\pmod{7}$, we have $3+7k\equiv 10\pmod{7^2}$. Therefore, $x_2:=10\bmod{7^2} \in \Z/7^2$ is the lift we are after.
+
+Expanding $(10+7^2 k)^2$ mod $7^3$, and reasoning analogously, will show that $x_2=10\bmod{7^2}$ lifts uniquely to $x_3:=10+7^2\cdot 2 = 108\bmod{7^3}$. 
+
+This process can be continued indefinitely, uniquely determining $x_1, x_2, x_3, \dots$. 
+Then $x:=(x_1, x_2, x_3,\dots) \in \prod_{k=1}^{\infty} \Z/7^k$ is a solution in $\Z_7$ to $x^2=2$. The canonical base $7$ expansion of $x$ begins
+\[  3 + 1\cdot 7 + 2\cdot 7^2 + 6\cdot 7^3 + \dots.\]
+
+{\scriptsize After that wall of text, you might be wondering what exactly you are being asked to do. Your job: Check that the process can be continued indefinitely, uniquely determining all the $x_k$, that setting $x = (x_1, x_2, x_3, \dots)$ really does define a $\Z_7$-solution to $x^2=2$, and finally, that the $7$-adic expansion of $x$ starts the way we claimed.}
+\end{prob}
+
+
+
+% \begin{prob} Every $x\in\Z_p$ admits a unique expansion $c_0 + c_1(-p) + c_2 p^2 + c_3(-p)^3 + c_4 p^4 + \dots$, with each $c_i \in \{0,1,\dots,p-1\}$. This expansion terminates precisely when $x \in \Z$.    
+% \end{prob}
+
+
+
+
+
+
+
+
+
+
+
+
+

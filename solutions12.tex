@@ -1,0 +1,273 @@
+\chapter*{Solutions to Set \#13}
+\addcontentsline{toc}{chapter}{Solutions to Set \#13}
+\markboth{Solutions to Set \#13}{Solutions to Set \#13}
+\label{set12sols}
+
+\begin{sol}{prob:fundamentalidentity}\index{Teichm\"{u}ller representatives}
+%The proof is similar to the argument used in Problem \ref{prob:newbern0}. 
+When $p-1\mid k$, every term in the sum is $1$, and $\sum_{u=1}^{p-1} \omega(u)^{k} = p-1 = \one_{p-1\mid k} (p-1)$. 
+
+Now suppose that $p-1\nmid k$.
+Recall that every finite subgroup of the multiplicative group of a field is cyclic. Thus, we may choose a generator $\zeta$ for the group $\mu_{p-1} = \{\omega(1), \dots, \omega(p-1)\}$ of $(p-1)$th roots of unity in $\Q_p$. Since $\zeta^{(p-1)k} = 1$ and $\zeta^k \ne 1$,
+\begin{align*} \sum_{u=1}^{p-1} \omega(u)^k &= \sum_{j=1}^{p-1} (\zeta^j)^k = \sum_{j=1}^{p-1} (\zeta^k)^j \\&= \zeta^k(1+\zeta^k + \dots + \zeta^{(p-2)k}) = \zeta^{k} \frac{1-\zeta^{(p-1)k}}{1-\zeta^{k}} = 0, \end{align*}
+which agrees with $\one_{p-1\mid k} (p-1)$ in this case.
+\end{sol}
+
+\begin{sol}{prob:betakintegral} By Faulhaber's formula\index{Bernoulli numbers!Faulhaber's formula}\index{Faulhaber's formula} and Exercise \ref{prob:fundamentalidentity},
+\begin{align*} \one_{p-1\mid k} (p-1) &= \sum_{u=1}^{p-1} (u + p\vartheta(u))^{k} \\
+&= \sum_{u=1}^{p-1} u^k + \sum_{0< j \le k}\binom{k}{j} p^j \sum_{u=1}^{p-1} u^{k-j} \vartheta(u)^j \\
+&= B_k p + \sum_{0< j \le k} \binom{k}{j} B_{k-j} \frac{p^{j+1}}{j+1} + \sum_{0< j \le k}\binom{k}{j} p^j \sum_{u=1}^{p-1} u^{k-j} \vartheta(u)^j.
+\end{align*}
+Shifting $\one_{p-1\mid k}(p-1)$ to the right-hand side and dividing by $pk$,
+\[ \beta_k + \sum_{0< j\le k} \frac{1}{k}\binom{k}{j} B_{k-j} \frac{p^j}{j+1} + \sum_{0< j \le k}\frac{1}{k}\binom{k}{j}p^{j-1} \sum_{u=1}^{p-1} u^{k-j}\vartheta(u)^j=0. \]
+This becomes the relation claimed in the problem statement after the substitution $\binom{k}{j} = \frac{k}{j} \binom{k-1}{j-1}$.
+\end{sol}
+
+\begin{sol}{prob:adams}\index{Bernoulli numbers!Adams' theorem} Suppose the claim is false and let $k$ be the smallest positive integer with $\beta_k\notin \Z_{p}$. We will derive a contradiction from the relation
+\begin{equation}\tag{*} \beta_k + \sum_{0 < j \le k} \binom{k-1}{j-1} B_{k-j}\frac{p^{j}}{j(j+1)}+\sum_{0 < j \le k}\binom{k-1}{j-1}\frac{p^{j-1}}{j}\sum_{u=1}^{p-1}u^{k-j}\vartheta(u)^j =0\end{equation}
+established in Problem \ref{prob:betakintegral}.
+
+Let $j$ be an integer in the range $0 < j \le k$. We argue below that the $j$th term in both of the above sums is $p$-adically integral. It is then immediate from (*) that $\beta_{k} \in \Z_{p}$, contrary to our choice of $k$.
+
+We start with the first of the two sums. Observe that
+\begin{align*} v_p\left(\frac{p^j}{j(j+1)}\right) &= j - v_p(j(j+1)) \ge j - v_p((j+1)!) \\&> j - \frac{j+1}{p-1} \ge j -\frac{j+1}{2} = \frac{j-1}{2} \ge 0. \end{align*}
+Hence, $p^j/j(j+1) \in p\Z_{p}$. Since $\binom{k-1}{j-1} \in \Z$, to complete the proof that $\binom{k-1}{j-1} B_{k-j} p^j/j(j+1) \in \Z_{p}$ it is enough to establish that $pB_{k-j} \in \Z_{p}$. But this follows from our choice of $k$: If $0 < j < k$, then $k-j$ is a positive integer smaller than $k$, so that $\beta_{k-j} \in \Z_{p}$. Hence, $pB_{k-j} - \one_{p-1\mid k-j}(p-1) = p(k-j)\beta_{k-j}  \in p\Z_{p}$, and $pB_{k-j} \in \Z_{p}$. If $j=k$, then $pB_{k-j} = pB_0=p$, which is also in $\Z_{p}$. 
+
+The second sum is easier. There it is clear that the $j$th term lies in $\Z_{p}$ as long as $p^{j-1}/j$ is $p$-adically integral. Integrality is obvious when $j=1$. When $j\ge 2$, we can argue as follows: $v_p\big(\frac{p^{j-1}}{j}\big) = j-1 - v_p(j) \ge j-1 - v_p(j!) > j-1 - \frac{j}{p-1} \ge j-1 -\frac{j}{2}  \ge 0$. (This argument actually shows a bit more: If $j\ge 2$, then $p^{j-1}/j \in p\Z_{p}$.)
+
+\begin{rmk} Note that   $k\beta_{k} = B_k - \frac{\one_{p-1 \mid k} (p-1)}{p} = B_k +\frac{\one_{p-1\mid k}}{p}- \one_{p-1\mid k}$. Thus, $\beta_k\in \Z_{p}$ implies $B_k +\frac{\one_{p-1\mid k}}{p} \in \Z_{p}$, recovering the result of Exercise \ref{prob:newbern2}. 
+\end{rmk}
+\end{sol}
+
+
+
+\begin{sol}{prob:prekummer} Let $p\ge 5$ and let $k\in 2\Z^{+}$. We refine the analysis appearing in the solution to Problem \ref{prob:adams}. Label the two sums in (*) as $\sum_1$ and $\sum_2$.
+
+We will show that the $j$th term of $\sum_1$ lies in $p\Z_{p}$ whenever $0 < j \le k$ and that the $j$th term of $\sum_2$ belongs to $p\Z_{p}$ whenever $1 < j \le k$. Taking (*) modulo $p\Z_{p}$, we deduce that $\beta_k + \sum_{u=1}^{p-1}u^{k-1}\vartheta(u)\in p\Z_{p}$, as required.
+
+For the second sum there is almost nothing to do. We noted at the end of the solution to Problem \ref{prob:adams} that $\frac{p^{j-1}}{j} \in p\Z_{p}$ once $j\ge 2$. (There we only needed $p\ge 3$.) As the other factors in the terms of $\sum_2$ are $p$-adic integers, our claim for $\sum_2$ follows.
+
+Since $k$ is even, the only odd integer $j$ which contributes to $\sum_1$ is $j=k-1$. For this $j$, we have $\binom{k-1}{j-1} B_{k-j} \frac{p^j}{j(j+1)} = (k-1)B_1 \frac{p^{k-1}}{k(k-1)} = -\frac{1}{2}\frac{p^{k-1}}{k}$. We already observed that $\frac{p^{k-1}}{k} \in p\Z_{p}$, while clearly $-\frac{1}{2} \in \Z_p$ ($p$ is odd). Hence, the term of $\sum_1$ corresponding to $j=k-1$ belongs to $p\Z_{p}$. Suppose now that $j$ is even and $0 < j \le k$. If $0 < j < k$, the $p$-integrality of $\beta_{k-j}$ established in Problem \ref{prob:adams} implies that
+\[ pB_{k-j} = p(k-j)\beta_{k-j} + \one_{p-1\mid k-j}(p-1) \in \Z_{p}. \]
+If $j=k$, then $pB_{k-j} = pB_{0} = p$, and this also belongs to $\Z_p$. Thus, it will suffice to show that $\frac{p^{j-1}}{j(j+1)} \in p\Z_{p}$. This follows upon observing that
+\begin{align*}
+v_p\left(\frac{p^{j-1}}{j(j+1)}\right)  &= j-1 - v_p(j(j+1)) \ge j-1 - v_p((j+1)!) \\
+&> j-1 - \frac{j+1}{p-1} \ge j-1-\frac{j+1}{4} > 0,
+\end{align*}
+keeping in mind for the last step that $j\ge 2$.
+\end{sol}
+
+\begin{sol}{prob:kummer}\index{Bernoulli numbers!Kummer's congruence}  We are assuming that $p-1$ does not divide the even integer $k$, so that $p\ge 5$. Since $k$ and $k'$ are congruent mod $p-1$, the integer $k'$ is also not divisible by $p-1$. By Problem \ref{prob:prekummer}, 
+\begin{align*} \frac{B_k}{k} &= \beta_k \equiv -\sum_{u=1}^{p-1} u^{k-1}\vartheta(u) \pmod{p\Z_{p}}, \\ \frac{B_{k'}}{k'} &= \beta_{k'} \equiv -\sum_{u=1}^{p-1} u^{k'-1}\vartheta(u) \pmod{p\Z_{p}}. \end{align*}
+Suppose without loss of generality that $k'\ge k$ and write $k' = k + (p-1)q$. Then $u^{k'-1} = u^{k-1} u^{(p-1)q} \equiv u^{k-1}\pmod{p\Z_p}$, by Fermat's little theorem. (To apply Fermat, we identify $\Z_p/p\Z_p$ with $\Z/p$, invoking Problem \ref{prob:58}.) Substituting above, $\frac{B_k}{k} \equiv \frac{B_{k'}}{k'}\pmod{p\Z_{p}}$.\end{sol}
+
+\begin{rmk} Call an odd prime $p$ \textsf{regular}\index{regular prime} if $p$ does not divide the numerator of any of $B_2, B_4, \dots, B_{p-3}$. In the middle of the 19th century, Kummer showed that Fermat's last theorem\index{Fermat's last theorem} for the exponent $p$ holds for all regular primes $p$. That is, if $p$ is a regular prime, then $x^p+y^p=z^p$ has no solutions in integers $x,y,z$ with $xyz\ne 0$ (see the books of Ribenboim \cite{ribenboim} and Washington \cite{washington} for accounts of this work).
+
+All primes smaller than $37$ are regular, while $37$ is not: $B_{32} = -37 \cdot \frac{683 \cdot 305065927}{2\cdot 3\cdot 5 \cdot 17}$. Via Kummer's congruence (the result of Problem \ref{prob:kummer}), it is possible to show that there are infinitely many \underline{ir}regular primes\index{irregular prime} (odd primes that are not regular). We sketch an argument for this due to Carlitz \cite{carlitz}, which nicely illustrates how the facts we have built up about Bernoulli numbers can be put to use. 
+
+Looking at the Remark following the solution to Problem \ref{prob:alternatingsigns}, we see that $|B_{2m}|_{\infty}$ tends to infinity faster than any power of $m$. In particular, as we will use momentarily, $|\frac{B_{2m}}{2m}|_{\infty} > 1$ for all large values of $m$.
+
+Let $p_1,\dots,p_r$ be any finite list of irregular primes, and let $$N = 2\mathop{\mathrm{lcm}}[p_1-1,\dots,p_r-1].$$ We let $k$ run over the positive multiples of $N$ and consider the ratios $B_{k}/k$. From the last paragraph, we can choose $k$ with $|B_k/k|_{\infty} > 1$. Then there is a prime $p$ dividing the numerator of $B_k/k$. Since $p_i-1$ divides $k$ for each $i=1,2,\dots, r$, each of our primes $p_i$ appears in the denominator of $B_k$, and so also in the denominator of $B_k/k$ (by the Clausen--von Staudt theorem, Exercise \ref{ex:vsclast}). Thus, $p$ is not any of $p_1,\dots,p_r$. A similar argument shows that $p-1$ does not divide $k$ (note that this implies $p\ne 2$). If we let $k'$ denote the reduction of $k$ modulo $p-1$, then $k' \in \{2, 4, 6, \dots, p-3\}$, and by Kummer's congruence, 
+\[ \frac{B_{k'}}{k'} \equiv \frac{B_k}{k} \equiv 0 \pmod{p\Z_p}. \] 
+Therefore, $p$ divides the numerator of $B_{k'}$, implying that $p$ is an irregular prime not on our initial list. At this point in the proof Euclid is smiling down from heaven.
+
+From the perspective of progress towards Fermat's Last Theorem, it would certainly be more encouraging to know that there are infinitely many \emph{regular} primes. Unfortunately, this question remains wide open! Of course, the urgency of the problem has diminished somewhat in the wake of the full proof of Fermat's Last Theorem by Wiles and Taylor--Wiles.\footnote{The story of which is gloriously recounted in  Joshua Rosenblum and Joanne Sydney Lessner's 2000 musical \emph{Fermat's Last Tango}.}
+\end{rmk}
+
+\begin{sol}{prob:glaisherharmonic}\index{harmonic number}\index{Bernoulli numbers!associated congruence for $H_{p-1}$}Let $p\ge 5$ be prime, and let $k = \varphi(p^3)-1$.
+
+The group $(\Z_p/p^3\Z_p)^\times$ can be identified with $(\Z/p^3)^{\times}$, which has order $\varphi(p^3)$. Hence, each $x \in \Z_p^{\times}$ satisfies $x^{\varphi(p^3)} \equiv 1\pmod{p^3\Z_p}$, and $x^{k} \equiv \frac1x \pmod{p^3 \Z_{p}}$. Therefore, working in $\Z_p$ modulo $p^3\Z_{p}$,
+\[ H_{p-1} = \sum_{n=1}^{p-1} \frac{1}{n} \equiv \sum_{n=1}^{p-1} n^{k} = k\frac{p^2}{2} B_{k-1} + \sum_{2 \le j \le k}\binom{k}{j} B_{k-j} \frac{p^{j+1}}{j+1}.
+\]
+In this last expression, the term $pB_k$ has been dropped from Faulhaber's formula, which is harmless as $k$ is odd and larger than $1$.
+
+Continuing, we argue that every term of the sum on $j$ belongs to $p^3 \Z_p$. Suppose $j \ge 3$. Since $pB_{k-j} \in \Z_{p}$ (as follows from Problem \ref{prob:newbern2} or \ref{prob:adams}), 
+\begin{align*} v_p\left(\binom{k}{j} B_{k-j} \frac{p^{j+1}}{j+1}\right) &= v_p\left(\binom{k}{j} pB_{k-j} \frac{p^{j}}{j+1}\right) \ge j - v_p(j+1) \\ &\ge j - v_p((j+1)!) > j - \frac{j+1}{p-1} \ge j - \frac{j+1}{4} \ge 2.
+\end{align*}
+This shows that each term with $j\ge 3$ belongs to $p^3 \Z_{p}$. The remaining term, corresponding to $j=2$, is $\binom{k}{2} B_{k-2} \frac{p^3}{3}$. As $k-2\equiv p-4\not\equiv 0\pmod{p-1}$, we have that $B_{k-2} \in \Z_{p}$. Hence, $\binom{k}{2} B_{k-2} \frac{p^3}{3} \in p^3 \Z_p$.
+
+Collecting our results so far, $H_{p-1} \equiv k \frac{p^2}{2} B_{k-1} \pmod{p^3\Z_p}$. Kummer, as incarnated in Problem \ref{prob:kummer}, now steps in to tell us that $$\frac{B_{k-1}}{k-1} \equiv \frac{B_{p-3}}{p-3}\pmod{p\Z_p}.$$
+Therefore, 
+\[ B_{k-1} \equiv (k-1) \frac{B_{p-3}}{p-3} \equiv \frac{2}{3} B_{p-3}\pmod{p\Z_p}, \] and \[ H_{p-1} \equiv k \frac{p^2}{2} B_{k-1} \equiv k\frac{p^2}{3} B_{p-3}\equiv -\frac{p^2}{3} B_{p-3}\pmod{p^3\Z_{p}}.\] 
+
+From this last congruence for $H_{p-1}$, we have $H_{p-1} \in p^3 \Z_p \Longleftrightarrow B_{p-3} \in p \Z_p$. This equivalence is the concluding assertion of the problem statement.
+\end{sol}
+
+\begin{rmk} This problem brings to a close our study of the Bernoulli numbers. For everything you ever wanted to know about this subject but were afraid to ask, see Chapter 15 in the book of Ireland and Rosen \cite{IR}, Chapter 9 in Cohen's volume \cite{cohenbook}, and the recent book \cite{bernoulli} by T. Arakawa, T. Ibukiyama, and M. Kaneko. A bibliography with $\approx$ 3000 books and papers related to Bernoulli numbers has been compiled by Karl Dilcher, Ladislav Skula, and Ilja Sh. Slavutskii \cite{bernoullibib}. 
+\end{rmk}
+
+
+\begin{sol}{prob:strassdivide} Since $F(r)=0$, we have  $F(x) = F(x) - F(r) = \sum_{k\ge 0} a_k (x^k -r^k) =\sum_{k\ge 0} a_k (x-r) \sum_{j=0}^{k-1}x^j r^{k-1-j}$. 
+
+Let $u_{k,j} = \one_{0\le j < k} \cdot a_k x^{j} r^{k-1-j}$. If we put $\epsilon_N:= \max_{n\ge N} |a_n|_p$, then 
+\[ |u_{k,j}|_p \le \one_{0 \le j < k} |a_k|_p \le \epsilon_N\qquad\text{whenever $j\ge N$ or $k\ge N$}. \] Moreover, $\epsilon_N\to 0$ (as $F$ is a Strassmann series). So by Exercises \ref{prob:91} and \ref{prob:92}, $\sum_{k}\sum_{j} u_{k,j}$ and $\sum_{j}\sum_{k} u_{k,j}$ both converge, and to the same value. Hence,
+\begin{align*} F(x)  = (x-r) \sum_{k} \sum_{j} u_{k,j} &=(x-r) \sum_{j} \sum_{k} u_{k,j}\\
+&= (x-r) \sum_{j\ge 0}x^j\sum_{k > j}a_k r^{k-1-j}.
+\end{align*}
+Here the final sum on $k$ is exactly what we called $b_j$. Therefore, if we set $G(T) = \sum_{j\ge 0} b_j T^j$, we have shown that $G(x)$ converges for all $x\in\Z_p$ (i.e., $G(T)$ is Strassmann) and that $F(x) = (x-r) G(x)$ for all such $x$.
+
+Now we suppose that the Strassmann degree $K$ of $F(T)$ is at least $1$ and prove that the Strassmann degree of $G(T)$ is $K-1$. If $j < K-1$, then
+\[ |b_j|_p \le \max_{k > j} |a_k r^{k-1-j}|_p \le \max_{k} |a_k|_p = |a_K|_p. \]
+When $j=K-1$,
+\[ |b_{K-1}|_p = \left|a_K + \sum_{k>K} a_k r^{k-K}\right|_p.\]
+This last sum on $k$ satisfies $$\bigg|\sum_{k > K} a_k r^{k-K}\bigg|_p \le \max_{k > K} |a_k r^{k-K}|_p \le \max_{k > K} |a_k|_{p} < |a_K|_p.$$ So by survival of the greatest, $|b_{K-1}|_p = |a_K|_p$. Finally, when $j \ge K$,
+\[ |b_j|_p \le \max_{k>K} |a_k r^{k-1-j}|_p \le \max_{k > K} |a_k|_p < |a_K|_p. \]
+Hence, the maximum value of $|b_j|_p$ is $|a_K|_{p}$, and this maximum is attained for the last time at $j=K-1$. Therefore, $G(T)$ has  Strassmann degree $K-1$.
+\end{sol}
+
+\begin{challenge} Recall our notation $\Q_p\langle T\rangle$ for the ring of Strassmann series.  Problem \ref{prob:strassdivide} establishes a version of the Root-Factor theorem for Strassmann series viewed as functions on $\Z_p$. Show that the Root-Factor theorem is also valid at the level of formal power series. More precisely,  show that if $r \in \Z_p$ is a root of $F(T) \in \Q_p\langle T\rangle$, then $F(T) = (T-r) G(T)$, where $G(T) \in \Q_p\langle T\rangle$ is the power series constructed in the preceding solution. 
+\end{challenge}
+
+\begin{challenge}\mbox{ }
+\begin{enumerate}
+\vspace{-0.12in}
+\item[(a)] Prove that if $F(T), G(T)$ are nonzero elements of $\Q_p\langle T\rangle$, then the Strassmann degree of $FG$ is the sum of the Strassmann degrees of $F$ and $G$.
+\item[(b)] Show that if $X(T)$ is a Strassmann series with all coefficients from $\Z_p$, then $1+pT \cdot X(T)$ is a unit in $\Q_p\langle T\rangle$, with inverse $1 - pT\cdot X(T) + p^2 T^2 \cdot X(T)^2 - p^3 T^3 \cdot X(T)^3 + \dots$, for an appropriate interpretation of the infinite series.
+\item[(c)] Establish that the units in $\Q_p\langle T\rangle$ are precisely the elements of Strassmann degree $0$.
+\end{enumerate}
+\end{challenge}
+
+
+
+
+\begin{sol}{ex:strassthm}\index{Strassmann series!number of zeros bounded by Strassmann degree}\index{Strassmann's theorem} Suppose to start off that  $F(T) = \sum_{k\ge 0} a_k T^k$ has Strassmann degree $K=0$. Then $|a_{0}|_p > |a_k|_p$ for every $k\ge 1$. Hence, for every $x\in \Z_p$, we have $|\sum_{k\ge 1} a_k x^k|_p \le \max_{k\ge 1}|a_k|_p < |a_0|_p$  and
+\[ |F(x)|_p = \bigg|a_0 + \sum_{k\ge 1} a_k x^k\bigg|_p \ge |a_0|_p - \bigg|\sum_{k\ge 1} a_k x^k\bigg|_p > 0.\]
+Therefore, $F$ has no zeros in $\Z_p$ (and no zeros is ``at most $K=0$ zeros''), 
+
+Assuming the general claim fails,  choose a counterexample $F(T)$ whose Strassmann degree $K$ is as small as possible. Then $K\ge 1$. By assumption, $F$ has more than $K$ distinct zeros in $\Z_p$; pick one of these and call it $r$. By Exercise \ref{prob:strassdivide}, we can find a Strassmann series $G(T)$ of Strassmann degree $K-1$ with $F(x) = (x-r) G(x)$ for all $x \in \Z_p$. As $K-1 < K$, we know that $G$ has at most $K-1$ distinct zeros in $\Z_p$. But each zero of $F$, other than (possibly) $r$, is a zero of $G$. Thus, there are at most $1+(K-1)= K$ zeros of $F$ in $\Z_p$, contradicting the choice of $F(T)$.
+\end{sol}
+
+% \begin{rmk} Let $\overline{\Q}_p$ denote the algebraic closure of $\Q_p$. The $p$-adic absolute value has a unique extension from $\Q_p$ to $\overline{\Q}_p$ (\cite[Chapter 7]{cassels86}, \cite[Chapter 6]{gouvea}, or \cite[Chapter 2, \S3]{robert}) and each Strassmann series $F(T) \in \Q_p[[T]]$ has precisely $K$ zeros counted ``with multiplicity'' in the corresponding closed unit disc $\Oo$ of $\overline{\Q}_p$. Here, as before, $K$ denotes the Strassmann degree of $F$. 
+\begin{rmk}
+It is enlightening to view Strassmann's theorem through the lens of the \textsf{Weierstrass preparation theorem for $\Q_p$}: \emph{Every Strassmann series $F(T)$ with Strassmann degree $K$ admits a factorization $F(T) = U(T) V(T)$ where $U(T) \in \Q_p[T]$ is polynomial whose degree and Strassmann degree are both $K$ and $V(T) = 1 + p \tilde{V}(T)$ for a Strassmann series $\tilde{V}(T) \in \Z_p[[T]]$.} You might try to prove this theorem yourself by imitating our second solution to Problem \ref{prob:uniquezero}. If you get stuck, look at \cite[pp.~54--55]{lewis} or \cite[pp.~166--167]{skolem}.\index{Weierstrass preparation theorem for $\Q_p$}
+
+Suppose we have factored $F(T)=U(T) V(T)$ as in the Weierstrass preparation theorem. Then $V(x)\in 1+p\Z_p$ for all $x \in \Z_p$; in particular, $V(x)\ne 0$.  Since $F(x) = U(x) V(x)$ for all $x \in \Z_p$, we deduce that $F$ and $U$ have the same zeros in $\Z_p$. But $U$, as a polynomial of degree $K$, has at most $K$ zeros in $\Q_p$, and a fortiori at most $K$ zeros in $\Z_p$.\footnote{Actually, each of its $\Q_p$-zeros is a $\Z_p$-zero. Since $U$ has the same degree as Strassmann degree, scaling by an appropriate power of $p$ turns $U$ into a polynomial with $\Z_p$-coefficients and leading coefficient a $p$-adic unit. Each $\Q_p$-root of such a polynomial belongs to $\Z_p$. Cf.~the proof of the Lemma in the solution to Problem \ref{prob:mahlerSML}.} Thus, the Weierstrass preparation theorem can be viewed as ``explaining'' Strassmann's theorem. This reasoning is very close to Strassmann's original proof; the Weierstrass preparation theorem as stated here follows from the assertions ``1'', ``1$'$'', and ``3'' appearing on page 21 of \cite{strassmann}. 
+\end{rmk}
+
+
+
+\begin{sol}{prob:constantcheck} Referring back to Set \#11, for each $A \in p\Z_{p}$ the constant term $C_{A,0}$ of $\Binom(1+A,T)$ is 
+\[ C_{A,0} = \sum_{k\ge 0} s(k,0) \frac{A^k}{k!} = s(0,0) \frac{A^0}{0!} = 1. \]
+Therefore, the constant term of $$F_{r,\pm}(T) = \alpha^{r}\,\Binom(1+a;T) - \beta^{r}\,\Binom(1+b;T) \mp (\alpha-\beta)$$ is $\alpha^r-\beta^r \mp (\alpha-\beta)$. This vanishes precisely when $\frac{\alpha^r-\beta^r}{\alpha-\beta}=\pm 1$. Inspecting the table on Set \#3, we see that when $0\le r \le 9$, we have $\frac{\alpha^r-\beta^r}{\alpha-\beta}=\pm 1$ if and only if $(r,\pm) \in \{(1,+), (2,+), (3,-), (5,-)\}$. 
+
+For all other values of $(r,\pm)$ one computes directly (see the tables at the top of this page) that $F_{r,\pm}(0)$ is an $11$-adic unit.
+
+\setlength{\tabcolsep}{7pt}
+\begin{table}[t]
+    \centering
+    \begin{tabular}{r || c  c  c  c  c c c c c c}
+      $r$ &  0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\\midrule
+      $F_{r,+}(0)\bmod{11\Z_{11}}$    & 9 & 0 & 0 & 7 & 3 & 7 & 8 & 1 & 3 & 8 \\
+    \end{tabular}
+\vskip 0.1in
+    \begin{tabular}{r || c  c c  c  c c c c c c}
+      $r$ &  0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\\midrule
+      $F_{r,-}(0)\bmod{11\Z_{11}}$  
+      & 2 &4  & 4& 0 & 7 & 0 & 1 & 5 & 7 & 1 \\
+    \end{tabular}
+    \caption*{Constant terms of $F_{r,\pm}(T)$ modulo $11\Z_{11}$.}
+\end{table}
+    
+Now let $j\ge 1$. The $T^j$-coefficient of $F_{r,\pm}(T)$ is given by 
+\[ \alpha^r C_{a,j}-\beta^r C_{b,j}= \sum_{k \ge j} s(k,j) \left(\alpha^r \frac{a^k}{k!} - \beta^r \frac{b^k}{k!}\right).  \]
+For each $k\ge j$, we have $v_{11}(a^k/k!), v_{11}(b^k/k!) \ge k - v_{11}(k!) >  k - \frac{k}{10} = 0.9k \ge 0.9j$. Therefore,
+\[ |\alpha^r C_{a,j}-\beta^r C  _{b,j}|_{11} \le \max_{k\ge j} \left|s(k,j) \left(\alpha^r \frac{a^k}{k!} - \beta^r \frac{b^k}{k!}\right)\right|_{11} \le 11^{-0.9j}. \]
+In particular, every nonconstant coefficient of $F_{r,\pm}(T)$ has $11$-adic absolute value less than $1$.
+
+We conclude that, apart from the four specified values of $(r,\pm)$, the series $F_{r,\pm}(T)$ has constant term an $11$-adic unit and all other terms belonging to $11\Z_{11}$. Hence, $F_{r,\pm}(T)$ has Strassmann degree $0$ and no zeros in $\Z_p$ (by Exercise \ref{ex:strassthm}).
+\end{sol}
+
+\begin{sol}{prob:easycases} The $T$-coefficient of $F_{r,\pm}(T)$ is \[\alpha^r C_{a,1} - \beta^{r} C_{b,1} = \sum_{k\ge 1} s(k,1) \left(\alpha^r \frac{a^k}{k!} - \beta^r\frac{b^k}{k!}\right). \]
+Reasoning as in the solution to Problem \ref{prob:constantcheck},  the terms of the right-hand sum with $k\ge 2$ make a contribution bounded in $11$-adic absolute value by $11^{-0.9\cdot 2}$, and hence also bounded by $11^{-2}$ (since no absolute value is strictly between $11^{-1}$ and $11^{-2}$). Keeping in mind that $s(1,1)=1$, we conclude that
+\begin{equation}\tag{*} \alpha^r C_{a,1} - \beta^{r} C_{b,1} \equiv \alpha^r a - \beta^r b \pmod{11^2\Z_{11}}. \end{equation}
+Plugging our approximations of $\alpha$ and $a$ into (*), we find that the $T$-coefficient
+\begin{align*} \text{of $F_{1,+}$ is }&\equiv 4\cdot 11\pmod{11^2\Z_{11}}, \\
+\text{of $F_{2,+}$ is }&\equiv 8\cdot 11\pmod{11^2\Z_{11}},\\
+\text{of $F_{3,-}$ is }&\equiv 0 \pmod{11^2\Z_{11}}, \text{ \emph{and}}\\
+\text{of $F_{5,-}$ is }&\equiv 6\cdot 11\pmod{11^2\Z_{11}}.
+\end{align*}
+So the $T$-coefficients are divisible by $11$ but not $11^2$ for $(r,\pm) = (1,+)$, $(2,+)$, and $(5,-)$.
+
+Let's take stock of what we've shown in this exercise and the last. If $(r,\pm)$ is any of $(1,+), (2,+), (5,-)$, then the constant term of $F_{r,\pm}(T)$ is $0$. The $T$-coefficient has $11$-adic absolute value $11^{-1}$. And the $T^j$ coefficient has $11$-adic absolute value at most $11^{-0.9\cdot 2} < 11^{-1}$, for each $j\ge 2$. It follows that $F_{r,\pm}(T)$ has Strassmann degree $1$. 
+% \setlength{\tabcolsep}{7pt}
+% \begin{table}
+%     \centering
+%     \begin{tabular}{r || c | c| c | c}
+%       $(r,\pm)$ &  (1,+) & (2,+) & (3,-) & (5,-) \\\hline 
+%       $F_{r,+}(0)\bmod{11^2 \Z_{11}}$    & 1\\
+%     \end{tabular}
+% \end{table}
+\end{sol}
+
+\begin{sol}{prob:annoyingcase} We saw already in the solution to Problem \ref{prob:easycases} that $F_{3,-}(T)$ has $T$-coefficient divisible by $11^2$. 
+
+The $T^2$-coefficient of $F_{3,-}(T)$  is given by
+\[ \alpha^3 C_{a,2} - \beta^3 C_{b,2} = \sum_{k\ge 2} s(k,2) \left(\alpha^3 \frac{a^k}{k!} - \beta^3 \frac{b^k}{k!}\right). \]
+Here the terms of the right-hand sum corresponding to $k\ge 3$ make a contribution bounded in $11$-adic absolute value by $11^{-0.9\cdot 3}$, and hence also by $11^{-3}$. Since $s(2,2)=1$ ($s(2,2)$ is the coefficient of $T^2$ in $T(T-1)$), 
+\[ \alpha^3 C_{a,2} - \beta^3 C_{b,2} \equiv \alpha^3 \frac{a^2}{2} - \beta^3 \frac{b^2}{2} \pmod{11^3 \Z_{11}}. \]
+Working with the right-hand side, we find that
+\[ \alpha^3 C_{a,2} - \beta^3 C_{b,2} \equiv 8\cdot 11^2\pmod{11^3\Z_{11}}.\]
+Hence, the $T^2$-coefficient of $F_{3,-}(T)$ is divisible by $11^2$ but not $11^3$.
+
+For every $j\ge 3$, the $T^j$ coefficient of $F_{3,-}(T)$ is bounded in absolute value by $11^{-0.9\cdot 3} < 11^{-2}$. 
+
+Summing up: $F_{3,-}(T)$ has vanishing constant term, $T$-coefficient bounded in absolute value by $11^{-2}$, $T^2$-coefficient with absolute value equal to $11^{-2}$, and $T^j$ coefficients with absolute value strictly smaller than $11^{-2}$ for $j\ge 3$. Therefore, $F_{3,-}(T)$ has Strassmann degree $2$.
+\end{sol}
+
+\begin{sol}{ex:finalram}\index{Ramanujan--Nagell equation} If $\frac{\alpha^n-\beta^n}{\alpha-\beta}=\pm 1$, then $F_{r,\pm}(n)=0$, where $r$ is the remainder when $n$ is divided by $10$. In Exercise \ref{prob:constantcheck}, we found that $F_{r,\pm}$ has no zeros in $\Z_p$ (let alone in $\Z$!) except possibly if $(r,\pm) \in \{(1,+), (2,+), (3,-), (5,-)\}$.
+
+In Exercise \ref{prob:easycases}, we showed that $F_{r,\pm}(T)$ has Strassmann degree $1$ for each of $(r,\pm)= (1,+)$, $(2,+)$, and $(5,-)$. By Strassmann's Theorem (Exercise \ref{ex:strassthm}), each corresponding series $F_{r,\pm}(T)$ has at most one zero in $\Z_p$. Similarly, the result of Exercise \ref{prob:annoyingcase} shows that $F_{3,-}(T)$ has at most $2$ zeros in $\Z_p$.
+
+Consequently, there are at most $1+1+1+2 = 5$ integers $n$ for which $\frac{\alpha^n-\beta^n}{\alpha-\beta}=\pm 1$. We know five such integers already: $n=1, 2, 3, 5, 13$. (See the table on Set \#3.) Thus, there can be no others.
+\end{sol}
+
+\begin{challenge}[Skolem, Chowla, and Lewis \cite{SCL}] Prove that each integer appears at most three times in the sequence $\{\frac{\alpha^n-\beta^n}{\alpha-\beta}\}_{n\ge 0}$ (for the same $\alpha,\beta$ as above).
+\end{challenge}
+
+\begin{challenge}[Cohen and Ljunggren \cite{cohen}] Find all integer solutions to $x^2+11=3^m$.
+\end{challenge}
+
+\begin{challenge} What are all of the positive integer solutions to $2x^2+1 = 3^m$? Equivalently: Which squares have ternary expansions consisting entirely of the digit $1$?
+\end{challenge}
+
+
+\let\oldaddcontenttsline\addcontentsline
+\renewcommand{\addcontentsline}[3]{}
+\begin{thebibliography}{11}
+\bibitem{bernoulli} T. Arakawa, T. Ibukiyama, and M. Kaneko, 
+\emph{Bernoulli numbers and zeta functions}, Springer Monogr. Math., Springer, Tokyo, 2014.
+
+
+\bibitem{carlitz} L. Carlitz, \emph{
+Note on irregular primes}. Proc. Amer. Math. Soc. \textbf{5} (1954), 329--331.
+
+
+\bibitem{cohen}
+E.\,L. Cohen, \emph{Sur l'équation diophantienne $x^2+11=3^k$}. C. R. Acad. Sci. Paris Sér. A-B 275 (1972), A5--A7.
+
+\bibitem{cohenbook}
+H.~Cohen, \emph{Number theory. Vol. II. Analytic and modern tools}, Graduate Texts in Mathematics, vol.~240, Springer, New York, 2007. 
+
+\bibitem{bernoullibib} K.~Dilcher, L.~Skula, and I.~Sh. Slavutskii, \emph{A bibliography of Bernoulli numbers}. Online resource. URL: \url{https://www.mscs.dal.ca/~dilcher/bernoulli.html}
+
+\bibitem{IR} K. Ireland and M. Rosen, \emph{A classical introduction to modern number theory}, second ed., Graduate Texts in Mathematics, vol. 84, Springer-Verlag, New York, 1990.
+
+\bibitem{lewis}{D.\,J.} Lewis, \emph{
+Diophantine equations: $p$-adic methods.} In: Studies in Number Theory, MAA Stud. Math., vol. 6, pp. 25--75. Math. Assoc. America, Buffalo, NY, 1969.
+
+\bibitem{ribenboim} P. Ribenboim, \emph{13 lectures on Fermat's last theorem}, Springer-Verlag, New York-Heidelberg, 1979. 
+
+\bibitem{skolem} T.~Skolem, \emph{Ein Verfahren zur Behandlung gewisser exponentialer Gleichungen und diophantischer Gleichungen}. 
+%C. r. 8 congr. scand. \`a Stockholm (1934)
+Comptes Rendus Congr. Math. Scand. (Stockholm, 1934), 163--188. 
+
+\bibitem{SCL} T.~Skolem, S.~Chowla, and {D.\,J.} Lewis, \emph{The diophantine equation $2^{n+2}-7=x^2$ and related problems}.
+Proc. Amer. Math. Soc. \textbf{10} (1959), 663--669.
+
+\bibitem{strassmann} R.~Strassmann, \emph{\"{U}ber den Wertevorrat von Potenzreihen im Gebiet der $\mathfrak{p}$-adischen Zahlen}. J. Reine Angew. Math. \textbf{159} (1928), 13--28.
+
+\bibitem{washington} L.\,C. Washington, \emph{Introduction to cyclotomic fields}, second ed., Graduate Texts in Mathematics, vol. 83, Springer-Verlag, New York, 1997.
+
+\end{thebibliography}
+\let\addcontentsline\oldaddcontentsline
+

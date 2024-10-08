@@ -1,0 +1,129 @@
+%%%%%%%%%%%%%%%%%%%%%% pref.tex %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% sample preface
+%
+% Use this file as a template for your own input.
+%
+%%%%%%%%%%%%%%%%%%%%%%%% Springer-Verlag %%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\setlength{\epigraphrule}{0.5pt}
+\preface
+
+% Ideas: 
+% * quick start accessible to students with a wided range of backgrounds
+% * prerequisites: elementary number theory, linear algebra, abstract algebra. rigorous calculus, at the level of Spivak
+% * not intended as a semester-long course; see more complete references for that
+% * organized fashion -- roadmap 
+% * convince students that there is something to see, motivate them to study on their own
+% * show off some of the most attractive applications
+%
+%
+%
+%
+%
+%
+
+
+\doubleepigraph 
+{A few months ago, on his last visit to New Jersey, I was telling [Paul] Erd\H{o}s something about $p$-adic analysis. Erd\H{o}s was not interested. ``You know,'' he said about the $p$-adic numbers, ``they don’t really exist.''}{Melvyn Nathanson}
+  % {The real numbers, like the sun, fill our field of vision in the day; but at night the primes, like the stars, come out.}
+  % {Kazuya Kato}
+    {In the long history of mathematics, `number' has always meant real number, and it is only relatively recently that we have become aware of the world of $p$-adic numbers. The situation is akin to someone who has only experienced daylight gazing in astonishment at the night sky.}{Kazuya Kato\\ Nobushige Kurokawa\\ Takeshi Saito
+    %, \emph{Number Theory 1: Fermat's Dream}
+    }
+
+$p$-adic numbers were birthed into the world by Kurt Hensel in 1897, at a lecture for the annual meeting of the 
+German Mathematical Society. Initially, these new objects were viewed with some skepticism. Helmut Hasse recollects that in 1920, no less a figure than Richard Courant advised him against studying with Hensel, dismissing Hensel's 1913 book on $p$-adic numbers as an unproductive detour (``unfruchtbarer Seitenweg''). Yet today $p$-adic numbers have thoroughly permeated number theory. Local-global principles, which relate solubility in number fields to solubility in $p$-adic fields, are central to modern arithmetic geometry.
+Tate's thesis and the adelic viewpoint on class field theory are bread and butter to algebraic number theorists. And those on the analytic side of the fence can point to `local densities' as $p$-adically motivated objects that arise in nearly every study of arithmetic counting problems. We live in an age when activists and arithmeticians universally agree on the need to think (and act) both globally and locally. 
+
+These problem sets, written for a topics course at the 2024 Ross Indiana summer mathematics camp, do not describe any of these significant modern applications of $p$-adic numbers. Rather, they offer a hands-on --- better, \emph{minds-on}! --- approach to the foundational theory of $\Q_p$, working towards elementary but attractive number-theoretic applications. Whenever there was a choice to be made, I have elected to treat special cases rather than develop general theory. This has allowed prerequisites to be kept to a minimum. Readers are expected to have seen number theory and rigorous calculus, as well as both abstract and matrix algebra, but most of what is needed belongs to the standard undergraduate curriculum.
+
+Notwithstanding the chosen title, these problem sets aim to offer a general introduction to $p$-adic numbers, privileging neither analysis nor algebra. Analysts will be disappointed by the absence of material on continuity, differentiability, and $p$-adic interpolation. Algebraists will be disheartened that the discussion never ventures beyond $\Q_p$ to any of its finite or infinite extensions. Despite the many omissions, I am optimistic that as individuals engage with these problem sets, they will catch a glimpse of an alluring territory begging to be charted. The suggested readings listed below have been selected as particularly approachable, and we commend their consideration to those with an adventurous spirit.
+
+% Our sketch of Witt's proof of the von Staudt--Clausen Theorem (Problems \ref{ex:vsc0}--\ref{ex:vsclast}) is adapted from notes of Chandan Singh Dalawat:
+
+% \begin{quote}
+% A first course in Local arithmetic, \texttt{arXiv:0903.2615}   
+% \end{quote}
+
+
+\subsection*{How to use this book}
+
+This manuscript is intended as a resource for undergraduates and beginning graduate students looking to dip their toes into non-Archimedean waters.
+
+For the teacher using the text as a resource for a class on $p$-adic numbers: First of all, congratulations! As you are probably aware, courses on this topic at the specified level are rare. 
+
+If the book is used as the primary course text, problems should be distributed to students independently of solutions. Class time can be spent discussing ideas and approaches, with conversations led by students but facilitated by the instructor. Experts will often see more in the problems than beginning students and they are encouraged to use these discussions to share insights.
+
+Solutions to Problem Set ($p$-Set) $X$ can be passed out once the class, as a whole (or at least, \emph{on} the whole), is ready to move on to Set $X+1$. For those on the semester system, a reasonable aim is to cover roughly one set per week, with the expectation that later material will take a bit more time. The book can also be used in a supplementary fashion, with an instructor handpicking interesting-seeming problems to spice up their own exercise sheets. 
+
+For students: Congratulations to you as well! $p$-adic numbers are a(n) (un)real treat to think about. If you are using the book for a course, follow the directions of your instructor. If you are using the book for self-study, I strongly recommend working through the problems systematically, tackling one set completely before moving on to the next. Please give yourself enough time for the mental fermentation process to occur before giving up on a question! Of course, you should not feel bad if after a long struggle certain problems continue to elude you; solutions are included for precisely these moments. 
+
+I should emphasize that this is not meant to be your only book on $p$-adic numbers. The author, for instance, learned about $p$-adic numbers from entirely different sources! After mastering the material on each problem set, it is recommended that you look at how the corresponding content is treated in the suggested references. One only truly understands a topic after examining it from all angles, and different texts bring out different perspectives.
+
+
+\subsection*{Saying what we mean and meaning what we say} %Most of our notations and conventions will be familiar, with the remainder introduced as necessary. 
+Exercises are typically introduced as assertions, without the use of ``show that'' or ``prove.'' (The \textsf{\pp s}, embedded in the solutions, are exceptions.) Problem solvers should recognize they are on the hook to validate every claim.
+
+We take no position on the hotly contested issue of whether $0$ is a \textsf{natural number}. Integers greater than or equal to $0$ are --- naturally enough --- referred to as \textsf{nonnegative integers}. As is customary in English, \textsf{positive} means \emph{strictly} larger than zero. We write $\Z^{+}$, $\Q^{+}$, and $\R^{+}$ for the sets of positive integers, rational numbers, and real numbers, respectively.
+
+Our terminology around quotient rings is slightly unconventional. To start with, the term \textsf{ring} always refers to a commutative ring with unity. If $I$ is an ideal of the ring $R$, and $a\in R$, the class of $a$ with respect to congruence modulo $I$ is typically denoted ``$a\bmod{I}$.'' We break this rule when (and only when) $R=\Z$ and $I=m\Z$, instead writing ``$a\bmod{m}$.'' Additionally, we use ``$\Z/m$'' in place of ``$\Z/m\Z$''; this is a mild concession to the notation $\Z_m$ appearing on the first-year Ross Program problem sets.
+
+\subsection*{Acknowledgements}
+Assembling these problem sets involved much scouring and borrowing. Deserving of particular mention:  Exercise \ref{ex:CC} was sourced from an article by Catherine Crompton in the Rose Hulman Undergrad.\ Mathematics Journal. Exercises \ref{ex:wilson00} and \ref{ex:wilson1} were inspired by discussions in Murty's text \cite{murty}. Exercise \ref{ex:pi} was taken from Koblitz's book \cite{koblitz}. The proof of Ramanujan's conjecture on integer solutions to $x^2+7=2^m$ follows closely the exposition in Cassels's monograph \cite{cassels86}. The proof ``from-the-Book'' of Skolem's theorem on integer linear recurrences, outlined on Set \#11, is due to Tao (loosely based on an argument of Georges Hansel): 
+\begin{quote}\url{https://terrytao.wordpress.com/2007/05/25/open-question-effective-skolem-mahler-lech-theorem/}\end{quote}
+In this connection it was also helpful to consult a post of Seewoo Lee:
+\begin{quote} \url{https://seewoo5.github.io/jekyll/update/2023/02/21/p-adic-numbers-application.html}
+\end{quote}
+Exercises \ref{prob:106} and \ref{prob:mahlerirrational} are based on a paper of Mahler:
+\begin{quote} \emph{On some irrational decimal fractions}.
+J. Number Theory \textbf{13} (1981), 268--269.
+\end{quote}
+The proofs on Set \#13 of the Adams and Kummer theorems on Bernoulli numbers are adapted from a delightful article of Wells Johnson:
+\begin{quote}
+\emph{$p$-adic proofs of congruences for the Bernoulli numbers}. J. Number Theory \textbf{7} (1975), 251--265.
+\end{quote}
+
+
+Various tech tools were employed to produce the book in front of you. The cover, which features 19th-century illustrations from the Hirayama Fireworks company\footnote{
+see \href{https://www.city.yokohama.lg.jp/kurashi/kyodo-manabi/library/shuroku/hirayama.html}{\nolinkurl{https://www.city.yokohama.lg.jp/kurashi/kyodo-manabi/library/shuroku/}} \href{https://www.city.yokohama.lg.jp/kurashi/kyodo-manabi/library/shuroku/hirayama.html}{\nolinkurl{hirayama.html}}
+}, was designed in Canva. Typesetting was done with \LaTeX, using Springer's SVMono document class. Several calculations were farmed out to the fantastically capable PARI/GP. ChatGPT assisted by offering English translations, hunting down typos, and suggesting alternative phrasings. 
+%; it is remarkably effective as a ``thought thesaurus.''
+
+This manuscript would not exist without the backing and encouragement of the Ross Mathematics Foundation. Site directors Timothy All and Jim Fowler have my profound appreciation for their inspiring efforts, year after year, to ensure that the Ross Program provides a supportive, welcoming, and stimulating environment for all camp participants (students, counselors, and even us lecturers!). Special thanks to Phoebe Watkins for her service as course assistant, Paco Adajar for suggesting the term ``$p$-set'' as an alternative to the more mundane ``problem set,'' and Jacob Bucciarelli for sharing his expertise in orbital mechanics.
+
+Work on this project was facilitated by a grant from the US National Science Foundation, award DMS-2001581. 
+
+\renewcommand\refname{\normalsize Suggestions for further reading}
+\begin{thebibliography}{11}
+
+\bibitem{cassels86} {J.\,W.\,S.}~Cassels, \emph{Local fields}, London Mathematical Society Student Texts, vol.~3, Cambridge University Press, Cambridge, 1986.
+
+\bibitem{conrad} K.~Conrad, \emph{Expository papers}, \url{https://kconrad.math.uconn.edu/blurbs/}.
+
+\bibitem{gouvea}
+{F.\,Q.}~Gouv\^{e}a, \emph{{$p$}-adic numbers: An introduction}, third ed., Universitext, Springer, Cham, 2020.
+
+\bibitem{katok} S.~Katok, \emph{{$p$}-adic analysis compared with real}, Student Mathematical Library, vol.~37, American Mathematical Society, Providence, RI; Mathematics Advanced Study Semesters, University Park, PA, 2007. 
+
+\bibitem{koblitz}
+N.~Koblitz, \emph{{$p$}-adic numbers, {$p$}-adic analysis, and zeta-functions}, second ed., Graduate Texts in Mathematics, vol.~58, Springer-Verlag, New York, 1984. 
+
+
+\bibitem{murty} M.\,R.~Murty, \emph{Introduction to {$p$}-adic analytic number theory}, AMS/IP Studies in Advanced Mathematics, vol.~27, Amrican Mathematical Society, Providence, RI; International Press, Somerville, MA, 2002. 
+
+\bibitem{schikhof} W.\,H.~Schikhof, \emph{Ultrametric calculus:  An introduction to $p$-adic analysis}, Cambridge Studies in Advanced Mathematics, vol.~4, Cambridge University Press, Cambridge, 2006.
+
+\bibitem{serre} J.-P.~Serre, \emph{A course in arithmetic}, Graduate Texts in Mathematics, vol.~7, 
+Springer-Verlag, New York-Heidelberg, 1973.
+
+\bibitem{steuding} J.~Steuding, \emph{Die $p$-adischen Zahlen}. Online survey article. URL:
+\url{https://www.uni-marburg.de/de/fb12/fachbereich/profil/geschichte-des-fachbereichs/biographisches/hensel_p_adischen_zahlen.pdf}
+
+\end{thebibliography} 
+
+%% Please "sign" your preface
+\vspace{1cm}
+\begin{flushright}\noindent
+University of Georgia\hfill {\it Paul Pollack}
+\end{flushright}

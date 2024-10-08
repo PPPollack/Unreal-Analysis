@@ -1,0 +1,132 @@
+%%%%%%%%%%%%%%%%%%%%% chapter.tex %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% sample chapter
+%
+% Use this file as a template for your own input.
+%
+%%%%%%%%%%%%%%%%%%%%%%%% Springer-Verlag %%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter*{$p$-Set \#3}
+\addcontentsline{toc}{chapter}{Set \#3}
+\markboth{Set \#3}{Set \#3}
+\label{chap:chap3}
+%\vspace{-0.3in}
+
+
+\section*{Knowing Your Limits}
+
+%\setlength{\epigraphwidth}{0.46\textwidth}  
+\epigraph{One cannot blame a respectable mathematician\index{respectable mathematician} for looking
+twice at the equation $$-1 = 4 + 4\cdot5 + 4 \cdot5^2 + 4\cdot5^3 +\dots.$$ 
+
+\dots\! It is obvious that [this] is absurd if ordinary convergence is intended. The whole point to Hensel's theory is that this is not ordinary convergence, but a new type of convergence which, from the point of view of abstract algebra, is equally worthy of the name.}{Cyrus Colton MacDuffee}
+\setlength{\epigraphwidth}{0.45\textwidth}  
+
+%\vspace{-0.05in}
+Let $(K,|\cdot|)$ be a valued field, and let $\{x_n\}$ be a sequence of elements of $K$. Suppose $x \in K$. We say \textsf{$\{x_n\}$ converges to $x$},\index{convergence of sequences|see{limits (sequential)}}\index{limits (sequential)} and write $x_n \to x$ or $\lim_{n\to\infty} x_n = x$ or simply $\lim x_n = x$, if the following holds.
+
+\fbox{
+    \parbox{4.5in}{
+        For every real number $\epsilon > 0$, there is an $N \in \Z^{+}$ with the property that
+\[ |x_n-x| < \epsilon \quad\text{whenever}\quad n \ge N.\]
+    }% 
+}
+
+(The inequality ``$|x_n-x|<\epsilon$'' could have been written as ``$x_n \in \Dd_{<\epsilon}(x)$.'') We say $\{x_n\}$ \textsf{converges}  if it converges to some $x$ in $K$. Those who already grok convergence in the context of calculus will notice that  $x_n \to x$ in $(K,|\cdot|)$ precisely when $|x_n-x|\to 0$ in the familiar sense.
+
+\begin{prob}\label{prob:28} Every sequence in a valued field has at most one limit.
+\end{prob}
+
+
+\begin{prob}[calculus classics]\label{prob:28andahalf}\label{prob:calclimits}
+\begin{enumerate}
+    \item[(i)] If $x_n=x$ for all $n$, then $x_n\to x$.
+    \item[(ii)] If $x_n\to x$ and $y_n\to y$, then $x_n+y_n\to x+y$.
+    \item[(iii)] If $x_n\to x$ and $y_n\to y$, then $x_n y_n\to xy$.
+\end{enumerate}
+\end{prob}
+
+\begin{prob}\label{prob:29}\index{convergence of infinite series} $x_n = 1+3+3^2+\dots+3^n$ converges to $-\frac12$ in $(\Q,|\cdot|_3)$. So defining the value of a series as the limit of its partial sums, $\sum_{k=0}^{\infty} 3^k = -\frac12$. Does $\{x_n\}$ converge in $(\Q,|\cdot|_p)$ for any other values of $p$? 
+\end{prob}
+
+\begin{prob}\label{prob:30} Evaluate $\sum_{n=0}^{\infty} n\cdot n!$ and $\sum_{n=0}^{\infty} n^2 \cdot 2^n$  in $(\Q,|\cdot|_{2})$. \end{prob}
+
+\begin{prob}\label{ex:rationalpadic0}\label{prob:31} Explain how the calculations 
+{\scriptsize\begin{equation*}
+\begin{split}
+\frac{11}{7} &= 2 + 3\cdot \frac{-1}{7} \\
+\frac{-1}{7} &= 2 + 3\cdot \frac{-5}{7} \\
+\frac{-5}{7} &= 1 + 3 \cdot \frac{-4}{7} \\
+\frac{-4}{7} &= 2 + 3 \cdot \frac{-6}{7}
+  \end{split}\quad\quad\quad\quad
+  \begin{split}
+\frac{-6}{7} &= 0 + 3 \cdot \frac{-2}{7} \\
+\frac{-2}{7} &= 1 + 3 \cdot \frac{-3}{7} \\
+\frac{-3}{7} &= 0 + 3 \cdot \frac{-1}{7}
+\end{split}
+\end{equation*}}imply that in $(\Q, |\cdot|_3)$,
+\[ \frac{11}{7} = 2 + 2\cdot 3 + 1 \cdot 3^2 + 2 \cdot 3^3 + 0 \cdot 3^4 + 1 \cdot 3^5 + 0 \cdot 3^6 + 2 \cdot 3^7 + 1 \cdot 3^8 + \dots,\]
+where the ``digits'' in the right-hand expansion follow the eventually periodic pattern $2, \overline{2, 1, 2, 0, 1, 0}$.
+\end{prob}    
+
+\begin{prob}\label{prob:32}  Find $c_0, c_1, c_2, \ldots \in \{0,1,2,3,4\}$ with $\sum_{k=0}^{\infty} c_k 5^k = \frac27$ in $(\Q,|\cdot|_{5})$.
+\end{prob}
+
+%\vspace{-0.15in}
+
+\absval
+\begin{prob}\label{ex:archchar}\label{prob:34} Let $(K,|\cdot|)$ be a valued field. Then $|\cdot|$ is non-Archimedean $\Longleftrightarrow$ $|2| \le 1$. (Here $2$ means $1+1$.) Is this equivalence true with $3$ in place of $2$?
+\end{prob}
+
+\begin{prob}\label{prob:35} If $|\cdot|$ is a nontrivial non-Archimedean absolute value on $\Q$, then $|p| < 1$ for some prime $p$.
+\end{prob}
+
+\begin{prob}\label{prob:36} Let $|\cdot|$ be a non-Archimedean absolute value on $\Q$. If $m$ and $n$ are relatively prime integers, either $|m| = 1$ or $|n| = 1$. (Use Bézout!)
+
+
+\end{prob}
+
+\begin{prob}\label{ex:localization}\label{prob:37} Let $|\cdot|$ be a non-Archimedean absolute value on $K$ and $\Oo= \Dd_{\le 1}(0)$. We have seen in Problem \ref{prob:earlyO} that $\Oo$ is a subring of $K$. 
+
+Show that $x \in \Oo$ is a unit in $\Oo$ $\Longleftrightarrow$ $|x| = 1$. Furthermore, if $M$ is the collection of all \underline{non}units of $\Oo$ --- that is, $M = \Dd_{<1}(0)$ --- then $M$ is a proper ideal of $\Oo$ containing every proper ideal of $\Oo$. Hence, $M$ is the unique maximal ideal of~$\Oo$. 
+\end{prob}
+
+\begin{prob}\label{prob:38} Every nonzero element of $\Z_{(p)}$ is uniquely expressible in the form $p^{v} u$ where $v$ is a nonnegative integer and $u$ is a unit of $\Z_{(p)}$.
+\end{prob}
+
+\begin{prob}\label{prob:39}$\Z_{(p)}$ is a principal ideal domain (PID) with $p\Z_{(p)}$ its only maximal ideal.
+\end{prob}
+
+\begin{table}[t]
+    \centering\setlength\tabcolsep{3.7pt}
+    \begin{tabular}{r||r r r r r r r r r r r r r r r r r}       $m$  & 0 &  1&  2 &  3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15 & 16\\\midrule       $u_m$  & $0$ & $1$ & $1$ & $-1$ & $-3$ & $-1$ & $5$ & $7$ & $-3$ & $-17$ & $-11$ & $23$ & $45$ & $-1$ & $-91$ & $-89$ & $93$\
+    \end{tabular}
+    \caption*{Sequence $\{u_m\}_{m\ge 0}$ appearing in Exercise \ref{ex:ram1}.}
+\end{table}
+
+%\vspace{-0.15in}
+\section*{A Question of Ramanujan}
+% \epigraph{$2^n-7$ is a perfect square for the values $3, 4, 5, 7, 15$ of $n$. Find other values.}{Srinivasa Ramanujan}
+When is a power of $2$ equal to $7$ more than a square? This happens for $2^3, 2^4, 2^5, 2^7$, and $2^{15}$ (in this last case, $2^{15} = \num{32768} = 7 + 181^2$). In a 1913 issue of the \emph{Journal of the Indian Mathematical Society}, Ramanujan listed all of these examples and posed the problem of finding others.\index{Ramanujan--Nagell equation}
+
+Let $R=\Z[\frac{1+\sqrt{-7}}{2}]$ (viewed as a subring of $\C$). Since $(\frac{1+\sqrt{-7}}{2})^2 = \frac{1+\sqrt{-7}}{2} - 2$,
+\[ R = \Z + \Z \frac{1+\sqrt{-7}}{2} =  \left\{\frac{1}{2}(a+b\sqrt{-7}):a,b \in \Z \text{ and }a\equiv b\!\!\!\!\pmod{2}\right\}. \]
+
+
+\begin{prob}[Nagell]\label{ex:ram1}\label{prob:40} Assume as known that $R$ is a unique factorization domain whose only units are $\pm 1$. Show that if $x,m$ are integers with $x^2+7 = 2^m$, then $u_{m-2} = \pm 1$, where $u_m$ is the  sequence defined by the Binet-type formula
+\[ u_m = \frac{\alpha^m-\beta^m}{\alpha-\beta} \quad\text{for}\quad \alpha = \frac{1+\sqrt{-7}}{2},\ \beta = \frac{1-\sqrt{-7}}{2}, \qquad m=0,1,2,3,\dots. \]
+Does the converse hold?
+\end{prob}
+
+{\scriptsize On our final problem set (Set \#13) you will determine all solutions to $u_{m-2}=\pm 1$ by $p$-adic methods.}
+
+
+
+% \chaptermark{23}
+% use \chaptermark{}
+% to alter or adjust the chapter heading in the running head
+
+% \ep
+
+
+
+%

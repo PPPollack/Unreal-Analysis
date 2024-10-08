@@ -1,0 +1,208 @@
+\chapter*{Solutions to Set \#8}
+\addcontentsline{toc}{chapter}{Solutions to Set \#8}
+\markboth{Solutions to Set \#8}{Solutions to Set \#8}
+\label{set7sols}
+
+\begin{sol}{prob:89}\index{convergence of infinite series}\index{$\Q_p$, field of $p$-adic numbers!convergence of series} 
+\begin{enumerate}
+    \item[(a)] In any complete valued field, a sequence $\{s_n\}$ converges  $\Longleftrightarrow$ $\{s_n\}$ is Cauchy. The forward implication was noted on Set \#6 (for every valued field, not necessarily complete). The backward implication is the definition of completeness.
+
+Let $\sum_{k=1}^{\infty}a_k$ be a series in $K$, a field assumed to be complete with respect to a non-Archimedean absolute value. Put $s_n = \sum_{k=1}^{n} a_k$. Then $\sum_{k=1}^{\infty} a_k$ converges $\Longleftrightarrow$ $\{s_n\}$ converges $\Longleftrightarrow$ $\{s_n\}$ is Cauchy $\Longleftrightarrow$ $s_{n+1}-s_n \to 0$ $\Longleftrightarrow$ $a_{n+1}  \to 0$ $\Longleftrightarrow$ $a_n \to 0$.
+
+\item[(b)] If we assume $\sum_{k=1}^{\infty}a_k$ converges to $s$, then $|s_n| \to |s|$ (see Problem \ref{prob:limitabsvalue}). By the strong inequality, each $|s_n| \le \max\{|a_1|, |a_2|, \dots, |a_n|\} \le \max_{k=1,2,3,\dots}|a_k|$. (That the last max exists is ensured by $|a_k|$ tending to $0$.) Hence, $|s| = \lim |s_n| \le \max_{k=1,2,3,\dots}|a_k|$.\index{strong triangle inequality!extension to infinite series in $\Q_p$}
+\end{enumerate}
+\end{sol}
+
+\begin{challenge}[convergence of infinite products]\index{convergence of infinite product}\label{pp:infprod} Let $K$ be a field complete with respect to a non-Archimedean absolute value. Let $\{a_k\}$ be a sequence in $K$.
+\begin{enumerate}
+\vspace{-0.12in}
+    \item[(a)] Suppose that $a_k\to 0$. Show that $\prod_{k=1}^{\infty} (1+a_k)$ is a well-defined element of $K$ (meaning that that the partial products have a limit in $K$). Furthermore, $\prod_{k=1}^{\infty} (1+a_k) = 0$ if and only if some $a_k=-1$.
+    \item[(b)] Conversely, prove that if $\prod_{k=1}^{\infty}(1+a_k)$ defines a \emph{nonzero} element of $K$, then $a_k\to 0$.
+\end{enumerate} 
+\end{challenge}
+
+\begin{sol}{prob:90} Let $\sum_{k=1}^{\infty} b_k$ be any rearrangement of $\sum_{k=1}^{\infty} a_k$; say $b_k = a_{\sigma(k)}$ for all $k=1,2,3,\dots$, where $\sigma \in \mathrm{Sym}(\Z^{+})$. Put $s_n = \sum_{k=1}^{n} a_k$ and $t_n = \sum_{k=1}^{n} b_k$. By assumption, $s_n \to s$, while our task is to prove that $t_n \to s$.
+
+Given $\epsilon > 0$, select $N_0 \in \Z^{+}$ with $|a_n| < \epsilon$ whenever $n > N_0$. Then choose $N \in \Z^{+}$ as the maximum of $\sigma^{-1}(1),\dots,\sigma^{-1}(N_0)$. Let us argue that $|t_n-s| < \epsilon$ whenever $n\ge N$.
+
+% Take any $n\ge N$. We start by observing that
+% \[ |t_n-s| = |t_n - s_{N_0} + s_{N_0} -s|\le \max\{|t_n - s_{N_0}|, |s_{N_0}-s|\}.\]
+% We can write 
+
+Let $n\ge N$. By our choice of $N$, all of $a_1,a_2,\dots,a_{N_0}$ appear among $b_{1},b_2,\dots,b_{N}$, so that 
+\[ t_n - s_{N_0} = \sum_{1 \le k \le n} b_k- \sum_{1\le k \le N_0} a_k = \sum_{1 \le k \le n,~\sigma(k) > N_0} a_{\sigma(k)}, \] and
+\[ |t_n-s_{N_0}| \le \max\{|a_{\sigma(k)}|: 1 \le k \le n, \sigma(k) > N_0\} < \epsilon. \]
+Moreover, \[ |s-s_{N_0}| = \left|\sum_{k > N_0} a_k\right| \le \max_{k > N_0} |a_k| < \epsilon.\] Hence,
+\[ |t_n - s| = |(t_n - s_{N_0}) - (s-s_{N_0})| \le \max\{|t_n - s_{N_0}|, |s-s_{N_0}|\} < \epsilon, \]
+as desired.
+\end{sol}
+
+\begin{sol}{prob:93} Put $s_n= \sum_{k=0}^{n} a_k, t_n = \sum_{k=0}^{n} b_k$, and $u_n = \sum_{k=0}^{n} c_k$. Let $s = \lim s_n$ and $t=\lim t_n$ be the infinite sums of the $a_k$ and $b_k$, respectively. We must show that $u_n \to st$.
+
+Observe that
+\[ s_n t_n = \sum_{\substack{0 \le k,\ell \le n \\ k+\ell\le n}} a_k b_\ell + \sum_{\substack{0 \le k, \ell \le n \\ k+\ell > n}} a_k b_\ell 
+\]
+and that the first of the two right-hand sums satisfies
+\[ \sum_{\substack{0 \le k,\ell \le n \\ k+\ell\le n}} a_k b_\ell = \sum_{0 \le r \le n} \sum_{\substack{k+\ell=r \\ k,\ell\ge 0}} a_k b_\ell =  \sum_{0 \le r \le n} \sum_{0 \le k \le r} a_k b_{r-k} = \sum_{0\le r \le n} c_r = u_n. \]
+Let $e_n$ be the previously neglected sum, $e_n = \sum_{0 \le k,\ell \le n,~k+\ell>n} a_k b_\ell$. Using $A$ and $B$ to denote upper bounds on $\{|a_k|\}$ and $\{|b_k|\}$ respectively (which certainly exist, since $a_k, b_k \to 0$), we find that
+\[ |e_n| \le \max_{0 \le k,\ell \le n, ~k+\ell > n} |a_k b_\ell| \le B\max_{n/2 < k \le n}|a_k|  + A\max_{n/2 < \ell \le n}|b_k|,\]
+which tends to $0$. Hence, $e_n\to 0$, and $u_n = s_n t_n - e_n \to st$, as desired.
+\end{sol}
+
+\begin{sol}{prob:91} For each fixed $i$, the series $\sum_{j} a_{i,j}$ converges, since $|a_{i,j}| \le \epsilon_j$ and $\epsilon_j\to 0$ as $j\to\infty$. Put $s_i = \sum_{j} a_{i,j}$. Then $\sum_{i} s_i$ also converges, since $|s_i| \le \max\{|a_{i,j}|: j \ge 0\} \le \epsilon_i$, and $\epsilon_i\to 0$ as $i\to\infty$. Thus, we have obtained convergence of the double series $\sum_{i} \sum_{j} a_{i,j}$. A symmetric argument demonstrates the convergence of $\sum_{j} \sum_{i} a_{i,j}$.
+\end{sol}
+
+
+\begin{sol}{prob:92} We start by noting that all of the double series appearing here converge or involve finitely many terms. This follows from Problem \ref{prob:91}. To take one example (the others are similar), $\sum_{i=0}^{N}  \sum_{j} a_{i,j}$ can be rewritten as $\sum_{i}\sum_{j} a_{i,j}\one_{i\le N}$. Since $|a_{i,j}\one_{i\le N}| \le |a_{i,j}|$, the sufficient condition for convergence furnished by Problem \ref{prob:91} is satisfied with the same sequence $\{\epsilon_N\}$.
+
+We can now establish our four inequalities. To attack the first of these, notice that 
+\[ \left|\sum_{i} \sum_{j} a_{i,j} - \sum_{i=0}^{N} \sum_{j} a_{i,j}\right| =\left|\sum_{i=N+1}^{\infty} \sum_{j} a_{i,j}\right| \le \max_{i\ge N+1} \left|\sum_{j} a_{i,j}\right|.\]
+Each term $a_{i,j}$ appearing in the final sum on $j$ has $i\ge N+1$, and thus $|a_{i,j}| \le \epsilon_{N+1}$. Hence, $|\sum_{j} a_{i,j}|  \le \max_{j} |a_{i,j}| \le \epsilon_{N+1}$ for each $i\ge N+1$, and $\max_{i\ge N+1} |\sum_{j} a_{i,j}| \le \epsilon_{N+1}$. So we have the first inequality.
+
+Analogous reasoning shows that
+\[ \left|\sum_{j} \sum_{i} a_{i,j} - \sum_{j} \sum_{i=0}^{N} a_{i,j}\right| = \left|\sum_{j} \sum_{i=N+1}^{\infty} a_{i,j}\right| \le \max_{j} \left|\sum_{i=N+1}^{\infty} a_{i,j}\right| \le \epsilon_{N+1},\]
+\[ \left|\sum_{i=0}^{N} \sum_{j} a_{i,j} - \sum_{i=0}^{N}\sum_{j=0}^{N} a_{i,j}\right| = \left|\sum_{i=0}^{N} \sum_{j=N+1}^{\infty} a_{i,j}\right| \le \max_{0\le i \le N} \left|\sum_{j=N+1}^{\infty}a_{i,j}\right| \le \epsilon_{N+1}, \]
+and
+\[ \left|\sum_{j} \sum_{i=0}^{N} a_{i,j} - \sum_{j=0}^{N}\sum_{i=0}^{N} a_{i,j}\right| = \left|\sum_{j=N+1}^{\infty} \sum_{i=0}^{N} a_{i,j}\right| \le \max_{j\ge N+1} \left|\sum_{i=0}^{N}a_{i,j}\right| \le \epsilon_{N+1}. \]
+
+Now look at the first column of inequalities in the problem statement. These inequalities, in conjunction with the strong triangle inequality, imply that
+\[ \left|\sum_{i}\sum_{j} a_{i,j} - \sum_{i=0}^{N} \sum_{j=0}^{N} a_{i,j}\right|  \le \epsilon_{N+1}. \]
+Similarly, we obtain from the second column of inequalities that
+\[ \left|\sum_{j}\sum_{i} a_{i,j} - \sum_{j=0}^{N} \sum_{i=0}^{N} a_{i,j}\right|  \le \epsilon_{N+1}. \]
+Since $\sum_{i=0}^{N} \sum_{j=0}^{N} a_{i,j} = \sum_{j=0}^{N} \sum_{i=0}^{N} a_{i,j}$ (it is always OK to swap  finite sums!), a final application of the strong triangle inequality yields
+\[ \left|\sum_{i}\sum_{j} a_{i,j}- \sum_j\sum_i a_{i,j}\right| \le \epsilon_{N+1}.\] Send $N$ to infinity to conclude that $\sum_{i} \sum_{j} a_{i,j} = \sum_{j} \sum_{i} a_{i,j}$.
+\end{sol}
+
+
+
+\begin{sol}{prob:newbern0} If $p-1 \mid k$, then $n^k\equiv 1\pmod{p}$ for all of $n=1,2,\dots,p-1$, so that $S_k(p) \equiv p-1 \pmod{p}$. Thus, $p\mid S_k(p) + 1 = S_k(p) + \one_{p-1\mid k}$. 
+
+If $p-1\nmid k$, choose an integer $g$ that generates the multiplicative group mod $p$. Working modulo $p$,
+\[ g^k S_k(p) = g^k\sum_{0 \le n < p} n^k \equiv \sum_{0 \le n < p} (gn)^k \equiv \sum_{m\bmod{p}} m^k \equiv S_k(p), \]
+using that multiplication by $g$ permutes the residue classes modulo $p$. As $g^k\not\equiv 1\pmod{p}$, we infer that $S_k(p)\equiv 0\pmod{p}$. Therefore, $p \mid S_k(p) = S_k(p) + \one_{p-1\mid k}$.
+\end{sol}
+
+\begin{sol}{prob:newbern1} By Faulhaber's formula\index{Bernoulli numbers!Faulhaber's formula}\index{Faulhaber's formula}, $\frac{S_k(p)}{p} = \frac{p^{k}}{k+1} + B_k + \sum_{0 < j < k} \binom{k}{j} B_{k-j} \frac{p^j}{j+1}$. Rearranging,
+\[ B_k + \frac{\one_{p-1\mid k}}{p} +  \sum_{0 < j < k} \binom{k}{j} B_{k-j} \frac{p^j}{j+1}= \frac{S_k(p)+\one_{p-1\mid k}}{p} - \frac{p^k}{k+1}. \]
+It will suffice to argue that both right-hand terms belong to $\Z_{(p)}$.
+
+The first is in $\Z$ (Problem \ref{prob:newbern0}), so certainly also in $\Z_{(p)}$. To handle the second, notice that $p^k \ge 2^k \ge k+1$ for each $k \in \Z^{+}$. Therefore, $v_p(k+1)\le k$, and $v_p(\frac{p^k}{k+1}) = k - v_p(k+1) \ge 0$. That is, $\frac{p^k}{k+1} \in \Z_p$.
+\end{sol}
+
+\begin{sol}{prob:newbern2} Suppose the claim is false and let $k$ be the smallest positive integer for which $B_k + p^{-1}\one_{p-1\mid k} \notin \Z_{(p)}$. Let $S$ be the sum on $j$ appearing in Problem \ref{prob:newbern1}, so that $B_k + p^{-1}\one_{p-1\mid k} + S \in \Z_{(p)}$. For use momentarily, we rewrite
+\[ S = \sum_{0 < j < k} \binom{k}{j} p B_{k-j} \frac{p^{j-1}}{j+1}.\]
+
+By the minimality of $k$, we have $B_{k-j} + p^{-1}\one_{p-1\mid k-j} \in \Z_{(p)}$ for all $j$ in the range $0 < j < k$. Hence, $pB_{k-j} \in \Z_{(p)}$ for all these $j$. Furthermore, $\frac{p^{j-1}}{j+1} \in \Z_{(p)}$ in this same range of $j$: To see why, note that $p^j \ge 3^j > j+1$, so that  $v_p(j+1) < j$. Since $v_p(j+1)$ is an integer, $v_p(j+1) \le j-1$, and $v_p(\frac{p^{j-1}}{j+1})\ge 0$. It follows that each term in our rewritten expression for $S$ belongs to $\Z_{(p)}$, so that $S$ itself belongs to $\Z_{(p)}$. But if $S \in \Z_{(p)}$ and $B_k + p^{-1}\one_{p-1\mid k} + S \in \Z_{(p)}$, then $B_k + p^{-1}\one_{p-1\mid k} \in \Z_{(p)}$. This contradicts the choice of $k$.
+\end{sol}
+
+
+\begin{sol}{prob:newbern3} This is similar to Problem \ref{prob:newbern2}. Assuming the claim fails, let $k$ be the smallest even positive integer for which $B_{k}+\frac{1}{2}\notin \Z_{(2)}$. From Exercise \ref{prob:newbern1}, $B_{k}+\frac{1}{2} + S\in \Z_{(2)}$, where \[ S=\sum_{0 < j < k} \binom{k}{j} 2B_{k-j}  \frac{2^{j-1}}{j+1}. \]
+
+Let us argue that each term in this expression for $S$ is in $\Z_{(2)}$ (and thus, $S \in \Z_2$). Let $0 < j < k$. If $j$ is odd, then $B_{k-j}=0$ unless $j=k-1$. The $j=k-1$ term of $S$ is $\binom{k}{k-1} 2B_{1} \frac{2^{k-2}}{k} = -2^{k-2}$, which is indeed in $\Z_{(2)}$. (We recalled here that $B_1 = -\frac12$.) If $j$ is even, the minimality of $k$ ensures that $2B_{k-j} \in \Z_{(2)}$. As $\frac{2^{j-1}}{j+1}$ is also in $\Z_{(2)}$ (clear, as $j+1$ is odd), the $j$th term is $2$-integral in the even case as well.
+
+Since $S \in \Z_{(2)}$ and $B_{k}+\frac{1}{2}+S \in \Z_{(2)}$, we are forced to have $B_{k}+\frac{1}{2}\in \Z_{(2)}$. This contradicts the choice of $k$.
+\end{sol}
+
+
+\begin{sol}{prob:97}\index{Bernoulli numbers!Clausen--von Staudt theorem}\index{Clausen--von Staudt theorem} Let $k$ be a positive even integer. From the last two problems we have that for every prime $p$,
+\[ B_k +\frac{\one_{p-1\mid k}}{p}  \in \Z_{(p)}. \]
+Put
+\[ \hat{B}_k := B_k + \sum_{p:~p-1\mid k}\frac{1}{p}.\]
+Then for every prime $p$,
+\[ \hat{B}_k = \left(B_k + \frac{\one_{p-1\mid k}}{p}\right) +  \sum_{\substack{\ell\text{ prime},~\ell\ne p \\ \ell-1\mid k}} \frac{1}{\ell} \in \Z_{(p)}.  \]
+Hence, $\hat{B}_k \in \bigcap_{p} \Z_{(p)} = \Z$.
+\end{sol}
+
+\begin{rmk}\index{Bernoulli numbers!distribution of denominators} Let $D_k$ denote the denominator of $B_k$ in lowest terms. The Clausen--von Staudt theorem implies that when $k$ is a positive even integer, $D_k$ is the product of the primes $p$ for which $p-1\mid k$. (So in particular $D_k$ is a multiple of $6$ for all even $k>0$.) It was realized by Erd\H{o}s and Wagstaff \cite{EW} that this characterization of $D_k$ allows one to establish strong statistical results. For example, enlisting methods from analytic number theory --- specifically, the field known as the ``anatomy of integers'' --- they showed that if $D = D_k$ for some positive even $k$, then the limit 
+\[ p_D:=
+\lim_{x\to\infty} 
+\frac{\#\{\text{even positive $n\le x$: $D_n = D$}\}}{\#\{\text{even positive $n\le x$}\}} \]
+exists and is positive. That is, any $D$ appearing as a denominator of an even-indexed Bernoulli number actually appears with a well-defined, positive limiting frequency. Furthermore, 
+\[ \sum_{D\ge 1} p_D = 1. \]
+More recent work on the distribution of the $p_D$ can be found in the article \cite{PW} of Pomerance and Wagstaff; among other things, they re-prove (in stronger form) a theorem of Sunseri that $6$ is the most popular denominator among even-indexed Bernoulli numbers. 
+\end{rmk}
+
+\begin{sol}{prob:teichmuller} 
+% Put $x_n = u^{p^n}$ for $n=1,2,3,\dots$. Each $x_{n+1}-x_n = x_n (u^{p^{n+1}-p^{n}}-1) = x_n (u^{\varphi(p^{n+1})}-1) \equiv 0\pmod{p^{n+1}}$, implying that $|x_{n+1}-x_n|_p \le p^{-n-1}$. Thus, $\{x_n\}$ is a Cauchy sequence in $\Z_p$.
+\index{Teichm\"{u}ller representatives} Since $u$ is a unit in $\Z_p$, it is also a unit modulo every power of $p\Z_p$. Setting $x_n = u^{p^n}$, Euler's theorem yields
+\[ x_{n+1} - x_n = x_ n(u^{p^{n+1}-p^n} - 1) = x_n (u^{\varphi(p^{n+1})}-1) \equiv 0 \pmod{p^{n+1}\Z_p}, \]
+for each $n=1,2,3,\dots$. (We may appeal to Euler's theorem here since the unit groups of $\Z_p$ mod powers of $p\Z_p$ are ``the same'' as the unit groups of $\Z$ mod powers of $p$, by Problem \ref{prob:justice}.) Hence, $|x_{n+1}-x_n|_p \le p^{-n-1}$ for each $n$, and $\{x_n\}$ is a Cauchy sequence in $\Z_p$.
+
+Let $x = \lim x_n$. Since $\lim x_{n+1} = \lim x_n^{p} = (\lim x_n)^p = x^p$, and $\lim x_{n+1} = \lim x_n = x$, it follows that $x^p=x$.
+
+By Fermat's little theorem, each $x_n = u^{p^n} \equiv u^{p^{n-1}} \equiv \dots \equiv u^p \equiv u\pmod{p\Z_p}$, Therefore, $x\equiv u\pmod{p\Z_p}$ (cf.\ the solution to Problem \ref{prob:77andahalf}), and in particular, $x\ne 0$. Thus, we have shown that $\omega(u):= x$ is a solution to $\omega(u)^{p-1}=1$ with $\omega(u)\equiv u\bmod{p\Z_{p}}$.
+
+To prove $\omega(u)$ is the \emph{unique} $(p-1)$th root of unity congruent to $u\bmod{p\Z_p}$, it is enough to argue that no residue class mod $p\Z_p$ contains two different $(p-1)$th roots of unity. This is easy: The $(p-1)$th roots of unity $\omega(1), \dots, \omega(p-1)$ belong to different residue classes mod $p\Z_{p}$. And these are  all of the $(p-1)$th roots of unity, since the degree $p-1$ polynomial $x^{p-1}-1$ cannot have more than $p-1$ roots in $\Q_p$.
+\end{sol}
+
+
+\begin{sol}{prob:teichmullercalculation} In $\Q_3$, the element $-1$ is a ($3-1$)th root of unity congruent to $2$ modulo $3\Z_3$. Therefore, $\omega(2) = -1$.
+
+Let $p=7$. As seen in the solution to Problem \ref{prob:teichmuller}, $2^{7^{n+1}} \equiv 2^{7^n} \pmod{7^{n+1} \Z_7}$ for each $n \in \Z^{+}$. Hence, for all integers $k\ge 3$,
+\[ 2^{7^k} \equiv 2^{7^{k-1}} \equiv \dots \equiv 2^{7^2} \pmod{7^{3}\Z_7}, \]
+from which it follows that 
+\[ \omega(2)= \lim 2^{7^k}\equiv 2^{7^2}\pmod{7^3\Z_7}. \]
+This information is enough to compute $c_0, c_1$, and $c_2$, provided we are willing to get our hands (or computing devices) a little dirty: $2^7 \equiv 128 \pmod{7^3}$, and $2^{7^2} \equiv 128^7 \equiv 324 \pmod{7^3}$. So the base $7$ expansion of $\omega(2)$ begins the same way as that of $324 = 2 + 4\cdot 7 + 6\cdot 7^2$. In other words, the desired digits are $c_0=2, c_1 = 4$, and $c_2 = 6$.
+\end{sol}
+
+\begin{sol}{prob:WJteich} We begin with a lemma valid over an arbitrary field of characteristic not equal to $2$.
+
+\begin{lem} Let $F$ be a field of characteristic not equal to $2$. If $\zeta$ is an element of order $3$ in $F^{\times}$, then $1+\zeta$ is an element of order $6$.
+\end{lem}
+
+% (In the proof we will only need that $\chara(F) \ne 2$. However, if $\chara(F)=3$, then $F^{\times}$ never has an element of order $3$.)
+
+\begin{proof} By assumption, $\zeta$ is a zero of $T^3-1$ but not $T-1$. Hence, $\zeta$ is a root of $\frac{T^3-1}{T-1} = T^2+T+1 \in F[T]$, and $1+\zeta = -\zeta^2$. Since $\mathrm{char}(F)\ne 2$, the element $-1 \in F^{\times}$ has order $2$, while $\zeta^2$ has order $3$. Since $2$ and $3$ are relatively prime, $1+\zeta = (-1)\cdot \zeta^2$ has order $2\cdot 3=6$.
+\end{proof}
+
+Now assume that $u \in \Z$ has order $3$ mod $p$. There are no elements of order $3$ in $\F_2^{\times}$. Hence, $p$ is odd, and we can invoke our lemma to deduce that $1+u$ has order $6$ in $\F_p^{\times}$. In particular, $p\equiv 1\pmod{6}$, as the order of each element in $\F_p^{\times}$ necessarily divides $p-1$; this congruence will be needed shortly.
+
+Continuing, observe that $$ \omega(u)^3 = (\lim_{n\to\infty} u^{p^n})^3 = \lim_{n\to\infty} (u^{3})^{p^n} = \omega(u^3). $$ 
+Here $\omega(u^3)$ is the unique $(p-1)$th root of unity congruent to $u^3 \bmod{p\Z_p}$. But $1$ is a $(p-1)$th root of unity, and $1 \equiv u^3 \pmod{p\Z_p}$.  Thus, $1 = \omega(u^3) = \omega(u)^3$. If $\omega(u)=1$, then $u\equiv \omega(u) \equiv 1\pmod{p\Z_p}$, contradicting that $u$ has order $3$ modulo $p$. So $\omega(u)$ is an element of order $3$ in $\Q_p^{\times}$ and, applying the lemma a second time, $1+\omega(u)$ is an element of order $6$. 
+
+In particular, $1+\omega(u)$ is a $(p-1)$th root of unity (since $6\mid p-1$). Furthermore, $1+\omega(u)\equiv 1+u \pmod{p\Z_p}$. Therefore, $1+\omega(u) = \omega(1+u)$.
+\end{sol}
+
+
+\begin{challenge}[$(\Z/p)^{\times}$ is cyclic, revisited, or \emph{sledgehammer swats fly}] For this exercise (only), you are asked to ``forget'' the general result that finite subgroups of multiplicative groups of fields are always cyclic.\footnote{``Please forget everything you have learned at school, because you haven't learned it. Please keep in mind everywhere the corresponding portions of your school work, because you haven't actually forgotten them.'' --- Edmund Landau}
+\begin{enumerate}
+\vspace{-0.12in}
+\item[(a)] Show that the mapping $u \bmod{p}\mapsto \omega(u)$ sets up an isomorphism between $(\Z/p)^{\times}$ and the group $\mu_{p-1}$ of $(p-1)$th roots of unity in $\Q_p$. This map is known as the \textsf{Teichm\"{u}ller lift}.\index{$\Z/p$@$(\Z/p)^{\times}$ is cyclic, proof using Teichm\"{u}ller lift}
+\item[(b)] Let $\zeta = \e^{2\pi \mathrm{i}/(p-1)} \in \C$. Explain why the minimal polynomial of $\zeta$ over $\Q$ divides $T^{p-1}-1$. Then deduce from (a) that said minimal polynomial splits over $\Q_p$. Conclude that $\Q(\zeta)$ embeds into $\Q_p$.
+\item[(c)] Prove that the image of $\zeta$ under any of the embeddings in (b) generates $\mu_{p-1}$. Hence, $\mu_{p-1}$ and $(\Z/p)^{\times}$ are cyclic.
+\end{enumerate}
+\vspace{-0.11in}
+This unusual argument is due to Matt Baker \cite{baker}.
+\end{challenge}
+
+
+\let\oldaddcontentsline\addcontentsline
+\renewcommand{\addcontentsline}[3]{}
+\begin{thebibliography}{11}
+
+\bibitem{baker} 
+M. Baker, \emph{Primitive roots, discrete logarithms, and p-adic numbers}. URL: \url{https://mattbaker.blog/2013/11/07/primitive-roots-discrete-logarithms-and-the-interplay-between-p-adic-and-complex-numbers/}
+
+\bibitem{EW} P. Erd\H{o}s and S.\,S. Wagstaff, Jr., \emph{The fractional parts of the Bernoulli numbers}. Illinois J. Math. \textbf{24} (1980), 104–-112.
+
+\bibitem{PW} C.~Pomerance and S.\,S. Wagstaff, Jr., \emph{The denominators of the Bernoulli numbers}. Acta Arith. \textbf{209} (2023), 1--15.
+\end{thebibliography}
+\let\addcontentsline\oldaddcontentsline
+
+
+% \begin{sol}{prob:94} Recall from Problem \ref{prob:42} that $S_k(n) = \sum_{j=0}^{k} \binom{k}{j} B_{k-j} \frac{n^{j+1}}{j+1}$. Hence,
+% $S_k(p^{s}) p^{-s} - B_k = \sum_{j=1}^{k} \binom{k}{j} B_{k-j} \frac{p^{sj}}{j+1}$. Let $M$ be the maximum of $|\binom{k}{j} B_{k-j}\frac{1}{j+1}|_p$ taken over $j=1,2,\dots,k$. Then $|\binom{k}{j} B_{k-j} \frac{p^{sj}}{j+1}|_p \le Mp^{-sj} \le Mp^{-s}$ for each such $j$, and
+% \[ |S_k(p^{s}) p^{-s} - B_k|_p \le \max_{1\le j \le k} \left|\binom{k}{j} B_{k-j} \frac{p^{sj}}{j+1}\right|_p \le Mp^{-s}. \]
+% Since $Mp^{-s}\to 0$, we conclude that $S_k(p^s) p^{-s} \to B_k$.
+% \end{sol}
+
+% \begin{sol}{prob:95} The $n \in I_j$ are the numbers $n = m+ j\cdot p^s$ for $m=0,1,2,\dots,p^{s}-1$. Each $n^k \equiv m^k + jk p^{s} m^{k-1} \pmod{p^{k+1}}$. Summing on $m=0,1,2,\dots,p^{s}-1$ gives $S_k(n) \equiv S_k(p^s) + kj p^s S_{k-1}(p^s) \pmod{p^{s+1}}$, as desired.
+% \end{sol}
+
+% \begin{sol}{prob:96} We sum the result of Problem \ref{prob:95} for $j=0,1,\dots,p-1$. Modulo $p^{s+1}$,
+% \[ S_k(p^{s+1}) = \sum_{j=0}^{p-1} \sum_{n \in I_j} n^k \equiv pS_k(p^s) + p^s S_{k-1}(p^{s}) \cdot \left(k\sum_{j=0}^{p-1} j\right).  \]
+% If $p=2$, then $p\mid k$. (Remember we are assuming that $k$ is even.) If $p$ is odd, then $p\mid \sum_{j=0}^{p-1} j = p\cdot \frac{p-1}{2}$. In either case, $p\mid k\sum_{j=0}^{p-1} j$, and so $p^{s+1} \mid S_{k-1}(p^{s})\cdot (k\sum_{j=0}^{p-1} j)$. Thus, $S_k(p^{s+1}) \equiv p S_k(p^s)\pmod{p^{s+1}}$. 
+
+% As a consequence, \[ \left|\frac{S_k(p^{s+1})}{p^{s+1}} - \frac{S_k(p^s)}{p^s}\right| = \left|\frac{1}{p^{s+1}}\right|_{p} \left|S_k(p^{s+1}) - p S_k(p^s)\right|_p \le p^{s+1} p^{-(s+1)} = 1.\]
+% That is, $\frac{S_k(p^{s+1})}{p^{s+1}} - \frac{S_k(p^s)}{p^s} \in \Z_{(p)}$. 
+% \end{sol}

@@ -1,0 +1,99 @@
+%%%%%%%%%%%%%%%%%%%%% chapter.tex %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% sample chapter
+%
+% Use this file as a template for your own input.
+%
+%%%%%%%%%%%%%%%%%%%%%%%% Springer-Verlag %%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter*{Problem Set \#1}
+\thispagestyle{plain}
+\addcontentsline{toc}{chapter}{Set \#1}
+\markboth{Set \#1}{Set \#1}
+%\vspace{-0.25in}
+\absvalfirst
+\epigraph{\dots true faith is belief in the reality of absolute values. It is in this kingdom
+of absolute values that we must look for and find our
+immortality.}{William R. Inge}
+
+
+Let $K$ be a field. An \textsf{absolute value}\index{absolute value!definition} on $K$ is a function $|\cdot|\colon K \to \R$ satisfying
+\begin{enumerate}
+\item[(i)] $|x| \ge 0$, with $|x|=0$ if and only if $x=0$,
+\item[(ii)] $|x+y| \le |x| + |y|$ (the \textsf{triangle inequality}),
+\item[(iii)] $|xy| = |x| |y|$.   
+\end{enumerate}
+for all $x,y \in K$. We refer to the pair $(K,|\cdot|)$ as a \textsf{valued field}.\index{valued field}
+
+\begin{prob}\label{prob:01} Let $(K, |\cdot|)$ be a valued field. Then:
+\begin{enumerate}
+\item[(a)] $|\pm 1| = 1$,
+\item[(b)] $|x-y| \ge |x|-|y|$ for all $x, y \in K$,
+\item[(c)] $|x y^{-1}| = |x| |y|^{-1}$ for all $x, y \in K$ with $y\ne 0$.
+\end{enumerate}
+\end{prob}
+
+\begin{prob}\label{prob:02} Let $K$ be a field. Define $|x|$ by letting $|x|=0$ if $x=0$ and $|x|=1$ for all $x\ne 0$. Show that $|\cdot|$ is an absolute value on $K$ (the \textsf{trivial absolute value}).\index{trivial absolute value}\index{absolute value!trivial absolute value}
+\end{prob}
+
+\vspace{-0.22in}
+\testrule
+Let $p$ be a prime number. For each $x \in \Q^{\times}$, there is a unique integer $v$ with the property that $x = p^v \frac{a}{b}$ for some integers $a,b$ not divisible by $p$. We set $v_p(x) = v$. In order to have $v_p$ defined on all of $\Q$, we take $v_p(0)= \infty$.\index{$v_p(n)$|see{$p$-adic valuation}} The function $v_p\colon \Q\to \Z\cup\{\infty\}$ is called the \textsf{$p$-adic valuation}.\index{p-adic@$p$-adic!valuation}
+\testruletwo
+
+\begin{prob}\label{ex:padicdef}\label{prob:03} Let $p$ be a prime. For each $x \in \Q$, define $|x|_{p} = p^{-v_p(x)}$, where $p^{-\infty}$ is taken to be $0$.\index{$x$@$\text{\textbar}x\text{\textbar}_p$|see{$p$-adic absolute value}} Then $|\cdot|_{p}$ is an absolute value on $\Q$ (the \textsf{$p$-adic absolute value}).\index{p-adic@$p$-adic!valuation}\index{absolute value!$p$-adic}\index{p-adic@$p$-adic!absolute value}
+\end{prob}
+
+The absolute value $|\cdot|_{p}$ will play a starring role throughout the course. You are strongly advised to compute several examples to develop a feel for this notion of absolute value. Here are a few to get you started:
+\[ \left|\frac{5\cdot 2^{10}}{2^{10}   +1}\right|_{2} = 2^{-10}, \quad |3^{-5}|_{2} = 1, \quad \left|\frac{2}{21}\right|_{3}=3, \quad |100!|_{7} = 7^{-16}. \]
+
+If $|\cdot|$ is an absolute value on the field $K$, we call $|\cdot|$ \textsf{non-Archimedean}\index{absolute value!non-Archimedean}\index{non-Archimedean absolute value} if it satisfies the following \textsf{strong triangle inequality}\index{strong triangle inequality}:   
+\[ |x+y| \le \max\{|x|, |y|\} \quad\text{for all $x, y \in K$}. \]
+Sensibly enough, an absolute value that is not non-Archimedean is \textsf{Archimedean}\index{Archimedean absolute value}\index{absolute value!Archimedean}. For example, the trivial absolute value is non-Archimedean, while the usual absolute value on $\Q$ is Archimedean.
+
+
+\begin{prob}\label{prob:05} For each prime $p$, the absolute value $|\cdot|_{p}$ on $\Q$ defined in Exercise \ref{ex:padicdef} is non-Archimedean. 
+\end{prob}
+
+The following Darwinian property of non-Archimedean absolute values (``survival of the greatest'') is central to the theory.\index{absolute value!survival of the greatest}\index{survival of the greatest}
+
+\vspace{-0.1in}
+\begin{prob}\label{prob:04} If $|\cdot|$ is a non-Archimedean absolute value on a field $K$, then
+\[ |x+y| = \max\{|x|,|y|\} \quad\text{whenever $x,y\in K$ with $|x| \ne |y|$}.\]
+\end{prob}
+
+
+
+\begin{prob}\label{prob:06} Let $K$ be a field equipped with an absolute value $|\cdot|$ for which $|2| \le 1$. Then $|2^{e_1} + 2^{e_2} + \dots + 2^{e_n}| \le n$ for all nonnegative integers $e_1,\dots, e_n$. It follows that $|\binom{n}{k}| \le n$ whenever $n$ is a positive integer and $0\le k\le n$.
+\end{prob}
+
+\begin{prob}[Product Formula]\label{prob:07}\index{absolute value!product formula on $\Q$}\index{product formula for absolute values on $\Q$} Let $|\cdot|_{\infty}$\index{$x$@$\text{\textbar}x\text{\textbar}_\infty$, familiar (Archimedean) abs.~value} denote the standard Archimedean absolute value on $\Q$. For every $x \in \Q^{\times}$, 
+\[ |x|_{\infty} \prod_{p\text{ prime}} |x|_{p} = 1.\]   
+\end{prob}
+
+
+\factfact
+
+\begin{prob}\label{prob:08} For each prime $p$ and  positive integer $n$: \quad $|n!|_{p} > p^{-n/(p-1)}$.\index{absolute value!of factorials} \end{prob}
+
+\begin{prob}\label{prob:09} $|n!|_{\infty}$ grows faster than $C^n$ for any fixed $C$. Hence, the product formula implies that there are infinitely many primes. \end{prob}
+
+\psh
+
+\begin{prob}\label{prob:10} Let $H_n = 1 + \frac12 +  \dots + \frac1n$, the $n$th \textsf{harmonic number}.\index{harmonic number}\index{$H_n$|see{harmonic number}} From calculus, $|H_n|_{\infty}$ tends to infinity. The same holds for $|H_n|_{2}$.
+\end{prob}
+
+
+\begin{prob}[Wolstenholme]\label{prob:11}\label{prob:wolstenholme}\index{Wolstenholme's theorem} When $p$ is odd, $H_{p-1} = p \sum_{0 < i < p/2} \frac{1}{i(p-i)}$. Hence,  $|H_{p-1}|_{p} \le p^{-2}$ for $p > 3$.
+\end{prob}
+
+
+
+% \chaptermark{23}
+% use \chaptermark{}
+% to alter or adjust the chapter heading in the running head
+
+% \ep
+
+
+
+%

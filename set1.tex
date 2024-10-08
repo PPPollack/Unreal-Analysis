@@ -1,0 +1,96 @@
+%%%%%%%%%%%%%%%%%%%%% chapter.tex %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% sample chapter
+%
+% Use this file as a template for your own input.
+%
+%%%%%%%%%%%%%%%%%%%%%%%% Springer-Verlag %%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter*{$p$-Set \#2}
+\addcontentsline{toc}{chapter}{Set \#2}
+\markboth{Set \#2}{Set \#2}
+
+%\vspace{-0.25in}
+\dist
+
+\epigraph{Today we are far from the standpoint of viewing the measure or size of a number or geometric figure as something given by nature and necessity. We view the size of a figure or number rather as a function of its essential components, whose determination is entirely at our discretion, and in whose choice we let ourselves be guided by reasons of expediency.
+}{Kurt Hensel}
+
+In $\R$ it is often useful to view $|x-y|$ as the distance between $x$ and $y$. One can adopt the same interpretation for any absolute value on any field $K$, but only if one is prepared to welcome a few surprises!
+
+\begin{prob}\label{prob:12} If $|\cdot|$ is non-Archimedean, every triangle with vertices in $K$ is isosceles. 
+\end{prob}
+
+Let $(K,|\cdot|)$ be a valued field. For  $x_0 \in K$ and real $r > 0$, the \textsf{open} and \textsf{closed} \textsf{discs} of radius $r$ centered at $x_0$ are defined, respectively, by\index{discs, open and closed} \[ \Dd_{<r}(x_0) = \{x \in K: |x-x_0| < r\}\,~\text{and}~\,\Dd_{\le r}(x_0) = \{x \in K: |x-x_0| \le r\}. \]
+
+\begin{prob}\label{prob:13} Suppose $|\cdot|$ is non-Archimedean. Let $D = \Dd_{<r}(x_0)$ be an open disc in $K$. Show that if $x \in D$, then $D = \Dd_{<r}(x)$. That is: Every point of an open disc is a center. 
+\end{prob}
+
+\begin{prob}\label{prob:14} Suppose $|\cdot|$ is non-Archimedean. Then any two open discs are either disjoint or one contains the other.
+\end{prob}
+
+\begin{prob}\label{prob:15} Let $K=\Q$ and $|\cdot|=|\cdot|_p$ with $p$ prime. Every open disc is a closed disc, and vice versa.
+\end{prob}
+
+%\vspace{-0.16in}
+\absval
+    
+\begin{prob}\label{prob:16} How many absolute values can you find on $\F_{2027}$? (Here and below, $\F_p$ denotes the field with $p$ elements, or equivalently the residue ring $\Z/p$.)
+\end{prob}
+
+\begin{prob}\label{prob:17} Let $(K,|\cdot|)$ be a valued field. For all $x, y \in K$ and all $n\in \Z^{+}$,
+\[ |x+y| \le (n+1)^{1/n}\left(\max_{0\le k \le n} \left|\binom{n}{k}\right|^{1/n}\right)\max\{|x|,|y|\}. \]
+\end{prob}
+
+
+Let $\F_p(T)$ denote the fraction field of the polynomial ring $\F_p[T]$, so that
+\[ \F_p(T) = \left\{\frac{F(T)}{G(T)}: F(T), G(T) \in \F_p[T], G(T) \ne 0\right\}. \] 
+
+
+\begin{prob}\label{prob:18} Every absolute value on $\F_p(T)$ is non-Archimedean.
+\end{prob}
+
+
+\begin{prob}\label{prob:19} If $\pi(T), \tilde{\pi}(T)$ are distinct monic irreducibles in $\F_p[T]$, then there is an absolute value $|\cdot|$ on $\F_p(T)$ with $|\pi(T)| < 1$ and $|\tilde{\pi}(T)|=1$. Is there an absolute value on $\F_p(T)$ with $|T| > 1$?
+\end{prob}
+
+
+
+\begin{prob}\label{prob:earlyO}\label{prob:20} If $K$ is a field equipped with a non-Archimedean absolute value $|\cdot|$, then $\Dd_{\le 1}(0)= \{x \in K: |x|\le 1\}$ is a ring. When $K=\Q$ and $|\cdot| = |\cdot|_p$, this ring is denoted $\Z_{(p)}$ and called the ring of \textsf{$p$-integral} rational numbers. Explain in pedestrian terms what it means for a rational number to be $p$-integral.\end{prob}\index{p-integral@$p$-integral rational number|see{$\Z_{(p)}$, ring of $p$-integral rationals}}\index{$\Z_{(p)}$, ring of $p$-integral rationals}
+
+\begin{prob}\label{prob:21} Determine $\bigcap_{p\text{ prime}} \Z_{(p)}$.
+\end{prob}
+
+
+%\vspace{-0.15in}
+\psh
+
+
+\begin{prob}\label{prob:22} For every prime $p$ and each integer $0 < k < p$:~$\binom{p}{k} = \frac{p}{k}\binom{p-1}{k-1}\equiv p \cdot \frac{(-1)^{k-1}}{k} \pmod{p^2}$. (Part of the problem is to make sense of the congruence, since $p \cdot \frac{(-1)^{k-1}}{k} \notin \Z$ if $1 < k < p$.)
+\end{prob}
+
+\begin{prob}[Eisenstein]\label{prob:23} If $p$ is an odd prime, then $|1-\frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \dots - \frac{1}{p-1}|_{p} < 1$ $\Longleftrightarrow$ $2^p \equiv 2\pmod{p^2}$.
+
+
+{\scriptsize When $2^p\equiv 2\pmod{p^2}$, we call $p$ a \textsf{Wieferich prime}\index{Wieferich prime}, alluding to the appearance of such primes in Wieferich's early 20th century investigations into  Fermat's last theorem. $1093$ and $3511$ are the only known Wieferich primes. Other examples (if they exist) exceed $10^{19}$.}
+\end{prob}
+\label{set1}
+
+%\vspace{-0.15in}
+\variations
+
+\begin{prob}[Schur]\label{prob:24} Let $F(T) \in \Z[T]$ be nonconstant. There are infinitely many primes that divide $F(n)$ for some $n \in \Z$. In other words: $F$ has a root in $\Z/p$ for infinitely many primes $p$.
+\end{prob}
+
+\begin{prob}\label{prob:25} If $p \mid n^4+1$ for some $n \in \Z$, either $p=2$ or $p\equiv 1\pmod{8}$. Hence, there are infinitely many primes $p\equiv 1\pmod{8}$.
+\end{prob}
+
+\begin{prob}\label{prob:26} Let $n \in \Z^{+}$. If $p\mid (2n+1)^2-2$, then $p\equiv \pm 1 \pmod{8}$. Not every prime dividing $(2n+1)^2-2$ can be congruent to $1\pmod{8}$. Hence, $(2n+1)^2-2$ is always divisible by some prime congruent to $-1\pmod{8}$. By varying $n$, we can find  infinitely many primes $p\equiv -1\pmod{8}$.
+\end{prob}
+
+\begin{prob}\label{prob:27} Every coprime residue class mod $8$ contains infinitely many primes.\index{primes in arithmetic progressions}
+
+{\scriptsize In this last statement, ``mod $8$'' can be replaced with ``mod $m$,'' for any $m \in \Z^{+}$. This is a celebrated (and difficult!) theorem of Dirichlet that you will meet in courses on analytic number theory.}
+\end{prob}
+
+
+

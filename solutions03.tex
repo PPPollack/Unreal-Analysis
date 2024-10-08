@@ -1,0 +1,219 @@
+
+\chapter*{Solutions to Set \#4}
+\addcontentsline{toc}{chapter}{Solutions to Set \#4}
+\markboth{Solutions to Set \#4}{Solutions to Set \#4}
+\label{set3sols}
+
+
+\begin{sol}{prob:41} We have $1+\e^{T} + \e^{2T} + \dots + \e^{(n-1)T} = \sum_{0 \le j < n} \sum_{k\ge 0} \frac{(jT)^{k}}{k!} 
+=\sum_{k\ge 0} \left(\sum_{0 \le j < n} j^k\right) \frac{T^k}{k!} = \sum_{k\ge 0} S_k(n) \frac{T^k}{k!}$.
+\end{sol}
+
+\begin{sol}{prob:42} Summing the finite geometric series,
+\[ \sum_{0 \le j < n} \e^{jT} = \sum_{0 \le j < n} (\e^{T})^{j} = \frac{\e^{nT}-1}{\e^{T}-1} = \frac{\e^{nT}-1}{T} \cdot \frac{T}{\e^{T}-1}.\]
+Therefore, by Problem \ref{prob:41},
+\begin{align*} \sum_{k \ge 0} S_k(n) \frac{T^k}{k!} &= \frac{\e^{nT}-1}{T} \cdot \frac{T}{\e^{T}-1}\\
+&= \left(\sum_{r \ge 0} \frac{n^{r+1} T^{r}}{(r+1)!}\right) \left(\sum_{s\ge 0} B_s \frac{T^s}{s!}\right) \\
+&= \sum_{k\ge 0} \frac{T^k}{k!} \sum_{\substack{r+s=k \\ r,s\ge 0}} B_s \frac{(r+s)!}{(r+1)! s!} n^{r+1}.
+\end{align*}
+Comparing coefficients of $\frac{T^k}{k!}$ gives
+\begin{align*} S_k(n) &= \sum_{\substack{r+s=k\\ r,s\ge 0}} B_s \frac{(r+s)!}{(r+1)! s!} n^{r+1} = \sum_{0 \le r \le k} \frac{B_{k-r}}{r+1} \binom{k}{r} n^{r+1}.\index{Bernoulli numbers!Faulhaber's formula}\index{Faulhaber's formula}\end{align*}
+
+\begin{rmk} If you stare carefully, you will notice this argument takes for granted the identities $\e^{jT} = (\e^{T})^j$ (for $j=0,1,2,3\dots$). Here what is important is not that these identities hold for real numbers $T$ (which is familiar from calculus), but that they hold as identities of formal power series in the indeterminate $T$. 
+
+To effect a proof, write \[ (\e^{T})^j = \sum_{k_1,\dots,k_j\ge 0} \frac{1}{k_1! \cdots k_j!} T^{k_1+\dots+k_j} = \sum_{k \ge 0} \frac{T^k}{k!} \sum_{k_1+\dots+k_j=k} \binom{k}{k_1,k_2,\dots,k_j}.\] By the multinomial theorem, $\sum_{k_1+\dots+k_j=k} \binom{k}{k_1,k_2,\dots,k_j}= j^k$. Therefore, $(\e^{T})^j = \sum_{k \ge 0} \frac{(jT)^k}{k!} = \e^{jT}$. 
+
+% Even though invoking the ``real'' world was not necessary in this instance, the technique of transmogrifying an identity of real (or complex) numbers into an identity of formal power series is frequently useful.
+
+We could also have proved the required identities by leveraging our prior knowledge of the ``real world.''
+% Fortunately, the (obvious) real identities can be shown to imply the (not-so-obvious) formal identities! 
+Expand (formally) $\e^{jT} - (\e^{T})^j = \sum_{k \ge 0} c_k T^k$ for some coefficients $c_k$. The exact same transformations you use to put the left side into the form of the right will show that
+\[ (\e^{x})^j - \e^{jx} = \sum_{k\ge 0} c_k x^k \quad\text{for all \underline{real} numbers $x$}. \]
+Here all manipulations with real numbers can be justified by citing absolute convergence of the relevant series. (Operations on formal power series are \emph{defined} to mirror operations that can be performed on numerical series in the presence of sufficiently good convergence.) Since $(\e^{x})^j - \e^{jx}=0$ for all real numbers $x$, the series $\sum_{k\ge 0} c_k x^k$ converges everywhere to $0$. This forces each $c_k=0$, which in turn shows that $\e^{jT} = (\e^{T})^j$ formally. While gratuitous in this instance, the principle that an identity of real numbers can (often) be transmogrified into an identity of formal power series is frequently useful.
+\end{rmk}
+\end{sol}
+
+\begin{sol}{prob:43}\index{Bernoulli numbers!vanish for odd indices $>1$} All of the claimed equalities are straightforward to verify, including the invariance of $T\coth{T}$ under the substitution $T\mapsto -T$ (provided we accept that $\e^{2T} \e^{-2T}=1$, which can be proved by the method of the preceding Remark). Writing down the power series for $-T\coth(-T)$ and $T\coth(T)$, we conclude that
+\[ -T + \sum_{k\ge 0} B_k \frac{(-2T)^{k}}{k!} = T + \sum_{k\ge 0} B_k \frac{(2T)^{k}}{k!}. \]
+When $k$ is odd and larger than $1$, comparing coefficients of $T^k$ on both sides shows that $B_k=0$. When $k=1$, the same reasoning gives $-1 -2B_1 = 1 + 2B_1$, leading to $B_1 = -\frac{1}{2}$ (as asserted in our table).
+
+\begin{sol}{prob:alternatingsigns}\index{Bernoulli numbers!alternate in sign} Starting from $T\coth{T} = T + \sum_{k\ge 0} B_k \frac{(2T)^{k}}{k!}$, divide by $T$ and substitute $B_0=1$, $B_1=-\frac{1}{2}$ and $B_k=0$ for odd $k>1$. This provides the expansion claimed for $\coth{T}$. That $\frac{\mathrm{d}}{\mathrm{d}T}\coth{T} = 1-\coth^2{T}$ can be checked directly.
+
+To ease notation, write \[ \coth{T} = \frac{1}{T} + \sum_{k\ge 1} c_k T^{2k-1}.\] As $c_k$ and $B_{2k}$ share the same sign, we will be done if we show that $(-1)^{k+1} c_k > 0$ for each $k \in \Z^{+}$. Assuming this claim fails, let $K$ be the minimal counterexample. For later use, note that $K > 1$ (since $c_1 = 2B_2 = \frac{1}{3} > 0$). Differentiating the last displayed equation,
+\[ \frac{\mathrm{d}}{\mathrm{d}T}\coth{T} = -\frac{1}{T^2} + \sum_{k\ge 1} (2k-1) c_k T^{2k-2}. \]
+The right-hand Laurent series has $T^{2K-2}$ appearing with coefficient $(2K-1) c_K$. On the other hand, the coefficient of $T^{2K-2}$ in $\frac{\mathrm{d}}{\mathrm{d}T}\coth{T}$ is the same as its coefficient in $-\coth^2{T}$, since $\frac{\mathrm{d}}{\mathrm{d}T}\coth{T} = 1 - \coth^2{T}$ and $K>1$. That coefficient is $-(2c_K+\sum_{i+j=K,~i,j\ge 1} c_i c_j)$.  Therefore,
+$(2K+1) c_K = -\sum_{i+j=K,~i, j\ge 1} c_i c_j$, and
+\[ (-1)^{K+1} c_K = \frac{(-1)^{K}}{2K+1} \sum_{\substack{i+j=K\\i, j\ge 1}} c_i c_j = \frac{1}{2K+1} \sum_{\substack{i+j=K\\i, j\ge 1}} (-1)^{i+1} c_i\cdot (-1)^{j+1} c_j > 0.\]
+We use in the last step that $(-1)^{i+1}c_i > 0$ and $(-1)^{j+1} c_j > 0$, since $i$ and $j$ are positive integers smaller than $K$.
+\end{sol}
+
+
+\begin{rmk} A more satisfying explanation for why the even-indexed Bernoulli numbers alternate in sign is found in Euler's formula\index{Bernoulli numbers!in terms of $\zeta$-values}
+    \[ B_{2k} = (-1)^{k+1} 2\zeta(2k) \cdot \frac{(2m)!}{(2\pi)^{2m}}, \]
+    where $\zeta(s):=\sum_{n\ge 1} \frac{1}{n^s}$ is the \textsf{Euler--Riemann zeta function}. This remarkable relation pins down $B_{2k}$ rather precisely as a real number. Indeed, when conjoined to Stirling's estimate on factorials, it implies that
+    \[ \lim_{k\to\infty} \frac{|B_{2k}|}{4\sqrt{\pi k} (\frac{k}{\pi \e})^{2k}} = 1.\]
+Unfortunately, Euler's formula does not contain any obvious information about the \emph{number-theoretic} properties of $B_{2k}$.
+    
+    We will not prove Euler's result here. Interested readers are referred to the exquisitely written textbook of Ireland and Rosen for a characteristically elegant treatment \cite[pp.\ 231--232]{IR}.
+\end{rmk}
+\end{sol}
+
+
+
+\begin{sol}{prob:33} Information on the first ten        partial sums is collected below.
+
+{
+\centering
+\setlength{\tabcolsep}{16pt}
+    \begin{tabular}{rr}
+        $n$ & $\sum_{1\le k\le n}2^k/k$ \\\midrule
+        1 & 2 \\
+        2 & $2^2$  \\
+        3 & $2^2 \cdot 5/3$ \\
+        4 & $2^2 \cdot 8/3$\\
+        5 & $2^8 \cdot 1/15$  \\
+        6 & $2^5\cdot 13/15$ \\
+        7 & $2^5 \cdot 151/105$ \\
+        8 & $2^{13} \cdot 1/105$ \\
+        9 & $2^9 \cdot 83/315$ \\
+        10 & $2^{10} \cdot 73/315$
+    \end{tabular}\par
+}
+    %\caption{Caption}
+
+    
+Already this limited data suggests that $v_2(\sum_{1\le k\le n} 2^k/k)$ tends to infinity with $n$ (equivalently, that $\sum_{k=1}^{\infty}2^k/k = 0$ in $(\Q,|\cdot|_2)$). Being a bit bolder, we might conjecture that $v_2(\sum_{1\le k\le n} 2^k/k)$ is bounded below by a function ever-so-slightly smaller than $n$. For the resolution of both conjectures, see the solution to Problem \ref{prob:padiclumber1}.
+\end{sol}
+
+
+\begin{sol}{prob:44}\index{$\Q_p$, field of $p$-adic numbers!element has eventually periodic base $p$ expansion
+iff rational} We need the following lemma.
+
+\begin{lem} For each $x \in \Z_{(p)}$, there is a $d \in \{0,1,2,\dots,p-1\}$ with $x-d \in p\Z_{(p)}$.
+\end{lem}
+\begin{proof} Write $x=a/b$ where $a, b \in \Z$ and $p\nmid b$. Choose $B\in \Z$ with $Bb\equiv 1\pmod{p}$, and select $d\in \{0,1,\dots,p-1\}$ with $d\equiv aB\pmod{p}$. Then $db \equiv aBb\equiv a\pmod{p}$, and $x-d = p \frac{(a-db)/p}{b} \in p\Z_{(p)}$. 
+\end{proof}
+
+With the lemma in hand, we can express $r$ in the desired form by the algorithm of Problems \ref{prob:31} and \ref{prob:32}. Specifically, let $x_0 = r$, and for $n=0,1,2,3,\dots$, select $d_n \in \{0,1,2,\dots,p-1\}$ so that $x_n = d_n + p x_{n+1}$ for some $x_{n+1} \in \Z_{(p)}$. Then $r = \sum_{k\ge 0} d_k p^k$. 
+
+Having shown existence we turn to uniqueness. Suppose $r =  \sum_{k\ge 0} d_k p^k = \sum_{k\ge 0} d_k' p^k$ with all $d_k, d_k' \in \{0,1,\dots,p-1\}$. Assume $\{d_k\}$ and $\{d_k'\}$ do not coincide, and let $k_0$ be the smallest nonnegative integer with $d_{k_0} \ne d_{k_0}'$. Then $0 = r-r' = \sum_{k\ge k_0} (d_k - d_k') p^k$, and 
+\[ (d_{k_0}' -d_{k_0}) p^{k_0}= \sum_{k > k_0} (d_k - d_k') p^k.\]
+So if we set $s_n = \sum_{k_0 < k \le n} (d_k-d_k')p^k$, then $s_n \to (d_{k_0}' -d_{k_0}) p^{k_0}$ in $(\Q,|\cdot|_{p})$. That is,
+\begin{equation}\tag{*} |s_n - (d_{k_0}' -d_{k_0}) p^{k_0}|_p \to 0.\end{equation} However, $|s_n|_p \le \max_{k_0 < k \le n} |(d_k-d_k')p^k|_p \le p^{-k_0-1}$, while $|(d_{k_0}' -d_{k_0}) p^{k_0}|_p = p^{-k_0}$. So by ``survival of the greatest,'' 
+\[ |s_n - (d_{k_0}' -d_{k_0}) p^{k_0}|_p = p^{-k_0} \]
+for every $n > k_0$, contradicting (*).
+
+Finally we prove $\{d_k\}$ is eventually periodic. It suffices to show that in the algorithm of Problems \ref{prob:31} and \ref{prob:32}, there will always be  nonnegative integers $m < n$ with $x_{m} = x_{n}$. In that case $\{d_k\}$ repeats, from $k=m$ onwards, with (not necessarily minimal) period $n-m$.
+
+Write $r=a/b$ where $p\nmid b$. We will base our proof on two claims:
+\begin{enumerate}
+\item[(a)] each $x_n \in \frac{1}{b}\Z$,
+\item[(b)] each $|x_n|_{\infty}\le M$, where $M:= \max\{2,|r|_{\infty}\}$.
+\end{enumerate}
+
+Claim (a) is obvious when $n=0$, since $x_0 = r= a/b$. Suppose that $x_n\in \frac{1}{b}\Z$. Then $b p x_{n+1} = bx_n - b d_n \in \Z$. As $x_{n+1} \in \Z_{(p)}$, we also have $|bp x_{n+1}|_p = |bp|_p |x_{n+1}|_{p} \le p^{-1}$. So in fact $bp x_{n+1} \in p\Z$, and $x_{n+1} \in \frac{1}{bp} (p\Z) = \frac{1}{b}\Z$. This gives (a). Since $x_0=r$, (b) is trivial when $n=0$. If $|x_n|_{\infty} \le M$, then \[ |x_{n+1}|_{\infty} = \frac{1}{p} |x_{n} - d_n|_{\infty} < \frac{1}{p} (|x_n|_{\infty} + p) \le \frac{1}{2}|x_n|_{\infty} + 1 \le \frac{1}{2} M + 1 \le M. \] 
+So we have (b) as well. From (a) and (b) it is easy to conclude: $[-M, M]$ has finite intersection with $\frac{1}{b}\Z$, so the $x_n$ cannot all be distinct.
+\end{sol}
+
+\begin{sol}{prob:limitabsvalue}\index{limits (sequential)} Observe that 
+\[ |x_n|- |x_n-x| \le |x_n-(x_n-x)| = |x| = |x_n+(x-x_n)| \le |x_n| + |x-x_n|. \]
+Hence, 
+\[ -|x-x_n| \le |x|-|x_n| \le |x-x_n|. \]
+Since $|x_n-x|\to 0$, the squeeze theorem implies that $|x| -|x_n| \to 0$. Therefore, $|x_n|$ converges to $|x|$.
+
+Suppose now that $|\cdot|$ is non-Archimedean and that $x_n\to x$, where $x\ne 0$. The limit definition guarantees that $|x_n-x| < |x|$ for all sufficiently large $n$. For these $n$, ``survival of the greatest'' yields $|x_n| = |(x_n-x)+x| = |x|$.
+\end{sol}
+
+\begin{sol}{prob:45} By Problem \ref{prob:34} we can choose a prime $p$ with $|p|< 1$. Then whenever $n$ is an integer not divisible by $p$, the integers $p$ and $n$ are relatively prime and  Problem \ref{prob:35} tells us that $|n|_p=1$. 
+
+Write $|p|= p^{-c}$ with $c> 0$. Given $x \in \Q^{\times}$, we can express $x=p^{v_p(x)} a/b$ where $a$ and $b$ are integers not divisible by $p$. Then 
+\[ |x| = |p|^{v_p(x)} |a| |b|^{-1} = |p|^{v_p(x)} = p^{-c v_p(x)} = (p^{-v_p(x)})^{c} = |x|_p^{c}. \]
+Of course, we also have $|0| = 0 = |0|_p^c$. So $|\cdot| = |\cdot|_p^{c}$.
+\end{sol}
+
+\begin{sol}{prob:46} From Exercise \ref{prob:33}, $|r| > 1$ for each integer $r\ge 2$. So there are indeed real numbers $c,d >0$ with $|2| = 2^c$ and $|3| = 3^d$. 
+
+If we write $2^n = \sum_{i=0}^{m} \epsilon_i 3^i$, with each $\epsilon_i \in \{0,1,2\}$ and $\epsilon_m > 0$, then 
+\begin{align*} 2^{cn} = |2|^n = |2^n| &\le \sum_{i=0}^{m} |\epsilon_i| |3|^i \le \max\{|1|,|2|\} \frac{|3|^{m+1}-1}{|3|-1} \\&\le \frac{\max\{|1|,|2|\} |3|}{|3|-1} \cdot |3|^{m} = \frac{|2|\cdot |3|}{|3|-1} 3^{dm},
+\end{align*}
+proving the claimed inequality with $B := \frac{|2|\cdot |3|}{|3|-1}$. As $\epsilon_m > 0$, we have $2^n \ge 3^m$, and thus $3^{dm} \le 2^{dn}$. Therefore, $2^{cn} \le B \cdot 2^{dn}$, and $2^{(c-d)n} \le B$. Since $n$ may be taken arbitrarily large, it follows that $c\le d$.
+
+We could have run the argument with the roles of $2$ and $3$ reversed. Writing $3^n$ in base $2$ and reasoning analogously would lead to the inequality $3^{dn} \le B' 3^{cn}$, where $B' = \frac{|2|}{|2|-1}$. We would then conclude that $d \le c$. Thus, $c=d$.
+\end{sol}
+
+\begin{sol}{prob:47} The arguments of Problem \ref{prob:46} apply equally well with $3$ replaced by an arbitrary integer $r \ge 3$. Writing $|2| = 2^{c}$ and $|r| = r^{d}$, we find that for each positive integer $n$,
+\[ 2^{cn} \le B\cdot 2^{dn}\quad\text{while}\quad r^{dn} \le B'\cdot r^{cn} \]
+for the constants $B = \frac{\max\{ |2|,\dots,|r-1|\} |r|}{|r|-1}$ and $B' = \frac{|2|}{|2|-1}$. These two inequalities imply $c\le d$ and $d\le c$ (respectively), yielding $c=d$. 
+
+It follows that $|r| = r^{c}$ for every integer $r> 1$. That equality holds trivially when $r=1$, and so $|\cdot| = |\cdot|^{c}$ on all of $\Z^{+}$. Writing each $x \in \Q^{\times}$ in the form $x= \pm \frac{a}{b}$ where $a,b \in \Z^{+}$, we deduce that
+\[ |x| = |a| \cdot |b|^{-1} = a^{c} b^{-c} = (a b^{-1})^{c} = |x|_{\infty}^{c}.\]
+Of course $|0| = 0 = |0|_{\infty}^{c}$ as well, and so $|\cdot| = |\cdot|_{\infty}^c$.
+\end{sol}
+
+\begin{challenge} For which positive real numbers $c$ is $|\cdot|_{\infty}^{c}$ an absolute value on $\Q$? Now let $p$ be prime. For which positive real numbers $c$ is $|\cdot|_p^{c}$ an absolute value on $\Q$?
+
+% Let $c$ be a positive real number. \mbox{ }
+% \vspace{-0.12in} 
+% \begin{enumerate}
+% \item[(a)] Show that if $p$ is prime, then $|\cdot|_{p}^{c}$ is an absolute value on $\Q$.
+% \item[(b)] Prove that $|\cdot|_{\infty}^{c}$ is an absolute value on $\Q$ $\Longleftrightarrow$ $c\le 1$.
+% \end{enumerate}
+\end{challenge}
+
+\begin{sol}{prob:48}\index{equivalent absolute values}\index{absolute value!equivalence} We begin with a simple but useful observation: If $(K,|\cdot|)$ is any valued field, and $x \in K$, then
+\[ x^n \to 0 \text{ in $K$}\Longleftrightarrow |x^n-0| \to 0\text{ in $\R$} \Longleftrightarrow |x|< 1.\]
+
+Now suppose for a contradiction that $|\cdot|$ and $|\cdot|'$ are equivalent absolute values on $K$ with $|\cdot|$ Archimedean and $|\cdot|'$ non-Archimedean. By Problem \ref{prob:34}, $|2| > 1$, and so $|\frac{1}{2}| < 1$. Hence, $(\frac{1}{2})^n \to 0$ in $(K,|\cdot|)$. Since $|\cdot|$ and $|\cdot|'$ are equivalent, $(\frac{1}{2})^n \to 0$ in $(K,|\cdot|')$ as well, so that $|\frac{1}{2}|' < 1$. But then $|2|'> 1$, contradicting that $|2|' = |1+1|' \le \max\{|1|'
+,|1|'\} = 1$.  
+\end{sol}
+
+\begin{sol}{prob:49}\index{absolute value!classification of all abs.~values on $\Q$ (Ostrowski's theorem)}\index{Ostrowski's theorem}  Let $|\cdot|$ be a nontrivial absolute value on $\Q$. If $|\cdot|$ is Archimedean, then $|\cdot| = |\cdot|_{\infty}^{c}$ for some $c>0$ (Problem \ref{prob:47}). In this case, $|\cdot|$ is equivalent to $|\cdot|_{\infty}$, since
+\begin{align*} x_n\to x\text{ in $(\Q,|\cdot|)$} &\Longleftrightarrow |x_n-x| \to 0 \\ &\Longleftrightarrow |x_n-x|_{\infty} \to 0 \Longleftrightarrow x_n \to x \text{ in $(\Q,|\cdot|_{\infty})$}.\end{align*}
+If $|\cdot|$ is non-Archimedean, then $|\cdot|=|\cdot|_p^{c}$ for some prime $p$ and some $c>0$. In this case $|\cdot|$ is equivalent to $|\cdot|_p$ (same reasoning as displayed above).
+
+It remains to show that none of $|\cdot|_{\infty}, |\cdot|_2, |\cdot|_3, |\cdot|_5\dots$ are equivalent. From Exercise \ref{prob:48}, $|\cdot|_{\infty}$ is not equivalent to any of the others, since $|\cdot|_{\infty}$ is Archimedean while $|\cdot|_p$ is non-Archimedean. If $p$ and $q$ are distinct primes, then $p^n \to 0$ in $(\Q,|\cdot|_p)$ but $p^n \not\to 0$ in $(\Q,|\cdot|_q)$. So $|\cdot|_p$ and $|\cdot|_q$ are inequivalent.
+\end{sol}
+
+\begin{challenge}[classifying absolute values on $\F_p(T)$]\index{absolute value!classification of all abs.~values on $\F_p(T)$} Fix a prime $p$, and let $\bmPi$ denote the collection of all monic irreducible polynomials $\pi \in \F_p[T]$. Let $|\cdot|$ be an absolute value on $\F_p(T)$.
+\vspace{-0.12in}
+\begin{enumerate}
+\item[(a)] Suppose that $|T| > 1$. Prove that $|F| = |T|^{\deg{a}-\deg{b}}$ for all $F =\frac{a}{b}\in \F_p(T)^{\times}$.\item[(b)] Now assume that $|T| \le 1$. Prove that $|F|\le 1$ for all $F \in \F_p[T]$. Assuming $|\cdot|$ is nontrivial, show that there is a unique $\pi \in \raisebox{-0.25pt}{$\bmPi$}$ with $|\pi| < 1$. Furthermore, $|F| = |\pi|^{v_\pi(F)}$ for all $F \in \F_p(T)^{\times}$. (Recall that when $F=\pi^{v} \frac{a}{b}$ for $a,b \in \F_p[T]$ coprime to $\pi$, we are setting $v_{\pi}(F):=v$.)
+\item[(c)] State and prove an $\F_p(T)$-analogue of the assertion in Problem \ref{prob:49}. 
+\end{enumerate}
+
+\end{challenge}
+
+\begin{sol}{prob:CC} NO. Suppose $x_0, \dots, x_{p}$ are $p+1$ (distinct) equidistant rational numbers. Translating each by $-x_0$, we can assume $x_0= 0$. Next, scaling the $x_i$ by the same power of $p$, we can assume that each $x_i \in \Z_{(p)}$ and that at least one of them, say $x_1$, is not in $p\Z_{(p)}$. Then $|x_1-x_0|_p = |x_1|_p= 1$. 
+
+Each of $x_1,\dots,x_{p}$ is congruent modulo $p\Z_{(p)}$ to one of $0,1,2,3,\dots,p-1$ (see the solution to Problem \ref{prob:44}). Since the $x_i$ are equidistant from one another, 
+\[ |x_j|_p  =  |x_j-x_0|_p = |x_1-x_0|_p=1 \] for all $j=1,2,\dots,p$. Therefore, each of $x_1,\dots,x_p$ is congruent to one of $1,2,\dots,p-1 \pmod {p\Z_{(p)}}$. But then two of $x_1,\dots,x_{p}$, say $x_i$ and $x_j$, coincide modulo $p\Z_{(p)}$ (Pigeonhole Principle). For these two, 
+\[ |x_i-x_j|_p \le \frac{1}{p} < 1 = |x_1-x_0|_p. \]
+Contradiction!
+\end{sol}
+
+
+\begin{sol}{prob:50}\index{harmonic number} Notice that $H_n - \frac{1}{p}H_{m} = \sum_{1 \le k \le n} \frac{1}{k} - \sum_{1 \le r \le m}\frac{1}{pr} = \sum_{1 \le k \le n,~p\nmid k}\frac{1}{k} \in \Z_{(p)}$. Hence, $|H_n - \frac{1}{p}H_m|_p \le 1 \le |H_m|_p < p|H_m|_p = |\frac{1}{p}H_m|_p$. Now ``survival of the greatest'' gives us
+\[ |H_n|_p = \left|\frac{1}{p}H_m + \left(H_n - \frac{1}{p}H_m\right)\right|_p = \left|\frac{1}{p}H_m\right|_p = p |H_m|_{p} \]
+\end{sol}
+
+\begin{sol}{prob:51} Let $p$ be a prime. Suppose we happen to have in hand a nonnegative integer $k$ with $|H_m|_{p} \ge 1$ for all $m$ in the range $p^k \le m < p^{k+1}$. Problem \ref{prob:50} allows us to conclude that $|H_n|_{p} \ge p$ whenever $p^{k+1} \le n < p^{k+2}$. Repeating the reasoning, $|H_n|_{p} \ge p^2$ whenever $p^{k+2} \le n < p^{k+3}$. In general, $|H_n|_p \ge p^{j}$ for all $n\ge p^{k+j}$ (for $j=0,1,2,3,\dots$). Therefore, $|H_n|_{p}\to\infty$. 
+
+One can check with a simple computer program that $k=2$ satisfies our hypothesis both when $p=3$ and when $p=5$. So $|H_n|_{3}\to\infty$ and $|H_n|_{5}\to\infty$. 
+
+\begin{rmk} For an in-depth examination of $|H_n|_{p}$, see \cite{boyd}. 
+
+Several open questions persist regarding the numerators and denominators of the harmonic numbers. Here is one that appears deceptively simple: Are there infinitely many $n$ for which the denominator of $H_n$ (in lowest terms) is the least common multiple of $1,2,3,\dots, n$?
+\end{rmk}
+
+\end{sol}
+
+\let\oldaddcontentsline\addcontentsline
+\renewcommand{\addcontentsline}[3]{}
+\begin{thebibliography}{11}
+        \bibitem{boyd}  D.\,W. Boyd,
+\emph{A $p$-adic study of the partial sums of the harmonic series}. Experiment. Math. \textbf{3} (1994), 287--302.
+
+\bibitem{IR} K. Ireland and M. Rosen, \emph{A classical introduction to modern number theory}, second ed., Graduate Texts in Mathematics, vol. 84, Springer-Verlag, New York, 1990.
+    \end{thebibliography}
+\let\addcontentsline\oldaddcontentsline
+

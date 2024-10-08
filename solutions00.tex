@@ -1,0 +1,121 @@
+
+\chapter*{Solutions to Set \#1}
+\addcontentsline{toc}{chapter}{Solutions to Set \#1}
+\markboth{Solutions to Set \#1}{Solutions to Set \#1}
+\label{set0sols}
+
+\begin{sol}{prob:01} 
+    \begin{enumerate}
+        \item[(a)] First off, $|1|^2 = |1\cdot 1|=|1|$ and $|1| > 0$ (from (i)). Thus, $|1| = 1$. Next, $|-1|^2 = |(-1) (-1)| = |1| = 1$. As $|-1| > 0$, we conclude that $|-1|=1$.
+\item[(b)] The proof is the same for the ``standard'' absolute value: By the triangle inequality, $|x| = |(x-y)+y| \le |x-y| + |y|$. Now rearrange.
+\item[(c)] Since $|y^{-1}|\cdot |y|= |y^{-1}\cdot y| = |1| = 1$, we have $|y^{-1}| = |y|^{-1}$. So $|xy^{-1}| = |x||y^{-1}| = |x||y|^{-1}$, as claimed.
+    \end{enumerate}
+\end{sol}
+
+\begin{sol}{prob:02}  Property (i) in the absolute value definition is clear. Property (ii) is also easy: When $x+y=0$, the inequality is obvious. Otherwise, either $x$ or $y$ is nonzero, so that $|x|$ or $|y|$ is $1$. Hence, $1= |x+y| \le |x| + |y|$. To prove (iii), take cases: If $x$ and $y$ are nonzero, both sides are $1$, otherwise both sides are $0$. In this last step we use that fields are integral domains.
+\end{sol}
+
+\begin{sol}{prob:03} Property (i) is again clear. Of the remaining two properties, (iii) is quicker to dispense with: If $x$ or $y$ is zero, both sides of (iii) vanish. Otherwise, write $x= p^{v_p(x)} \frac{a}{b}$ and $y=p^{v_p(y)} \frac{c}{d}$, where $p$ does not divide any of $a,b,c,d$. Then $xy = p^{v_p(x)+v_p(y)} \frac{ac}{bd}$, and $p$ does not divide either of $ac$ or $bd$. Hence, $v_p(xy) = v_p(x) + v_p(y)$ and $|xy|_p = p^{-v_p(x)} p^{-v_p(y)} = |x|_p |y|_p$.
+
+To prove (ii) we have to work a bit harder. If $x$, $y$, or $x+y$ is zero, (ii) is trivial. Otherwise, write $x= p^{v_p(x)} \frac{a}{b}$ and $y=p^{v_p(y)} \frac{c}{d}$ as above. The symmetry of (ii) in $x$ and $y$ allows us to assume $v_p(x) \le v_p(y)$. Then $x+y= p^{v_p(x)} \left(\frac{a}{b} + p^{v_p(y)-v_p(x)} \frac{c}{d}\right)$. Since $p^{v_p(y)-v_p(x)}\in \Z$, we can express $p^{v_p(y)-v_p(x)}\frac{c}{d}$ as a fraction with denominator $d$. Hence, $\frac{a}{b} + p^{v_p(y)-v_p(x)} \frac{c}{d} = \frac{N}{bd}$ for some nonzero $N\in \Z$. Write $N = p^{w} N'$, where $w$ is a nonnegative integer and $N'\in \Z$ is not divisible by $p$. Then $x+y = p^{v_p(x)+w} \frac{N'}{bd}$, where neither $N'$ nor $bd$ is divisible by $p$. Hence, $v_p(x+y) = v_p(x) + w \ge v_p(x)$, and $|x+y|_{p} = p^{-v_p(x)} p^{-w} = |x|_p p^{-w} \le |x|_p \le |x|_p + |y|_p$.
+\end{sol}
+
+
+\begin{sol}{prob:05} This is implicit in our solution to Problem \ref{prob:03}.
+\end{sol}
+
+\begin{sol}{prob:04} We may assume without loss of generality that $|x| > |y|$. A direct application of the strong triangle inequality gives $|x+y| \le \max\{|x|,|y|\} = |x|$. The strong triangle inequality also implies that $|x| = |(x+y) + (-y)| \le \max\{|x+y|,|-y|\} = \max\{|x+y|,|y|\}$. (We use in this last step that $|-y| = |y|$, which follows from $|-1|=1$.) Since $|x| > |y|$, the maximum here cannot be $|y|$. So it must be $|x+y|$, yielding $|x| \le |x+y|$. Hence, $|x+y| = |x|$.  
+\end{sol}
+
+
+\begin{sol}{prob:06} Since $|2| \le 1$, we see that $|2^{e_1} + \dots + 2^{e_n}| \le  |2|^{e_1} + \dots + |2|^{e_n} \le 1  +\dots + 1 = n$.
+To conclude, notice that (a) every positive integer less than $2^n$ is a sum of at most $n$ powers of $2$ (e.g., use the binary representation), while (b) $\sum_{0 \le k \le n} \binom{n}{k}=2^n$, so that $\binom{n}{k} < 2^n$ for every $k$.
+\end{sol}
+
+\begin{sol}{prob:07}\index{absolute value!product formula on $\Q$}\index{product formula for absolute values on $\Q$} Write $x = \pm \frac{a}{b}$ where $a$ and $b$ are relatively prime positive integers. Since $a$ and $b$ share no prime factors,
+\[ \prod_{p\text{ prime}} |x|_p = \prod_{p \text{ prime}} \left(|a|_p |b|_p^{-1}\right) = \prod_{p\mid a} p^{-v_p(a)} \prod_{p \mid b} p^{v_p(b)} = |a|_{\infty}^{-1} |b|_{\infty},\]
+which is the multiplicative inverse of $|a|_{\infty} |b|_{\infty}^{-1} = |x|_{\infty}$.
+\end{sol}
+
+\begin{challenge}[simultaneous approximation]\index{simultaneous approximation} The product formula suggests that $|\cdot|_{\infty}$, $|\cdot|_2$, $|\cdot|_3$, $|\cdot|_5, \dots$ ``know about each other.'' The situation is very different if one considers only a finite subset of these absolute values. Make this precise by proving the following independence statement.
+
+Let $\Pp$ be a finite set of primes. Choose rational numbers $x_p$ for each prime $p\in \Pp$, alongside a rational number $x_{\infty}$. For each $\epsilon > 0$, there is a rational number $x$ satisfying 
+\[ |x - x_p|_p < \epsilon\quad\text{for all $p \in \mathcal{P}$}, \quad\text{as well as}\quad |x-x_{\infty}|_{\infty} <\epsilon. \]
+\end{challenge}
+
+\begin{sol}{prob:08} We begin by demonstrating a fabulously useful formula of Legendre\index{Legendre's formula for $v_p(n"!)$}: For each prime $p$ and nonnegative integer $n$,
+\[ v_p(n!) = \sum_{1 \le m \le n} v_p(m) = \sum_{1 \le m \le n} \sum_{\substack{p^k \mid m \\ k \ge 1}} 1 = \sum_{k \ge 1} \sum_{\substack{1 \le m \le n \\ p^k \mid m}} 1 = \sum_{k \ge 1} \left\lfloor \frac{n}{p^k}\right\rfloor. \]
+
+When $n>0$, it follows that $v_p(n!) < \sum_{k \ge 1} \frac{n}{p^k} = \frac{n}{p-1}$. (The inequality is surely strict, as $\lfloor n/p^k\rfloor < n/p^k$ whenever $p^k > n$.) Therefore, $|n!|_{p} = p^{-v_p(n!)} > p^{-n/(p-1)}$.\index{absolute value!of factorials}
+\end{sol}
+
+\begin{challenge}[following up on Legendre's formula] Let $p$ be a prime. For each nonnegative integer $n$, expand $n$ in base $p$: write $n = n_0 + n_1 p + n_2 p^2 + \dots$, where each $n_i \in \{0,1,2,\dots,p-1\}$ and all but finitely many $n_i=0$. Set $s_p(n) = n_0 + n_1 + n_2 + \dots$.
+\begin{enumerate} 
+\item[(a)] Show that $v_p(m) = \frac{1}{p-1}(s_p(m-1)-s_p(m)+1)$ for every positive integer $m$. Deduce that $v_p(n!) = \frac{1}{p-1}(n - s_p(n))$ for all nonnegative integers $n$ (an alternative form of Legendre's formula).
+\item[(b)] Prove that $n!/(-p)^{v_p(n!)} \equiv n_0! n_1! n_2! n_3! \cdots\pmod{p}$ for all nonnegative $n\in\Z$. (Anton \cite{anton}, Stickelberger \cite[pp.~342--343]{stickelberger}, Hensel \cite{hensel})
+\end{enumerate}
+\end{challenge}
+
+
+\begin{sol}{prob:09} We interpret ``grows faster'' to mean that $n!/C^{n}$ tends to infinity. To prove that, we may (in fact, should!) assume that $C>0$. A (canonical) application of the ratio test shows that $\sum_{n\ge 0} C^n/n!$ converges. (It converges to $\e^C$ but we do not need that here.) So its terms must tend to $0$. Since $C^n/n!$ is positive for each $n$, we deduce that $n!/C^n\to\infty$.
+
+On the other hand, if there are only finitely many primes, then $n! = |n!|_{\infty} = \prod_{p} |n!|_{p}^{-1} \le \prod_{p} p^{n/(p-1)} = (\prod_{p} p^{1/(p-1)})^{n}$. That is, $n! \le C^n$ with $C := \prod_{p} p^{1/(p-1)}$. Contradiction!
+\end{sol}
+
+\begin{challenge}[Skolem \cite{skolem}] Show that if $p$ is prime and $n\in \Z^{+}$, either $|2^n-1|_p=1$ or $|2^n-1|_p = |2^{p-1}-1|_p |n|_p$. Deduce that if $\Pp$ is any fixed finite set of primes, then $2^n-1$ has a prime factor outside of $\Pp$ for all sufficiently large $n$. 
+\end{challenge}
+
+\begin{sol}{prob:10} Given $n \in \Z^{+}$, let $e$ be the largest nonnegative integer such that $2^{e}\le n$. Then $2^e$ is the unique integer in $[1,n]$ divisible by $2^e$. (The next smallest multiple of $2^e$ is $2^{e+1}$, but this exceeds $n$.) It follows that $|1/m|_{2} = 2^{v_2(m)}$ has a unique maximum, among $m \in [1,n]$, at $m=2^e$. By ``survival of the greatest'' (Exercise \ref{prob:05}), $|H_n|_2 = |\sum_{m \le n} 1/m|_{2} = |1/2^e|_{2}= 2^{e} > \frac{1}{2}n$. So $|H_n|_2\to\infty$.
+
+\begin{challenge} Prove that in any nonempty set $S$ of consecutive positive integers, one element of $S$ has strictly smaller $2$-adic absolute value than all the     others. Conclude that if $S\ne\{1\}$, then $\sum_{n \in S} 1/n \notin \Z$ \textbf{(Kürschák \cite{kurschak})}.
+\end{challenge} 
+\end{sol}
+
+
+\begin{sol}{prob:11}\index{harmonic number}\index{Wolstenholme's theorem} The stated expression for $H_{p-1}$ is immediate upon pairing the terms $\frac{1}{i}$ and $\frac{1}{p-i}$. To show $|H_{p-1}|_{p} \le p^{-2}$, we must prove that $|S|_{p} \le p^{-1}$, where $S: = \sum_{0 < i < p/2} \frac{1}{i(p-i)}$. 
+
+We would like to evaluate $S$ modulo $p$ by reducing term-by-term. This is essentially what we will do, but since it is not immediately clear what it means to reduce a rational number mod $p$, we premultiply by $(p-1)!$. In the field $\F_p=\Z/p$, we have $\frac{(p-1)!}{i(p-i)} = (p-1)!i^{-1} (p-i)^{-1} = -(p-1)! i^{-2}$\footnote{The first equality is not  a tautology! What is being claimed is that the integer on the left has its mod $p$ reduction equal to the element of $\F_p$ on the right. The $-1$st powers indicate inverses in the field $\F_p$.} whenever $0 < i < p/2$.  Therefore (still working in $\F_p$),
+\[ (p-1)!S = -(p-1)! \sum_{0 < i < p/2} i^{-2} = -\frac{1}{2}(p-1)! \sum_{i \in \F_p^{\times}} i^{-2} = -\frac{1}{2}(p-1)! \sum_{j \in \F_p^{\times}} j^{2}. \]
+Here we use that $i^{-2} = (p-i)^{-2}$ and that as $i$ runs over all the nonzero elements of $\F_p$, so does $j = i^{-1}$. To finish, observe that since $p > 3$, the group $\F_p^{\times}$ has an element other than $\pm 1$. So there is an $r \in \F_p^{\times}$ with $r^2\ne 1$. Since multiplication by $r$ permutes $\F_p^{\times}$,
+\[ r^2 \sum_{j \in \F_p^{\times}} j^{2} = \sum_{j \in \F_p^{\times}} (rj)^{2} = \sum_{j \in \F_p^{\times}} j^{2}, \]
+forcing $\sum_{j \in \F_p^{\times}} j^2=0$ (since $r^2\ne 1$). It follows that $(p-1)!S=0$ in $\Z/p$, and so $(p-1)!S$ is a multiple of $p$. Since $p\nmid (p-1)!$, we conclude that $|S|_p = |(p-1)!|_p |S|_p = |(p-1)! S|_p \le p^{-1}$, as desired.
+
+\begin{rmk} It is not really necessary to premultiply by $(p-1)!$. On the next problem set, we will introduce the ring $\Z_{(p)}$, whose elements are the rational numbers with denominators prime to $p$. $\Z_{(p)}$ is a local ring (in fact, domain) with unique maximal ideal $p\Z_{(p)}$, and $\Z_{(p)}/p\Z_{(p)} \cong \Z/p = \F_p$. The same argument we used to show $(p-1)!S=0$ in $\Z/p$ will show directly that $S = 0$ in $\Z_{(p)}/p\Z_{(p)}$, and this is sufficient to conclude that $|S|_p \le p^{-1}$.  
+\end{rmk}
+\end{sol}
+
+
+
+
+\renewcommand\refname{\normalsize References}
+\let\oldaddcontentsline\addcontentsline
+\renewcommand{\addcontentsline}[3]{}
+\begin{thebibliography}{11}
+\bibitem{anton} H.~Anton, \emph{Die Elferprobe und die Proben für die Modul Neun, Dreizehn und Hunderteins.  Für Volks- und Mittelschulen}. Archiv Math. Physik \textbf{49} (1869), 241--308.
+
+\bibitem{hensel} K.~Hensel, \emph{Über die arithmetischen Eigenschaften der Faktoriellen}. Archiv Math. Physik (third series) \textbf{2} (1902), 293--294.
+
+\bibitem{kurschak}
+J. Kürschák, \emph{A harmonikus sorról}. Mat. Fiz. Lapok \textbf{27} (1918), 299--300. 
+
+\bibitem{skolem}
+T. Skolem, \emph{On certain exponential equations}.
+Norske Vid. Selsk. Forh. \textbf{18} (1945), 71--74.
+
+\bibitem{stickelberger}
+L. Stickelberger, \emph{Ueber eine Verallgemeinerung der Kreistheilung}. Math. Ann. \textbf{37} (1890), 321--367.
+
+
+
+\end{thebibliography}
+\let\addcontentsline\oldaddcontentsline
+
+
+% \let\oldaddcontentsline\addcontentsline
+% \renewcommand{\addcontentsline}[3]{}
+% \begin{thebibliography}{11}
+%         \bibitem{newman}  Donald J. Newman,
+% \emph{A problem seminar}. Problem Books in Mathematics. Springer-Verlag, New York-Berlin, 1982.
+%     \end{thebibliography}
+% \let\addcontentsline\oldaddcontentsline
+

@@ -1,0 +1,89 @@
+\chapter*{$p$-Set \#6}
+\addcontentsline{toc}{chapter}{Set \#6}
+\markboth{Set \#6}{Set \#6}
+
+
+\section*{Enter Cauchy}
+Let $K$ be a field equipped with an absolute value $|\cdot|$. If $\{x_n\}$ converges to $x$ in $(K,|\cdot|)$, then for any real number $\epsilon > 0$, all terms far enough out in the sequence $\{x_n\}$ are within $\frac{1}{2}\epsilon$ of $x$. By the triangle inequality, all such terms are within $\epsilon$ of each other. That is:
+\vskip 0.05in
+\fbox{
+    \parbox{4.2in}{
+        For each $\epsilon > 0$, there is a positive integer $N$ with \[ |x_n - x_m| < \epsilon \quad\text{whenever $n, m \ge N$.}\]
+    } (C)
+}
+\vskip 0.05in
+Any sequence $\{x_n\}$ with property (C) is called a \textsf{Cauchy sequence}.\index{Cauchy sequence}
+
+\begin{prob}\label{prob:68} If $|\cdot|$ is non-Archimedean, then $\{x_n\}$ is Cauchy $\Longleftrightarrow$ $|x_{n+1}-x_n| \to 0$. 
+
+{\scriptsize This need not hold if $|\cdot|$ is Archimedean; a counterexample is provided by the partial sums of the harmonic series in $(\Q,|\cdot|_{\infty})$.}
+\end{prob}
+
+\begin{prob}\label{prob:70} The sequence $\{2^{5^n}\}$ is Cauchy in $(\Q, |\cdot|_5)$. 
+%It does not converge in $(\Q,|\cdot|_5)$ but does converge in $(\Q_5,|\cdot|_5)$, to a $4$th root of $1$.
+\end{prob}
+
+
+\begin{prob}[a common calculus Cauchy claim]\label{prob:68point5} Let $(K,|\cdot|)$ be a valued field. If $\{x_n\}$ is a Cauchy sequence in $K$, then $\{|x_n|\}$ is a bounded sequence of real numbers.
+\end{prob}
+
+\begin{prob}[and another] \label{prob:69} Let $(K,|\cdot|)$ be a valued field. If a sequence $\{x_n\}$ of elements of $K$ is Cauchy, and some subsequence of $\{x_n\}$ converges to $x \in K$, then $\{x_n\}$ converges to $x$.
+\end{prob}
+
+\vspace{-0.22in}
+\testrule 
+If $\R$ is equipped with the usual absolute value, then every Cauchy sequence in $\R$ converges to an element of $\R$. This need not be the case for a general valued field. For example, the sequence of rational numbers
+\[ x_1 =1, \quad x_2 = 1.4, \quad x_3 = 1.41, \quad x_4 = 1.414,\quad \dots, \]
+obtained by successively truncating the decimal expansion of $\sqrt{2}$, is Cauchy in $(\Q,|\cdot|_{\infty})$ but does not converge to any element of $\Q$, since $\sqrt{2}\notin \Q$. Coping with this unsettling scenario was one of the motivations behind the invention (discovery?) of the real numbers in the first place!
+
+Disconcerting examples of this same kind can also be found when $K=\Q$ and $|\cdot| = |\cdot|_p$. Take any sequence $\{c_k\}_{k\ge 0}$ from $\{0,1,\dots,p-1\}$ that is not eventually periodic. Then $x_n = \sum_{k=0}^{n} c_k p^k$ defines a Cauchy sequence in $(\Q,|\cdot|_p)$. To check the Cauchy condition (C), we may assume that $m < n$ (why?). Then  
+\[ |x_n - x_m|_p = |c_{m+1} p^{m+1} + c_{m+2} p^{m+2} + \dots + c_n p^{n}|_p < p^{-m},\]
+which is smaller than $\epsilon$ once $m > \frac{\log(1/\epsilon)}{\log{p}}$. So (C) is satisfied for any $N > \frac{\log(1/\epsilon)}{\log{p}}$. But $\{x_n\}$ cannot converge to an element of $\Q$, on account of Exercise \ref{ex:rational}.
+
+To get out of this mess, we need to fill in the following blank: $\R$ is to $(\Q,|\cdot|_{\infty})$ as $\underline{\hphantom{nonsense}}$ is to $(\Q,|\cdot|_{p})$. The answer here turns out to be $\Q_p$! But \dots what is $\Q_p$?
+\testruletwo
+
+\section*{The $p$-adic Numbers, At Last!}
+
+We define the $\textsf{field of $p$-adic numbers}$\index{p-adic@$p$-adic number|see{$\Q_p$, field of $p$-adic numbers}}, denoted $\Q_p$\index{$\Q_p$, field of $p$-adic numbers!introduction and basic properties},  as the fraction field of  $\Z_p$. Since $\Z_p$ has characteristic $0$, so does $\Q_p$, and thus $\Q\subset \Q_p$.
+% As fields of characteristic $0$, each $\Q_p$ contains a canonical copy of $\Q$.
+
+\begin{prob}\label{prob:63} $\Q_p = \bigcup_{n\ge 0} p^{-n} \Z_p =  \Z_p[1/p]$.
+\end{prob}
+
+\begin{prob}\label{prob:64} Every nonzero $x \in \Q_p$ admits a unique expression in the form $p^v u$, where $v$ is an integer and $u$ is a unit in $\Z_p$. \end{prob}
+
+For $x \in \Q_p^{\times}$, we set $v_p(x)=v$, where $v$ is the integer from Problem \ref{prob:64}. In order to have $v_p$ defined on all of $\Q_p$, we let $v_p(0)=\infty$. (Compare with the definition of $v_p$ on Set \#1.)
+
+\begin{prob}\label{prob:65} When $x \in \Q$, we have defined $v_p(x)$ twice: once on Set \#1 and again just now, since $x$ is also an element of $\Q_p$. 
+
+Check that when $x \in \Q$ our two definitions of $v_p(x)$ agree (so our sin is venial, rather than mortal). Furthermore, if we set $|x|_p = p^{-v_p(x)}$ for $x \in \Q_p$, then $|\cdot|_p$ defines a non-Archimedean absolute value on $\Q_p$. (We continue to call $v_p$ the \textsf{$p$-adic valuation}\index{p-adic@$p$-adic!valuation} and $|\cdot|_p$ the \textsf{$p$-adic absolute value}.)\index{absolute value!$p$-adic}\index{p-adic@$p$-adic!absolute value}
+\end{prob}
+
+\begin{prob}\label{prob:66} $\Z_p = \{x \in \Q_p: |x|_p \le 1\}$. (That is, $\Z_p=\Dd_{\le 1}(0)$ in $\Q_p$.) \\
+Also, $\Z_p^{\times} = \{x \in \Q_p: |x|_p = 1\}$.
+\end{prob}
+\begin{prob}[$\Z_p$ is compact]\index{$\Z_p$, ring of $p$-adic integers!is compact}\label{prob:67}\label{prob:zpcompact} Let $x_1, x_2, x_3, \dots$ be a sequence of elements of $\Z_p$. Infinitely many $x_n$ share the same mod $p$ component, say $a_1\bmod{p}$. Among these, infinitely many share the same mod $p^2$ component, $a_2\bmod{p^2}$. Etc. Thus:      $x_1,x_2,x_3,\dots$ contains a subsequence converging to $(a_1\bmod{p}, a_2\bmod{p^2}, a_3\bmod{p^3}, \dots) \in \Z_p$. 
+\end{prob}
+
+
+
+
+\curious
+
+\begin{prob}[Stern]\label{prob:71} Recall that $\log\frac{1}{1-t} = t+\frac{1}{2}t^2 +\frac{1}{3}t^3+  \dots$ whenever $t$ is a complex number with $|t| < 1$ (usual absolute value). Exponentiating, $\e^{T} \e^{T^2/2} \e^{T^3/3} \cdots =\frac{1}{1-T}$, as formal power series. Expanding and comparing coefficients of $T^p$ shows that $|1 - \frac{1}{p!} - \frac{1}{p}|_{p} \le 1$. Hence, $(p-1)!\equiv -1\pmod{p}$ (\textsf{Wilson's theorem}).\index{Wilson's theorem}
+\end{prob}
+
+
+\begin{prob}\label{prob:72} For each prime $p$ and each $a\in \Z$ coprime to $p$, put $q_p(a) = \frac{a^{p-1}-1}{p}$. By Fermat's little theorem, $q_p(a) \in \Z$. 
+
+Prove: If $a$ and $b$ are both coprime to $p$, then $q_p(ab) \equiv q_p(a) + q_p(b) \pmod{p}$.
+\end{prob}
+
+
+
+
+
+
+
+

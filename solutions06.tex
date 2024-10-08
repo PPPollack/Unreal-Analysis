@@ -1,0 +1,199 @@
+\chapter*{Solutions to Set \#7}
+\addcontentsline{toc}{chapter}{Solutions to Set \#7}
+\markboth{Solutions to Set \#7}{Solutions to Set \#7}
+\label{set6sols}
+
+\begin{sol}{prob:76} Let $\{x_n\}$ be a Cauchy sequence in $\Z_p$. By Problem \ref{prob:67}, $\{x_n\}$ has a  subsequence $\{x_{n_k}\}$ converging to some $x\in \Z_p$. By Problem \ref{prob:69}, $x_n\to x$.
+\end{sol}
+
+\begin{sol}{prob:77} Let $\{x_n\}$ be a Cauchy sequence in $\Q_p$. We know from Exercise \ref{prob:68point5} that $\{|x_n|\}$ is bounded. Hence, if $k$ is sufficiently large, then each $|p^k x_n|\le 1$, i.e., $\{p^k x_n\}$ is a sequence in $\Z_p$. Since $\{x_n\}$ is Cauchy, so is $\{p^k x_n\}$. By Problem \ref{prob:76}, $p^k x_n \to x$ for some $x \in \Z_p$. Then $x_n \to p^{-k} x$.\index{$\Q_p$, field of $p$-adic numbers!is complete}
+\end{sol}
+
+\begin{sol}{prob:77andahalf} Let $x_n = 2^{5^n}$. By Problem \ref{prob:70}, $\{x_n\}$ is a Cauchy sequence in $\Z_5$. Invoking Exercise \ref{prob:76}, $x_n \to x$ for some $x\in \Z_p$.
+
+By the product rule for limits, $\lim x_n^5 = (\lim x_n)^5= x^5$. On the other hand, $x_n^{5} = x_{n+1}$, so that $\lim x_n^5 = \lim x_{n+1} = x$. Hence, $x=x^5$.
+
+As shown in the solution to Problem \ref{prob:70}, $x_n = 2^{5^n}\equiv 2^{5^1}\equiv 2\pmod{5}$ for all $n$. Therefore, $|x_n-2|_5 \le \frac15$ for all $n$, and (see Problem \ref{prob:limitabsvalue})
+\[ |x-2|_5 = |\lim{(x_n-2)}|_5 = \lim |x_n-2|_5 \le \frac{1}{5}. \]
+Thus, $x \equiv 2\pmod{5\Z_5}$. In particular, $x\ne 0$, and $x=x^5$ tells us $1=x^4$. That is, $x$ is a $4$th root of $1$, as claimed.
+
+The only $4$th roots of $1$ belonging to $\Q$ are $1$ and $-1$. Neither is congruent to $2$ modulo $5\Z_5$. Therefore, $x\notin \Q$.
+\end{sol}
+
+\begin{sol}{prob:78} Let $x \in \Z_p$. For each $k \in \Z^{+}$, there is an integer $a_k$ with $x\equiv a_k\pmod{p^k\Z_p}$. (If we view $x$ as an infinite tuple, we can take for $a_k$ any integer representing the mod $p^k$ component of $x$; see the solution to Problem \ref{prob:58}.) Then $|a_k-x|_{p} \le p^{-k}$, which tends to $0$ as $k\to\infty$. So $\{a_k\}$ is a sequence of integers converging to $x$.\index{$\Z_p$, ring of $p$-adic integers!has $\Z$ as a dense subset}
+\end{sol}
+
+\begin{sol}{prob:79} Let $x \in \Q_p$. Choose $k \in \Z$ with $p^k x \in \Z_p$. By Problem \ref{prob:78}, we can find a sequence of integers $a_k$ converging to $p^k x$. Then $p^{-k} a_k$ is a sequence of rational numbers converging to $x$.\index{$\Q_p$, field of $p$-adic numbers!has $\Q$ as a dense subset}
+\end{sol}
+
+
+\begin{sol}{prob:80} We define a candidate isomorphism $\phi\colon L\to L'$ as follows. Since $K$ is dense in $L$, for each $x \in L$ there is a sequence $\{x_n\}$ in $K$ such that $x_n\to x$ in $L$. Since $\{x_n\}$ converges in $L$, $\{x_n\}$ is Cauchy in $L$. Then $\{x_n\}$ is also Cauchy in $L'$, as each $x_n \in K$ and $|\cdot|$ and $|\cdot|'$ extend the same absolute value on $K$. Since $(L',|\cdot|')$ is complete, $\{x_n\}$ converges in $L'$. We define $\phi(x) = \lim^{(L')} x_n$, where the superscript indicates that the limit is taken in $L'$.
+
+Honor demands we check that $\phi(x)$ depends only on $x$ and not on the particular $\{x_n\}$. Suppose $\{x_n\}$  and $\{\tilde{x}_n\}$ are two sequences in $K$ both converging to $x$ in $L$. Then $x_n-\tilde{x}_n \to 0$ in $L$. As each $x_n -\tilde{x}_n \in K$, and $|\cdot|$ and $|\cdot|'$ extend the same absolute value on $K$, it must be that $x_n-\tilde{x}_n \to 0$ in $L'$. Consequently, $\lim^{(L')} x_n = \lim^{(L')} \tilde{x}_n$. Vindication! 
+
+If $x \in K$, we can compute $\phi(x)$ by taking each $x_n=x$. This shows that $\phi(x) = \lim^{(L')} x = x$. So $\phi$ fixes $K$.
+
+Let $x, y \in L$ and choose sequences $\{x_n\}$, $\{y_n\}$ in $K$ such that $x_n\to x$ in $L$ and $y_n\to y$ in $L$. Then $x_n+y_n \to x+y$ in $L$, and
+\[ \phi(x+y) = \sideset{}{^{(L')}}\lim (x_n+y_n) = \sideset{}{^{(L')}}\lim x_n + \sideset{}{^{(L')}}\lim y_n = \phi(x) + \phi(y). \]
+Similarly, $\phi(xy) = \phi(x) \phi(y)$, confirming that $\phi$ is a homomorphism.
+
+A homomorphism between fields is always injective. To establish surjectivity, take any $x' \in L'$. Since $K$ is dense in $L'$, there is a sequence $\{x_n\}$ in $K$ converging to $x'$ in $L'$. Since $\{x_n\}$ converges in $L'$, it is Cauchy in $L'$ and hence in $L$ as well. Define $x \in L$ by $x = \lim^{(L)} x_n$. Then $\phi(x) = \lim^{(L')} x_n = x'$. 
+
+Thus far we have shown $\phi$ is an isomorphism. To prove $\phi$ is isometric, let $x \in L$, and consider a sequence $\{x_n\}$ in $K$ converging to $x$ in $L$. Then $\{x_n\}$ converges to $\phi(x)$ in $L'$. Given $\epsilon > 0$, we choose $N \in \Z^{+}$ such that, for all $n\ge N$,
+\[ |x_n-x| < \epsilon\quad\text{and}\quad|x_n-\phi(x)|' < \epsilon. \]
+Then, for $n\ge N$,
+\[ |x| \le |x_n| + \epsilon = |x_n|' + \epsilon < |\phi(x)|' + 2\epsilon, \]
+and
+\[ |x| \ge |x_n|-\epsilon = |x_n|'-\epsilon \ge |\phi(x)|'-2\epsilon. \]
+Hence $|x|$ and $|\phi(x)|'$ are within $2\epsilon$ of each other. Since this holds for each $\epsilon > 0$, it must be that $|x| = |\phi(x)|'$.\index{completion of a valued field!is unique}
+% The above arguments establish that $\tilde{\iota}$ is one extension of $\iota$ to an isometric isomorphism between $\Q_p$ and $L$. Suppose $\hat{\iota}$ is any such extension. Let $x\in\Q_p$ and let $x_n$ be a sequence of rational numbers for which $x_n\to x$. 
+% Then $x_n-x \to 0$ and, since $\hat{\iota}$ is an isometry and an isomorphism, $\hat{\iota}(x_n)-\hat{\iota}(x) \to 0$. So $\hat{\iota}(x_n)\to  \hat{\iota}(x)$. But $\hat{\iota}(x_n) = \iota(x_n)$ and $\iota(x_n)\to \tilde{\iota}(x)$. Hence, $\hat{\iota}(x) = \tilde{\iota}(x)$. As this holds for each $x \in \Q_p$, we conclude that $\hat{\iota}=\tilde{\iota}$.
+\end{sol}
+
+\begin{challenge} Show that the map $\phi$ described above is the \emph{unique} isometric isomorphism from $L$ to $L'$.
+\end{challenge}
+
+\begin{rmk} Every valued field $(K,|\cdot|)$ admits a completion (which we have just seen is then unique up to isometric isomorphism). The usual way to show a completion exists is to mimic one of the standard constructions of $\R$ from $\Q$, due to Cantor and M\'eray: Take the ring of Cauchy sequences in $K$ and quotient by the maximal ideal of sequences tending to $0$. For details, see for instance \cite[\S1.3]{katok}. Those with more exotic tastes might enjoy a recent, very different argument by Kionke \cite{kionke}.
+\end{rmk}
+
+
+
+\begin{sol}{prob:81} Let $s_n = \sum_{k=0}^{n} c_k p^k$. Then $|s_{n+1}-s_n|_p = |c_{n+1} p^{n+1}|_p \le p^{-n-1}$. As $p^{-n-1}\to 0$, the sequence $\{s_n\}$ is Cauchy (see Exercise \ref{prob:68}). By Problem \ref{prob:76}, $s_n$ has a limit in $\Z_p$. This is precisely what it means to say that $\sum_{k=0}^{\infty} c_k p^k$ converges to an element of $\Z_p$.
+\end{sol}
+
+\begin{sol}{prob:82} Our selection process guarantees that $x_{k+1}\equiv x \equiv x_k\pmod{p^k\Z_{p}}$ and thus $x_{k+1} \equiv x_k \pmod{p^k}$ (this last congruence holding in $\Z$). It also ensures that $x_k$ is the least nonnegative representative of its residue class mod $p^k$. Therefore, $x_{k+1} \ge x_k$, and $c_k = \frac{1}{p^k} (x_{k+1}-x_k) \ge 0$. Since $x_{k+1} < p^{k+1}$, we also have $c_k < p^{k+1}/p^k = p$. Hence, $c_k \in \{0,1,\dots,p-1\}$. 
+
+Clearly, $x_k\to x$, since $|x_k - x|_p \le p^{-k}$. Moreover,
+\[ c_0 + c_1 p + \dots + c_{k-1} p^{k-1} = (x_1-x_0) +(x_2-x_1) + \dots + (x_k-x_1) = x_k-x_0 = x_k \]
+for every $k\in \Z^{+}$. Sending $k$ to infinity, $c_0 + c_1 p + c_2 p^2 + \dots = \lim x_k = x$.\index{$\Z_p$, ring of $p$-adic integers!base $p$ expansions of elements}
+\end{sol}
+
+% \begin{sol}{prob:83} That there are not two different expansions of $x$ can be established exactly as in the solution to Problem \ref{prob:44}.
+% \end{sol}
+
+
+\begin{challenge} Show that if $p$ is an odd prime, then every $x \in \Z_p$ has a unique representation in the form $\sum_{k=0}^{\infty} d_k p^k$, where the $d_k$ are integers from the interval $(-p/2,p/2)$. For which $x$ is this expansion terminating? For which $x$ is it eventually periodic?
+\end{challenge}
+
+
+\begin{challenge}[Knopfmacher and Knopfmacher \cite{KK}] Prove that every $x \in 1 + p\Z_p$ has a unique product representation $x = (1+p)^{e_1}(1+p^2)^{e_2}(1+ p^3)^{e_3}\cdots$, where $e_1, e_2, e_3,\ldots \in \{0,1,2,\dots,p-1\}$.%\index{infinite product}
+\end{challenge}
+
+
+\begin{challenge}[Pigeons hard at work; Mahler \cite{mahler}] Let $x \in \Z_p$. In this problem we look for prescribed patterns of digits in the base $p$ expansions of the integer multiples of $x$.
+\begin{enumerate}
+\vspace{-0.12in}
+\item[(a)] Let $m, n \in \Z^{+}$. Prove that there are integers $A, B$ with $A\ne 0$, $-p^m \le A  \le p^m$, and $0 \le B < p^n$ satisfying $A x\equiv B\pmod{p^{m+n}\Z_p}$.
+
+{\scriptsize Suggestion. Consider $Ax-B$ mod $p^{m+n}\Z_p$ for $1\le A \le p^m$ and $0 \le B < p^n$. If $0$ mod $p^{m+n}\Z_p$ is represented, you are done. Otherwise, start stuffing pigeons in holes.}
+
+\item[(b)] Taking $m=1$ in (a), show that one of the $2p$ $p$-adic integers $\pm x, \pm 2x, \dots, \pm px$ has infinitely many `$0$' digits in its base $p$ expansion. More generally, for each $m \in \Z^{+}$, one of the $2p^m$ $p$-adic integers $\pm x, \pm 2x, \dots, \pm p^{m} x$ has infinitely many runs of $m$ consecutive zeros in its base $p$ expansion.
+
+\item[(c)] Assume $x$ is an irrational element of $\Z_p$. (That is, $x \in \Z_p \setminus \Z_{(p)}$.) Let $m \in \Z^{+}$, and let $d_0, d_1, d_2, \dots, d_{m-1} \in \{0,1,\dots,p-1\}$. Show that there is a nonzero integer $k$
+%, 
+%bounded in absolute by value a function of $m$ and $p$ only (meaning, the bound does not depend on $x$ or the particular choice of $d_i$), 
+such that the following holds: The digits $d_0, d_1, \dots, d_{m-1}$ appear, in that order, infinitely often in the base $p$ expansion of $kx$.
+
+{\scriptsize The last bit means that if we expand $kx = \sum_{j\ge 0} c_j p^j$, then $c_j = d_0, c_{j+1} = d_1, \dots, c_{j+m-1} = d_{m-1}$ for infinitely many nonnegative integers $j$. For the proof, consider multiples of $k_0 x$, where $k_0 x$ has long runs of zeros as in (b).} 
+
+\item[(d)] Assume $x$ is an irrational element of $\Z_p$. Let $m \in \Z^{+}$. Show that there is a \emph{positive} integer $k'$
+%, bounded above by a function of $m$ and $p$ only, 
+such that \emph{every} sequence of $m$ base $p$ digits appears infinitely often in the base $p$ expansion of $k' x$.
+
+
+{\scriptsize Hint. Can you do this with a not-necessarily-positive (but nonzero) $k'$%(still bounded in terms of $m$ and $p$)
+? If so, what happens when you replace $k'$ with $-k'$? }
+\end{enumerate} 
+
+\end{challenge}
+
+\begin{sol}{prob:84}\index{canonical expansions of elements of $\Q_p$} Start with any $x\in \Q_p$ and select $k\in \Z$ with $p^k x \in \Z_p$. Take the infinite base $p$ expansion of $p^k x$ constructed in Problem \ref{prob:82} and scale by $p^{-k}$ to obtain an expansion of $x$ satisfying (i)--(iii).
+
+If there were two expansions of $x$ possessing properties (i)---(iii), scaling both by the same sufficiently large power of $p$ would produce an element of $\Z_p$ with two different base $p$ expansions.\index{$\Q_p$, field of $p$-adic numbers!base $p$ expansions of elements}
+\end{sol}
+
+\begin{sol}{prob:85} The forward direction is clear. Now suppose $x=0$ or $x\in \Q^{+}$ with denominator a power of $p$. Write $x=a/p^k$, where $a$ and $k$ are nonnegative integers. Then the canonical expansion of $x$ is obtained by taking the usual base $p$ expansion of $a$ and scaling by $p^{-k}$; this is obviously terminating.
+\end{sol}
+
+\begin{sol}{prob:86}\index{$\Q_p$, field of $p$-adic numbers!element has eventually periodic base $p$ expansion iff rational} We record a simple observation for later use: For each $\ell\in\Z^{+}$, the series $1+p^{\ell}+p^{2\ell} + \dots$ converges to $1/(1-p^{\ell})$ in $(\Q_p,|\cdot|)$. We omit the straightforward proof (compare with Exercise \ref{prob:29}).
+
+Suppose $x$ has an eventually periodic canonical expansion with (not necessarily minimal) period $\ell$. Scaling $x$ by a suitable power of $p$ (which does not affect rationality), we can assume $x= \sum_{k\ge 0} c_k p^k$ where $c_k = c_{k+\ell}$ for all $k\ge k_0$. Then
+$x = \sum_{0 \le k < k_0} c_k p^k + \sum_{k \ge k_0} c_k p^k$. Clearly, $\sum_{0 \le k < k_0} c_k p^k \in \Q$. Less trivially,
+\begin{align*} \sum_{k \ge k_0} c_k p^k &= \lim_{m\to\infty} \sum_{k_0 \le k 
+< k_0+m\ell} c_k p^k \\
+&= \lim_{m\to\infty} \sum_{k_0 \le k < k_0+\ell} c_k p^k (1+p^{\ell} + \dots + p^{(m-1)\ell}) \\
+&= \sum_{k_0 \le k < k_0+\ell} c_k p^{k} (1+p^{\ell} + p^{2\ell} + \dots)\\
+&= \sum_{k_0 \le k < k_0+\ell} c_k \frac{p^k}{1-p^{\ell}} \in \Q.
+\end{align*}
+Therefore, $x\in \Q$.
+
+Turning to the converse: We have already shown that each $x\in \Z_{(p)}$ has an eventually periodic base $p$ expansion. To obtain an eventually periodic canonical expansion for an arbitrary $x \in \Q$, scale $x$ by $p^k$ to place $p^k x \in \Z_{(p)}$, then rescale by $p^{-k}$.
+\end{sol}
+
+\underline{Open problem}: Is the $p$-adic number $\sum_{k=0}^{\infty} k!$ rational for some prime $p$?
+
+\begin{challenge}[Casacuberta \cite{casacuberta}] Show that the $p$-adic number $\sum_{k=0}^{\infty} p^{v_p(k!)}$ has a canonical expansion containing arbitrarily long (but finite) runs of zeros, for every prime $p$. Deduce that $\sum_{k=0}^{\infty} p^{v_p(k!)} \notin \Q$.
+\end{challenge}
+
+\begin{challenge}[Dragovich \cite{dragovich}] \underline{Dis}prove: $\sum_{k=0}^{\infty} k!$ converges to the same rational number in $\Q_p$ for all primes $p$.
+\end{challenge}
+
+
+\begin{sol}{prob:87} By Problem \ref{prob:72}, $\sum_{a=1}^{p-1} q_p(a) \equiv q_p((p-1)!) \equiv \frac{(p-1)!^{p-1}-1}{p}\pmod{p}$. So the claimed congruence is equivalent to $\frac{(p-1)!^{p-1}-(p-1)!-2}{p}\equiv 0\pmod{p}$, or $(p-1)!^{p-1} - (p-1)! \equiv 2\pmod{p^2}$. Using Wilson's theorem\index{Wilson's theorem}, write $(p-1)! = -1 + pr$ with $r \in \Z$. Then, working modulo $p^2$, 
+\[ (p-1)!^{p-1} = \sum_{j=0}^{p-1} \binom{p-1}{j} (-1)^{p-1-j} (pr)^{j} \equiv 1 + (p-1)(-1)pr \equiv 1 + pr,\] so that $(p-1)!^{p-1} - (p-1)! \equiv (1+pr)-(-1+pr) \equiv 2$, as desired.
+\end{sol}
+
+\begin{sol}{prob:98}\index{method of successive approximation} Let us argue that whenever we have a solution to $x^2=2$ in $\Z/7^k$, say $a_k\bmod{7^k}$, we can lift it uniquely --- by the process described --- to a solution $a_{k+1}\bmod{7^{k+1}}$ in $\Z/7^{k+1}$. Expanding, $(a_k + 7^k q)^2 \equiv a_k^2 + 2\cdot 7^{k} a_k q \pmod{7^{k+1}}$. This last expression is congruent to $2$ modulo $7^{k+1}$ precisely when
+\[ 2\cdot 7^k a_k q\equiv 2-a_k^2\pmod{7^{k+1}}. \]
+By assumption, $7^k \mid 2-a_k^2$. So the preceding congruence is equivalent to
+\[ 2a_k q \equiv \frac{2-a_k^2}{7^k} \pmod{7}.\]
+Both $2$ and $a_k$ are coprime to $7$. (Since $a_k^2\equiv 2\pmod{7}$,  we cannot have $a_k\equiv 0\pmod{7}$.) Thus, the last displayed congruence uniquely determines the residue class of $q$ modulo $7$. Picking any $q$ from this class and defining $a_{k+1}=a_k + 7^k q$ yields our desired lift. Note that since $q$ is uniquely determined mod $7$, our lift is uniquely determined as a residue class mod $7^{k+1}$.
+
+Assume now that $a_1\bmod{7}, a_2\bmod{7^2}, a_3\bmod{7^3},\dots$ have been determined by the above procedure. Let $x = (a_1\bmod{7}, a_2\bmod{7^2}, a_3\bmod{7^3},\dots)$. Then $x\in \Z_7$ as each $a_{k+1}$ is a lift of $a_k$. By construction, $x^2 = (2\bmod{7},2\bmod{7^2},2\bmod{7^3},\dots) = 2$.
+
+We still need to verify that the canonical expansion of $x$ is as stated. The initial steps of the algorithm, starting with $3\bmod{7}$, are described in the problem statement. We lifted $3\bmod{7}$ to $3+1\cdot 7\bmod{7^2}$, and we lifted \emph{that} to $3+1\cdot 7 + 2\cdot 7^2 \bmod{7^3}$. If we run the algorithm one more round, we arrive at $3+1\cdot 7 + 2\cdot 7^2 + 6\cdot 7^3\bmod{7^4}$ (check this!). We can read off from here that the $7$-adic expansion of $x$ starts as 
+$3+1\cdot 7 + 2\cdot 7^2 + 6\cdot 7^3 + \dots$. 
+
+\begin{rmk} Gauss left us in 1855, four decades before Hensel's first publication on the $p$-adic numbers. It is therefore rather remarkable that one finds in his Nachlass (manuscripts left behind at death) the claim that
+\[  \sqrt{5} \pmod{11^{\infty}} = 9.0.4.10.4.4.\]
+This seems to be Gauss's way of expressing that in $\Z_{11}$,
+\[ \sqrt{5} = 4 + 4\cdot 11 + 10 \cdot 11^2 + 4\cdot 11^3 + 0\cdot 11^4 + 9\cdot 11^5+\dots.\]
+I owe this historical nugget to math StackExchange user \texttt{user2554}.\footnote{\url{https://math.stackexchange.com/a/4877205}}
+\end{rmk}
+\end{sol}
+
+
+
+
+\begin{figure}
+\centering
+\includegraphics[width=0.95\textwidth]{nachlass-BW.pdf}
+\caption*{Page from Gauss's Nachlass; originally scanned by the Göttinger Digitalisierungszentrum.}
+\end{figure}
+
+\let\oldaddcontentsline\addcontentsline
+\renewcommand{\addcontentsline}[3]{}
+\begin{thebibliography}{11}
+
+\bibitem{casacuberta} S. Casacuberta, 
+\emph{Irrationality of the sum of a $p$-adic series}. Unpublished. \texttt{arXiv:1710.11484 [math.NT]}
+
+\bibitem{dragovich} B. Dragovich,
+\emph{On $p$-adic power series}. In: $p$-adic functional analysis (Poznań, 1998), Lecture Notes in Pure and Appl. Math., vol. 207, Dekker, New York, 1999, pp. 65--75. 
+
+\bibitem{katok} S.~Katok, \emph{{$p$}-adic analysis compared with real}, Student Mathematical Library, vol.~37, American Mathematical Society, Providence, RI; Mathematics Advanced Study Semesters, University Park, PA, 2007. 
+
+\bibitem{kionke} S.~Kionke, \emph{Constructing the completion of a field using Quasimorphisms}, 
+$p$-Adic Numbers Ultrametric Anal. Appl. \textbf{11} (2019), 335--337.
+
+\bibitem{KK} A. Knopfmacher and J. Knopfmacher, \emph{A binomial product representation for $p$-adic numbers},
+Arch. Math. (Basel) \textbf{52} (1989), 333--336.
+
+\bibitem{mahler} K.~Mahler,
+\emph{On the digits of the multiples of an irrational $p$-adic number}.
+Proc. Cambridge Philos. Soc. 
+\textbf{76} (1974), 417--422.
+
+\end{thebibliography}
+
+\let\addcontentsline\oldaddcontentsline

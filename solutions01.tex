@@ -1,0 +1,140 @@
+
+\chapter*{Solutions to Set \#2}
+\addcontentsline{toc}{chapter}{Solutions to Set \#2}
+\markboth{Solutions to Set \#2}{Solutions to Set \#2}
+\label{set1sols}
+
+\begin{sol}{prob:12} We have to show that for any $x,y,z\in K$, at least two of $|x-y|, |y-z|$, and $|z-x|$ coincide. This is a simple consequence of ``survival of the greatest'': If $|x-y| \ne |y-z|$, then $|z-x| = |x-z| = |(x-y) + (y-z)|= \max\{|x-y|,|y-z|\}$. This argument shows that the largest side length always appears at least twice.
+\end{sol}
+
+
+\begin{sol}{prob:13}\index{discs, open and closed} Suppose to start with that $z \in \Dd_{<r}(x)$. Then $|z-x_0| = |(z-x)+(x-x_0)| \le \max\{|z-x|,|x-x_0|\} < r$. Thus, $\Dd_{<r}(x) \subset \Dd_{<r}(x_0) = D$. Similarly, if $z \in D$, then $|z-x| = |(z-x_0) + (x_0-x)|\le \max\{|z-x_0|,|x_0-x|\} <r$, proving that $D \subset \Dd_{<r}(x)$. So $D = \Dd_{<r}(x)$.
+\end{sol}
+
+
+\begin{sol}{prob:14} Suppose that $x\in K$ belongs to the intersection of the open discs $D_0 = \Dd_{<r_0}(x_0)$ and $D_1=\Dd_{<r_1}(x_1)$. By Problem \ref{prob:13}, $D_0 = \Dd_{<r_0}(x)$ and $D_1 = \Dd_{<r_1}(x)$. Then $D_0\subset D_1$ or $D_1 \subset D_0$ according to whether $r_0 \le r_1$ or vice versa.
+\end{sol}
+
+\begin{sol}{prob:15} Let $\mathcal{R} = \{p^v: v \in \Z\}$. If $r \notin \mathcal{R}$, then $\Dd_{<r}(x_0) = \Dd_{\le r}(x_0)$, for any center $x_0$. If $r \in \mathcal{R}$, then $\Dd_{<r}(x_0) = \Dd_{\le r/p}(x_0)$ while $\Dd_{\le r}(x_0) = \Dd_{<pr}(x_0)$. 
+\end{sol}
+
+\begin{sol}{prob:16} Suppose $|\cdot|$ is an absolute value on $F= \F_{2027}$. Let $g$ be a generator of $F^{\times}$. Then $|g|^{2026} = |g^{2026}| = |1| = 1$, and so $|g|=1$. Since $g$ generates $F^{\times}$, it follows that $|x|=1$ for all nonzero $x$ in $F$. Therefore, the only absolute value on $F$ is the trivial absolute value.
+
+This argument works for any $\F_p$, or any finite field for that matter.
+\end{sol}
+
+\begin{sol}{prob:17} Applying the binomial theorem and the triangle inequality,
+\begin{multline*} |x+y|^n = \left|\sum_{k=0}^{n} \binom{n}{k} x^{k} y^{n-k}\right| \le  \sum_{k=0}^{n} \left|\binom{n}{k}\right| |x|^k |y|^{n-k} \\
+\le \max\{|x|,|y|\}^{n} \sum_{k=0}^{n} \left|\binom{n}{k}\right| \le \max\{|x|,|y|\}^{n} \cdot (n+1) \max_{0\le k \le n}\left|\binom{n}{k}\right|. \end{multline*}
+(Moving from the first to the second line, we used that $|x|^k |y|^{n-k} \le \max\{|x|,|y|\}^k \cdot \max\{|x|,|y|\}^{n-k} = \max\{|x|,|y|\}^n$.) 
+Take $n$th roots.
+\end{sol}
+
+
+\begin{sol}{prob:18} Every absolute value on $\F_p(T)$ restricts to an absolute value on $\F_p$, hence is trivial on $\F_p$ (Exercise \ref{prob:16}). It follows that every binomial coefficient has absolute value at most $1$. So by Exercise \ref{prob:17}, for all $x, y \in \F_p(T)$, 
+\[ |x+y| \le (n+1)^{1/n} \max\{|x|,|y|\}. \] Sending $n$ to infinity, $|x+y|\le \max\{|x|,|y|\}$. In other words, $|\cdot|$ is non-Archimedean.
+\end{sol}
+
+\begin{sol}{prob:19} We start by constructing a family of absolute values on $\F_p(T)$ parametrized by the monic irreducibles in $\F_p[T]$. 
+
+Fix a monic irreducible $\pi \in \F_p[T]$. Every $x \in \F_p(T)^{\times}$ can be written in the form $\pi^{v} \frac{a}{b}$ where $a$ and $b$ are elements of $\F_p[T]$ not divisible by $\pi$. Here the integer $v_\pi(x):=v$ is uniquely determined by $x$ (a consequence of the unique factorization theorem for $\F_p[T]$). Fix your favorite constant $C_{\pi} > 1$. If we set $|x|_{\pi} = C_\pi^{-v_\pi(x)}$ for nonzero $x \in \F_p(T)$, and set $|0|_{\pi}=0$, then $|\cdot|_{\pi}$ is a non-Archimedean absolute value on $\F_p(T)$. The proof is more or less identical to that for $|\cdot|_p$ (see Exercise \ref{prob:03}). 
+
+If $\pi$ and $\tilde{\pi}$ are distinct monic irreducibles in $\F_p[T]$, then $|\pi|_{\pi} = C_{\pi}^{-1} < 1$ while $|\tilde{\pi}|_{\pi} = C_{\pi}^{0} = 1$. This settles the first half of the problem.
+
+As for the concluding question: Yes, there is such an absolute value. Fix $C_{\infty} > 1$. For $x \in \F_p(T)^{\times}$, write $x = \frac{a}{b}$ with $a, b \in \F_p[T]$. While $a$ and $b$ are not uniquely determined by this representation, the difference $\deg{a} - \deg{b}$ is independent of the choice of $a$ and $b$. We put $|x|_{\infty} = C_{\infty}^{\deg{a}-\deg{b}}$ for nonzero $x \in \F_p(T)$, taking $|0|_{\infty} = 0$. Since $|T|_{\infty} = C_{\infty} > 1$, we will be done if we show $|\cdot|_{\infty}$ is an absolute value on $\F_p(T)$.
+
+Condition (i) in the absolute value definition (see Set \#1) is obvious. Condition (iii) follows from $\deg{uv} = \deg{u} + \deg{v}$. To prove (ii), we may assume $x,y$, and $x+y$ are nonzero. Write $x = \frac{a}{b}$ and $y= \frac{c}{d}$. Then $x+y = \frac{ad+bc}{bd}$, and
+\begin{align*} \deg(ad+bc) - \deg(bd) &\le \max\{\deg(ad),\deg(bc)\} - \deg(bd) \\
+&= \max\{\deg(ad) - \deg(bd),\deg(bc) -\deg(bd)\}\\
+&= \max\{\deg(a)-\deg(b),\deg(c)-\deg(d)\}.
+\end{align*}
+Since $C_{\infty} > 1$, the inequality is preserved upon raising $C_{\infty}$ to both sides. This gives $|x+y|_{\infty} \le \max\{|x|_{\infty},|y|_{\infty}\}$, proving the strong triangle inequality.
+\end{sol}
+
+\begin{sol}{prob:20}\index{$\Z_{(p)}$, ring of $p$-integral rationals} To prove that $\Dd_{\le 1}(0)$ is a subring it is enough to argue that $1 \in \Dd_{\le 1}(0)$ and that $\Dd_{\le 1}(0)$ is closed under multiplication and subtraction. The first requirement is clear, since $|1|=1$. Closure under multiplication follows from the multiplicative property of $|\cdot|$, as the interval $[0,1]$ is closed under multiplication. Closure under subtraction is a consequence of the strong triangle inequality: If $|x|, |y| \le 1$, then $|x-y| \le \max\{|x|,|-y|\} = \max\{|x|,|y|\} \le 1$. 
+
+By definition of the $p$-adic absolute value, $x \in \Z_{(p)}$ if and only if $x = p^{v} a/b$ for some nonnegative integer $v$ and some $a,b\in \Z$ not divisible by $p$. This happens precisely when the denominator of $x$ in lowest terms is not a multiple of $p$.
+\end{sol}
+
+\begin{sol}{prob:21} Write $x=a/b$ in lowest terms, with $b>0$. By Problem \ref{prob:20}, $x \in \bigcap_{p\text{ prime}} \Z_{(p)}$ $\Longleftrightarrow$ $b$ has no prime factors $\Longleftrightarrow b= 1 \Longleftrightarrow x \in \Z$. So $\bigcap_{p\text{ prime}} \Z_{(p)}=\Z$.
+\end{sol}
+
+\begin{sol}{prob:22} Let $0 < k < p$. Working modulo $p$,
+\begin{align*} (k-1)! \binom{p-1}{k-1} &= (p-1)(p-2)\cdots(p-(k-1)) \\ &\equiv (-1)(-2)\cdots(-(k-1)) \\
+&\equiv (-1)^{k-1} (k-1)!.
+\end{align*}
+Since $p \nmid (k-1)!$, we conclude that $\binom{p-1}{k-1} \equiv (-1)^{k-1}\pmod{p}$. Write $\binom{p-1}{k-1} = (-1)^{k-1} + pr$, where $r \in \Z$. Then $\binom{p}{k}=\frac{p}{k}\binom{p-1}{k-1}  = p\frac{(-1)^{k-1}}{k} + p^2\frac{r}{k}$. Hence, working in the ring $\Z_{(p)}$, 
+\[ \binom{p}{k} \equiv p \frac{(-1)^{k-1}}{k} \pmod{p^2 \Z_{(p)}}. \]
+We have made sense of the claimed congruence mod $p^2$ by interpreting it --- nay, proving it --- as a congruence modulo the ideal $p^2 \Z_{(p)}$ of the ring $\Z_{(p)}$.
+% Let $\phi$ be homomorphism from $\Z \to \Z_{(p)}/p^2\Z_{(p)}$ mapping $a$ to $a\bmod{p^2\Z_{(p)}}$. The map $\phi$ is onto: If $a, b \in \Z$ with $b$ not divisible by $p$, let $B \in \Z$ be an inverse of $b$ modulo $p^2$. Then $aB-\frac{a}{b}= \frac{aBb-a}{b} = p^2\frac{(aBb-a)/p^2}{b} \in p^2 \Z_{(p)}$, so that $\phi(aB) = \frac{a}{B}\bmod{p^2 \Z_{(p)}}$. Furthermore, for $a\in \Z$,
+% \[ a \in \mathrm{ker}(\phi) \Longleftrightarrow a/p^2 \in \Z_{(p)} \Longleftrightarrow |a/p^2|_{p} < 1 \Longleftrightarrow |a|_p < p^{-2}  
+% \Longleftrightarrow p^2 \mid a. \]
+% Thus, $\ker(\phi) = p^2\Z$. We conclude that $\phi$ induces an isomorphism $\Z/p^2 \cong \Z_{(p)}/p^2 \Z_{(p)}$. 
+\end{sol}
+
+\begin{sol}{prob:23} Summing the congruence $\binom{p}{k} \equiv p \frac{(-1)^{k-1}}{k}\pmod{p^2\Z_{(p)}}$ over integers $0 < k < p$ yields $2^p-2 \equiv p \sum_{0 < k < p} (-1)^{k-1}/k \pmod{p^2 \Z_{(p)}}$. Dividing by $p$,
+\[ \frac{2^p-2}{p} \equiv 1-\frac{1}{2}+\frac{1}{3}-\frac{1}{4}+\dots-\frac{1}{p-1} \pmod{p\Z_{(p)}}. \]
+The left and right-hand sides of the displayed congruence have difference smaller than $1$ in terms of $p$-adic absolute value. So by the strong triangle inequality, one side has absolute value $<1$ if and only if the other does. The solution is concluded by observing that $|\frac{2^p-2}{p}|_p < 1$ $\Longleftrightarrow$ $p^2 \mid 2^p-2$.
+\end{sol}
+
+\begin{sol}{prob:24} Since $F$ has finitely many complex roots, we can fix $n_0 \in \Z$ with $F(n_0) \ne 0$. Replacing $F(T)$ with $F(T+n_0)$, we may assume that $F(T)$ has nonzero constant term $a_0$ (say). Then $F(a_0 T) = a_0 G(T)$ for some nonconstant $G(T) \in \Z[T]$ with $G(0)=1$.
+
+Let $\mathcal{P}$ be the set of primes dividing $G(n)$ for some integer $n$. Every prime dividing a value of $G$ also divides a value of $F$, so it suffices to prove $\mathcal{P}$ is infinite.
+
+We mimic Euclid. Suppose $p_1,\dots,p_k$ is any finite list of primes in $\mathcal{P}$. We choose an integer $m$ with $|G(mp_1\cdots p_k)|>1$. (Such an $m$ surely exists, as the inequality excludes no more than $3\deg{G}$ values of $m$.) Then $G(mp_1\cdots p_k)$ is divisible by \emph{some} prime $p$, but
+\[ G(m p_1\cdots p_k) \equiv G(0) \equiv 1 \pmod{p_i} \]
+for each $i=1,2,\dots, k$. So there is a prime $p\in \mathcal{P}$ not on our list. As this is true no matter what finite list we start with, $\mathcal{P}$ is infinite.
+\end{sol}
+
+\begin{challenge} Let $\mathcal{P}$ be a finite set of primes, say $\#\mathcal{P}=k$. Show that there are positive constants $c$ and $x_0$ such that, for every real number $x\ge x_0$,
+\[ \#\{n \in \Z: |n|\le x\text{ and } p\mid n \Rightarrow p \in \mathcal{P}\} \le c (\log x)^{k}. \]
+Use this to give another solution to Problem \ref{prob:24}.
+\end{challenge}
+
+
+\begin{challenge}[Bauer \cite{bauer}; {see also Nagell \cite[\S49, pp.\ 168--169]{nagell}}] Let $F(T)$ be a nonconstant polynomial with integer coefficients. Suppose that $F$ has a real root of odd multiplicity. Show that for each integer $m\ge 3$, there are infinitely many primes $p\not\equiv1\pmod{m}$ for which $F$ has a root mod $p$.
+\end{challenge}
+
+\begin{sol}{prob:25} Suppose $p$ is odd. If $p\mid n^4+1$, then  $n^4\equiv -1\pmod{p}$ and $n^8 \equiv 1\pmod{p}$. Since $-1\not\equiv 1\pmod{p}$, the order of $n$ modulo $p$ divides $8$ but does not divide $4$ --- so it must be precisely $8$. As the order is always a divisor of $p-1$, we conclude that $p\equiv 1\pmod{8}$. 
+
+To obtain infinitely many primes $p\equiv 1\pmod{8}$, apply Problem \ref{prob:24}.
+\end{sol}
+
+\begin{sol}{prob:26} If $p\mid (2n+1)^2-2$, then $p$ is odd and $2$ is a square modulo $p$. By elementary number theory, $p\equiv \pm 1\pmod{8}$. 
+
+For each $n \in \Z^{+}$, the integer $(2n+1)^2-2$ is larger than $1$ and thus factors as a product of positive primes. If each prime in this factorization is congruent to $1\pmod{8}$, then $(2n+1)^2-2$ is also congruent to $1\pmod{8}$. But $(2n+1)^2-2 \equiv 1-2 \equiv -1\pmod{8}$. Thus, $(2n+1)^2-2$ must be divisible by some prime congruent to $-1\pmod{8}$.
+
+Finally, suppose $p_1,\dots,p_k$ is any finite list of primes congruent to $-1\pmod{8}$. For each $i=1,2,\dots,k$, there are two residue classes $n_i \bmod{p_i}$ for which $(2n_i+1)^2-2 \equiv 0 \pmod{p_i}$. As each $p_i > 2$, the Chinese Remainder Theorem allows us to choose a positive integer $n$ not congruent to any of the $n_i \pmod{p_i}$. Then $(2n+1)^2-2$ is divisible by some prime $p\equiv -1\pmod{8}$ but not divisible by any of $p_1,\dots,p_k$. Thus, there must be a prime congruent to $-1\bmod{8}$ that is not on the list $p_1,\dots,p_k$. As our starting list was arbitrary, there are infinitely many primes $p\equiv -1\pmod{8}$.
+\end{sol}
+
+
+\begin{sol}{prob:27} Problem \ref{prob:25} handles the residue class $1\bmod{8}$ while Problem \ref{prob:26} handles $-1\bmod{8}$. To take care of $5\bmod{8}$, we argue as in Problem \ref{prob:26} with $(2n+1)^2+4$ replacing $(2n+1)^2-2$. Every odd prime $p$ with $-4$ a square mod $p$ is congruent to $1$ or $5 \pmod{8}$. Since $(2n+1)^2+4\equiv 1+4\equiv 5\pmod{8}$, there must be some prime congruent to $5\pmod{8}$ dividing $(2n+1)^2+4$. Following the solution to Problem \ref{prob:26}, we obtain infinitely many primes $p\equiv 5\pmod{8}$ by varying $n$.
+
+To deal with $3\bmod{8}$, use $(2n+1)^2+2$. Every odd $p$ with $-2$ a square mod $p$ is congruent to $1$ or $3\pmod{8}$. As $(2n+1)^2+2\equiv 1+2\equiv 3\pmod{8}$, there is always some prime congruent to $3\pmod{8}$ dividing $(2n+1)^2+2$. Varying $n$, we obtain infinitely many primes $p\equiv 3\pmod{8}$. 
+
+
+\begin{rmk} Dirichlet's general theorem is proved by moderately sophisticated analytic methods. By contrast, the proofs in the last few exercises are variants on Euclid's simple and familiar argument. This invites the question: Which other residue classes can be shown to contain infinitely many primes by a proof \emph{in the style of Euclid's}? For one reasonable interpretation of ``in the style of Euclid's'' (which regrettably would take us too far afield to motivate here) an elegant answer has been given by Issai Schur and Ram Murty: \emph{There is a Euclid-style proof of the infinitude of primes congruent to $a\pmod{m}$ $\Longleftrightarrow$ $a^2\equiv 1\pmod{m}$.} See \cite{murty, MT, schur} for details.\index{primes in arithmetic progressions}
+\end{rmk}
+\end{sol}
+
+
+\renewcommand\refname{\normalsize References}
+\let\oldaddcontentsline\addcontentsline
+\renewcommand{\addcontentsline}[3]{}
+\begin{thebibliography}{11}
+\bibitem{bauer} M. Bauer, \emph{\"{U}ber die arithmetische Reihe}. J. Reine Angew. Math. \textbf{131} (1906), 265--267.
+
+\bibitem{murty} M.\,R. Murty, \emph{Primes in certain arithmetic progressions}. J. Madras Univ., Section B, \textbf{51} (1988), 161--169.
+
+\bibitem{MT} M.\,R. Murty and N. Thain, \emph{Prime numbers in certain arithmetic progressions}. Funct. Approx. Comment. Math. \textbf{35} (2006), 249--259.
+
+\bibitem{nagell} T. Nagell, \emph{Introduction to number theory},
+Chelsea Publishing Co., New York, 1964.
+
+\bibitem{schur} I. Schur, \emph{\"{U}ber die {E}xistenz unendlich vieler {P}rimzahlen in einigen speziellen arithmetischen {P}rogressionen}. Sitzungber. Berliner Math. Ges. \textbf{11} (1912), 40--50.
+\end{thebibliography}
+\let\addcontentsline\oldaddcontentsline
+
+
+
+

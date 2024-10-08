@@ -1,0 +1,381 @@
+%%%%%%%%%%%%%%%%%%%% book.tex %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[envcountsame,envcountchap]{svmono}
+%\usepackage{blindtext}
+
+%% Load important packages
+%% format URLs
+\usepackage[object=vectorian]{pgfornament} 
+\usepackage{numprint}
+\usepackage{xurl}
+\usepackage{mathdots}
+\usepackage{tikz-cd}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{mathtools}
+\usepackage{parskip}
+\usepackage{microtype}
+\usepackage{xpatch}
+\usepackage{bm}
+%\usepackage[sfdefault]{ClearSans}
+\makeatletter
+\newcommand*\l@chapterinfo{\@nodottedtocline{0}{0.0em}{1.5em}}
+\newcommand*\l@sectioninfo{\@nodottedtocline{1}{1.5em}{2.3em}}
+\newcommand*\l@subsectioninfo{\@nodottedtocline{2}{3.8em}{3.2em}}
+\newcommand*\l@subsubsectioninfo{\@nodottedtocline{3}{7.0em}{4.1em}}
+\newcommand*\l@paragraphinfo{\@nodottedtocline{4}{10em}{5em}}
+\newcommand*\l@subparagraphinfo{\@nodottedtocline{5}{12em}{6em}}
+
+% Copied from the book class macro `\@dottedtocline`. Removed the dots and page number
+\def\@nodottedtocline#1#2#3#4#5{%
+  \ifnum #1>\c@tocdepth \else
+    \vskip \z@ \@plus.2\p@
+    {\leftskip #2\relax \rightskip \@tocrmarg \parfillskip -\rightskip
+     \parindent #2\relax\@afterindenttrue
+     \interlinepenalty\@M
+     \leavevmode
+     \@tempdima #3\relax
+     \advance\leftskip \@tempdima \null\nobreak\hskip -\leftskip
+     {#4}\nobreak
+     \leaders\hbox{$\m@th
+        \mkern \@dotsep mu\hbox{\,}\mkern \@dotsep
+        mu$}\hfill
+     \nobreak
+     \hb@xt@\@pnumwidth{\hfil\normalfont \normalcolor }%
+     \par}%
+  \fi}
+
+\makeatother
+
+
+
+% \def\chapterinfo#1{%
+%     \addcontentsline{toc}{chapterinfo}{%
+%     \noexpand\numberline{}#1}%
+% }
+% \def\sectioninfo#1{%
+%     \addcontentsline{toc}{sectioninfo}{%
+%     \noexpand\numberline{}#1}%
+% }
+% \def\subsectioninfo#1{%
+%     \addcontentsline{toc}{subsectioninfo}{%
+%     \noexpand\numberline{}#1}%
+% }
+
+
+\setlength{\parskip}{0.6\baselineskip plus 2pt}
+
+%% bibliographies within chapter
+\usepackage[sectionbib]{chapterbib}
+
+%% use tikz arrows
+\usetikzlibrary{arrows}
+
+%% extra control over enumerated lists
+\usepackage{enumitem}
+\setlist[itemize]{parsep=0.5pt}
+\setlist[enumerate]{parsep=0.5pt}
+
+
+
+
+  
+%% horizontal rules
+\newcommand{\myrule} [3] []{
+    \begin{center}
+        \begin{tikzpicture}
+            \draw[#2-#3, thick, #1] (0,0) to (\linewidth,0);
+        \end{tikzpicture}
+    \end{center}
+}
+\newcommand{\myruletwo} [3] []{
+    \begin{center}
+        \begin{tikzpicture}[scale=1,rotate=180,transform shape]
+            \draw[#2-#3, thick, #1] (0,0) to (\linewidth,0);
+        \end{tikzpicture}
+    \end{center}
+}
+\newcommand\testrule{\myruletwo{right to reversed}{left to reversed}\vspace{-0.05in}}
+\newcommand\testruletwo{\vspace{-0.29in}\myrule{right to reversed}{left to reversed}}
+
+\newcommand*{\printdate}{%
+   \ifcase \month\or January\or February\or March\or April\or May\or June\or July\or
+    August\or September\or October\or November\or December\fi \space \number\year}
+
+\renewcommand\subset\subseteq
+\newcommand{\fakepar}{\mbox{}\\\hspace*{2em}}
+\def\bysame{\leavevmode\hbox to3em{\hrulefill}\thinspace}
+
+%% use \num to dis play large numbers with correct spacing between groups of digits
+\usepackage[output-decimal-marker={.},exponent-product=\cdot]{siunitx}
+
+%% adjust running head to have no chapter number
+\makeatletter
+\renewcommand\chaptermark[1]{%
+  \markboth{\textsc{#1}}{}
+}
+\makeatother
+
+
+\makeatletter
+\def\@makechapterhead#1{%
+  \vspace*{50\p@}%
+  {\parindent \z@ \raggedright \normalfont
+    \interlinepenalty\@M
+    \Large \bfseries #1\par\nobreak
+    \vskip 40\p@
+  }}
+\def\@makeschapterhead#1{%
+  \vspace*{50\p@}%
+  {\parindent \z@ \raggedright
+    \normalfont
+    \interlinepenalty\@M
+    \Large \bfseries  #1\par\nobreak
+    \vskip 40\p@
+  }}
+\makeatother
+
+\let\proof\relax\let\endproof\relax
+\usepackage{amsthm}
+\usepackage{pifont}
+
+%% theorem environments
+\spnewtheorem*{lem}{Lemma}{\bfseries}{}
+\spnewtheorem*{thm}{Theorem}{\bfseries}{}
+\spnewtheorem*{rmk}{Remark}{\bfseries}{\small\rmfamily}
+\newcommand\pp{Extra Exploration}
+\spnewtheorem{challenge}{\pp}{\bfseries}{\small\rmfamily}
+\spnewtheorem*{rmks}{Remarks}{\bfseries}{\small\rmfamily}
+
+%% character macros
+
+\newcommand{\chara}{\textrm{char}}
+\renewcommand{\supset}{\supseteq}
+\newcommand{\Binom}{\mathrm{Binom}}
+\renewcommand{\subset}{\subseteq}
+\newcommand{\vv}{\mathbf{v}}
+\newcommand{\ee}{\mathbf{e}}
+\newcommand{\Dd}{\mathbf{D}}
+\newcommand{\Pp}{\mathcal{P}}
+\newcommand{\ssin}{\mathrm{sin}}
+\newcommand{\Id}{\mathrm{Id}}
+\renewcommand\qedsymbol{\ding{122}}
+\def\doublestroke#1{\pdfliteral{1 Tr .3 w}#1\pdfliteral{0 Tr 0 w}}
+\newcommand\bmPi{\bm{\mathrm{\Pi}}}
+\newcommand{\one}{\mathbf{1}}
+\newcommand{\C}{\mathbf{C}}
+\newcommand{\F}{\mathbf{F}}
+\newcommand{\R}{\mathbf{R}}
+\newcommand{\Q}{\mathbf{Q}}
+\newcommand{\Z}{\mathbf{Z}}
+\newcommand{\GL}{\mathop{\mathrm{GL}}}
+\newcommand{\Oo}{\mathcal{O}}
+\newcommand{\Nm}{\mathrm{N}}
+\newcommand{\Uu}{\mathcal{U}}
+\newcommand{\Ll}{\mathbf{L}}
+
+\newcommand\li{\mathrm{Li}}
+\newcommand\LCM{\mathrm{LCM}}
+\renewcommand\Omega\varOmega
+\renewcommand\Phi\varPhi
+
+\newcommand\cc{\mathbf{C}}
+\newcommand\uu{\mathbf{U}}
+\newcommand\rr{\mathbf{R}}
+\newcommand\zz{\mathbf{Z}}
+\newcommand\qq{\mathbf{Q}}
+\newcommand\e{\mathrm{e}}
+\newcommand\weirdi{\i}
+\newcommand*{\threesim}{%
+  \mathrel{\vcenter{\offinterlineskip
+  \hbox{$\sim$}\vskip-.35ex\hbox{$\sim$}\vskip-.35ex\hbox{$\sim$}}}}
+\renewcommand\i{\mathrm{i}}
+\newcommand{\leg}[2]{\bigg(\displaystyle\frac{#1}{#2}\bigg)}
+\newcommand{\legg}[2]{\genfrac{(}{)}{}{}{#1}{#2}}
+\renewcommand\refname{\normalsize References}
+\newcommand\namestyle{\textsc}
+
+\newcommand{\genlegendre}[4]{%
+  \genfrac{(}{)}{}{#1}{#3}{#4}%
+  \if\relax\detokenize{#2}\relax\else_{\!#2}\fi
+}
+\newcommand{\legendre}[3][]{\genlegendre{}{#1}{#2}{#3}}
+\newcommand{\dlegendre}[3][]{\genlegendre{0}{#1}{#2}{#3}}
+\newcommand{\tlegendre}[3][]{\genlegendre{1}{#1}{#2}{#3}}
+
+
+%% Section headings
+\newcommand\absval{\section*{Valuation Theory}}
+\newcommand\absvalfirst{\section*{Valuation Theory (the Theory of Absolute Values)}}
+\newcommand\factfact{\section*{Factorials and Factorization}}
+\newcommand\psh{\section*{`$p$'s and Harmony}}
+\newcommand\dist{\section*{Distance Learning}}
+\newcommand\curious{\section*{Curious Congruences}}
+\newcommand\variations{\section*{Variations on a Theme of Euclid}}
+
+\usepackage{epigraph}
+\usepackage{wrapfig}
+\usepackage{amsmath,amssymb}
+\usepackage{makeidx}         % allows index generation
+\usepackage{graphicx}        % standard LaTeX graphics tool
+                             %
+\usepackage{multicol}        % used for the two-column index
+\usepackage[perpage,para,symbol*]{footmisc}% places footnotes at page bottom
+
+\makeindex             % used for the subject index
+                       % please use the style svind.ist with
+                       % your makeindex program
+ 
+  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\epigraphnoindent
+
+\makeatletter
+\newcommand{\doubleepigraph}[4]{%
+  \vspace{\beforeepigraphskip}
+  \vbox{%
+    \xpatchcmd{\@epitext}{{minipage}}{{minipage}[t]}{}{}%
+    \epigraphsize
+    \begin{\epigraphflush}
+    \begin{minipage}[t]{\epigraphwidth}
+      \@epitext{#1}\\
+      \@episource{#2}%
+    \end{minipage}\hfill
+    \begin{minipage}[t]{\epigraphwidth}
+      \@epitext{#3}\\
+      \@episource{#4}%
+    \end{minipage}%
+    \end{\epigraphflush}%
+  }%
+  \nointerlineskip
+  \vspace*{\afterepigraphskip}%
+  \ifepigraphnoindent\@afterheading\fi
+}
+\makeatother    
+
+
+\makeatletter
+\newcommand{\doubleepigrapha}[4]{%
+  \vspace{\beforeepigraphskip}
+  \vbox{%
+    \xpatchcmd{\@epitext}{{minipage}}{{minipage}[t]}{}{}%
+    \epigraphsize
+    \begin{\epigraphflush}
+    
+\setlength{\epigraphwidth}{0.42\textwidth}  
+    \begin{minipage}[t]{0.42\textwidth}
+      \@epitext{#1}\\
+      \@episource{#2}%
+    \end{minipage}\hfill
+\setlength{\epigraphwidth}{0.53\textwidth}  
+    \begin{minipage}[t]{0.53\textwidth}
+      \@epitext{#3}\\
+      \@episource{#4}%
+    \end{minipage}%
+    \end{\epigraphflush}%
+  }%
+  \nointerlineskip
+  \vspace*{\afterepigraphskip}%
+  \ifepigraphnoindent\@afterheading\fi
+}
+\makeatother    
+\makeatletter
+\newcommand{\gobblecomma}[1]{\@gobble{#1}\ignorespaces}
+\makeatother
+
+\newcommand{\xref}{\nameref}
+\makeatletter
+\newcommand\xlabel[2][]{\phantomsection\def\@currentlabelname{#1}\label{#2}}
+\makeatother
+
+\setlength{\epigraphwidth}{0.45\textwidth}  
+
+%\usepackage{refcheck}
+\usepackage[hidelinks]{hyperref}
+
+\makeatletter
+\let\ps@empty\ps@plain
+\makeatother
+
+
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\ps@plain}{\scriptsize}{}{}{}
+\makeatother
+\pagestyle{plain}
+
+\begin{document}
+\pagenumbering{gobble} 
+%\includepdf{cover0.pdf}
+\author{Paul Pollack}
+\title{Unreal Analysis}
+    \subtitle{Visions of the $p$-adic Realm}\maketitle  
+
+\frontmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\include{dedic}
+\pagenumbering{Roman} 
+\include{pref}
+
+%\tableofcontents
+
+\mainmatter%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{part}
+\setcounter{chapter}{1}
+\include{set0}
+\setcounter{chapter}{2}
+\include{set1}
+\setcounter{chapter}{3}
+\include{set2}
+\setcounter{chapter}{4}
+\include{set3}
+\setcounter{chapter}{5}
+\include{set4}
+\setcounter{chapter}{6}
+\include{set5}
+\setcounter{chapter}{7}
+\include{set6}
+\setcounter{chapter}{8}
+\include{set7}
+\setcounter{chapter}{9}
+\include{set8}
+\setcounter{chapter}{10}
+\include{set9}
+\setcounter{chapter}{11}
+\include{set10}
+\setcounter{chapter}{12}
+\include{set11}
+\setcounter{chapter}{13}
+\include{set12} 
+\setcounter{part}{1}
+\include{partII}
+\include{solutions00}
+\include{solutions01}
+\include{solutions02}
+\include{solutions03}
+\include{solutions04}
+\include{solutions05}
+\include{solutions06}
+\include{solutions07}
+\include{solutions08}
+\include{solutions09}
+\include{solutions10}
+\include{solutions11}
+\include{solutions12}
+%\include{setextras} 
+
+
+% \include{solutions00}
+% \backmatter
+%\include{notes}
+\printindex
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
+
+
+
+
+

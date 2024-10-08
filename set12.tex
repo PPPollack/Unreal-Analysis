@@ -1,0 +1,94 @@
+\setcounter{chapter}{13}
+\chapter*{$p$-Set \#13}\label{chap:chap13}
+\addcontentsline{toc}{chapter}{Set \#13}
+\markboth{Set \#13}{Set \#13}
+
+\epigraph{\textsc{Narrator}: And so we come to the last chapter in which Christopher Robin and Pooh come to the enchanted place and we say goodbye.
+
+\textsc{Winnie the Pooh}: Goodbye? Oh no please can't we go back to page one and do it all over again?
+
+\textsc{Narrator}: Sorry Pooh. But all stories have an ending you know.
+
+\textsc{Winnie the Pooh}: Oh bother.}
+{{The Many Adventures of Winnie the Pooh}}
+
+
+\section*{Bern, Baby, Bern!}
+
+For each integer $u$ not divisible by $p$, let $\omega(u)$ denote the $(p-1)$th root of unity in $\Q_p$ congruent to $u$ modulo $p\Z_p$ (see Problem \ref{prob:teichmuller}).\index{Teichm\"{u}ller representatives} Define $\vartheta(u)\in \Z_p$ by the equation $\omega(u) = u + p \vartheta(u)$.
+
+\begin{prob}\label{prob:fundamentalidentity} For each $k\in \Z^{+}$:~  $\sum_{u=1}^{p-1} \omega(u)^{k} = \one_{p-1\mid k} (p-1)$.
+\end{prob}
+
+\begin{prob}\label{prob:betakintegral} Let $\beta_k = \frac{B_k}{k} - \frac{\one_{p-1\mid k}(p-1)}{pk}$. For each $k \in \Z^{+}$: \\
+\[ \beta_k + \sum_{0 < j \le k} \binom{k-1}{j-1} B_{k-j}\frac{p^{j}}{j(j+1)}+\sum_{0 < j \le k}\binom{k-1}{j-1}\frac{p^{j-1}}{j}\sum_{u=1}^{p-1}u^{k-j}\theta(u)^j =0. \]
+\end{prob}
+
+\begin{prob}\label{prob:adams} Assume $p$ is odd. Then $\beta_k \in \Z_{p}$ for every $k\in \Z^{+}$. As a consequence, $\frac{B_k}{k} \in \Z_{p}$ whenever $p-1\nmid k$ \textbf{(Adams)}.\index{Bernoulli numbers!Adams' theorem}
+\end{prob}
+
+
+\begin{prob}\label{prob:prekummer} Assume $p\ge 5$. Then $\beta_{k}+\sum_{u=1}^{p-1} u^{k-1}\vartheta(u) \in p\Z_{p}$ for each $k \in 2\Z^{+}$.
+\end{prob}
+
+\begin{prob}[Kummer]\label{prob:kummer} If $k,k'$ are even positive integers with $k\equiv k'\pmod{p-1}$, and $p-1\nmid k$, then $\frac{B_k}{k}\equiv \frac{B_{k'}}{k'}\pmod{p\Z_{p}}$.\index{Bernoulli numbers!Kummer's congruence}
+\end{prob}
+
+{\scriptsize For example, $\frac{B_{4}}{4}= -\frac{1}{120}$ and $\frac{B_{10}}{10}= \frac{1}{132}$ are congruent mod $7\Z_{7}$. In fact, $\frac{B_{4}}{4} - \frac{B_{10}}{10} = 7 \cdot -\frac{1}{440}$.}
+
+\begin{prob}[Glaisher]\label{prob:glaisherharmonic}\index{harmonic number}\index{Bernoulli numbers!associated congruence for $H_{p-1}$}  Let $p \ge 5$, and put $k = \varphi(p^3)-1$. Modulo $p^3 \Z_{p}$, 
+\[ H_{p-1} \equiv \sum_{n=1}^{p-1} n^{k} \equiv  k\frac{p^2}{2} B_{k-1} \equiv -\frac{p^2}{3} B_{p-3}.\]
+(Here, as usual, $H_{p-1} = 1 + \frac12 + \dots + \frac1{p-1}$.) Therefore: $p^3$ divides the numerator of $H_{p-1}$ $\Longleftrightarrow$ $p$ divides the numerator of $B_{p-3}$. (Compare with Problem \ref{prob:wolstenholme}.)\index{Wolstenholme prime} 
+
+{\scriptsize Primes $p$ dividing the numerator of $B_{p-3}$ are known as \textsf{Wolstenholme primes}. The only examples not exceeding $10^{11}$ are 	$\numprint{16843}$ and $\numprint{2124679}$.}
+\end{prob}
+
+
+\section*{Strassmann Series}
+Let $F(T) = \sum_{k\ge 0} a_k T^k \in \Q_p[[T]]$ be a Strassmann series where not all $a_k=0$. Since $a_k\to 0$ in $\Q_p$, there is a largest nonnegative integer $K$ with
+\[ a_K = \max_{k\ge 0} |a_k|_{p}. \]
+We refer to $K$ as the \textsf{Strassmann degree} of $F(T)$.\index{Strassmann degree}\index{Strassmann series!Strassmann degree of} For example, $p+T+\sum_{k\ge 2} p^{\lfloor \sqrt{k}\rfloor} T^k$ has Strassmann degree $1$, while $\sum_{k\ge 0} k!\cdot T^k$ has Strassmann degree $p-1$.
+
+ \begin{prob}\label{prob:strassdivide} Let $F(T) = \sum_{k \ge 0} a_k T^k$ be a Strassmann series with a zero $r \in \Z_p$. For all $x \in \Z_p$, we have $F(x) = (x-r) G(x)$, where 
+\[ G(T) = \sum_{j\ge 0} b_j T^j, \quad\text{with}\quad b_j:= \sum_{k > j}a_k r^{k-1-j}. \]
+Moreover, if $F(T)$ has Strassmann degree $K\ge 1$, then $G(T)$ is Strassmann with Strassmann degree $K-1$.
+\end{prob}
+
+\begin{prob}[Strassmann's Theorem]\label{ex:strassthm}\index{Strassmann's theorem}\index{Strassmann series!number of zeros bounded by Strassmann degree} Let $F(T)$ be a Strassmann series with Strassmann degree $K$. Then $F(x)=0$ for at most $K$ distinct values of $x \in \Z_p$.
+\end{prob}
+
+\section*{Ramanujan's Conjecture Revisited}\index{Ramanujan--Nagell equation}
+We finally return to the study of the equation $x^2+7= 2^m$ initiated in Exercise \ref{ex:ram1}. By that problem, to establish Ramanujan's conjecture it suffices to show that there are no $n>13$ with $\frac{\alpha^n-\beta^n}{\alpha-\beta} = \pm 1$. Here $\alpha = \frac{1+\sqrt{-7}}{2}$ and $\beta =\frac{1-\sqrt{-7}}{2}$.
+
+The quadratic field $\Q(\sqrt{-7})$ can be viewed as a subfield of $\Q_{11}$, identifying $\sqrt{-7}$ with the square root of $-7$ in $\Z_{11}$ that is congruent to $2$ modulo $11\Z_{11}$. By hand, or with the aid of software such as PARI/GP, one computes that  \[ \sqrt{-7} = 2 + 8\cdot 11 + 8 \cdot 11^2 + 7 \cdot 11^3 + 10\cdot 11^4 + 1\cdot 11^5 + \dots,  \]
+where $\dots$ suppresses a quantity with $11$-adic absolute value at most $11^{-6}$. Then
+\begin{align*} \alpha &= 7 + 9\cdot 11 + 9\cdot 11^2 + 3\cdot 11^3 + 5\cdot 11^4 + 6\cdot 11^5 + \dots,\\
+\beta &= 5 + 1\cdot 11 + 1\cdot 11^2 + 7\cdot 11^3 + 5\cdot 11^4 + 4\cdot 11^5 + \dots.\end{align*}
+
+We study the equation $\frac{\alpha^n  - \beta^n}{\alpha-\beta}= \pm 1$ by the method of Exercise \ref{ex:cubicpell2}. Put $A=\alpha^{10}$ and $B = \beta^{10}$, so that $A= 1+a, B=1+b$ for 
+\begin{align*}
+ a&= 7\cdot 11 + 1\cdot 11^2 + 1\cdot 11^3 + 7\cdot 11^4 + 5\cdot 11^5 + \dots,\\
+ b&= 9\cdot 11 + 9\cdot 11^2 + 9\cdot 11^3 + 3\cdot 11^4 + 5\cdot 11^5 +\dots,
+\end{align*}
+both of which belong to $11\Z_{11}$. Write $n = 10m+r$, where $r \in \{0,1,\dots,9\}$. Then 
+\begin{align*} \frac{\alpha^n - \beta^n}{\alpha-\beta} = \pm 1 &\Longleftrightarrow \alpha^n-\beta^n = \pm (\alpha-\beta) \\
+&\Longleftrightarrow \alpha^{r} (1+a)^m - \beta^{r} (1+b)^m \mp (\alpha-\beta) = 0.
+\end{align*}
+
+For each $r\in \{0,1,\dots,9\}$ and each choice of $\pm$ sign, define $$F_{r,\pm}(T) = \alpha^{r}\,\Binom(1+a;T) - \beta^{r}\,\Binom(1+b;T) \mp (\alpha-\beta),$$ so that $F_{r,\pm}(m) = \alpha^{r} (1+a)^m - \beta^{r} (1+b)^m \mp (\alpha-\beta)$ for all $m \in \Z$. %(Look back at Exercises \ref{ex:binomialseries} and \ref{ex:binom2} for the definition of $\Binom$.) 
+
+Each of our 20 power series $F_{r,\pm}(T)$ is a Strassmann series. For every one of these, we will apply Strassmann's Theorem (Exercise \ref{ex:strassthm}) to bound the number of zeros in $\Z_p$.
+
+\begin{prob}\label{prob:constantcheck} The constant term of $F_{r,\pm}(T)$ is $\alpha^r-\beta^r \mp (\alpha-\beta)$, which vanishes when \[ (r,\pm) \in \{(1,+), (2,+), (3,-), (5,-)\} \] and is an $11$-adic unit in the other sixteen cases. Every nonconstant coefficient of every $F_{r,\pm}(T)$ is a multiple of $11$. Hence, $F_{r,\pm}(T)$ has no zero in $\Z_{11}$ except possibly for the four displayed values of $(r,\pm)$.
+\end{prob}
+
+\begin{prob}\label{prob:easycases} All of $F_{1,+}(T)$, $F_{2,+}(T)$, $F_{5,-}(T)$ have their $T$-coefficients multiples of $11$ but not $11^2$. Their Strassmann degrees are all $1$.
+\end{prob}           
+
+\begin{prob}\label{prob:annoyingcase} $F_{3,-}(T)$ has a $T$-coefficient that vanishes mod $11^2$. Its $T^2$-coefficient is a multiple of $11^2$ but not $11^3$. Its Strassmann degree is $2$.
+\end{prob}
+
+\begin{prob}\label{ex:finalram} There are at most $3\cdot 1 + 2=5$ integers $n$ with $\frac{\alpha^n-\beta^n}{\alpha-\beta}=\pm 1$. We know five such integers --- $n=1, 2, 3, 5$, and $13$ --- so those must be all of them.
+\end{prob}
+
+\begin{rmk} The choice to work in $\Q_p$ for $p=11$ was fortuitous. The next prime after $11$ for which $-7$ is a quadratic residue is $p=23$. If we had elected to embed $\Q(\sqrt{-7})$ into $\Q_{23}$, we would have to bound the number of zeros of $2\cdot 22 = 44$ Strassmann series. One of those would correspond to the equation $\frac{\alpha^{22m+12}-\beta^{22m+12}}{\alpha-\beta}=- 1$. If you approximate the coefficients sufficiently to apply Strassmann's theorem, you'll find that this series has \underline{at most one} zero $m \in \Z_p$; hence, $\frac{\alpha^{22m+12}-\beta^{22m+12}}{\alpha-\beta}=- 1$ has at most one integer solution $m$. But in fact (as we know after Exercise \ref{ex:finalram}), there are \underline{zero} integers $m$ satisfying the equation. So working in $\Q_{23}$, we fail to rule out an extraneous zero. What's going on in this instance is that there really \emph{is} an $m \in \Z_{23}$ where the associated power series vanishes --- but this $m$ does not belong to $\Z$! \end{rmk}

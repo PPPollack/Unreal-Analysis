@@ -1,0 +1,112 @@
+\chapter*{$p$-Set \#9}
+\addcontentsline{toc}{chapter}{Set \#9}
+\markboth{Set \#9}{Set \#9}
+
+
+\setlength{\epigraphwidth}{0.45\textwidth}
+\epigraph{Is $\R$ special? Well, physical reality, as we and Archimedes believe it, has no infinitesimals\dots. Hence we say that the field $\R$ and its
+absolute value $|\cdot|_{\infty}$ are \emph{archimedean}\dots. 
+\emph{pace} Archimedes, in recent years the theoretical physicists have learned about the $p$-adic fields and
+have begun to wonder whether they may not help in modeling just what
+happens in the nuclei of atoms, for instance. So much for reality.}{Alf van der Poorten}
+\setlength{\epigraphwidth}{0.45\textwidth}
+
+
+\section*{Gazing at the Newfound Stars}
+\begin{prob}\label{prob:99} Let $p$ be odd. Let $a \in \Z_p^{\times}$, and let $a_1 \bmod{p}$ be the mod $p$ component of $a$. Then $a \text{ is a square in $\Q_p$} \Longleftrightarrow a_1\bmod{p} \text{ is a square in $\Z/p$}$. 
+
+{\scriptsize Suggestion. Adapt the method of successive approximation\index{method of successive approximation} described in Exercise \ref{ex:hensel0}.}
+\end{prob}
+
+\begin{prob}\label{prob:100} Let $p$ be odd, and let $n \in \Z$ be a nonsquare mod $p$. Then $1,  n$ are coset representatives for $\Z_p^{\times}/(\Z_p^{\times})^2$, while $1, n, p, np$ are coset representatives for $\Q_p^{\times}/(\Q_p^{\times})^2$.\index{$\Z_p$, ring of $p$-adic integers!structure of $\Z_p^{\times}/(\Z_p^{\times})^2$}\index{$\Q_p$, field of $p$-adic numbers!structure of $\Q_p^{\times}/(\Q_p^{\times})^2$}  
+\end{prob}
+
+\begin{prob}\label{prob:101} If $a\in \Z_2^{\times}$, then $a$ is a square in $\Q_2$ $\Longleftrightarrow$ $a\equiv 1\pmod{8\Z_2}$.
+\end{prob}
+
+
+\begin{prob}\label{prob:102} Find coset representatives for $\Z_2^{\times}/(\Z_2^{\times})^2$ and $\Q_2^{\times}/(\Q_2^{\times})^2$. 
+\end{prob}
+
+\begin{prob}\label{prob:103}
+For $a \in \Q_p^{\times}$: 
+\[ a \in \Z_p^{\times} \Longleftrightarrow \text{(some value of) $\sqrt[n]{a} \in \Q_p$ for infinitely many $n\in \Z^{+}$}. \]
+\end{prob}
+
+
+\begin{prob}[a Liouville approximation theorem in $\Z_p$]\index{Liouville's approximation theorem in $\Z_p$}\label{prob:104} Suppose $\alpha \in \Z_p$ is a root of a polynomial $F(T) \in \Z[T]$ of degree $d$ having no integer roots. For every nonzero $n \in \Z$,
+\[ |n-\alpha|_{p} \ge |F(n)-F(\alpha)|_{p} = |F(n)|_p \ge |F(n)|_{\infty}^{-1} \ge c|n|_{\infty}^{-d}, \]
+where $c$ is a positive constant depending only on $F$.
+\end{prob}
+
+
+
+
+\begin{prob}[a transcendental element of $\Q_p$]\label{prob:105} $\sum_{k\ge 1} p^{k!}\in \Q_p$ is not a root of any nonconstant polynomial in $\Q[x]$.\end{prob}
+
+
+\begin{prob}\label{prob:106} $2^{4\cdot 5^n}\to 1$ in $\Z_{5}$ while $2^{4\cdot 5^n}\to 0$ in $\Z_{2}$. Since $0$ and $1$ are distinct rational numbers, the $\Z_{10}$-limit of $2^{4\cdot 5^n}$ has a nonperiodic $10$-adic expansion.\index{$\Z_g$, ring of $g$-adic integers!example of $\Z_{10}$} 
+
+{\scriptsize Since $10$ is not prime, your solution should start with a sensible definition of convergence in $\Z_{10}$.}
+
+\end{prob} 
+
+
+\section*{Strassmann Series}
+Let $F(T) = \sum_{n \ge 0} a_n T^n$ be a formal power series with $\Q_p$-coefficients.
+
+\begin{prob}\label{prob:strass0}\label{prob:107} For $x \in \Q_p$:~\,$F(x)$ converges $\Longleftrightarrow$ $|a_n x^n|_p\to 0$.\\ Hence, $F(x)$ converges for all $x \in \Z_p$ $\Longleftrightarrow$ $a_n\to 0$ in $\Q_p$.
+\end{prob}
+
+\vspace{-0.05in}When $F(x)$ converges for all $x \in \Z_p$, we call $F(T)$ a \textsf{Strassmann (power) series}.\index{Strassmann series!definition}\index{restricted power series|see{Strassmann series}}\index{strictly convergent power series|see{Strassmann series}}\footnote{Here we depart from convention; the usual terms are \textsf{restricted power series} or \textsf{strictly convergent power series}.}
+
+\vspace{-0.22in}
+\testrule
+In courses on complex function theory, one learns that an analytic function has only finitely many zeros in a closed disc, unless it vanishes identically on that disc. The next three exercises guide you through a proof of an analogous result for zeros of Strassmann series within $\Z_p$.
+\testruletwo
+
+\begin{prob}\label{prob:108} Let $F(T)$ be a Strassmann series with a nonzero coefficient. Any nonzero $x \in \Z_p$ with $F(x) = 0$ satisfies $|x|_p \ge \delta$, where $\delta > 0$ is a constant depending only on $F$. If $F(T)$ has $\Z_p$-coefficients, we can take $\delta = |a_m|_p$, where $a_m$ is the first nonvanishing coefficient of $F(T)$. 
+
+In particular: If $F(T)$ is a Strassmann series and $F(x) = 0$ for all $x \in \Z_p$, then $F(T) = 0$ in $\Q_p[[T]]$.
+\end{prob}
+
+\begin{prob}[recentering Strassmann series]\label{prob:109} Let $F(T)= \sum_{k \ge 0} a_k T^k$ be a Strassmann power series, and let $x_0 \in \Z_p$. For every $x \in \Z_p$,
+\[ F(x+x_0) = \sum_{j\ge 0} b_j x^j, \quad\text{where}\quad b_j:= \sum_{k \ge j} a_k \binom{k}{j} x_0^{k-j}. \]
+The recentered series $\sum_{j \ge 0} b_j T^j$ is also Strassmann.
+\end{prob}
+
+\begin{prob}\label{ex:weakstrass}\label{prob:110} A Strassmann series with a nonvanishing coefficient has finitely many zeros in $\Z_p$.\index{Strassmann series!if nonzero has finitely many zeros in $\Z_p$}
+\end{prob}
+
+
+\curious
+
+ 
+
+
+\begin{prob}[Glaisher]\label{ex:wilson1}\label{prob:111}\index{Bernoulli numbers!associated characterization of Wilson primes} For all primes $p$:\quad $p^2 \mid (p-1)! + 1 \Longleftrightarrow B_{p-1} + \frac{1}{p}-1 \in p\Z_{(p)}$.
+
+{\scriptsize Primes $p$ for which $p^2\mid (p-1)!+1$ are known as Wilson primes.\index{Wilson prime} The only known examples, and the only examples smaller than $2\cdot 10^{13}$, are $5$, $13$, and $563$.}
+\end{prob}  
+
+\begin{prob}[Johnson]\label{prob:WJfermat}\index{Teichm\"{u}ller representatives} Recall that when $u\in \Z_p^{\times}$, we are writing $\omega(u)$ for the unique $(p-1)$th root of unity congruent to $u$ modulo $p\Z_p$ (see Exercise \ref{prob:teichmuller}). Show that if $u\in \Z$ has order $3$ modulo $p$, and $v\in \Z$ satisfies $v\equiv \omega(u) \pmod{p^k\Z_p}$, where $k\in \Z^{+}$, then
+\[ (1+v)^p \equiv 1+v^p \pmod{p^{2k+1}}. \]
+Use this to explain the congruence $325^7 \equiv 1 + 324^7 \pmod{7^7}$.
+\end{prob}
+
+
+{\setlength{\tabcolsep}{16pt}
+\begin{table}[b]
+    \centering
+        
+    \label{tab:my_label}
+    \begin{tabular}{rr}\toprule
+
+    \multicolumn{1}{r}{$u$} & \multicolumn{1}{r}{$\omega(u)$}\\ \cmidrule(lr){1-1}\cmidrule(lr){2-2}          2&  $2 + 4\cdot7 + 6\cdot7^2 + 3\cdot7^3 + 2\cdot7^5+\dots$\\
+          3&  $3 + 4\cdot7 + 6\cdot7^2 + 3\cdot7^3 + 2\cdot7^5+\dots$ \\
+          4& $4 + 2\cdot7 + 3\cdot7^3 + 6\cdot7^4 + 4\cdot7^5+\dots$\\
+          5& $5 + 2\cdot7 + 3\cdot7^3 + 6\cdot7^4 + 4\cdot7^5+\dots$\\\bottomrule
+        
+    \end{tabular}
+\caption*{Sixth roots of unity in $\Q_7$, omitting $\omega(\pm 1)=\pm 1$. Notice that $\omega(3)=1+\omega(2)$ and $\omega(5) = 1+\omega(4)$, as guaranteed by Problem \ref{prob:WJteich}.\index{Teichm\"{u}ller representatives}}
+\end{table}}

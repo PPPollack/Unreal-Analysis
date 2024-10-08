@@ -1,0 +1,124 @@
+%%%%%%%%%%%%%%%%%%%%% chapter.tex %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% sample chapter
+%
+% Use this file as a template for your own input.
+%
+%%%%%%%%%%%%%%%%%%%%%%%% Springer-Verlag %%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Epilogue}
+\label{notes} % Always give a unique label
+% \chaptermark{23}
+% use \chaptermark{}
+% to alter or adjust the chapter heading in the running head
+
+\epigraph{Theorems are fun especially when you are the prover, but then the pleasure fades. What keeps us going are the unsolved problems.}{Carl Pomerance}
+
+\noindent By necessity, problem sets that attempt to introduce an area of modern research will always paint an incomplete picture. Below we briefly discuss the state of our knowledge (and ignorance) concerning some of the main topics we explored in these problem sets.
+
+
+\begin{description}
+
+
+\item[\textbf{Distribution of squares and nonsquares modulo $p$.}] It was conjectured by  Vinogradov around 1920 that for each $\epsilon > 0$, the least positive nonsquare modulo $p$ is $< p^{\epsilon}$, for all sufficiently large primes $p$. Despite being an intense focus of research over the past century, Vinogradov's conjecture remains unsolved.
+
+
+\smallskip Some progress has been made.
+Linnik proved in 1940 that counterexamples to Vinogradov's conjecture are rare: For all $x\ge 3$, there are $O_{\epsilon}(\log\log{x})$ primes $p\le x$ with least nonsquare $> p^{\epsilon}$. In fact, if we replace $> p^{\epsilon}$ with $> x^{\epsilon}$, then the count of such $p\le x$ shrinks to $O_{\epsilon}(1)$. And around 1960, Burgess proved that for each $\epsilon > 0$, the least positive nonsquare modulo $p$ is $<p^{\frac{1}{4\sqrt{\e}}+\epsilon}$, once $p$ is large enough. (The exponent here is half of that of \setprob{prob:vinogradov}.) His main tool was an estimate for Legendre symbol sums sharper than that of  \setprob{prob:PV}. Replacing $\frac{1}{4\sqrt{\e}}$ by any smaller number would be a major advance.
+% There are many relted problems in this area. For example, what is the size of the smallest positive generator of $\uu_p$?  Burgess proved that this is $O_{\epsilon}(p^{1/4+\epsilon})$, but probably the answer is $O_{\epsilon}(p^{\epsilon})$.
+\bigskip
+\item[\textbf{Arithmetic functions and the anatomy of integers}.]  The results of Step \#11~on the typical sizes of $\omega(n)$ and $\Omega(n)$ are due to Hardy and Ramanujan (1917). Our (simpler) approach follows Tur\'an (1934). Hardy and Ramanujan's proofs were based on the following inequality, which has since found many other applications: For certain constants $K$ and $K'$, and all real $x\ge 2$ and integers $k\ge 1$,
+\begin{equation}\tag{*} \sum_{\substack{n \le x \\ \omega(n)=k}} 1 \le K\frac{x}{\log{x}} \frac{(\log\log{x}+K')^{k-1}}{(k-1)!}.\end{equation}
+That this upper bound holds when $k=1$ (for an appropriate $K$, and any $K'$)  is a straightforward consequence of \setprob{prob:chebyshevupper}. Writing $\pi_k(x)$ for the left-hand side of (*), one observes that $k \pi_{k+1}(x) \le \sum_{p^e \le \sqrt{x}} \pi_k(x/p^{e})$. (Can you see why?) The proof is completed by induction on $k$, once one shows that
+for a suitably chosen $K'$,
+\[ \sum_{p^e \le \sqrt{x}} \frac{1}{p^e\log(x/p^e)} \le \frac{\log\log{x}+K'}{\log{x}}.\]
+You are invited to fill in the details!  \smallskip
+
+\begin{figure}[t]
+\centering
+    \begin{picture}(200,200)
+    \put(0,0){\includegraphics{plots-gaussian}}
+    \put(120,150){$y=\frac{1}{\sqrt{2\pi}}\e^{-\frac12 x^2}$}
+    \end{picture}
+\caption{By the Erd\H{o}s--Kac theorem, the limiting proportion of $n\le x$ (as $x\to\infty$) with $1 < \frac{\omega(n)-\log\log{x}}{\sqrt{\log\log{x}}} \le 2$ is the area of the shaded region.}
+\end{figure}
+
+Later, Erd\H{o}s and Kac (1940)  established the remarkable fact that $\omega(n)$ and $\Omega(n)$, for $n\le x$, are (as $x\to\infty$) asymptotically normally distributed with mean and variance $\log\log{x}$.  Precisely: Let $f \in \{\omega, \Omega\}$. Then for each $z \in\rr$,
+\[ \displaystyle \lim_{x\to\infty} \frac{1}{x}\#\{n\le x: \frac{\omega(n)-\log\log{x}}{\sqrt{\log\log{x}}} \le z\} = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{z} \e^{-\frac{1}{2}t^2}\, \D t.  \]
+(Notice that this subsumes the result that $\omega(n), \Omega(n)$ are typically $\approx \log\log{x}$ for integers $n\le x$.)
+This result of Erd\H{o}s and Kac was a major impetus for the development of the subject that has come to be known as ``\textsf{probabilistic number theory}''.\smallskip
+
+There is no shortage of open problems concerning the behavior of arithmetic functions. To take an example, let $M(N)$ denote the number of elements in the $N\times N$ multiplication table. You showed in \setprob{prob:multtable} that $M(N)/N^2 \to 0$ as $N\to\infty$. It was proved by Kevin Ford (2008) that $M(N)$ lies between two positive constant multiples of
+\[ M_{\approx}(N):= \frac{N^2}{(\log{N})^{\delta} (\log\log{N})^{3/2}}, \text{ where }\delta = 1-\frac{1+\log\log{2}}{\log{2}} \quad\!(\approx 0.086),\]
+once $N$ is large enough. Question: Does $M(N)/M_{\approx}(N)$ tend to a limit as $N\to\infty$ ? Extensive computations on this problem have been carried out recently by Brent, Pomerance, Purdum, and Webster, but it remains unclear what the numbers are trying to tell us.
+
+\item[\textbf{The distribution of prime numbers}.] We alluded in Step \#12 to the Prime Number Theorem, which we formulated as a result comparing $\pi(x)$ to $x/\log{x}$. But it was recognized already by Gauss that $\pi(x)$ ought to be compared not to $x/\log{x}$ but to the ``\textsf{logarithmic integral}'' $\mathrm{Li}(x) :=\int_{2}^{x}\frac{\D t}{\log{t}}$. Since $\frac{x/\log x}{\mathrm{Li}(x)}\to 1$ as $x\to\infty$, the Prime Number Theorem --- being an assertion about a limit of ratios --- can be stated either way. However, as far as absolute numerical difference with $\pi(x)$ is concerned, the logarithmic integral is a much closer approximation than $x/\log{x}$. How close?\smallskip
+
+\textit{Conjecture}: $|\pi(x)-\mathrm{Li}(x)|  < \sqrt{x}\log{x}$, for all $x\ge 3$.\smallskip
+
+\begin{table}[t]\caption{Comparison of $\pi(x)$ and
+    $\li(x)$ (rounded to the nearest integer). While $\li(x) > \pi(x)$ for all $x$ shown, Littlewood showed that there are arbitrarily large values of $x$ where the reverse inequality holds.}\def\arraystretch{1.11}\label{tbl:tbl1}\begin{center}
+    \begin{tabular}{|r||r|r|r|r}\hline
+    $x$ & $\pi(x)$ & $\li(x)$ & $\li(x)-\pi(x)$ \\ \hline\hline
+    $10^3$ & 168 & 177 & 9  \\
+    $10^4$ & 1229 & 1245 & 16  \\
+    $10^5$ & \num{9592} & \num{9629} & 37 \\
+    $10^6$ & \num{78498} & \num{78627} & 129 \\
+    $10^7$ & \num{664579} & \num{664917} & 338 \\
+    $10^8$ & \num{5761455} & \num{5762208} & 753 \\
+    $10^9$ & \num{50847534} & \num{50849234} & \num{1700} \\
+    $10^{10}$ & \num{455052511} & \num{455055614} & \num{3103}  \\
+    $10^{11}$ & \num{4118054813} & \num{4118066400} & \num{11587}\\
+    $10^{12}$ & \num{37607912018} & \num{37607950280} & \num{38262}  \\
+    $10^{13}$ & \num{346065536839} & \num{346065645809} & \num{108970}  \\
+    \hline
+    \end{tabular}\end{center}
+    \end{table}
+Actually, this Conjecture is no more (and no less) than the infamous ``\textsf{Riemann Hypothesis}''! To see the relation with the usual formulation of RH in terms of zeros of (the analytically continued version of) $\zeta(s)$, look up ``\textsf{Riemann's explicit formula}'' (for example, in \cite{davenport}).\bigskip
+
+\item[\textbf{Prime numbers in arithmetic progressions}.] Dirichlet's methods imply that for every positive integer $m$, the prime numbers are equidistributed over the coprime residue classes modulo $m$, in the following sense: For every integer $a$ coprime to $m$,
+$$  \lim_{x\to\infty} \frac{\sum_{\substack{p \le x,~p\equiv a\!\!\!\!\!\pmod{m}}} 1/p}{\sum_{p\le x} 1/p}= \frac{1}{\phi(m)}. $$
+It is tempting to ask if the same limiting relation holds when the summand $\frac{1}{p}$ is replaced by $1$, as that would be a significantly more natural way of measuring equidistribution. In other words, if we set $$\pi(x;m,a) = \#\{p\le x: p\equiv a\!\!\!\!\pmod{m}\},$$ does $\frac{\pi(x;m,a)}{\pi(x)} \to \frac{1}{\phi(m)}$, as $x\to\infty$ (assuming $a$ and $m$ are coprime)?  YES! This is called the Prime Number Theorem for Arithmetic Progressions, and it can be proved by the same techniques used to establish the ordinary Prime Number Theorem.\smallskip
+
+The PNT for APs is not the end of the story. If we \emph{fix} $m$, that result tells us that the primes $\le x$ equidistribute themselves over the coprime progressions mod $m$ once $x$ is large enough compared to $m$. But how long do we have to wait for  equidistribution to ``kick in''? It is conjectured that $x > m^{1+\epsilon}$ suffices, but known results do not guarantee equidistribution unless $x > \exp(m^{\epsilon})$.\bigskip
+
+\item[{\textbf{Combinatorial methods}}.] In Step \#9, you finished the proof of Brun's theorem: $\sum_{p} \frac{1}{p} < \infty$, where $p$ runs over the primes for which $p+2$ is also prime. Brun's argument (which we followed) was the first important example (1919) of what is called a ``\textsf{sieve method}'' in number theory. Sieve methods have seen extensive development, and they continue to be the source of the sharpest results to date on the twin prime conjecture. We mention two: (a) (Chen, 1966) There are infinitely many primes $p$ for which $p+2$ is either prime or a product of two primes (counting multiplicity). (b) (D.H.J.\ Polymath, 2014, building on ideas of Zhang, Maynard, Tao) There are infinitely pairs of primes that differ by no more than $246$.
+\end{description}
+
+\renewcommand\refname{\normalsize Suggestions for Further Reading}
+\begin{thebibliography}{11}
+    \bibitem{apostol}  Tom M. Apostol, {\em Introduction to Analytic Number Theory}, 2010:
+    Springer, New York.
+
+    \bibitem{cm} Alina Cojocaru and M. Ram Murty, \emph{An Introduction to Sieve Methods and their Applications}, 2005: Cambridge University Press, Cambridge.
+
+    \bibitem{davenport} Harold Davenport, {\em Multiplicative Number Theory} (3rd ed.), 2000: Springer,
+New York.
+
+
+\bibitem{hildebrand} Adolf J. Hildebrand, {\em Introduction to Analytic Number Theory: Lecture Notes}, 2013. Online resource: \url{https://faculty.math.illinois.edu/~hildebr/ant/index.html}
+
+\bibitem{HST} Edmund Hlawka, Johannes Schoi\ss engeier, and Rudolf Taschner, {\em Geometric and Analytic Number Theory}, 1991: Springer-Verlag, Berlin.
+
+
+\bibitem{hua} Loo-Keng Hua, {\em Introduction to Number Theory}, 1987: Springer-Verlag, Berlin.
+
+\bibitem{landau} Edmund Landau, {\em Elementary Number Theory}, 1999: American Mathematical Society, Providence, RI.
+
+\bibitem{LDK} Florian Luca and Jean-Marie De Koninck, {\em Analytic Number Theory: Exploring the Anatomy of Integers}, 2012: American Mathematical Society, Providence, RI.
+
+    \bibitem{MV} Hugh L.\ Montgomery and Robert C.\ Vaughan, {\em Multiplicative Number Theory I. Classical Theory}, 2012: Cambridge University Press, Cambridge.
+
+\bibitem{Murty} M. Ram Murty, {\em Problems in Analytic Number Theory} (2nd ed.), 2007: Springer, New York.
+
+\bibitem{Nathanson} Melvyn B. Nathanson, {\em Additive Number Theory: The Classical Bases}, 1996: Springer, New York.
+
+    \bibitem{pollack} Paul Pollack, {\em Not Always Buried Deep: A Second Course in Elementary Number Theory}, 2009: American Mathematical Society, Providence, RI.
+
+    \bibitem{shapiro} Harold N.\ Shapiro, {\em Introduction to the Theory of Numbers}, 2008: Dover, New York.
+
+    \bibitem{tenenbaum} Gerald Tenenbaum, {\em Introduction to Analytic and Probabilistic Number Theory} (3rd ed.), 2015: American Mathematical Society, Providence, RI.
+
+
+
+    \end{thebibliography} 

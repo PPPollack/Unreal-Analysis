@@ -1,0 +1,127 @@
+%%%%%%%%%%%%%%%%%%%%% chapter.tex %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% sample chapter
+%
+% Use this file as a template for your own input.
+%
+%%%%%%%%%%%%%%%%%%%%%%%% Springer-Verlag %%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter*{$p$-Set \#4}
+\addcontentsline{toc}{chapter}{Set \#4}
+\markboth{Set \#4}{Set \#4}
+
+%\vspace{-0.25in}
+\section*{Berning Questions}
+
+\setlength{\epigraphwidth}{0.55\textwidth}  
+\epigraph{\dots\! It took me less than half a quarter
+of an hour to find that the tenth powers of the first 1000 numbers, starting from 1, being added together make
+$$\numprint{91409924241424243424241924242500}.
+$$ 
+This renders apparent the futility of the work Isma\"{e}l Boulliau spent on the compilation of his voluminous \emph{Arithmetica
+Infinitorum}, in which he did nothing more than laboriously compute the sums of the first six powers\dots}{Jacob Bernoulli}
+\setlength{\epigraphwidth}{0.45\textwidth} 
+
+The \textsf{Bernoulli numbers $B_k$} ($k=0,1,2,3,\dots$)\index{Bernoulli numbers!definition} are defined as the coefficients in the formal power series\footnote{We assume acquaintance with basic facts about formal power series, as found for instance in \S1.1 of Stanley's \emph{Enumerative Combinatorics}.} expansion 
+\[ \frac{T}{\e^{T}-1} = \sum_{k=0}^{\infty} B_k \frac{T^k}{k!}. \]
+Equivalently, $B_0, B_1, B_2, \dots$ are determined by the identity
+\[ T= \bigg(T + \frac{T^2}{2!} + \frac{T^3}{3!} + \frac{T^4}{4!} + \dots\bigg) \bigg(B_0 + B_1 T + B_2 \frac{T^2}{2!} + B_3 \frac{T^3}{3!}+\dots\bigg).\index{$B_k$|see{Bernoulli numbers}}\]
+
+Since $\frac{\e^{T}-1}{T}= 1 + \frac{T}{2!} + \frac{T^2}{3!} + \dots$ is a power series with rational coefficients and nonzero constant term, its reciprocal $\frac{T}{e^T-1}$ is also a power series with rational coefficients. Therefore, every $B_k\in \Q$. 
+
+\begin{table}[t]
+    \centering
+    \setlength\tabcolsep{6.25pt}
+    \begin{tabular}{r||r r r r r r r r r r r r r}       $k$  & 0 &  1&  2 &  3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12\\\midrule
+       $B_k$  & 1 & $-\frac12$  & $\frac16$  &  $0$ & $-\frac{1}{30}$ & $0$ & $\frac{1}{42}$ & $0$ & $-\frac{1}{30}$ & $0$ & $\frac{5}{66}$ & $0$ & $-\frac{691}{2730}$\\
+    \end{tabular}
+    \caption*{First several Bernoulli numbers.}
+\end{table} 
+
+
+For positive integers $n$ and $k$, define $S_k(n) = 1^k + 2^k + \dots + (n-1)^k$.\index{$S_k(n)$, sum of $k$th powers of first $n$ nonnegative integers}
+\index{$S_k(n)$, sum of $k$th powers of first $n$ nonnegative integers!subentry@\gobblecomma|seealso{Faulhaber's formula}}
+
+\begin{prob}\label{prob:41} $1 + \e^T + \e^{2T} +\dots+ \e^{(n-1) T} = \sum_{k=0}^{\infty} S_k(n) \frac{T^k}{k!}$ (as formal power series).
+\end{prob}
+
+
+
+
+\begin{prob}[Faulhaber's Formula]\label{prob:42}\index{Faulhaber's formula}\index{Bernoulli numbers!Faulhaber's formula} $\displaystyle S_k(n) = \sum_{j=0}^{k} \binom{k}{j} B_{k-j} \frac{n^{j+1}}{j+1}$.
+\end{prob}
+
+
+
+In view of the widespread applications of Faulhaber's formula, the Bernoulli numbers are natural objects of study. The following two exercises ask you to pluck some
+low-hanging fruit.
+
+\begin{prob}\label{prob:43}\index{Bernoulli numbers!vanish for odd indices $>1$}If $\coth{T} := \frac{e^{2T}+1}{e^{2T}-1}$, then $T \coth{T} = T + \frac{2T}{e^{2T}-1} = T+ \sum_{k=0}^{\infty}B_k \frac{(2T)^k}{k!}$ (as formal series). $T\coth(T)$ is invariant under the substitution $T\mapsto -T$. Hence, $B_{k}=0$ for every odd $k > 1$.
+\end{prob}
+
+
+\begin{prob}\label{prob:alternatingsigns} $\coth{T} = \frac{1}{T} + \sum_{k\ge 1} B_{2k} \frac{2^{2k}}{(2k)!} T^{2k-1}$ and $\frac{\mathrm{d}}{\mathrm{d}T}\coth{T} = 1-\coth^2{T}$.\\ As a consequence: $(-1)^{k+1} B_{2k} > 0$ for each $k \in \Z^{+}$.\index{Bernoulli numbers!alternate in sign}
+\end{prob}
+
+Other properties of Bernoulli numbers lie a bit further below the surface. For instance, based on the above table one might conjecture that Bernoulli numbers always have squarefree denominators. We will prove this ---  and much more --- in due time!
+\label{setbern}
+
+\section*{Take It to the Limit, One More Time}
+
+
+\begin{prob}\label{prob:33} Compute the first several partial sums of $\sum_{k=1}^{\infty} 2^k/k$, noting their $2$-adic absolute values. Any conjectures?
+\end{prob}
+
+\begin{prob}\label{ex:rational}\label{prob:44}\index{$\Q_p$, field of $p$-adic numbers!element has eventually periodic base $p$ expansion iff rational} For every $r \in \Z_{(p)}$, there is a unique sequence $d_0, d_1, d_2, d_3, \ldots \in \{0,1,2,\dots,p-1\}$ with $\sum_{k=0}^{\infty} d_k p^k=r$ in $(\Q,|\cdot|_{p})$. The sequence $\{d_k\}$ is eventually periodic.
+\end{prob}
+
+\begin{prob}\label{prob:limitabsvalue} If $x_n\to x$ in $(K,|\cdot|)$, then $|x_n|\to |x|$ in the real numbers. In fact, if $|\cdot|$ is non-Archimedean and $x_n\to x$, where $x\ne 0$, then $|x_n| =|x|$ for all large $n$.\index{limits (sequential)} 
+\end{prob}
+
+\absval 
+
+
+\begin{prob}\label{prob:45} Every nontrivial non-Archimedean absolute value on $\Q$ has the form $|\cdot|_{p}^{c}$ for some prime $p$ and some $c>0$. \end{prob}
+
+\begin{prob}\label{prob:46} If $|\cdot|$ is an Archimedean absolute value on $\Q$, we know from Exercise \ref{ex:archchar} that $|2| = 2^{c}$ and $|3|=3^d$ for some real numbers $c,d  > 0$. 
+
+Write $2^n$ in base $3$, say $2^n = \epsilon_m 3^m + \epsilon_{m-1} 3^{m-1}+ \dots + \epsilon_0$, where each $\epsilon_i = 0, 1$, or $2$ and $\epsilon_m  > 0$. There is a positive constant $B$ with 
+\[ 2^{cn} = |2^n| \le B\cdot |3|^{m} = B\cdot 3^{dm}; \]
+e.g., $B = \frac{|2|\cdot|3|}{|3|-1}$ works. Since $3^m \le 2^n$ and $n$ can be taken arbitrarily large, it must be that $c \le d$. Reversing the roles of $2$ and $3$  shows $d \le c$, and so $c=d$.
+\end{prob}
+
+\begin{prob}\label{prob:47} If $|\cdot|$ is an Archimedean absolute value on $\Q$, then $|\cdot| = |\cdot|_{\infty}^{c}$, where $|2|  = 2^{c}$. 
+\end{prob}
+
+Let $|\cdot|$ and $|\cdot|'$ be absolute values on $K$. We say $|\cdot|$ and $|\cdot|'$ are \textsf{equivalent absolute values}\index{equivalent absolute values}\index{absolute value!equivalence} if they induce the same notion of convergence, meaning that $x_n \to x$ in $(K,|\cdot|)$ if and only if $x_n\to x$ in $(K,|\cdot|')$.
+
+\begin{prob}\label{prob:48} If $|\cdot|$ and $|\cdot|'$ are equivalent, then $|\cdot|$ and $|\cdot|'$ are both Archimedean or both non-Archimedean.\\
+{\scriptsize Suggestion. Look at convergent \emph{geometric} sequences.}
+\end{prob} 
+
+
+\begin{prob}[Ostrowski's Theorem]\label{prob:49}\index{Ostrowski's theorem}\index{absolute value!classification of all abs.~values on $\Q$ (Ostrowski's theorem)} Every nontrivial absolute value on $\Q$ is equivalent to exactly one of $|\cdot|_p$ ($p$ prime) or $|\cdot|_{\infty}$.
+\end{prob} 
+
+
+
+
+\begin{prob}\label{ex:CC}\label{prob:CC} It is easy to find $p$ distinct rational numbers equidistant with respect to $|\cdot|_p$; simply consider $0,1,2,\dots,p-1$. Can you find $p+1$ such numbers? 
+\end{prob}
+
+
+
+
+\vspace{-0.15in}
+\psh
+
+ \begin{prob}[Eswarathasan--Levine, Boyd]\label{prob:50} Recall our notation $H_n$ for the $n$th harmonic number, $H_n = 1 + \frac12+\dots+\frac1n$.  If $|H_m|_p \ge 1$, then $|H_n|_p = p|H_m|$ whenever $pm \le n < p(m+1)$. 
+\end{prob} 
+
+\begin{prob} (electronic assistance recommended!) $|H_n|_{3}$ and $|H_n|_{5}$ tend to infinity.\index{harmonic number}\label{prob:51}
+
+{\scriptsize \underline{Open problem}: $|H_n|_{p}$ tends to infinity for every fixed prime $p$.}
+\end{prob}
+
+
+
+

@@ -1,0 +1,524 @@
+PWD /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020
+INPUT /usr/local/texlive/2019/texmf.cnf
+INPUT /usr/local/texlive/2019/texmf-dist/web2c/texmf.cnf
+INPUT /usr/local/texlive/2019/texmf-var/web2c/pdftex/pdflatex.fmt
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/book.tex
+OUTPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/book.log
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/svmono.cls
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/svmono.cls
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/base/article.cls
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/base/article.cls
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/base/size10.clo
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/base/size10.clo
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/lm/lmodern.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/lm/lmodern.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/url/url.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/url/url.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/mathtools/mathtools.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/mathtools/mathtools.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/graphics/keyval.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/graphics/keyval.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/tools/calc.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/tools/calc.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/mathtools/mhsetup.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/mathtools/mhsetup.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/amsmath/amsmath.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/amsmath/amsmath.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/amsmath/amstext.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/amsmath/amstext.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/amsmath/amsgen.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/amsmath/amsgen.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/amsmath/amsbsy.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/amsmath/amsbsy.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/amsmath/amsopn.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/amsmath/amsopn.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/parskip/parskip.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/parskip/parskip.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/microtype/microtype.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/microtype/microtype.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/microtype/microtype-pdftex.def
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/microtype/microtype-pdftex.def
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/microtype/microtype.cfg
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/microtype/microtype.cfg
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/microtype/microtype.cfg
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/chapterbib.sty
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/chapterbib.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/enumitem/enumitem.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/enumitem/enumitem.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/siunitx/siunitx.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/siunitx/siunitx.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/l3kernel/expl3.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/l3kernel/expl3.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/l3kernel/expl3-code.tex
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/l3kernel/expl3-code.tex
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/map/fontname/texfonts.map
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/unicode-data/UnicodeData.txt
+INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/unicode-data/UnicodeData.txt
+INPUT /dev/null
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/l3kernel/l3pdfmode.def
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/l3kernel/l3pdfmode.def
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/tools/array.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/tools/array.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/translator/translator.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/translator/translator.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/translator/translator.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/xpatch/xpatch.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/xpatch/xpatch.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/epigraph/epigraph.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/epigraph/epigraph.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/amssymb.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/amssymb.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/graphics/graphicx.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/graphics/graphicx.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/graphics/graphics.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/graphics/graphics.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/graphics/trig.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/graphics/trig.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/graphics-def/pdftex.def
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/graphics-def/pdftex.def
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/footmisc/footmisc.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/footmisc/footmisc.sty
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmr9.tfm
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/book.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/book.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/dedic.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/dedic.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/pref.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/pref.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set0.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set0.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set01.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set01.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set02.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set02.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set03.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set03.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set04.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set04.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set05.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set05.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set06.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set06.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set07.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set07.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set08.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set08.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set09.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set09.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set10.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set10.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set11.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set11.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/specialset1.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/specialset1.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/specialset2.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/specialset2.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/specialset3-v2.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/specialset3-v2.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions00.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions00.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions01.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions01.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions02.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions02.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions03.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions03.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions04.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions04.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions05.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions05.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions06.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions06.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions07.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions07.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions08.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions08.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions09.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions09.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions10.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions10.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions11.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions11.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutionsspecial1.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutionsspecial1.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutionsspecial2.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutionsspecial2.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutionsspecial3.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutionsspecial3.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/notes.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/notes.aux
+OUTPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/book.aux
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/lm/ot1lmr.fd
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/lm/ot1lmr.fd
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/rm-lmr10.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/microtype/mt-cmr.cfg
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/microtype/mt-cmr.cfg
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/base/ts1enc.dfu
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/base/ts1enc.dfu
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/translator/translator-basic-dictionary-English.dict
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/translator/translator-basic-dictionary-English.dict
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/siunitx/siunitx-abbreviations.cfg
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/siunitx/siunitx-abbreviations.cfg
+INPUT /usr/local/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+INPUT /usr/local/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/grfext.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/grfext.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/rm-lmr7.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/rm-lmr5.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/lm/omllmm.fd
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/lm/omllmm.fd
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/lmmi10.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/lmmi7.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/lmmi5.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/lm/omslmsy.fd
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/lm/omslmsy.fd
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/lmsy10.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/lmsy7.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/lmsy5.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/lm/omxlmex.fd
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/lm/omxlmex.fd
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/lmex10.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/microtype/mt-msa.cfg
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/microtype/mt-msa.cfg
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/microtype/mt-msb.cfg
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/microtype/mt-msb.cfg
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/lm/ot1lmss.fd
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/lm/ot1lmss.fd
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/rm-lmss10.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/rm-lmss8.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/rm-lmss8.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/lm/ot1lmtt.fd
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/lm/ot1lmtt.fd
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/rm-lmtt10.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/rm-lmtt8.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/rm-lmtt8.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/rm-lmr17.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/rm-lmr17.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/rm-lmr12.tfm
+OUTPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/book.pdf
+INPUT /usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map
+OUTPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/dedic.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/dedic.tex
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/dedic.tex
+OUTPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/pref.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/pref.tex
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/pref.tex
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/rm-lmr12.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/rm-lmbx12.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/rm-lmri10.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/rm-lmbx12.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/rm-lmr9.tfm
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/book.toc
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/book.toc
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/rm-lmbx10.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/rm-lmbx7.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/rm-lmbx5.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/lmmib10.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/lmmib7.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/lmmib5.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/lmbsy10.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/lmbsy7.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/lmbsy5.tfm
+OUTPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/book.toc
+OUTPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set0.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set0.tex
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set0.tex
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/rm-lmr6.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/lmmi9.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/lmmi6.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/lmsy9.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/lmsy6.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/rm-lmss9.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/rm-lmss8.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/rm-lmtt9.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/rm-lmtt8.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/rm-lmcsc10.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/rm-lmcsc10.tfm
+OUTPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set01.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set01.tex
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set01.tex
+OUTPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set02.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set02.tex
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set02.tex
+OUTPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set03.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set03.tex
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set03.tex
+OUTPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set04.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set04.tex
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set04.tex
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/rm-lmbx8.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/rm-lmbx6.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/lmmib10.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/lmmib10.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/lmmib7.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/lmbsy10.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/lmbsy10.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/lmbsy7.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+OUTPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set05.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set05.tex
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set05.tex
+OUTPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set06.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set06.tex
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set06.tex
+OUTPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set07.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set07.tex
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set07.tex
+OUTPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set08.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set08.tex
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set08.tex
+OUTPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set09.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set09.tex
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set09.tex
+OUTPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set10.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set10.tex
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set10.tex
+OUTPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set11.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set11.tex
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set11.tex
+OUTPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/specialset1.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/specialset1.tex
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/specialset1.tex
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/lmmi12.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/lmsy10.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/rm-lmss12.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/rm-lmtt12.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/rm-lmbx9.tfm
+OUTPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/specialset2.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/specialset2.tex
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/specialset2.tex
+OUTPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/specialset3-v2.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/specialset3-v2.tex
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/specialset3-v2.tex
+OUTPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions00.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions00.tex
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions00.tex
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/rm-lmri9.tfm
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/plots-eulergamma.pdf
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/plots-eulergamma.pdf
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/plots-eulergamma.pdf
+OUTPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions01.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions01.tex
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions01.tex
+OUTPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions02.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions02.tex
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions02.tex
+OUTPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions03.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions03.tex
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions03.tex
+OUTPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions04.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions04.tex
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions04.tex
+OUTPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions05.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions05.tex
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions05.tex
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/lm/omslmr.fd
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/lm/omslmr.fd
+OUTPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions06.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions06.tex
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions06.tex
+OUTPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions07.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions07.tex
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions07.tex
+OUTPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions08.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions08.tex
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions08.tex
+OUTPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions09.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions09.tex
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions09.tex
+OUTPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions10.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions10.tex
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions10.tex
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/rm-lmri7.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/rm-lmri7.tfm
+OUTPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions11.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions11.tex
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions11.tex
+OUTPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutionsspecial1.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutionsspecial1.tex
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutionsspecial1.tex
+OUTPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutionsspecial2.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutionsspecial2.tex
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutionsspecial2.tex
+OUTPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutionsspecial3.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutionsspecial3.tex
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutionsspecial3.tex
+OUTPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/notes.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/notes.tex
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/notes.tex
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/plots-gaussian.pdf
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/plots-gaussian.pdf
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/plots-gaussian.pdf
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/rm-lmcsc10.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/lm/rm-lmcsc10.tfm
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/book.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/dedic.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/dedic.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/pref.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/pref.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set0.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set0.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set01.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set01.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set02.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set02.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set03.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set03.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set04.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set04.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set05.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set05.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set06.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set06.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set07.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set07.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set08.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set08.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set09.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set09.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set10.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set10.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set11.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/set11.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/specialset1.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/specialset1.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/specialset2.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/specialset2.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/specialset3-v2.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/specialset3-v2.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions00.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions00.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions01.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions01.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions02.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions02.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions03.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions03.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions04.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions04.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions05.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions05.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions06.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions06.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions07.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions07.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions08.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions08.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions09.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions09.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions10.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions10.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions11.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutions11.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutionsspecial1.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutionsspecial1.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutionsspecial2.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutionsspecial2.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutionsspecial3.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/solutionsspecial3.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/notes.aux
+INPUT /Users/paul/odrive/Dropbox/Apps/Overleaf/Analytic Book April 2020/notes.aux
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-rmtt.enc
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-rmsc.enc
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmbsy10.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmbx10.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmbx12.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmbx8.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmbx9.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmex10.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmmi10.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmmi12.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmmi5.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmmi6.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmmi7.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmmi9.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmmib10.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmr10.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmr12.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmr17.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmr5.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmr6.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmr7.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmr9.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmri10.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmri9.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmss10.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmss9.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmsy10.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmsy5.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmsy6.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmsy7.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmsy9.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmtt9.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb

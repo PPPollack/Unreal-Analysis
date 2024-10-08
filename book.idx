@@ -1,0 +1,129 @@
+\indexentry{absolute value!definition|hyperpage}{3}
+\indexentry{valued field|hyperpage}{3}
+\indexentry{trivial absolute value|hyperpage}{3}
+\indexentry{absolute value!trivial absolute value|hyperpage}{3}
+\indexentry{$v_p(n)$|hyperindexformat{\see{$p$-adic valuation}}}{3}
+\indexentry{p-adic@$p$-adic!valuation|hyperpage}{3}
+\indexentry{$x$@$\text{\textbar}x\text{\textbar}_p$|hyperindexformat{\see{$p$-adic absolute value}}}{3}
+\indexentry{p-adic@$p$-adic!valuation|hyperpage}{3}
+\indexentry{absolute value!$p$-adic|hyperpage}{3}
+\indexentry{p-adic@$p$-adic!absolute value|hyperpage}{3}
+\indexentry{absolute value!non-Archimedean|hyperpage}{4}
+\indexentry{non-Archimedean absolute value|hyperpage}{4}
+\indexentry{strong triangle inequality|hyperpage}{4}
+\indexentry{Archimedean absolute value|hyperpage}{4}
+\indexentry{absolute value!Archimedean|hyperpage}{4}
+\indexentry{absolute value!survival of the greatest|hyperpage}{4}
+\indexentry{survival of the greatest|hyperpage}{4}
+\indexentry{absolute value!product formula on $\Q$|hyperpage}{4}
+\indexentry{product formula for absolute values on $\Q$|hyperpage}{4}
+\indexentry{$x$@$\text{\textbar}x\text{\textbar}_\infty$, familiar (Archimedean) abs.~value|hyperpage}{4}
+\indexentry{absolute value!of factorials|hyperpage}{4}
+\indexentry{harmonic number|hyperpage}{5}
+\indexentry{$H_n$|hyperindexformat{\see{harmonic number}}}{5}
+\indexentry{Wolstenholme's theorem|hyperpage}{5}
+\indexentry{discs, open and closed|hyperpage}{7}
+\indexentry{p-integral@$p$-integral rational number|hyperindexformat{\see{$\Z_{(p)}$, ring of $p$-integral rationals}}}{8}
+\indexentry{$\Z_{(p)}$, ring of $p$-integral rationals|hyperpage}{8}
+\indexentry{Wieferich prime|hyperpage}{8}
+\indexentry{primes in arithmetic progressions|hyperpage}{9}
+\indexentry{respectable mathematician|hyperpage}{11}
+\indexentry{convergence of sequences|hyperindexformat{\see{limits (sequential)}}}{11}
+\indexentry{limits (sequential)|hyperpage}{11}
+\indexentry{convergence of infinite series|hyperpage}{12}
+\indexentry{Ramanujan--Nagell equation|hyperpage}{13}
+\indexentry{Bernoulli numbers!definition|hyperpage}{15}
+\indexentry{$B_k$|hyperindexformat{\see{Bernoulli numbers}}}{15}
+\indexentry{$S_k(n)$, sum of $k$th powers of first $n$ nonnegative integers|hyperpage}{15}
+\indexentry{$S_k(n)$, sum of $k$th powers of first $n$ nonnegative integers!subentry@\gobblecomma|hyperindexformat{\seealso{Faulhaber's formula}}}{15}
+\indexentry{Faulhaber's formula|hyperpage}{16}
+\indexentry{Bernoulli numbers!Faulhaber's formula|hyperpage}{16}
+\indexentry{Bernoulli numbers!vanish for odd indices $>1$|hyperpage}{16}
+\indexentry{Bernoulli numbers!alternate in sign|hyperpage}{16}
+\indexentry{$\Q_p$, field of $p$-adic numbers!element has eventually periodic base $p$ expansion iff rational|hyperpage}{16}
+\indexentry{limits (sequential)|hyperpage}{16}
+\indexentry{equivalent absolute values|hyperpage}{17}
+\indexentry{absolute value!equivalence|hyperpage}{17}
+\indexentry{Ostrowski's theorem|hyperpage}{17}
+\indexentry{absolute value!classification of all abs.~values on $\Q$ (Ostrowski's theorem)|hyperpage}{17}
+\indexentry{harmonic number|hyperpage}{17}
+\indexentry{p-adic@$p$-adic integer|hyperindexformat{\see{$\Z_p$, ring of $p$-adic integers}}}{19}
+\indexentry{$\Z_p$, ring of $p$-adic integers!introduction and basic properties|hyperpage}{19}
+\indexentry{$\Z_g$, ring of $g$-adic integers!decomposition as $\prod_{p\mid g}\Z_p$|hyperpage}{20}
+\indexentry{La Cara de la Guerra|hyperpage}{20}
+\indexentry{Monsky's theorem|hyperpage}{21}
+\indexentry{Cauchy sequence|hyperpage}{23}
+\indexentry{p-adic@$p$-adic number|hyperindexformat{\see{$\Q_p$, field of $p$-adic numbers}}}{24}
+\indexentry{$\Q_p$, field of $p$-adic numbers!introduction and basic properties|hyperpage}{24}
+\indexentry{p-adic@$p$-adic!valuation|hyperpage}{24}
+\indexentry{absolute value!$p$-adic|hyperpage}{24}
+\indexentry{p-adic@$p$-adic!absolute value|hyperpage}{24}
+\indexentry{$\Z_p$, ring of $p$-adic integers!is compact|hyperpage}{24}
+\indexentry{Wilson's theorem|hyperpage}{25}
+\indexentry{sadness in our hearts|hyperpage}{27}
+\indexentry{completeness of a valued field|hyperpage}{27}
+\indexentry{$\Q_p$, field of $p$-adic numbers!is complete|hyperpage}{27}
+\indexentry{$\Z_p$, ring of $p$-adic integers!has $\Z$ as a dense subset|hyperpage}{27}
+\indexentry{$\Q_p$, field of $p$-adic numbers!has $\Q$ as a dense subset|hyperpage}{27}
+\indexentry{completion of a valued field|hyperpage}{28}
+\indexentry{completion of a valued field!is unique|hyperpage}{28}
+\indexentry{$\Z_p$, ring of $p$-adic integers!base $p$ expansions of elements|hyperpage}{28}
+\indexentry{$\Q_p$, field of $p$-adic numbers!base $p$ expansions of elements|hyperpage}{29}
+\indexentry{canonical expansions of elements of $\Q_p$|hyperpage}{29}
+\indexentry{$\Q_p$, field of $p$-adic numbers!element has eventually periodic base $p$ expansion iff rational|hyperpage}{29}
+\indexentry{method of successive approximation|hyperpage}{29}
+\indexentry{convergence of infinite series|hyperpage}{31}
+\indexentry{$\Q_p$, field of $p$-adic numbers!convergence of series|hyperpage}{31}
+\indexentry{strong triangle inequality!extension to infinite series in $\Q_p$|hyperpage}{31}
+\indexentry{$1$@$\one_C$, indicator function of $C$|hyperpage}{32}
+\indexentry{Bernoulli numbers!Clausen--von Staudt theorem|hyperpage}{32}
+\indexentry{Clausen--von Staudt theorem|hyperpage}{32}
+\indexentry{Teichm\"{u}ller representatives|hyperpage}{32}
+\indexentry{respectable mathematician!non-example, \emph{see bottom of}|hyperpage}{32}
+\indexentry{$\omega(u)$|hyperindexformat{\see{Teichm\"{u}ller representatives}}}{32}
+\indexentry{method of successive approximation|hyperpage}{33}
+\indexentry{$\Z_p$, ring of $p$-adic integers!structure of $\Z_p^{\times}/(\Z_p^{\times})^2$|hyperpage}{33}
+\indexentry{$\Q_p$, field of $p$-adic numbers!structure of $\Q_p^{\times}/(\Q_p^{\times})^2$|hyperpage}{33}
+\indexentry{Liouville's approximation theorem in $\Z_p$|hyperpage}{33}
+\indexentry{$\Z_g$, ring of $g$-adic integers!example of $\Z_{10}$|hyperpage}{34}
+\indexentry{Strassmann series!definition|hyperpage}{34}
+\indexentry{restricted power series|hyperindexformat{\see{Strassmann series}}}{34}
+\indexentry{strictly convergent power series|hyperindexformat{\see{Strassmann series}}}{34}
+\indexentry{Strassmann series!if nonzero has finitely many zeros in $\Z_p$|hyperpage}{34}
+\indexentry{Bernoulli numbers!associated characterization of Wilson primes|hyperpage}{35}
+\indexentry{Wilson prime|hyperpage}{35}
+\indexentry{Teichm\"{u}ller representatives|hyperpage}{35}
+\indexentry{Taylor's formula|hyperpage}{38}
+\indexentry{Newton's method|hyperpage}{38}
+\indexentry{Hensel's lemma|hyperpage}{38}
+\indexentry{p-adic@$p$-adic logarithm!definition and convergence on $1+p\Z_p$|hyperpage}{41}
+\indexentry{logarithm, on $\Q_p$|hyperindexformat{\see{$p$-adic logarithm}}}{41}
+\indexentry{$s(N,K)$, Stirling numbers of the first kind|hyperpage}{42}
+\indexentry{Strassmann series!representing $(1+a)^n$|hyperpage}{42}
+\indexentry{$\Binom(1+a;T)$|hyperindexformat{\see{Strassmann series representing $(1+a)^n$}}}{43}
+\indexentry{Strassmann series!representing terms of a linear recurrence|hyperpage}{44}
+\indexentry{Skolem--Mahler--Lech theorem|hyperpage}{44}
+\indexentry{Strassmann series!representing $(1+a)^n$|hyperpage}{45}
+\indexentry{$\Z[\sqrt[3]{D}]$, arithmetic of|hyperpage}{45}
+\indexentry{cubic Pellian equation|hyperpage}{48}
+\indexentry{$x^3-Dy^3=1$, finiteness of solutions|hyperpage}{48}
+\indexentry{Teichm\"{u}ller representatives|hyperpage}{49}
+\indexentry{Bernoulli numbers!Adams' theorem|hyperpage}{49}
+\indexentry{Bernoulli numbers!Kummer's congruence|hyperpage}{49}
+\indexentry{harmonic number|hyperpage}{50}
+\indexentry{Bernoulli numbers!associated congruence for $H_{p-1}$|hyperpage}{50}
+\indexentry{Wolstenholme prime|hyperpage}{50}
+\indexentry{Strassmann degree|hyperpage}{50}
+\indexentry{Strassmann series!Strassmann degree of|hyperpage}{50}
+\indexentry{Strassmann's theorem|hyperpage}{50}
+\indexentry{Strassmann series!number of zeros bounded by Strassmann degree|hyperpage}{50}
+\indexentry{Ramanujan--Nagell equation|hyperpage}{50}
+\indexentry{absolute value!product formula on $\Q$|hyperpage}{56}
+\indexentry{product formula for absolute values on $\Q$|hyperpage}{56}
+\indexentry{simultaneous approximation|hyperpage}{56}
+\indexentry{Legendre's formula for $v_p(n"!)$|hyperpage}{56}
+\indexentry{absolute value!of factorials|hyperpage}{56}
+\indexentry{harmonic number|hyperpage}{57}
+\indexentry{Wolstenholme's theorem|hyperpage}{57}
+\indexentry{discs, open and closed|hyperpage}{59}
+\indexentry{$\Z_{(p)}$, ring of $p$-integral rationals|hyperpage}{60}

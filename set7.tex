@@ -1,0 +1,106 @@
+\chapter*{$p$-Set \#8}
+\addcontentsline{toc}{chapter}{Set \#8}
+\markboth{Set \#8}{Set \#8}
+
+
+\section*{The World (of $p$-adic) Series}
+
+% \epigraph{With the exception of the very simplest cases \dots there are almost no infinite series in mathematics whose sum has been rigorously determined.}{Niels Henrik Abel}
+
+\begin{prob}\label{ex:seriesconvergence}\label{prob:89} Let $K$ be a field complete with respect to a non-Archimedean absolute value $|\cdot|$ (for instance, $\Q_p$!). 
+\begin{enumerate}\vspace{-0.05in}
+    \item[(a)] A series $\sum_{k=1}^{\infty} a_k$ converges in $K$ $\Longleftrightarrow$ $a_k \to 0$ in $K$. 
+    \item[(b)] If $\sum_{k=1}^{\infty} a_k$ converges, then $\left|\sum_{k=1}^{\infty} a_k\right| \le \max_{k=1,2,3,\dots} |a_k|$.
+\end{enumerate}
+\index{convergence of infinite series}\index{$\Q_p$, field of $p$-adic numbers!convergence of series}\index{strong triangle inequality!extension to infinite series in $\Q_p$}
+\end{prob}
+
+For the next exercise, recall that a \textsf{rearrangement} of a series $\sum_{k=1}^{\infty} a_k$ is a series of the form $\sum_{k=1}^{\infty} a_{\sigma(k)}$, where $\sigma$ is a permutation of $\Z^{+}$ (a bijection of $\Z^{+}$ with itself).
+
+\begin{prob}\label{prob:90} Let $K$ be a field complete with respect to a non-Archimedean absolute value. If $\sum_{k=1}^{\infty} a_k$ is a series in $K$ that converges to $s\in K$, then every rearrangement of $\sum_{k=1}^{\infty} a_k$ also converges to $s$.
+\end{prob}
+
+
+\begin{prob}\label{prob:93} Suppose that $\sum_{n=0}^{\infty} a_n$ and $\sum_{n=0}^{\infty} b_n$ are convergent series in the field $K$, which is assumed complete with respect to a non-Archimedean absolute value. Define $c_n = \sum_{k=0}^{n} a_k b_{n-k}$, for $n=0,1,2,\dots$. Then $\sum_{n=0}^{\infty} c_n$ converges and in fact $\sum_{n=0}^{\infty} c_n = (\sum_{n=0}^{\infty} a_n) (\sum_{n=0}^{\infty} b_n)$.
+
+{\scriptsize \underline{Important consequence}: If $F(T) = \sum_{k=0}^{\infty} a_k T^k$,  $G(T) = \sum_{k=0}^{\infty} b_k T^k \in K[[T]]$ both converge at the point $z \in K$, so does $F(T)G(T)$, and $F(T)G(T)|_{T=z} = F(z) G(z)$. }
+\end{prob}
+
+
+
+
+
+\begin{prob}[a doubleheader?]\label{ex:doubleseries}\label{prob:91} Let $K$ be a field complete with respect to a non-Archimedean absolute value $|\cdot|$. Let $\{a_{i,j}\}_{i,j\ge 0}$ be a doubly-indexed sequence of elements of $K$. Suppose there is a sequence of real numbers $\{\epsilon_N\}_{N\ge 0}$ tending to $0$ with the property that 
+\[ |a_{i,j}|_p \le \epsilon_N \quad\text{whenever $i\ge N$ or $j\ge N$}.\footnote{This may seem a strange condition to impose on $\{a_{i,j}\}$. In fact, it's very natural; it's equivalent to asking that for each $\epsilon > 0$, the inequality $|a_{i,j}| < \epsilon$ fails at most finitely often. We could have phrased the requirement this way to start with, but our more elaborate formulation will turn out to be easier to work with in proofs.} \]        
+Show: The double series $\sum_{i}  \sum_{j} a_{i,j}$ and $\sum_{j}\sum_{i} a_{i,j}$ both converge.
+\end{prob}
+
+\begin{prob}[a double switch]\label{prob:92} Continue with the notation and assumptions of Exercise \ref{ex:doubleseries}. For every nonnegative integer $N$,
+\[  \left|\sum_{i} \sum_{j} a_{i,j} - \sum_{i=0}^{N} \sum_{j} a_{i,j}\right| \le \epsilon_{N+1}, \quad \left|\sum_{j} \sum_{i} a_{i,j} - \sum_{j} \sum_{i=0}^{N} a_{i,j}\right| \le \epsilon_{N+1},\]
+\[ \left|\sum_{i=0}^N \sum_{j} a_{i,j} - \sum_{i=0}^{N} \sum_{j=0}^{N} a_{i,j}\right| \le \epsilon_{N+1}, \quad \left|\sum_{j} \sum_{i=0}^{N} a_{i,j} - \sum_{j=0}^{N} \sum_{i=0}^{N} a_{i,j}\right| \le \epsilon_{N+1}.\]
+Therefore, $\sum_{i}\sum_{j} a_{i,j} = \sum_{j}\sum_{i} a_{i,j}$.\end{prob}
+
+
+\section*{Are You Feeling the Bern?}
+
+Recall from Set \#4 that when $k,n\in \Z^{+}$, we are writing $S_k(n) =1^k + 2^k + \dots + (n-1)^k$. 
+%In the next series of exercises, $p$ denotes a prime (as usual). 
+
+% \begin{prob}\label{ex:vsc0} $S_k(p) \equiv \begin{cases}
+% -1\pmod{p}&\text{if $p-1\mid k$},\\
+% 0\pmod{p}&\text{otherwise}.
+% \end{cases}$quad
+% \end{prob}
+
+\begin{prob}\label{prob:newbern0} For $p$ prime, $k\in \Z^{+}$:\quad $p\mid (S_k(p) + \mathbf{1}_{p-1\mid k})$.
+\end{prob}
+{\scriptsize $\one_{C}$\index{$1$@$\one_C$, indicator function of $C$} denotes the indicator function of the condition $C$. Thus, $\one_{p-1\mid k}$ is $1$ if $p-1$ divides $k$ and $0$ otherwise.}
+
+\begin{prob}\label{prob:newbern1} For $p$ prime, $k\in \Z^{+}$:\quad $B_k + \frac{\mathbf{1}_{p-1\mid k}}{p} + \sum_{0 < j < k} \binom{k}{j} B_{k-j} \frac{p^j}{j+1} \in \Z_{(p)}$.
+\end{prob}
+
+\begin{prob}\label{prob:newbern2} For $p$ an odd prime, $k\in \Z^{+}$:\quad  $B_k + \frac{\mathbf{1}_{p-1\mid k}}{p} \in \Z_{(p)}$.
+\end{prob}
+
+\begin{prob}\label{prob:newbern3} For $k\in 2\Z^{+}$:\quad $B_{k} + \frac{1}{2} \in \Z_{(2)}$.
+\end{prob}
+
+
+
+
+
+% \begin{prob}\label{ex:vsc0}\label{prob:94} In $(\Q, |\cdot|_p)$:\quad $\lim_{s\to\infty} S_k(p^s) p^{-s} = B_k$.
+% \end{prob}
+
+% \begin{prob}\label{prob:95} Let $k \in \Z^{+}$. For $s \in \Z^{+}$, let $I_j = [j\cdot p^{s}, (j+1)p^s)$ for $j=0,\dots,p-1$. For each $j$,
+% \[ \sum_{n \in I_j} n^k \equiv S_k(p^s) + kj p^s S_{k-1}(p^s) \pmod{p^{s+1}}.\] 
+% \end{prob}
+
+% \begin{prob}\label{prob:96} For $k\in 2\Z^{+}$, $s\in \Z^{+}$:\quad $S_k(p^{s+1}) \equiv p S_k(p^s)\pmod{p^{s+1}}$. Therefore,
+% \[ \frac{S_k(p^{s+1})}{p^{s+1}}-\frac{S_k(p^s)}{p^s} \in \Z_{(p)}. \]
+% \end{prob}
+
+\begin{prob}[Clausen, von Staudt]\label{ex:vsclast}\label{prob:97} For $k \in 2\Z^{+}$:\quad
+% If $k\in 2\Z^{+}$, then $B_k \in \Z_{(p)}$ unless $p-1\mid k$, in which case $B_k + \frac{1}{p} \in \Z_{(p)}$. As a consequence
+$\displaystyle B_k + \sum_{\substack{p\text{ prime } \\ p-1 \mid k}} \frac{1}{p} \in \Z$.\index{Bernoulli numbers!Clausen--von Staudt theorem}\index{Clausen--von Staudt theorem}
+
+{\scriptsize It follows from Exercise \ref{ex:vsclast} that the denominator of $B_k$ is the (squarefree!) product of the primes $p$ for which $p-1\mid k$.}
+\end{prob}
+
+\section*{Finding Your Roots}
+
+\begin{prob}[Teichm\"{u}ller representatives]\label{prob:teichmuller}\index{Teichm\"{u}ller representatives}\index{respectable mathematician!non-example, \emph{see bottom of}} For each $u \in \Z_p^{\times}$, the field $\Q_p$ contains a unique $(p-1)$th root of unity congruent to $u\bmod{p\Z_p}$, namely $\omega(u):= \lim_{n\to\infty} u^{p^n}$.\index{$\omega(u)$|see{Teichm\"{u}ller representatives}}
+\end{prob}
+
+\begin{prob}\label{prob:teichmullercalculation} Find $\omega(2)$ (exactly) when $p=3$. Then take $p=7$ and determine the digits $c_0, c_1, c_2$ in the canonical expansion $\omega(2) =  c_0 + c_1 \cdot 7 + c_2 \cdot 7^2 + \dots$.
+\end{prob}
+
+\begin{prob}\label{prob:WJteich} If $u\in \Z$ has order $3$ modulo $p$, then $1+u$ has order $6$ mod $p$, and $\omega(1+u)=1+\omega(u)$.
+\end{prob}
+
+
+
+
+% \begin{prob} Interpret $2^{2^{2^{\iddots}}}$ as an element of $\Z_3$. Can you do this in $\Z_5$? in $\Z_p$?
+% \end{prob}
+ 

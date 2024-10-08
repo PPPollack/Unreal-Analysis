@@ -1,0 +1,293 @@
+\chapter*{Solutions to Set \#11}
+\addcontentsline{toc}{chapter}{Solutions to Set \#11}
+\markboth{Solutions to Set \#11}{Solutions to Set \#11}
+\label{set10sols}
+
+\begin{sol}{prob:padiclumber1}\index{p-adic@$p$-adic logarithm!definition and convergence on $1+p\Z_p$} We assume $|x-1|_p < 1$ and argue that the terms of the series defining $\log_p x$ tend to $0$. For each positive integer $k$, the product formula yields $|k|_{p}^{-1} = |k|_\infty \prod_{\text{prime }q \ne p} |k|_{q} \le |k|_{\infty} = k$. Therefore,
+\[ \left|(-1)^{k-1} \frac{(x-1)^k}{k}\right|_p = |x-1|_p^k \cdot |k|_p^{-1} \le k \cdot |x-1|_{p}^k, \]
+which tends to $0$ as $k$ tends to infinity.
+\end{sol}
+
+
+\begin{sol}{prob:padiclumber2} We start by noting that if $x \in 1 + p\Z_p$, then $x^{-1} \in 1+p\Z_p$. This is not difficult to prove directly, futzing about with absolute values, but a more elegant approach is to observe that $(1+rp)^{-1} = 1 - rp + r^2p^2 - \dots \in 1+p\Z_p$ whenever $r \in \Z_p$. Utilizing the addition rule (\textdagger), we deduce that for all $x \in 1+p\Z_p$,
+\[ \log_p x + \log_p \frac{1}{x} = \log_p\, 1 = \sum_{k=1}^{\infty} \frac{(-1)^{k-1}}{k}(1-1)^{k} = 0. \]
+(That $\log_p x + \log_p \frac{1}{x}=0$ should not be surprising, but it ought to be comforting!)
+
+If $j \in \{1,2,\dots,p-1\}$, then $$\sum_{k=1}^{\infty} \frac{1}{j^k} \frac{p^k}{k} = -\log_p\left(1-\frac{p}{j}\right) = \log_p\left(\left(1-\frac{p}{j}\right)^{-1}\right) = \log_p\frac{j}{j-p}.$$
+Therefore, % Since $p-j$ belongs to $\{1,2,\dots,p-1\}$ whenever $j$ does,
+% \begin{align*} \sum_{k=1}^{\infty} \left(\frac{1}{j^k}+ \frac{1}{(p-j)^k}\right)\frac{p^k}{k} &= \log_p\frac{j}{j-p} + \log_p\frac{p-j}{(p-j)-p} \\
+% &=  \log_p\frac{j}{j-p} + \log_p\frac{j-p}{j} = 0,
+% \end{align*}
+% and
+\begin{align*} \sum_{k=1}^{\infty} \left(\sum_{j=1}^{p-1} \frac{1}{j^k}\right)\frac{p^k}{k} &= \sum_{j=1}^{p-1} \left(\sum_{k=1}^{\infty} \frac{1}{j^k} \frac{p^k}{k}\right) = \sum_{j=1}^{p-1} \log_p \frac{j}{j-p} \\&= \log_p \prod_{0 < j < p}\frac{j}{j-p} = \log_p((-1)^{p-1}).
+\end{align*} 
+Here the interchange of the sums on $j$ and $k$ is routine to justify, for example by setting $a_{k,j} = \one_{0 < j < p} j^{-k} p^k k^{-1}$ and applying the result of Problem \ref{prob:92}.
+
+If $p$ is odd, then $(-1)^{p-1}=1$, and $\log_p 1 = 0$ gives the desired result. To finish off, we must show $\log_2(-1)=0$. But this is easy: $\log_2(-1) + \log_2(-1) = \log_2((-1)^2) = \log_2(1) = 0$.
+\end{sol}
+
+\begin{rmks}\mbox{ }
+\vspace{-0.13in}
+\begin{enumerate}
+    \item[(i)] You may have conjectured in Problem \ref{prob:33} that $v_2(\sum_{k=1}^{n} 2^k/k)$ is bounded below by $n - (\text{something small})$. Once we know that $\sum_{k=1}^{n} 2^k/k=0$, this becomes easy to show. Indeed, 
+    \[ \left|\sum_{k=1}^{n} \frac{2^k}{k}\right|_2 = \left|-\sum_{k=n+1}^{\infty} \frac{2^k}{k}\right|_2\le \max_{k\ge n+1} \left|\frac{2^k}{k}\right|_2 \le \max_{k\ge n+1} \frac{k}{2^k} = \frac{n+1}{2^{n+1}}.\] (To estimate $|2^k/k|_2$ we used the displayed inequality in the solution to Problem \ref{prob:padiclumber1}, for $x=-1$.) Converting this from a statement about absolute values to one about valuations, $v_2(\sum_{k=1}^{n} 2^k/k) \ge (n+1)-\frac{\log(n+1)}{\log{2}}$. A slight modification of this argument will show that equality holds when $n+1$ is a power of $2$.
+    \item[(ii)] In the next \pp, we outline one proof of the addition law (\textdagger). Arguments for (\textdagger) based on different principles can be found in the books of Gouv\^{e}a \cite[\S5.7]{gouvea} and Robert \cite[Chapter 5, \S4]{robert}. 
+    
+    Our proof  of (\textdagger) is motivated by the following formula from (real) calculus: For each real number $x>0$, \[ \log{x} = \lim_{k\to\infty} k(\sqrt[k]{x}-1).\] 
+(Check this yourself, possibly starting from $\left.\frac{\mathrm{d}}{\mathrm{d} t} x^{t}\right|_{t=0} = \log{x}$.) This identity is surprisingly powerful; Landau shows in  \cite{landau} that all of the familiar theory of the natural logarithm can be developed taking the right-hand side as the \emph{definition} of $\log{x}$. We will establish and apply a $p$-adic analogue of this relation. 
+\end{enumerate}
+\end{rmks}
+
+
+\begin{challenge}[Leopoldt \cite{leopoldt}]\label{prob:logaddition}\index{p-adic@$p$-adic logarithm!proof of additivity}\mbox{ } Fix a prime number $p$. For $x \in 1+p\Z_p$ and $m \in \Z^{+}$, put 
+\[ L_{p,m}(x) = \frac{x^{p^m}-1}{p^m}. \]
+Justify each of the following assertions.
+\begin{enumerate}
+\vspace{-0.12in}
+\item[(a)] For $x \in 1+p\Z_p$ and $m \in \Z^{+}$:\quad $|L_{p,m+1}(x) - L_{p,m}(x)|_p \le p^{-m-2}$. 
+\item[(b)] For each $x \in 1+p\Z_p$, the limit $L_{p}(x):=\lim_{m\to\infty} L_{p,m}(x)$ exists in $\Q_p$. %Moreover, $L_p(x) \in p\Z_p$.
+\item[(c)] For all $x,y \in 1+p\Z_p$, and all $m \in  \Z^{+}$: \quad $|L_{p,m}(xy) - (L_{p,m}(x) + L_{p,m}(y))|_p \le p^{-m-2}$. Hence, $L_p(xy) = L_p(x) + L_p(y)$.
+\end{enumerate}
+The rest of this problem is devoted to showing that $L_p$ and $\log_p$ coincide; once this is known, (\textdagger) follows from (c). 
+\begin{enumerate}[resume]
+\item[(d)] For $x \in 1+p\Z_p$ and $m \in \Z^{+}$:\quad  $L_{p,m}(x) = \sum_{k \ge  1}\frac{1}{p^m}\binom{p^m}{k}(x-1)^k$.
+\item[(e)] For $m,k \in \Z^{+}$: \quad $\frac{1}{p^m}\binom{p^m}{k} = \frac{(-1)^{k-1}}{k} \prod_{1 \le j < k} \big(1-\frac{p^m}{j}\big)$. Therefore, $L_{p,m}(x) = \log_p(x) + e_{p,m}(x)$, where
+\[ e_{p,m}(x) = \sum_{k \ge 2} \frac{(-1)^{k-1}}{k} \left(\prod_{1 \le j < k}\left(1-\frac{p^m}{j}\right) - 1\right) (x-1)^k.\]
+\item[(f)] For each $x \in 1+p\Z_p$, we have $\lim_{m\to\infty} e_{p,m}(x)=0$. Thus, $L_p(x) = \log_p{x}$.
+
+{\scriptsize Hint. If $k$ is small in terms of $m$, then $\prod_{1 \le j < k}(1-p^m/j)$ is congruent to $1$ modulo a large power of $p\Z_p$. On the other hand, when $k$ is large, $v_p((x-1)^k/k)$ is also large.}
+\end{enumerate}
+\end{challenge}
+
+
+
+\begin{sol}{prob:fakeproofkoblitz} Quite a lot of what is claimed here is true --- just none of the important bits!
+
+Let $p$ be an odd prime and define $\ssin_p(T)= \sum_{k \ge 0} (-1)^k \frac{T^{2k+1}}{(2k+1)!} \in \Q_p[[T]]$. It is straightforward to check that $\sin_p{x}$ converges when $|x|_p \le 1/p$; consequently, $\sin_p(pa)$ is a well-defined element of $\Q_p$ for all $a \in \Z$. It is also true that if $a$ is an integer not divisible by $p$, then $\sin_p(ap) \ne 0$. Otherwise the display following ``Therefore'' indeed lays out a contradiction.
+
+Unfortunately, none of this has much to do with the real number $\pi$! Let's assume $\pi = \frac{a}{b}$, with $a, b \in \Z$, $b\ne 0$. Choose an odd prime $p$ not dividing $a$, Then the series $\sum_{k\ge 0} (-1)^k (ap)^k/(2k+1)!$ converges to $\sin(pb\pi) = 0$ in $\R$. So far, so good. But the fact that a series converges to $0$ in $\R$ and converges to \emph{something} in $\Q_p$ --- something that could (misleadingly?) be labeled $\ssin_p(pb\pi)$ --- doesn't imply it converges to $0$ in $\Q_p$.  (Cf.~Exercise \ref{prob:differentroots}.)
+\end{sol}
+
+
+\begin{rmk} An error of a similar nature crept into the work of Hensel himself. In 1905, Hensel claimed to prove that $[\Q_p(\e):\Q]= p$ for each odd prime $p$, from which he derived the corollary that $\e$ is transcendental over $\Q$ \cite{hensel}. While the transcendence of $\e$ had already been shown by Hermite in 1873, Hensel's reasoning was much shorter and simpler; his proof has an unmistakable air of elegance. Unfortunately, it is also fundamentally flawed.\footnote{``For every complex problem there is an answer that is clear, simple, and wrong.'' --- {H.\,L.} Mencken} See \cite{ullrich} and \cite[\S5.6]{petri} for discussion (and compare with \cite[Exercise 9, p.~84]{koblitz}).
+\end{rmk}
+
+
+\begin{sol}{prob:uniquezero} We apply again the method of successive approximation.\index{method of successive approximation} If $x_1=-1$, then $F(x_1)\equiv 0\pmod{p}$. Suppose we have found $x_k \in \Z_p$ with $F(x_k)\equiv 0\pmod{p^{k}}$; we demonstrate how to find $x_{k+1}\in \Z_p$ with $x_{k+1}\equiv x_k\bmod{p^{k}\Z_p}$ and $F(x_{k+1})\equiv 0\pmod{p^{k+1}\Z_p}$.
+
+To enforce the congruence $x_{k+1}\equiv x_k \pmod{p^k\Z_p}$, we look for $x_{k+1}$ of the form $x_{k+1} = x_k + p^k h$, with $h \in \Z_p$. For each $h \in \Z_p$,
+\[ F(x_k + p^k h)- F(x_k) = p^k h + \sum_{j\ge 1} p^{2^j}((x_k+p^k h)^{2^j} - x_k^{2^j}).\]
+Since $p^k \mid ((x_k+p^k h)^{2^j} - x_k^{2^j})$ and $p \mid p^{2^j}$, the sum on $j$ belongs to $p^{k+1} \Z_p$.
+Hence, $F(x_k+p^k h) \equiv F(x_k) + p^k h \pmod{p^{k+1}}$, and $F(x_k + p^k h)\equiv 0\pmod{p^{k+1}}$ provided we choose $h\equiv -F(x_k)/p^k\pmod{p\Z{p}}$.
+
+If $x_1,x_2,x_3,\dots$ are constructed as above, then the $\{x_n\}$ form a Cauchy sequence in $\Z_p$, so that $x_n\to x$ for some $x \in \Z_p$. For each $n$,
+\[ |F(x)|_p \le |F(x)-F(x_n)|_p + |F(x_n)|_p. \]
+By construction, $|F(x_n)|_p\to 0$. Moreover, $F(x)-F(x_n) = (x-x_n)(1+ \sum_{j\ge 1}p^{2^{j}}(x^{2^{j}-1} + \dots + x_n^{2^{j}-1}))$. Thus, $|F(x)-F(x_n)|_p \le |x-x_n|_p$, a quantity that also tends to $0$. So taking $n$ to infinity, we deduce that $F(x)=0$.
+
+We could prove uniqueness similarly, showing that if $x \in \Z_p$ is any zero of $F$, then $x$ is uniquely determined mod $p\Z_p$, then mod $p^2\Z_p$, mod $p^3\Z_p$, etc. We choose a different path. We will show that $F$ assumes \emph{every} value at most once; that is, $F$ is injective as a function from $\Z_p$ to $\Z_p$. Suppose $x,x' \in \Z_p$ with $F(x') = F(x)$. Rearranging,
+\[ x'-x = -(x'-x)\sum_{j\ge 1}p^{2^j}(x'^{2^{j}-1} + \dots + x^{2^{j}-1}). \]
+Since the right-hand sum is divisible by $p$, the only way the $p$-adic absolute values of both sides can agree is if $x'-x=0$, so that $x'=x$.
+\end{sol}
+
+\begin{sol}{prob:uniquezero} (yes, déjà vu all over again!) We will factor $F(T)$ so as to make obvious that $F(x)=0$ for a unique $x \in \Z_p$. The factors are constructed by a variant of the method of successive approximation. 
+
+The only property of $F(T)$ we will use is that $F(T) = 1 + T + p G(T)$, where $G(T) \in \Z_p[[T]]$ is a Strassmann series. Since $G(T)$ is Strassmann, for any $k\in \Z^{+}$ the power series $F(T)\in \Z_p[[T]]$ is congruent modulo $p^k\Z_p[[T]]$ to a \emph{polynomial} with $\Z_p$ coefficients. This will be crucial.
+
+We begin by locating $r_1 \in \Z_p$ and $q_1(T) \in \Z_p[T]$ with 
+\begin{equation*} (1+T+p\cdot r_1)(1 + p\cdot q_1(T))\equiv F(T) \pmod{p^2\Z_p[[T]]}. \end{equation*}
+The left-hand side is congruent to $(1+T) + p ((1+T) q_1(T) + r_1)$ modulo $p^2\Z_p[[T]]$, and this matches the right mod $p^2\Z_p[[T]]$ if
+\begin{equation}\tag{*} (1+T) q_1(T) +  r_1 \equiv \frac{F(T)-(1+T)}{p}\pmod {p\Z_p[[T]]}. \end{equation}
+Choose $F_1(T) \in \Z_p[T]$ with $\frac{F(T)-(1+T)}{p}\equiv F_1(T) \pmod{p\Z_p[[T]]}$. We can find $q_1(T)$ and $r_1(T)$ satisfying (*) by performing long division in the ring $(\Z_p/p\Z_p)[T]$. Specifically, if $\tilde{F}_1(T)$ is the mod  $p\Z_p$-reduction of $F_1(T)$, long division furnishes us with $\tilde{q}_1(T) \in (\Z_p/p\Z_p)[T]$ and $\tilde{r}_1 \in \Z_p/p\Z_p$ with $\tilde{F}_1(T) = (1+T) \tilde{q}_1(T) + \tilde{r}_1$ in $(\Z_p/p\Z_p)[T]$. Then (*) holds if we choose $q_1(T) \in \Z_p[T]$ and $r_1 \in \Z_p$ to lift $\tilde{q}_1(T)$ and $\tilde{r}_1$.
+
+Continuing, suppose we have already found $r_1, r_2, \dots, r_k \in \Z_p$ and $q_1(T)$, $q_2(T), \dots, q_k(T) \in \Z_p[T]$ with
+\[ \bigg(1+T + \sum_{j=1}^{k} p^j r_j\bigg)\bigg(1 + \sum_{j=1}^{k} p^j q_j(T)\bigg) \equiv F(T)\pmod{p^{k+1}\Z_p[[T]]}.  \]
+We determine $r_{k+1} \in \Z_p$ and $q_{k+1}(T) \in \Z_p[T]$ such that the analogous congruence holds with $k$ replaced everywhere by $k+1$. To ease notation, put $U_k(T) = 1+T + \sum_{j=1}^{k} p^j r_j$ and $V_k(T)= 1+\sum_{j=1}^{k} p^j q_j(T)$. (Thus, $U_k(T) V_k(T) \equiv F(T) \pmod{p^{k+1}\Z_p[[T]]}$.) Then 
+\begin{multline*}(U_k(T) + p^{k+1} r_{k+1})(V_{k}(T) + p^{k+1} q_{k+1}(T)) \\ \equiv U_k(T) V_k(T) + p^{k+1} (U_k(T) q_{k+1}(T) + r_{k+1} V_k(T))\pmod{p^{k+2}\Z_{p}[[T]]}.\end{multline*} Hence, we would like to choose $q_{k+1}(T)$ and $r_{k+1}$ to satisfy
+\[ U_k(T) q_{k+1}(T) + r_{k+1} V_k(T) \equiv \frac{F(T) -U_k(T) V_k(T)}{p^{k+1}} \pmod{p\Z_p[[T]]}. \]
+Equivalently, as $U_k(T) \equiv 1+T\pmod{p\Z_p[[T]]}$ and $V_k(T) \equiv 1\pmod{p\Z_p[[T]]}$, we want
+\[ (1+T) q_{k+1}(T) + r_{k+1}\equiv \frac{F(T) -U_k(T) V_k(T)}{p^{k+1}} \pmod{p\Z_p[[T]]}. \]
+The right-hand side is congruent to a polynomial mod $p\Z_p[[T]]$ and so we are in a similar situation as before; we can find $q_{k+1}(T)$ and $r_{k+1}$ by performing long division in $(\Z_p/p\Z_p)[T]$ and taking lifts. 
+
+Suppose we have chosen $r_1, r_2, r_3, \ldots \in \Z_p$ and $q_1(T), q_2(T), q_3(T), \ldots \in \Z_p[T]$ by the above procedure. We might then expect that
+\begin{multline*} F(T) = U(T)V(T),\\\text{where }\quad U(T):=1+T + \sum_{j=1}^{\infty} p^j r_j,~V(T):=1+\sum_{j=1}^{\infty}p^j q_j(T). \end{multline*}
+There's one problem with this proposal. While $\sum_{j=1}^{\infty} p^j r_j$ is a well-defined element of $\Z_p$ (the sum being obviously convergent), it is not clear what is meant by 
+$\sum_{j=1}^{\infty}p^j q_j(T)$, an infinite sum of elements of $\Z_p[T]$.\footnote{This \emph{should} be a power series over $\Z_p$. But its precise interpretation requires some care: Convergence in power series rings is usually defined by the requirement that the coefficient on each fixed power of $T$ stabilizes, i.e., is eventually constant. But that is \emph{not} the intended meaning here.} Fortunately this difficulty is not so serious: For each fixed nonnegative integer $r$, the sum of the $T^r$ coefficients of $p^j q_j(T)$ converges, to $\gamma_r \in \Z_p$ (say), and we simply define $\sum_{j=1}^{\infty}p^j q_j(T)$ to \emph{mean} $\sum_{r\ge 0} \gamma_r T^r$. Having made this definition, the factorization $F(T) = U(T) V(T)$ follows easily (check that the two sides are congruent modulo $p^k \Z_p[[T]]$, for every $k$, and convince yourself that this implies equality in $\Z_p[[T]]$).
+
+So far we have shown $F(T) = U(T) V(T)$, as formal power series. As each $q_j(T)$ is a polynomial, a moment's thought shows that $V(T) = 1 + \sum_{j=1}^{\infty} p^j q_j(T)$ is a Strassmann series. Invoking Problem \ref{prob:93}, $F(x) = U(x) V(x)$ for all $x \in \Z_p$. Since $V(x)\in 1+p\Z_p$ for each $x \in \Z_p$, the $\Z_p$-zeros of $F$ are precisely the same as those of $U$. But it is obvious $U(x)=0$ for a unique $x\in \Z_p$, namely $x=-1-\sum_{j=1}^{\infty} p^j r_j$. 
+
+\begin{rmk} This took quite a bit longer than our first approach! However, if you understand this argument, you are well on your way to proving (one form of) the \textsf{Weierstrass preparation theorem for $\Q_p$}.\index{Weierstrass preparation theorem for $\Q_p$} See the remark after the solution to Problem \ref{ex:strassthm}.
+\end{rmk}
+\end{sol}
+
+\begin{challenge}\label{ex:strasslinear} Let $F(T)$ be a Strassmann series with $\Z_p$-coefficients. Reducing the coefficients of $F(T)$ modulo $p\Z_p$ yields a \emph{polynomial} $\tilde{F}(T) \in (\Z_p/p\Z_p)[T]$. Show that if $\tilde{F}(T)$ has degree $1$, then there is exactly one $x \in \Z_p$ with $F(x)=0$. 
+\end{challenge}
+
+\begin{challenge}\label{prob:logisomorphism} Let $p$ be an odd prime.\index{p-adic@$p$-adic logarithm!sets up isomorphism between $1+p\Z_p$ and $p\Z_p$}
+\vspace{-0.12in}
+\begin{enumerate}
+    \item[(a)] Show that $\log_p$ defines a group isomorphism between $1+p\Z_p$ (under multiplication) and $p\Z_p$ (under addition). This is analogous to how the usual $\log$ map sets up an isomorphism between $\R^{+}$ and $\R$.
+
+{\scriptsize Hint. One proof of injectivity goes by establishing $|\log_p x - \log_p y|_p = |x-y|_p$ for all $x,y \in 1+p\Z_p$. For surjectivity, change variables and apply \pp~\ref{ex:strasslinear}.} 
+\item[(b)] Prove that every element of $\Z_p^{\times}$ has a unique representation in the form $\zeta u$, where $\zeta$ is a $(p-1)$th root of unity and $u \in 1+p\Z_p$.
+\item[(c)] Let $\mu_{p-1}$ denote the group of $(p-1)$th roots of unity in $\Q_p$. Deduce that $\Z_p^{\times} \cong \mu_{p-1} \times (1+p\Z_p) \cong \Z/({p-1}) \times \Z_p$ and that $\Q_p^{\times} \cong \Z \times \Z/(p-1) \times \Z_p$.\index{$\Q_p$, field of $p$-adic numbers!structure of $\Q_p^{\times}$}\index{$\Z_p$, ring of $p$-adic integers!structure of $\Z_p^{\times}$}
+\end{enumerate}
+\end{challenge}
+
+
+\begin{challenge}[the $p$-adic exponential] We assume familiarity with \pp s \ref{prob:logaddition} and \ref{prob:logisomorphism}. Let $p$ be an odd prime. For $y \in p\Z_p$, define $\exp_p(y) = \sum_{k \ge 0}\frac{1}{k!} y^k$.\index{p-adic@$p$-adic exponential}\index{exponential function, on $\Q_p$|see{$p$-adic exponential}}\index{$\exp_p$|see{$p$-adic exponential}}\index{$\log_p$|see{$p$-adic logarithm}} Show that $\exp_p$ maps $p\Z_p$ into $1+p\Z_p$, and that in fact $\exp_p\colon p\Z_p\to 1+p\Z_p$ is the inverse of the isomorphism $\log_p\colon 1+p\Z_p  \xrightarrow{\sim} p\Z_p$. 
+
+One approach is to introduce $E_p(y) := \lim_{m\to\infty} (1+p^m y)^{1/p^m}$. (Here raising to the power $1/p^m$ is defined by the Newton binomial expansion, as in \pp~\ref{pp:binomial1}.) Show that $E_p$ maps $p\Z_p$ into $1+p\Z_p$ and is actually the inverse of $L_p\colon 1+p\Z_p\to p\Z_p$. Then argue that $E_p(y) = \exp_p(y)$. The identity $E_p(y) = \exp_p(y)$ is the $p$-adic analogue of the well-known formula $\exp(x) = \lim_{n\to\infty} (1+\frac{1}{n}x)^{n}$.
+\end{challenge}
+
+\begin{sol}{prob:binomialseries}\index{Strassmann series!representing $(1+a)^n$} We explain how to transform the double sum on $k$ and $j$ into the claimed sum on $j$. Put $u_{k,j} = \one_{k\ge j} s(k,j) n^j \frac{a^k}{k!}$. Since $p$ is odd and $|a|_p\le 1/p$, 
+\[ \left|\one_{k\ge j} s(k,j) n^j \frac{a^k}{k!}\right|_p \le \one_{k\ge j} p^{-k} |k!|_p^{-1} \le \one_{k\ge j} p^{-k} p^{k/(p-1)} \le \one_{k\ge j} p^{-k/2}.\]  So if we set $\epsilon_N := p^{-N/2}$, then $|\one_{k\ge j} s(k,j)\frac{a^k}{k!}|_p \le \epsilon_N$ whenever $k\ge N$ or $j\ge N$. By Problem \ref{prob:92}, 
+\begin{align*} \sum_{k=0}^{\infty} \left(\sum_{j=0}^{k} s(k,j) n^j\right) \frac{a^k}{k!} &= \sum_{k=0}^{\infty} \sum_{j=0}^{\infty} u_{k,j} = \sum_{j=0}^{\infty} \sum_{k=0}^{\infty} u_{k,j} \\ &= \sum_{j=0}^{\infty} n^j \left(\sum_{k\ge j} s(k,j)\frac{a^k}{k!}\right) = \sum_{j=0}^{\infty} C_{a,j} n^j. \end{align*}
+
+When $n=1$, this argument shows that $\sum_{j=0}^{\infty} C_{a,j} = 1+a$. Since $\sum_{j=0}^{\infty} C_{a,j}$ converges,  $|C_{a,j}|_p \to 0$ as $j\to\infty$. 
+\end{sol}
+
+
+\begin{sol}{prob:matrixmult} Put $\textbf{v}_n = [x_n, x_{n+1}, \dots, x_{n+d-1}]^{T}$, so that $\textbf{v} = \textbf{v}_0$. According to our recurrence relation, $x_{n+d} = a_1 x_{n+d-1} + a_2 x_{n+d-2} + \dots + a_d x_{n}$, and so
+\[ A \textbf{v}_n =  \left[\begin{matrix} 
+0 & 1 & 0  & \hdots & 0\\
+0 & 0 & 1  & \hdots & 0 \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+0 & 0 & 0 & \hdots & 1 \\
+a_d & a_{d-1} & a_{d-2} & \hdots & a_1
+\end{matrix}\right]\left[
+\begin{matrix}
+x_n \\
+x_{n+1} \\
+x_{n+2} \\
+\vdots \\
+x_{n+d-1}
+\end{matrix}
+\right] = 
+\left[
+\begin{matrix}
+x_{n+1} \\
+x_{n+2} \\
+x_{n+3} \\
+\vdots \\
+x_{n+d}
+\end{matrix}
+\right] = \textbf{v}_{n+1}
+\]
+for each nonnegative integer $n$. Iterating, $A^n\textbf{v} = A^n\textbf{v}_0 = \textbf{v}_n$, and $\langle A^n \textbf{v},\textbf{e} \rangle = \langle \textbf{v}_n,\textbf{e}\rangle = x_n$.
+\end{sol}
+
+\begin{sol}{prob:pinvertible} Computing the determinant by expanding along the first column gives $\det(A) = \pm a_d$. Therefore, $A$ is invertible over any ring in which $a_d^{-1}$ exists, such as $\F_p$ when $p\nmid a_d$.
+\end{sol}
+
+\begin{sol}{prob:matrixexpression} We have
+\begin{align*} x_n &= \langle A^n \textbf{v}, \textbf{e}\rangle = \langle A^r (A^k)^m\textbf{v}, \textbf{e}\rangle =  \langle A^r (\Id + pB)^m\textbf{v}, \textbf{e}\rangle \\
+&= \langle A^r \sum_{j=0}^{m} \binom{m}{j} p^j B^j \textbf{v},\textbf{e} \rangle= \sum_{j=0}^{m} \binom{m}{j} p^j \langle A^r B^j \textbf{v}, \textbf{e}\rangle.
+\end{align*}
+\end{sol}
+
+\begin{sol}{prob:matrixbinomial}\index{Strassmann series!representing terms of a linear recurrence} Let $s(N,K)$ be the Stirling numbers of the first kind. For each nonnegative integer $m$, Problem \ref{prob:matrixexpression} gives
+\begin{align*} x_{km+r} &= \sum_{j=0}^{\infty} \frac{m(m-1)(m-2)\cdots(m-(j-1))}{j!} p^j \langle A^r B^j\textbf{v}, \textbf{e}\rangle  \\
+&= \sum_{j=0}^{\infty} \frac{p^j}{j!}\left(\sum_{\ell=0}^{j} s(j,\ell)m^\ell\right) \langle A^r B^j\textbf{v},\textbf{e}\rangle.\end{align*}
+If we put $u_{j,\ell} = \one_{\ell \le j}\frac{p^j}{j!}s(j,\ell)m^{\ell}\langle A^r B^j\textbf{v},\textbf{e}\rangle$, then $|u_{j,\ell}|_p \le \one_{\ell \le j} |j!|_{p}^{-1} \cdot p^{-j} \le \one_{\ell \le j} p^{j/(p-1)} p^{-j} \le \one_{\ell \le j} p^{-j/2}$.  Hence, if $\epsilon_N:= p^{-N/2}$, then $|u_{j,\ell}|_p \le \epsilon_N$ whenever $j\ge N$ or $\ell \ge N$. Because $\epsilon_N\to 0$ as $N\to\infty$, Exercise \ref{prob:92} allows us to write
+\[ x_{km+r} = \sum_{j=0}^{\infty} \sum_{\ell=0}^{\infty} u_{j,\ell} = \sum_{\ell=0}^{\infty} \sum_{j=0}^{\infty} u_{j,\ell} = \sum_{\ell=0}^{\infty} m^\ell \sum_{j\ge \ell} \frac{p^j}{j!} s(j,\ell) \langle A^r B^j \textbf{v},\textbf{e}\rangle. \]
+So if we define
+\[ F_{k,r}(T) = \sum_{\ell=0}^{\infty} \left(\sum_{j\ge \ell} \frac{p^j}{j!} s(j,\ell) \langle A^r B^j \textbf{v},\textbf{e}\rangle\right) T^\ell,\]
+then $F_{k,r}(m)$ converges to $x_{km+r}$ for every nonnegative integer $m$. In particular, $F_{k,r}(1)$ converges, so that the coefficients of $T^\ell$ tend to $0$ as $\ell\to\infty$. Thus, $F_{k,r}(T)$ is a Strassmann series.
+\end{sol}
+\begin{sol}{prob:skdichotomy}\index{Skolem--Mahler--Lech theorem} Let $r \in \{0,1,\dots,k-1\}$. Suppose $x_{n}\ne 0$ for some nonnegative integer $n\equiv r\pmod{k}$. If we write $n=km+r$, then $F_{k,r}(m) = x_{km+r} = x_{n} \ne 0$. Therefore, $F_{k,r}(T)$ is not the zero series. Since $F_{k,r}(T)$ is Strassmann, Exercise \ref{ex:weakstrass} shows that $F_{k,r}$ has finitely many zeros in $\Z_p$. Consequently, there are finitely many nonnegative integers $m$ with $F_{k,r}(m) = 0$. Equivalently, there are finitely many nonnegative integers $n\equiv r\pmod{k}$ with $x_n=0$. 
+
+Summarizing: Either $x_n$ vanishes for all nonnegative integers $n\equiv r\pmod{k}$ or $x_n$ vanishes for only finitely many nonnegative integers $n\equiv r\pmod{k}$. The final claim of the problem (``Hence, \dots'') follows immediately.
+\end{sol}
+
+\begin{rmks}\mbox{ }
+\vspace{-0.12in}
+\begin{enumerate}
+\item[(i)] Imagine you are presented with an integer linear recurrence sequence, specified by a list of coefficients $a_1,\dots,a_d \in \Z$ (where $a_d \neq 0$) and a collection of initial values $x_0,\dots,x_{d-1} \in \Z$. The \textsf{Skolem problem} asks whether $x_n=0$ for some nonnegative integer $n$. Frustratingly, while we have algorithms to decide this for any sequence with $d\le 4$ (``algorithm'' here meaning a procedure that is proven to always terminate), no general algorithm is known for $d\ge 5$. See \cite{OW} for a discussion.
+\item[(ii)] The \emph{Monthly} article \cite{MP} of Myerson and Van der Poorten provides a highly entertaining account of the Skolem--Mahler--Lech theorem, addressing several aspects not discussed here.
+\end{enumerate}
+\end{rmks}
+
+\begin{challenge}[Shapiro \cite{shapiro}, Myerson and Van der Poorten \cite{MP}] Let $\{x_n\}_{n\ge 0}$ be an integer linear recurrence sequence. Call $m \in \Z$ a \textsf{repeat offender} (relative to $\{x_n\}$) if $x_n=m$ for infinitely many nonnegative integers $n$. Show that each integer linear recurrence sequence is associated with only finitely many repeat offenders.
+\end{challenge}
+
+\begin{sol}{prob:easyrecurrence}  These are easy to find once you go looking. For instance, let $x_0 = 0$, $x_1=1$, and set $x_{n} = -x_{n-2}$ for all $n\ge 2$. Then $x_n=0$ precisely when $n$ is even. 
+
+Here is a more compelling example, yoinked from \cite{MP}. Consider the integer recurrence sequence $\{x_n\}$ satisfying 
+\[ x_n = 6 x_{n-2} -12 x_{n-4} + 8 x_{n-6} \quad\text{for all $n\ge 6$}, \]
+with initial conditions $x_0=8$, $x_1=0$, $x_2 = 9$, $x_3 = 0$, $x_4 = 8$, and $x_5=0$. Then $x_n = 0$ when $n$ is odd, while $x_n = (n-8)^2 2^{(n-6)/2}$ when $n$ is even. Hence, $x_n=0$ $\Longleftrightarrow$ $n$ is odd or $n=8$.
+\end{sol}
+
+\begin{sol}{prob:mahlerSML} Yes, the same result holds for recurrence sequences defined over an arbitrary number field $K$. 
+
+The proof is almost the same as that given for integer recurrences.
+An obvious complication is that when $K\ne \Q$, a general element of $K$ does not carry a preassigned meaning as an element of $\Q_p$. This obstacle is by no means insurmountable; it is resolved by embedding $K$ into $\Q_p$, which we know is possible for infinitely many primes $p$ (Exercise \ref{ex:embedding}). Let's suppose we have not just an embedding but an \textsc{embedding$^{+}$} (TM), meaning an embedding of $K$ into $\Q_p$, $p$ \emph{odd}, where (identifying elements of $K$ with their images in $\Q_p$) $a_1,\dots, a_d, x_0,\dots, x_{d-1} \in \Z_p$, and $a_d \in \Z_p^{\times}$. Then it is not hard to convince yourself that our proof of Skolem's theorem goes through nearly  verbatim. (Check this!)
+
+We know there are always embeddings, but is there always an \textsc{embedding$^{+}$}? Yes! Since $K$ embeds into $\Q_p$ for infinitely many $p$, it will suffice to prove the following lemma.
+
+\begin{lem} Let $K$ be a number field and let $\alpha$ be a nonzero element of $K$. There are only finitely many primes $p$ for which there exists an embedding of $K$ into $\Q_p$ with $|\alpha|_p\ne 1$. 
+\end{lem}
+(As usual, we abuse notation and identify $\alpha$ with its image in $\Q_p$.)
+
+\begin{proof} Let $m(T)$ be the minimal polynomial of $\alpha$ over $\Q$, scaled to have integer coefficients. Write $m(T) = c_d T^d + c_{d-1} T^{d-1} + \dots + c_1 T + c_0$. If $c_0=0$, then $T$ divides $m(T)$, and the irreducibility of $m(T)$ over $\Q$ forces $m(T)$ to be a constant multiple of $T$. But then $\alpha=0$, contrary to hypothesis. So $c_0\ne 0$.
+
+Assume now that $K$ has been embedded into $\Q_p$, where $p$ is a prime not dividing $c_d c_0$. We will show that $|\alpha|_p=1$. Since only finitely many primes divide $c_d c_0$, the lemma follows.
+
+Suppose instead  that $|\alpha|_p > 1$. Since $m(\alpha)=0$, we have $c_d \alpha^d = -(c_{d-1} \alpha^{d-1} + \dots + c_0)$. However (keeping in mind that $p\nmid c_d$), 
+\begin{align*} |c_d \alpha^d|_p = |\alpha|_p^d > |\alpha|_p^{d-1} &\ge \max\{|c_{d-1}\alpha^{d-1}|_p, \dots, |c_1 \alpha|_p, |c_0|_p\}\\
+&\ge \bigg|\sum_{j=0}^{d-1} c_j \alpha^j\bigg|_p. 
+\end{align*}
+If $|\alpha|_p < 1$, we argue similarly, exploiting that $1/\alpha$ is a root of the \textsf{reciprocal polynomial} $T^{d} m(T^{-1}) = c_0 T^d + c_1 T^{d-1} + \dots + c_{d-1} T + c_d$. In this situation, $c_0 (1/\alpha)^d = -(c_1 (1/\alpha)^{d-1} + \dots + c_{d-1}(1/\alpha) + c_d)$, and (keeping in mind that $p\nmid c_0$)
+\begin{align*} \bigg|c_0 \left(\frac1\alpha\right)^d\bigg|_p = \bigg|\frac1\alpha\bigg|_p^d > \bigg|\frac1\alpha\bigg|_p^{d-1} &\ge \max\left\{|c_{1}(1/\alpha)^{d-1}|_p, \dots, |c_{d-1} (1/\alpha)|_p, |c_d|_p\right\} \\
+&\ge \bigg|\sum_{j=0}^{d-1} c_{d-j} \left(\frac{1}{\alpha}\right)^j\bigg|_p. 
+\end{align*}
+Again we have a contradiction.\end{proof}
+
+\begin{rmk} 
+Lech has shown that Skolem's theorem holds for recurrence sequences defined over \emph{arbitrary} fields of characteristic $0$. Today one usually refers to this general statement as the \textsf{Skolem--Mahler--Lech theorem}. In this setting the embedding required to make the proof work is guaranteed by a lemma of Cassels (see \cite[Chapter 5]{cassels86}):  \emph{Let $K$ be a finitely generated extension of $\Q$ and let $S$ be a finite set of nonzero elements of $K$. For infinitely many primes $p$, there is an embedding of $K$ into $\Q_p$  with the property that $|x|_p = 1$ for all $x \in S$.} To prove the Skolem--Mahler--Lech Theorem, apply this with $K = \Q(a_1,\dots,a_d,x_0,\dots,x_{d-1})$ (details left to you!).
+\end{rmk}
+
+\end{sol}
+
+\let\oldaddcontentsline\addcontentsline
+\renewcommand{\addcontentsline}[3]{}
+\begin{thebibliography}{11}
+
+
+
+\bibitem{cassels86} {J.\,W.\,S.}~Cassels, \emph{Local fields}, London Mathematical Society Student Texts, vol.~3, Cambridge University Press, Cambridge, 1986.
+
+\bibitem{gouvea}{F.\,Q.}~Gouv\^{e}a, \emph{{$p$}-adic numbers: An introduction}, third ed., Universitext, Springer, Cham, 2020.
+
+\bibitem{hensel} K.~Hensel,
+\emph{Über die arithmetischen Eigenschaften der algebraischen und transzendenten Zahlen}. 
+Jahresber. Dtsch. Math.-Ver. \textbf{14} (1905), 545--558. 
+
+\bibitem{koblitz}
+N.~Koblitz, \emph{{$p$}-adic numbers, {$p$}-adic analysis, and zeta-functions}, second ed., Graduate Texts in Mathematics, vol.~58, Springer-Verlag, New York, 1984. 
+
+
+
+\bibitem{landau} E. Landau, \emph{Differential and integral calculus}, third ed., AMS Chelsea Publishing, Providence, RI, 2001.
+
+\bibitem{leopoldt} H.-W. Leopoldt, \emph{Zur Approximation des p-adischen Logarithmus}.
+Abh. Math. Sem. Univ. Hamburg \textbf{25} (1961), 77--81.
+
+
+\bibitem{MP} G.~Myerson and A.~van der Poorten, \emph{Some problems concerning recurrence sequences}.
+Amer. Math. Monthly \textbf{102} (1995), 698--705.
+
+\bibitem{OW}
+J. Ouaknine and J. Worrell, \emph{Decision problems for linear recurrence sequences}. In: Reachability Problems, Lecture Notes in Comput. Sci., vol. 7550, Springer, Heidelberg, 2012, pp. 21--28.
+
+\bibitem{petri}
+B. Petri, \emph{Perioden, Elementarteiler, Transzendenz. Kurt Hensels Weg zu den \(p\)-adischen Zahlen}, Dr. Hut, M\"{u}nchen, 2011.  URL: \url{http://tuprints.ulb.tu-darmstadt.de/2785/1/DissPetri.pdf}
+
+\bibitem{robert} {A.\,M.}~Robert, \emph{A course in p-adic analysis}, Grad. Texts in Math., vol.~198, Springer-Verlag, New York, 2000.  
+
+\bibitem{shapiro} {H.\,N.} Shapiro,
+\emph{On a theorem concerning exponential polynomials}. Comm. Pure Appl. Math. \textbf{12} (1959), 487--500.
+
+\bibitem{ullrich} P.~Ullrich, \emph{Der Henselsche Beweisversuch f\"{u}r die Transzendenz von $e$}, in: Mathematik im Wandel, bd.\ 1, Franzbecker, Hildesheim, 1998, pp.\ 320--330.
+\end{thebibliography}
+\let\addcontentsline\oldaddcontentsline
+
